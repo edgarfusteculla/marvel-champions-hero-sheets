@@ -2,9 +2,12 @@
 
 from __future__ import annotations
 
+import re
 import shutil
 import subprocess
 from pathlib import Path
+
+PAGE_PATTERN = re.compile(rb"/Type\s*/Page[^s]")
 
 WINDOWS_CANDIDATES = (
     r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
@@ -54,3 +57,7 @@ def export(html_path: Path, pdf_path: Path) -> None:
     )
     if not pdf_path.exists():
         raise PdfExportError(f"El navegador no generó el PDF: {result.stderr.strip()}")
+
+
+def page_count(pdf_path: Path) -> int:
+    return len(PAGE_PATTERN.findall(pdf_path.read_bytes()))

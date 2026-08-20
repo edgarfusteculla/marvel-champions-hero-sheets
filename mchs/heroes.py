@@ -17,6 +17,26 @@ ASPECT_LABELS = {
 
 REQUIRED_FIELDS = ("slug", "hero_card_code", "difficulty", "power")
 
+LEVELS = ("principiante", "intermedio", "avanzado")
+
+SIDES = ("a", "b")
+
+TONES = ("consejo", "aviso", "neutro")
+
+# Apartados que se pueden quitar de una hoja con "hide", para dejar solo lo que interese.
+HIDEABLE = (
+    "habilidades",
+    "fuertes-debiles",
+    "aspectos",
+    "obligacion",
+    "estilo",
+    "resto-del-kit",
+    "combos",
+    "curva",
+    "mulligan",
+    "fases",
+)
+
 
 class HeroDataError(ValueError):
     pass
@@ -28,13 +48,8 @@ def _check_rating(value: Any, field: str, slug: str) -> int:
     return value
 
 
-def load_hero(path: Path) -> dict[str, Any]:
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as error:
-        raise HeroDataError(f"{path.name} no es un JSON válido: {error}") from error
-
-    slug = data.get("slug", path.stem)
+def _validate(data: dict[str, Any]) -> dict[str, Any]:
+    slug = data.get("slug", "?")
     for field in REQUIRED_FIELDS:
         if not data.get(field):
             raise HeroDataError(f"[{slug}] falta el campo obligatorio '{field}'.")
@@ -61,7 +76,65 @@ def load_hero(path: Path) -> dict[str, Any]:
         seen.add(code)
         _check_rating(card.get("priority"), f"cards[{code}].priority", slug)
 
+    level = data.get("level")
+    if level is not None and level not in LEVELS:
+        raise HeroDataError(
+            f"[{slug}] 'level' debe ser uno de {', '.join(LEVELS)}, y es {level!r}."
+        )
+
+    unknown = set(data.get("hide", [])) - set(HIDEABLE)
+    if unknown:
+        raise HeroDataError(
+            f"[{slug}] 'hide' contiene apartados que no existen: {', '.join(sorted(unknown))}. "
+            f"Se pueden ocultar: {', '.join(HIDEABLE)}."
+        )
+
+    for index, section in enumerate(data.get("sections", [])):
+        where = f"sections[{index}]"
+        if not section.get("title"):
+            raise HeroDataError(f"[{slug}] {where} necesita un 'title'.")
+        if section.get("side") not in SIDES:
+            raise HeroDataError(
+                f"[{slug}] {where}.side debe ser 'a' o 'b', y es {section.get('side')!r}."
+            )
+        if not section.get("items"):
+            raise HeroDataError(f"[{slug}] {where} no tiene ninguna nota en 'items'.")
+        tone = section.get("tone", "consejo")
+        if tone not in TONES:
+            raise HeroDataError(
+                f"[{slug}] {where}.tone debe ser uno de {', '.join(TONES)}, y es {tone!r}."
+            )
+
     return data
+
+
+def apply_variant(data: dict[str, Any], name: str) -> dict[str, Any]:
+    """Devuelve el héroe con la variante aplicada encima.
+
+    La variante sustituye por completo las claves que declara, así que en ella solo hace falta
+    escribir lo que cambia respecto a la hoja base.
+    """
+    variants = data.get("variants", {})
+    if name not in variants:
+        raise HeroDataError(
+            f"[{data['slug']}] no tiene la variante '{name}'. "
+            f"Definidas: {', '.join(variants) or 'ninguna'}."
+        )
+    merged = {key: value for key, value in data.items() if key != "variants"}
+    merged.update(variants[name])
+    merged["slug"] = f"{data['slug']}-{name}"
+    merged["variant"] = name
+    return _validate(merged)
+
+
+def load_hero(path: Path) -> dict[str, Any]:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        raise HeroDataError(f"{path.name} no es un JSON válido: {error}") from error
+
+    data.setdefault("slug", path.stem)
+    return _validate(data)
 
 
 def load_all(directory: Path, slugs: list[str] | None = None) -> list[dict[str, Any]]:

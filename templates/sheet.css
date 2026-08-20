@@ -22,11 +22,12 @@ body {
 
 .sheet {
   width: 210mm;
-  height: 297mm;
+  /* Con min-height, si el contenido no cabe se va a otra página impresa en vez de recortarse
+     en silencio: así el aviso de páginas del generador lo detecta. */
+  min-height: 297mm;
   margin: 0 auto 8mm;
   background: var(--paper);
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4mm 10mm rgba(0, 0, 0, .45);
@@ -99,6 +100,28 @@ body {
   opacity: .95;
 }
 
+/* En fila, para que la etiqueta de nivel no haga crecer la cabecera. */
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+}
+
+.level-tag {
+  background: var(--accent);
+  color: #111;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3mm;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1mm 2mm;
+  border-radius: 1.2mm;
+  border: .4mm solid var(--ink);
+  white-space: nowrap;
+}
+
 .face-tag {
   background: var(--ink);
   color: #fff;
@@ -138,7 +161,7 @@ body {
   background: var(--paper-light);
   border: .7mm solid var(--ink);
   border-radius: 2mm;
-  padding: 3mm 3.5mm;
+  padding: 2.6mm 3.2mm;
   position: relative;
 }
 
@@ -149,7 +172,7 @@ body {
   letter-spacing: .07em;
   font-size: 3.9mm;
   color: var(--primary-ink);
-  margin: 0 0 2mm;
+  margin: 0 0 1.7mm;
   display: flex;
   align-items: center;
   gap: 2mm;
@@ -291,11 +314,11 @@ body {
 }
 
 .ability {
-  font-size: 3mm;
-  line-height: 1.4;
+  font-size: 2.9mm;
+  line-height: 1.36;
   background: var(--paper);
   border-left: 1mm solid var(--primary);
-  padding: 1.8mm 2.4mm;
+  padding: 1.5mm 2.2mm;
   border-radius: 0 1.4mm 1.4mm 0;
 }
 
@@ -324,7 +347,7 @@ body {
 .pc-list li {
   font-size: 3.05mm;
   line-height: 1.38;
-  margin-bottom: 1.5mm;
+  margin-bottom: 1.3mm;
   padding-left: 5mm;
   position: relative;
 }
@@ -356,7 +379,7 @@ body {
 .aspect {
   border-radius: 1.8mm;
   border: .7mm solid var(--ink);
-  padding: 2mm 2mm 2.2mm;
+  padding: 1.8mm 1.8mm 1.9mm;
   color: #fff;
   position: relative;
   display: flex;
@@ -373,8 +396,8 @@ body {
 }
 
 .aspect .desc {
-  font-size: 2.7mm;
-  line-height: 1.32;
+  font-size: 2.55mm;
+  line-height: 1.3;
 }
 
 .aspect .dot {
@@ -413,10 +436,10 @@ body {
   color: var(--on-secondary);
   border: .7mm solid var(--ink);
   border-radius: 2mm;
-  padding: 3mm 4mm 3mm 13mm;
+  padding: 2.4mm 4mm 2.4mm 12mm;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 4mm;
-  line-height: 1.4;
+  font-size: 3.7mm;
+  line-height: 1.35;
   font-style: italic;
   position: relative;
 }
@@ -714,12 +737,12 @@ body {
   display: flex;
   gap: 3mm;
   align-items: center;
-  padding: 2mm 3mm;
+  padding: 1.6mm 3mm;
 }
 
 .obligation img {
   flex: 0 0 auto;
-  width: 10mm;
+  width: 9mm;
   display: block;
   border-radius: 1mm;
   border: .4mm solid var(--ink);
@@ -742,6 +765,62 @@ body {
   padding: .3mm 1.4mm;
   border-radius: .8mm;
   margin-right: 1.2mm;
+}
+
+/* ---------------- Notas propias ---------------- */
+
+.notes {
+  border: .7mm solid var(--ink);
+  border-left-width: 2.5mm;
+  border-radius: 1.8mm;
+  padding: 2mm 3mm 2.2mm;
+  background: var(--paper-light);
+}
+
+.notes-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: 3.6mm;
+  margin-bottom: 1.2mm;
+}
+
+.notes ul {
+  margin: 0;
+  padding-left: 4mm;
+}
+
+.notes li {
+  font-size: 2.9mm;
+  line-height: 1.33;
+  margin-bottom: .8mm;
+}
+
+.notes li:last-child {
+  margin-bottom: 0;
+}
+
+.notes-consejo {
+  border-left-color: var(--secondary);
+  background: #eef2fb;
+}
+
+.notes-consejo .notes-title {
+  color: var(--secondary);
+}
+
+.notes-aviso {
+  border-left-color: #b3242a;
+  background: #fdeeee;
+}
+
+.notes-aviso .notes-title {
+  color: #8e1c22;
+}
+
+.notes-neutro {
+  border-left-color: var(--ink);
 }
 
 /* ---------------- Pie ---------------- */

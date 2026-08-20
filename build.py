@@ -1,11 +1,11 @@
 """Genera las hojas de héroe en HTML listas para imprimir.
 
 Ejemplos:
-    python build.py                     # todos los héroes
+    python build.py                     # todos los héroes y todas sus variantes
     python build.py spider-man          # solo uno
     python build.py --refresh           # ignora la caché y vuelve a bajar los datos
     python build.py spider-man --open   # genera y abre en el navegador
-    python build.py --pdf               # genera además el PDF listo para imprimir
+    python build.py --pdf               # genera el PDF y avisa si el contenido no cabe
 """
 
 from __future__ import annotations
@@ -14,10 +14,11 @@ import argparse
 import sys
 import webbrowser
 from pathlib import Path
+from typing import Any
 
-from mchs.heroes import HeroDataError, load_all
+from mchs.heroes import HeroDataError, apply_variant, load_all
 from mchs.marvelcdb import MarvelCDB, MarvelCDBError
-from mchs.pdf import PdfExportError, export as export_pdf
+from mchs.pdf import PdfExportError, export as export_pdf, page_count
 from mchs.render import make_environment, render_hero
 
 ROOT = Path(__file__).resolve().parent
@@ -26,9 +27,22 @@ TEMPLATES_DIR = ROOT / "templates"
 CACHE_DIR = ROOT / "cache"
 DIST_DIR = ROOT / "dist"
 
+EXPECTED_PAGES = 2
+
+
+def expand_variants(heroes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    expanded = []
+    for hero in heroes:
+        expanded.append(hero)
+        for name in hero.get("variants", {}):
+            expanded.append(apply_variant(hero, name))
+    return expanded
+
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument("slugs", nargs="*", help="Héroes a generar (por nombre de archivo, sin .json).")
     parser.add_argument("--refresh", action="store_true", help="Vuelve a descargar los datos de MarvelCDB.")
     parser.add_argument("--locale", default="es", choices=["es", "en"], help="Idioma de los textos de carta.")
@@ -37,7 +51,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     try:
-        heroes = load_all(DATA_DIR, args.slugs or None)
+        heroes = expand_variants(load_all(DATA_DIR, args.slugs or None))
     except HeroDataError as error:
         print(f"Error en los datos: {error}", file=sys.stderr)
         return 1
@@ -45,6 +59,7 @@ def main(argv: list[str] | None = None) -> int:
     client = MarvelCDB(CACHE_DIR, locale=args.locale, refresh=args.refresh)
     env = make_environment(TEMPLATES_DIR)
     DIST_DIR.mkdir(exist_ok=True)
+    warnings = 0
 
     for hero in heroes:
         try:
@@ -64,12 +79,20 @@ def main(argv: list[str] | None = None) -> int:
             except PdfExportError as error:
                 print(f"Aviso: {error}", file=sys.stderr)
             else:
-                print(f"OK  {pdf_path.relative_to(ROOT)}")
+                pages = page_count(pdf_path)
+                print(f"OK  {pdf_path.relative_to(ROOT)} ({pages} páginas)")
+                if pages > EXPECTED_PAGES:
+                    warnings += 1
+                    print(
+                        f"AVISO  '{hero['slug']}' ocupa {pages} páginas en vez de {EXPECTED_PAGES}: "
+                        f"hay contenido que se sale del A4. Acorta textos o quita alguna nota.",
+                        file=sys.stderr,
+                    )
 
         if args.open:
             webbrowser.open(output.as_uri())
 
-    return 0
+    return 2 if warnings else 0
 
 
 if __name__ == "__main__":

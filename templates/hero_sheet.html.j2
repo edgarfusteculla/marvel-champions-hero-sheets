@@ -1,3 +1,14 @@
+{% macro notes(sections) -%}
+{% for section in sections %}
+<div class="notes notes-{{ section.tone | default('consejo') }}">
+  <div class="notes-title">{{ section.title }}</div>
+  <ul>
+    {% for item in section['items'] %}<li>{{ item }}</li>{% endfor %}
+  </ul>
+</div>
+{% endfor %}
+{%- endmacro %}
+
 {% macro dots(value, total=5, extra='') -%}
 <div class="dots {{ extra }}">
   {% for i in range(1, total + 1) %}
@@ -41,7 +52,10 @@
       <div class="hero-name">{{ hero_card.name }}</div>
       <div class="alter-ego-name">{{ alter_ego.name }} · {{ pack_name }}</div>
     </div>
-    <div class="face-tag">Cara A<br>Presentación</div>
+    <div class="tags">
+      <div class="face-tag">Cara A<br>Presentación</div>
+      {% if hero.level %}<div class="level-tag">Nivel {{ hero.level }}</div>{% endif %}
+    </div>
   </header>
 
   <div class="body">
@@ -81,6 +95,7 @@
           </div>
         </div>
 
+        {% if 'habilidades' not in hide %}
         <div class="panel" style="flex:1 1 auto;">
           <div class="panel-title">Habilidades propias</div>
           <div class="ability" style="margin-bottom:2mm;">
@@ -92,9 +107,11 @@
             {{ alter_ego.text }}
           </div>
         </div>
+        {% endif %}
       </div>
     </div>
 
+    {% if 'fuertes-debiles' not in hide %}
     <div class="panel">
       <div class="panel-title">Puntos fuertes y débiles</div>
       <div class="pros-cons">
@@ -110,7 +127,9 @@
         </ul>
       </div>
     </div>
+    {% endif %}
 
+    {% if 'aspectos' not in hide %}
     <div class="panel">
       <div class="panel-title">¿Con qué aspecto lo acompaño?</div>
       <div class="aspects">
@@ -124,7 +143,9 @@
         {% endfor %}
       </div>
     </div>
+    {% endif %}
 
+    {% if 'obligacion' not in hide %}
     {% for card in obligations %}
     <div class="panel obligation">
       {% if card.image %}<img src="{{ card.image }}" alt="{{ card.name }}">{% endif %}
@@ -134,8 +155,13 @@
       </div>
     </div>
     {% endfor %}
+    {% endif %}
 
+    {{ notes(sections_a) }}
+
+    {% if 'estilo' not in hide %}
     <div class="flavor">{{ hero.playstyle }}</div>
+    {% endif %}
   </div>
 
   <footer class="footer">Hoja no oficial hecha por aficionados · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
@@ -150,7 +176,10 @@
       <div class="eyebrow">Cartas propias, combos y plan de juego</div>
       <div class="hero-name">{{ hero_card.name }}</div>
     </div>
-    <div class="face-tag">Cara B<br>Estrategia</div>
+    <div class="tags">
+      <div class="face-tag">Cara B<br>Estrategia</div>
+      {% if hero.level %}<div class="level-tag">Nivel {{ hero.level }}</div>{% endif %}
+    </div>
   </header>
 
   <div class="body">
@@ -175,6 +204,7 @@
       </div>
     </div>
 
+    {% if 'resto-del-kit' not in hide %}
     <div>
       <div class="panel-title">El resto del kit</div>
       <div class="mini-grid">
@@ -193,7 +223,9 @@
         {% endfor %}
       </div>
     </div>
+    {% endif %}
 
+    {% if 'combos' not in hide %}
     <div class="combos">
       <div class="panel-title" style="margin-bottom:1.6mm;">Combos que tienes que conocer</div>
       <div class="combo-grid">
@@ -205,8 +237,11 @@
         {% endfor %}
       </div>
     </div>
+    {% endif %}
 
+    {% if not ('curva' in hide and 'mulligan' in hide) %}
     <div class="row">
+      {% if 'curva' not in hide %}
       <div class="panel" style="flex:0 0 62mm;">
         <div class="panel-title">Curva de coste</div>
         <div class="curve">
@@ -219,7 +254,9 @@
           {% endfor %}
         </div>
       </div>
+      {% endif %}
 
+      {% if 'mulligan' not in hide %}
       <div class="panel" style="flex:1 1 auto;">
         <div class="panel-title">Mano inicial: qué quedarse y qué cambiar</div>
         <ul class="mulligan">
@@ -231,8 +268,11 @@
           {% endfor %}
         </ul>
       </div>
+      {% endif %}
     </div>
+    {% endif %}
 
+    {% if 'fases' not in hide %}
     <div>
       <div class="panel-title">Plan de juego por fases</div>
       <div class="phases">
@@ -256,7 +296,9 @@
         </div>
       </div>
     </div>
+    {% endif %}
 
+    {{ notes(sections_b) }}
   </div>
 
   <footer class="footer">Hoja no oficial hecha por aficionados · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>

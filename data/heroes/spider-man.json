@@ -5,6 +5,7 @@
   "alter_ego_name": "Peter Parker",
   "difficulty": 1,
   "power": 3,
+  "level": "principiante",
   "beginner_friendly": true,
   "playstyle": "Aguanta en primera línea y deja que el villano te pegue: cada ataque que recibes se convierte en una carta. Tú machacas al villano, que del plan se ocupe otro.",
   "strengths": [
@@ -129,5 +130,34 @@
       "Gasta las últimas cargas de Lanzarredes, no las guardes.",
       "Si el plan está a punto de completarse, frustra antes de pegar."
     ]
+  },
+  "sections": [
+    {
+      "title": "Errores típicos de novato",
+      "side": "a",
+      "tone": "aviso",
+      "items": [
+        "Quedarse en Peter Parker por miedo: pierdes el sentido arácnido, que es su mejor baza.",
+        "Olvidar que Lanzarredes se gasta: son 3 usos, no es una mejora permanente."
+      ]
+    }
+  ],
+  "variants": {
+    "avanzado": {
+      "level": "avanzado",
+      "beginner_friendly": false,
+      "hide": ["mulligan", "curva"],
+      "sections": [
+        {
+          "title": "Detalles que marcan la diferencia",
+          "side": "b",
+          "tone": "consejo",
+          "items": [
+            "El sentido arácnido se dispara al iniciarse el ataque, antes del daño: con Voltereta anulas el golpe y aun así robas.",
+            "La segunda copia de Lanzarredes vale más que cualquier aliado: es lo que hace sostenible el Balanceo con patada."
+          ]
+        }
+      ]
+    }
   }
 }

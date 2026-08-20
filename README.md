@@ -46,6 +46,10 @@ descubre solo.
 | `display_name`, `alter_ego_name` | Opcionales, para forzar cómo se escribe el nombre. |
 | `difficulty`, `power` | Enteros de 1 a 5. |
 | `beginner_friendly` | Si es `true`, se imprime el distintivo de héroe recomendado. |
+| `level` | Opcional: `principiante`, `intermedio` o `avanzado`. Sale como etiqueta en la cabecera. |
+| `sections` | Bloques de notas propias. Ver más abajo. |
+| `hide` | Apartados que no quieres en esta hoja. Ver más abajo. |
+| `variants` | Otras versiones de la misma hoja. Ver más abajo. |
 | `playstyle` | La frase destacada del pie de la cara A. |
 | `strengths`, `weaknesses` | Listas de frases. |
 | `aspects` | Los cuatro aspectos, cada uno con `rating` (1-5) y `note`. Se ordenan solos de mejor a peor. |
@@ -58,12 +62,71 @@ descubre solo.
 El generador valida el archivo antes de dibujar nada y avisa si falta un aspecto, si una
 valoración se sale de 1-5 o si un código de carta no pertenece al set de ese héroe.
 
+## Meter tu propia experiencia
+
+Los apuntes en bruto van en `notas/<slug>.md`, que no se imprime: es de donde sale el contenido.
+Lo que sí acaba en la hoja se escribe en el JSON, y tienes tres mecanismos.
+
+### Bloques de notas propias
+
+Un apartado con el título que tú quieras, en la cara que tú elijas:
+
+```json
+"sections": [
+  {
+    "title": "Errores típicos de novato",
+    "side": "a",
+    "tone": "aviso",
+    "items": ["Primera nota.", "Segunda nota."]
+  }
+]
+```
+
+`side` es `a` o `b`. `tone` es `consejo` (azul), `aviso` (rojo) o `neutro`.
+
+### Quitar apartados
+
+Si un apartado no aporta para el público de esa hoja, se quita y deja sitio para lo tuyo:
+
+```json
+"hide": ["mulligan", "curva"]
+```
+
+Se pueden ocultar `habilidades`, `fuertes-debiles`, `aspectos`, `obligacion`, `estilo`,
+`resto-del-kit`, `combos`, `curva`, `mulligan` y `fases`.
+
+### Dos versiones del mismo héroe
+
+Una variante es la misma hoja con los cambios que declares. Solo escribes lo que cambia; el
+resto se hereda:
+
+```json
+"variants": {
+  "avanzado": {
+    "level": "avanzado",
+    "hide": ["mulligan", "curva"],
+    "sections": [{ "title": "Detalles finos", "side": "b", "tone": "consejo", "items": ["..."] }]
+  }
+}
+```
+
+Cada variante genera su propio archivo: `dist/spider-man-avanzado.html`. Ojo, una clave declarada
+en la variante **sustituye entera** a la de la hoja base, no se fusionan elemento a elemento.
+
 ### Cuidado con el espacio
 
 Las dos caras van justas de sitio a propósito: la información entra en A4 sin apretar la
-tipografía. Si al añadir texto ves que algo se corta, acorta las notas antes que reducir el
-tamaño de letra. Cada nota de carta debería quedarse en unos 70 caracteres, y cada consejo de
-fase en unos 65.
+tipografía. Cada nota de carta debería quedarse en unos 70 caracteres, y cada consejo de fase en
+unos 65. Un bloque de notas de dos líneas ocupa unos 20 mm, así que casi siempre habrá que
+compensarlo con `hide` o acortando textos.
+
+Si te pasas, nada se recorta en silencio: el contenido se va a una tercera página y
+`python build.py --pdf` te lo dice y termina con código de salida 2.
+
+```
+OK  dist\spider-man.pdf (4 páginas)
+AVISO  'spider-man' ocupa 4 páginas en vez de 2: hay contenido que se sale del A4.
+```
 
 ## Estructura
 
@@ -76,6 +139,7 @@ mchs/pdf.py                  Exportación a PDF con navegador headless
 templates/hero_sheet.html.j2 Maquetación de las dos caras
 templates/sheet.css          Estilos (en milímetros, pensados para impresión)
 data/heroes/*.json           Un archivo por héroe
+notas/*.md                   Apuntes en bruto, no se imprimen
 ```
 
 ## Notas
