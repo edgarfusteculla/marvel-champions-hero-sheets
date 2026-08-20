@@ -1,0 +1,133 @@
+{
+  "slug": "spider-man",
+  "hero_card_code": "01001a",
+  "display_name": "Spider-Man",
+  "alter_ego_name": "Peter Parker",
+  "difficulty": 1,
+  "power": 3,
+  "beginner_friendly": true,
+  "playstyle": "Aguanta en primera línea y deja que el villano te pegue: cada ataque que recibes se convierte en una carta. Tú machacas al villano, que del plan se ocupe otro.",
+  "strengths": [
+    "Sentido arácnido: robas una carta cada vez que el villano te ataca. Es el mejor robo gratis del juego y premia quedarte en héroe.",
+    "Defensa 3, la mejor del Set Básico. Defender le sale barato y encima activa su robo.",
+    "Casi todo su set cuesta 0 o 1, así que monta su motor desde el primer turno.",
+    "Peter Parker recupera 3 y genera un recurso mental cada ronda: sus turnos de alter ego nunca son turnos perdidos."
+  ],
+  "weaknesses": [
+    "Frustrar 1: por sí solo casi no puede contener los planes, necesita que el aspecto se lo cubra.",
+    "Ataque 2 de base: sin Balanceo con patada su daño por turno es flojo.",
+    "Depende de tener Lanzarredes en mesa para pagar sus cartas más caras.",
+    "Su obligación le obliga a perder tiempo en forma de alter ego."
+  ],
+  "aspects": {
+    "justice": {
+      "rating": 5,
+      "note": "Tapa su Frustrar 1, que es su gran agujero. La pareja clásica y la mejor para tu primera partida."
+    },
+    "protection": {
+      "rating": 4,
+      "note": "Con Defensa 3 y el sentido arácnido, defender sale barato y encima te da cartas."
+    },
+    "leadership": {
+      "rating": 4,
+      "note": "Los aliados se ocupan de los planes mientras Spider-Man se centra en pegar."
+    },
+    "aggression": {
+      "rating": 3,
+      "note": "Daño de sobra, pero deja los planes sin atender y ya va justo de Frustrar."
+    }
+  },
+  "cards": [
+    {
+      "code": "01008",
+      "priority": 5,
+      "note": "Cada copia son 3 recursos comodín. Ponla en mesa el turno 1."
+    },
+    {
+      "code": "01005",
+      "priority": 5,
+      "note": "8 de daño de golpe. Guárdala para el villano, no para esbirros."
+    },
+    {
+      "code": "01003",
+      "priority": 4,
+      "note": "Anula todo el daño de un ataque, gratis. Y defender te hace robar."
+    },
+    {
+      "code": "01004",
+      "priority": 4,
+      "note": "Cancela el «Al ser revelada» de una traición: tu seguro antidesastre."
+    },
+    {
+      "code": "01006",
+      "priority": 4,
+      "note": "Cura 4 sin gastar tu activación: con Recuperar 3 son 7 en un turno."
+    },
+    {
+      "code": "01007",
+      "priority": 3,
+      "note": "En un esbirro: al derrotarlo quitas 3 de amenaza. Tu parche al Frustrar 1."
+    },
+    {
+      "code": "01002",
+      "priority": 3,
+      "note": "Recupera cartas mentales del descarte. Útil, pero no urgente."
+    },
+    {
+      "code": "01009",
+      "priority": 2,
+      "note": "Cuesta 4 para anular un ataque y aturdir. Solo si te sobra de todo."
+    },
+    {
+      "code": "01165",
+      "priority": 1,
+      "note": "te obliga a pasar por Peter Parker; aprovecha para curarte con Tía May."
+    }
+  ],
+  "combos": [
+    {
+      "chain": "Lanzarredes → Balanceo con patada",
+      "text": "dos en mesa pagan 2 de los 3 puntos de la patada: 8 de daño casi gratis."
+    },
+    {
+      "chain": "Voltereta + Sentido arácnido",
+      "text": "anulas todo el daño y encima robas: quedarse en héroe deja de dar miedo."
+    },
+    {
+      "chain": "Rastreador arácnido → esbirro",
+      "text": "colócalo antes de derrotar al esbirro y te llevas 3 de amenaza."
+    },
+    {
+      "chain": "Tía May + Peter Parker",
+      "text": "recupera 3 y agota a Tía May: 7 de vida en una sola ronda."
+    }
+  ],
+  "mulligan": {
+    "keep": [
+      "Lanzarredes: hace funcionar el resto de la mano.",
+      "Cualquier carta de coste 0 o 1, para jugar ya el turno 1.",
+      "Algo con lo que generar recursos de tu aspecto."
+    ],
+    "toss": [
+      "Envuelto en telaraña y todo lo de coste 4.",
+      "Manos con dos Balanceos y nada barato: no los pagarás."
+    ]
+  },
+  "phases": {
+    "early": [
+      "Monta primero: Lanzarredes y mejoras baratas antes que atacar.",
+      "Quédate en héroe sin miedo: si el villano te pega, robas.",
+      "Deja el plan principal para tus aliados o tu compañero."
+    ],
+    "mid": [
+      "Derrota esbirros con el Rastreador puesto para bajar amenaza.",
+      "Pasa a Peter Parker al bajar de media vida, no al borde de caer.",
+      "Reserva una Voltereta para el ataque más fuerte del villano."
+    ],
+    "late": [
+      "Cuenta la vida del villano y encadena Balanceos con patada.",
+      "Gasta las últimas cargas de Lanzarredes, no las guardes.",
+      "Si el plan está a punto de completarse, frustra antes de pegar."
+    ]
+  }
+}

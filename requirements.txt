@@ -1,0 +1,4 @@
+Jinja2==3.1.6
+
+# Permite validar TLS con el almacén de certificados del sistema (necesario tras un proxy corporativo).
+truststore==0.10.4
