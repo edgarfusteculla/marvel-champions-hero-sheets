@@ -27,11 +27,10 @@ TONES = ("consejo", "aviso", "neutro")
 HIDEABLE = (
     "fuertes-debiles",
     "aspectos",
-    "resto-del-kit",
-    "combos",
+    "circunstanciales",
+    "consejos",
     "curva",
     "mulligan",
-    "fases",
 )
 
 

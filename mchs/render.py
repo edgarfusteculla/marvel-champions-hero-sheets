@@ -147,16 +147,9 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
     obligations = [c for c in cards if c["type_code"] == "obligation"]
 
     ratings = hero_data["aspects"]
-    best = max(ratings[a]["rating"] for a in ASPECTS)
     aspects = sorted(
         (
-            {
-                "key": key,
-                "label": ASPECT_LABELS[key],
-                "rating": ratings[key]["rating"],
-                "note": ratings[key].get("note", ""),
-                "recommended": ratings[key]["rating"] == best,
-            }
+            {"key": key, "label": ASPECT_LABELS[key], "rating": ratings[key]["rating"]}
             for key in ASPECTS
         ),
         key=lambda a: -a["rating"],

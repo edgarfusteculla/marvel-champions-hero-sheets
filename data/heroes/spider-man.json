@@ -94,39 +94,5 @@
       "Envuelto en telaraña y todo lo de coste 4.",
       "Manos con dos Balanceos y nada barato: no los pagarás."
     ]
-  },
-  "phases": {
-    "early": [
-      "Monta primero: Lanzarredes y mejoras baratas antes que atacar.",
-      "Quédate en héroe sin miedo: si el villano te pega, robas.",
-      "Deja el plan principal para tus aliados o tu compañero."
-    ],
-    "mid": [
-      "Derrota esbirros con el Rastreador puesto para bajar amenaza.",
-      "Pasa a Peter Parker al bajar de media vida, no al borde de caer.",
-      "Reserva una Voltereta para el ataque más fuerte del villano."
-    ],
-    "late": [
-      "Cuenta la vida del villano y encadena Balanceos con patada.",
-      "Gasta las últimas cargas de Lanzarredes, no las guardes.",
-      "Si el plan está a punto de completarse, interviene antes de pegar."
-    ]
-  },
-  "variants": {
-    "avanzado": {
-      "level": "avanzado",
-      "hide": ["mulligan", "curva"],
-      "sections": [
-        {
-          "title": "Detalles que marcan la diferencia",
-          "side": "b",
-          "tone": "consejo",
-          "items": [
-            "El sentido arácnido se dispara al iniciarse el ataque, antes del daño: con Voltereta anulas el golpe y aun así robas.",
-            "La segunda copia de Lanzarredes vale más que cualquier aliado: es lo que hace sostenible el Balanceo con patada."
-          ]
-        }
-      ]
-    }
   }
 }

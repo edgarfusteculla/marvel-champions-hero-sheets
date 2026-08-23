@@ -70,14 +70,28 @@
       <div class="panel meters-panel">
         <div class="meters">
           <div>
-            <div class="meter-label"><span>Dificultad</span><span class="value">{{ hero.difficulty }} / 5</span></div>
+            <div class="meter-label">Dificultad</div>
             {{ dots(hero.difficulty) }}
           </div>
           <div>
-            <div class="meter-label"><span>Potencia</span><span class="value">{{ hero.power }} / 5</span></div>
+            <div class="meter-label">Potencia</div>
             {{ dots(hero.power, extra='power') }}
           </div>
         </div>
+
+        {% if 'aspectos' not in hide %}
+        <div>
+          <div class="sub-title">¿Con qué aspecto lo acompaño?</div>
+          <div class="aspects">
+            {% for aspect in aspects %}
+            <div class="aspect aspect-{{ aspect.key }}">
+              <div class="name">{{ aspect.label }}</div>
+              {{ dots(aspect.rating, extra='small') }}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
 
@@ -99,21 +113,6 @@
     </div>
     {% endif %}
 
-    {% if 'aspectos' not in hide %}
-    <div class="panel">
-      <div class="panel-title">¿Con qué aspecto lo acompaño?</div>
-      <div class="aspects">
-        {% for aspect in aspects %}
-        <div class="aspect aspect-{{ aspect.key }}">
-          {% if aspect.recommended %}<span class="pick">Top</span>{% endif %}
-          <div class="name">{{ aspect.label }}</div>
-          {{ dots(aspect.rating, extra='small') }}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
-
     {{ notes(sections_a) }}
   </div>
 
@@ -126,29 +125,28 @@
 
   <header class="header">
     <div>
-      <div class="eyebrow">Cartas propias, combos y plan de juego</div>
+      <div class="eyebrow">Cartas propias y consejos de juego</div>
       <div class="hero-name">{{ hero_card.name }}</div>
     </div>
+    {% if hero.level %}
     <div class="tags">
-      <div class="face-tag">Cara B<br>Estrategia</div>
-      {% if hero.level %}<div class="level-tag">Nivel {{ hero.level }}</div>{% endif %}
+      <div class="level-tag">Nivel {{ hero.level }}</div>
     </div>
+    {% endif %}
   </header>
 
   <div class="body">
     <div>
-      <div class="panel-title">Las imprescindibles · juégalas siempre que puedas</div>
+      <div class="panel-title">Mejores cartas</div>
       <div class="card-grid">
         {% for card in key_cards %}
         <div class="sig-card">
           <div class="sig-art">
             {% if card.image %}<img src="{{ card.image }}" alt="{{ card.name }}">{% endif %}
-            <div class="cost-badge">{{ card.cost if card.cost is not none else '–' }}</div>
-            <div class="qty-badge">x{{ card.quantity }}</div>
           </div>
           <div class="sig-name">{{ card.name }}</div>
           <div class="sig-meta">
-            <span class="type-tag">{{ card.type_label }}</span>
+            <span class="type-tag">{{ card.type_label }} · x{{ card.quantity }}</span>
             {{ dots(card.priority, extra='small') }}
           </div>
           <p class="sig-note">{{ card.note }}</p>
@@ -157,9 +155,9 @@
       </div>
     </div>
 
-    {% if 'resto-del-kit' not in hide %}
+    {% if 'circunstanciales' not in hide %}
     <div>
-      <div class="panel-title">El resto del kit</div>
+      <div class="panel-title">Cartas circunstanciales</div>
       <div class="mini-grid">
         {% for card in other_cards %}
         <div class="mini">
@@ -167,7 +165,7 @@
           <div class="mini-info">
             <div class="sig-name">{{ card.name }}</div>
             <div class="sig-meta">
-              <span class="type-tag">{{ card.type_label }} · coste {{ card.cost if card.cost is not none else '–' }} · x{{ card.quantity }}</span>
+              <span class="type-tag">{{ card.type_label }} · x{{ card.quantity }}</span>
               {{ dots(card.priority, extra='small') }}
             </div>
             <p class="sig-note">{{ card.note }}</p>
@@ -178,9 +176,9 @@
     </div>
     {% endif %}
 
-    {% if 'combos' not in hide %}
+    {% if 'consejos' not in hide %}
     <div class="combos">
-      <div class="panel-title" style="margin-bottom:1.6mm;">Combos que tienes que conocer</div>
+      <div class="panel-title" style="margin-bottom:1.6mm;">Consejos</div>
       <div class="combo-grid">
         {% for combo in hero.combos %}
         <div class="combo">
@@ -222,32 +220,6 @@
         </ul>
       </div>
       {% endif %}
-    </div>
-    {% endif %}
-
-    {% if 'fases' not in hide %}
-    <div>
-      <div class="panel-title">Plan de juego por fases</div>
-      <div class="phases">
-        <div class="phase phase-early">
-          <h4>Inicio</h4>
-          <ul>
-            {% for tip in hero.phases.early %}<li>{{ tip }}</li>{% endfor %}
-          </ul>
-        </div>
-        <div class="phase phase-mid">
-          <h4>Mitad</h4>
-          <ul>
-            {% for tip in hero.phases.mid %}<li>{{ tip }}</li>{% endfor %}
-          </ul>
-        </div>
-        <div class="phase phase-late">
-          <h4>Final</h4>
-          <ul>
-            {% for tip in hero.phases.late %}<li>{{ tip }}</li>{% endfor %}
-          </ul>
-        </div>
-      </div>
     </div>
     {% endif %}
 

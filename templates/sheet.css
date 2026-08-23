@@ -122,22 +122,6 @@ body {
   white-space: nowrap;
 }
 
-.face-tag {
-  background: var(--ink);
-  color: #fff;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 3.4mm;
-  letter-spacing: .1em;
-  line-height: 1.25;
-  padding: 2mm 3.5mm;
-  border-radius: 1.5mm;
-  border: .5mm solid #fff;
-  text-align: center;
-  white-space: nowrap;
-  text-transform: uppercase;
-}
-
 /* ---------------- Estructura ---------------- */
 
 .body {
@@ -208,7 +192,9 @@ body {
 .meters-panel {
   flex: 1 1 auto;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5mm;
 }
 
 .meter-label {
@@ -217,15 +203,17 @@ body {
   font-size: 4.6mm;
   text-transform: uppercase;
   letter-spacing: .05em;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
   margin-bottom: 2mm;
 }
 
-.meter-label .value {
-  font-size: 3.8mm;
-  opacity: .65;
+.sub-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: 3.4mm;
+  opacity: .7;
+  margin-bottom: 1.8mm;
 }
 
 .dots {
@@ -302,19 +290,19 @@ body {
 
 .aspects {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5mm;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5mm 3mm;
 }
 
 .aspect {
   border-radius: 1.8mm;
   border: .7mm solid var(--ink);
-  padding: 1.8mm 1.8mm 1.9mm;
+  padding: 1.6mm 2.4mm;
   color: #fff;
-  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 1.2mm;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2mm;
 }
 
 .aspect .name {
@@ -340,22 +328,6 @@ body {
 .aspect-leadership { background: #2b5fa8; }
 .aspect-protection { background: #2c7a4d; }
 
-.aspect .pick {
-  position: absolute;
-  top: -2.2mm;
-  right: -1.5mm;
-  background: var(--accent);
-  color: #111;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 2.5mm;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  padding: .5mm 1.6mm;
-  border-radius: 3mm;
-  border: .4mm solid var(--ink);
-}
-
 /* ---------------- Cara B ---------------- */
 
 .card-grid {
@@ -380,36 +352,6 @@ body {
   border-radius: 1.8mm;
   border: .5mm solid var(--ink);
   background: #ddd;
-}
-
-.cost-badge {
-  position: absolute;
-  top: -1.8mm;
-  left: -1.8mm;
-  width: 7mm;
-  height: 7mm;
-  border-radius: 50%;
-  background: var(--secondary);
-  color: var(--on-secondary);
-  border: .5mm solid var(--ink);
-  font-family: 'Bangers', cursive;
-  font-size: 4.4mm;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.qty-badge {
-  position: absolute;
-  bottom: 1.2mm;
-  right: -1.5mm;
-  background: var(--ink);
-  color: #fff;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 2.6mm;
-  padding: .4mm 1.4mm;
-  border-radius: 1mm;
 }
 
 .sig-name {
@@ -583,55 +525,6 @@ body {
 
 .mulligan li.keep::before { color: #2f7d4f; }
 .mulligan li.toss::before { color: #b3242a; }
-
-.phases {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3mm;
-}
-
-.phase {
-  border: .7mm solid var(--ink);
-  border-radius: 1.8mm;
-  padding: 1.8mm 2.4mm 1.8mm;
-}
-
-.phase h4 {
-  margin: 0 0 1.4mm;
-  font-family: 'Barlow Condensed', sans-serif;
-  text-transform: uppercase;
-  font-size: 3.4mm;
-  letter-spacing: .06em;
-  display: flex;
-  align-items: center;
-  gap: 1.5mm;
-}
-
-.phase h4::before {
-  content: "";
-  width: 2.6mm;
-  height: 2.6mm;
-  border-radius: .5mm;
-  border: .4mm solid var(--ink);
-}
-
-.phase-early { background: #fdeeee; }
-.phase-early h4::before { background: #cf4646; }
-.phase-mid { background: #eaf0fd; }
-.phase-mid h4::before { background: #3f6dc0; }
-.phase-late { background: #ecf7ef; }
-.phase-late h4::before { background: #3f9b63; }
-
-.phase ul {
-  margin: 0;
-  padding-left: 3.6mm;
-}
-
-.phase li {
-  font-size: 2.75mm;
-  line-height: 1.32;
-  margin-bottom: 1mm;
-}
 
 /* ---------------- Notas propias ---------------- */
 

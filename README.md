@@ -5,8 +5,8 @@ nunca ha jugado a un LCG pueda elegir héroe y saber qué hacer con él desde la
 
 - **Cara A — Presentación:** dificultad, potencia, puntos fuertes y débiles y con qué aspecto
   acompañarlo.
-- **Cara B — Estrategia:** cartas de firma con imagen y prioridad, combos, curva de coste,
-  qué quedarse en la mano inicial y plan de juego por fases.
+- **Cara B — Estrategia:** las mejores cartas de firma con imagen y prioridad, las
+  circunstanciales, consejos, curva de coste y qué quedarse en la mano inicial.
 
 Cada héroe se describe en un único archivo JSON. Los datos objetivos de las cartas (nombre en
 español, coste, tipo, texto, imagen y colores del héroe) se descargan de
@@ -51,10 +51,9 @@ descubre solo.
 | `variants` | Otras versiones de la misma hoja. Ver más abajo. |
 | `strengths`, `weaknesses` | Listas de frases. |
 | `aspects` | Los cuatro aspectos, cada uno con su `rating` (1-5). Se ordenan solos de mejor a peor. |
-| `cards` | Lista de `{code, priority, note}`. Las cuatro de mayor prioridad salen a tamaño grande. |
-| `combos` | Lista de `{chain, text}`. |
+| `cards` | Lista de `{code, priority, note}`. Las cuatro de mayor prioridad salen como «Mejores cartas»; el resto, como «Cartas circunstanciales». |
+| `combos` | Lista de `{chain, text}`. Se imprime bajo el título «Consejos». |
 | `mulligan` | `{keep: [...], toss: [...]}`. |
-| `phases` | `{early: [...], mid: [...], late: [...]}`. |
 | `palette` | Opcional. Por defecto se usan los colores oficiales del héroe que da MarvelCDB. |
 
 El generador valida el archivo antes de dibujar nada y avisa si falta un aspecto, si una
@@ -90,8 +89,8 @@ Si un apartado no aporta para el público de esa hoja, se quita y deja sitio par
 "hide": ["mulligan", "curva"]
 ```
 
-Se pueden ocultar `fuertes-debiles`, `aspectos`, `resto-del-kit`, `combos`, `curva`, `mulligan`
-y `fases`.
+Se pueden ocultar `fuertes-debiles`, `aspectos`, `circunstanciales`, `consejos`, `curva` y
+`mulligan`.
 
 ### Dos versiones del mismo héroe
 
@@ -102,7 +101,7 @@ resto se hereda:
 "variants": {
   "avanzado": {
     "level": "avanzado",
-    "hide": ["mulligan", "curva"],
+    "hide": ["mulligan"],
     "sections": [{ "title": "Detalles finos", "side": "b", "tone": "consejo", "items": ["..."] }]
   }
 }
