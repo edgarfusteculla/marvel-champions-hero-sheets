@@ -3,8 +3,8 @@
 Fichas de dos caras, en español y listas para imprimir en A4, pensadas para que alguien que
 nunca ha jugado a un LCG pueda elegir héroe y saber qué hacer con él desde la primera partida.
 
-- **Cara A — Presentación:** dificultad, potencia, estadísticas, puntos fuertes y débiles,
-  con qué aspecto acompañarlo y cuál es su obligación.
+- **Cara A — Presentación:** dificultad, potencia, puntos fuertes y débiles y con qué aspecto
+  acompañarlo.
 - **Cara B — Estrategia:** cartas de firma con imagen y prioridad, combos, curva de coste,
   qué quedarse en la mano inicial y plan de juego por fases.
 
@@ -45,14 +45,12 @@ descubre solo.
 | `hero_card_code` | Código de la carta de héroe en MarvelCDB. |
 | `display_name`, `alter_ego_name` | Opcionales, para forzar cómo se escribe el nombre. |
 | `difficulty`, `power` | Enteros de 1 a 5. |
-| `beginner_friendly` | Si es `true`, se imprime el distintivo de héroe recomendado. |
 | `level` | Opcional: `principiante`, `intermedio` o `avanzado`. Sale como etiqueta en la cabecera. |
 | `sections` | Bloques de notas propias. Ver más abajo. |
 | `hide` | Apartados que no quieres en esta hoja. Ver más abajo. |
 | `variants` | Otras versiones de la misma hoja. Ver más abajo. |
-| `playstyle` | La frase destacada del pie de la cara A. |
 | `strengths`, `weaknesses` | Listas de frases. |
-| `aspects` | Los cuatro aspectos, cada uno con `rating` (1-5) y `note`. Se ordenan solos de mejor a peor. |
+| `aspects` | Los cuatro aspectos, cada uno con su `rating` (1-5). Se ordenan solos de mejor a peor. |
 | `cards` | Lista de `{code, priority, note}`. Las cuatro de mayor prioridad salen a tamaño grande. |
 | `combos` | Lista de `{chain, text}`. |
 | `mulligan` | `{keep: [...], toss: [...]}`. |
@@ -92,8 +90,8 @@ Si un apartado no aporta para el público de esa hoja, se quita y deja sitio par
 "hide": ["mulligan", "curva"]
 ```
 
-Se pueden ocultar `habilidades`, `fuertes-debiles`, `aspectos`, `obligacion`, `estilo`,
-`resto-del-kit`, `combos`, `curva`, `mulligan` y `fases`.
+Se pueden ocultar `fuertes-debiles`, `aspectos`, `resto-del-kit`, `combos`, `curva`, `mulligan`
+y `fases`.
 
 ### Dos versiones del mismo héroe
 
@@ -140,6 +138,14 @@ templates/hero_sheet.html.j2 Maquetación de las dos caras
 templates/sheet.css          Estilos (en milímetros, pensados para impresión)
 data/heroes/*.json           Un archivo por héroe
 notas/*.md                   Apuntes en bruto, no se imprimen
+tools/inspect.py             Mide el espacio libre de cada cara y saca un PNG
+```
+
+Para ver cuánto sitio queda en una hoja antes de añadir nada:
+
+```bash
+python tools/inspect.py dist/spider-man.html
+# a=297 libre:93.3 | b=297 libre:7
 ```
 
 ## Notas

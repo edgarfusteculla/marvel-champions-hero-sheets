@@ -205,55 +205,39 @@ body {
   background: #ddd;
 }
 
-.badge-beginner {
-  display: block;
-  background: var(--accent);
-  color: var(--ink);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 3.2mm;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 1.6mm 2mm;
-  border-radius: 6mm;
-  border: .5mm solid var(--ink);
-}
-
-.profile {
+.meters-panel {
   flex: 1 1 auto;
   display: flex;
-  flex-direction: column;
-  gap: 3mm;
+  align-items: center;
 }
 
 .meter-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 3.6mm;
+  font-size: 4.6mm;
   text-transform: uppercase;
   letter-spacing: .05em;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 1.2mm;
+  margin-bottom: 2mm;
 }
 
 .meter-label .value {
-  font-size: 3.2mm;
+  font-size: 3.8mm;
   opacity: .65;
 }
 
 .dots {
   display: flex;
-  gap: 1.2mm;
+  gap: 1.6mm;
 }
 
 .dot {
-  width: 5mm;
-  height: 5mm;
+  width: 7mm;
+  height: 7mm;
   border-radius: 50%;
-  border: .5mm solid var(--ink);
+  border: .6mm solid var(--ink);
   background: #ded8ca;
 }
 
@@ -272,64 +256,10 @@ body {
 }
 
 .meters {
+  flex: 1 1 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5mm;
-  margin-bottom: 2.5mm;
-}
-
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.6mm;
-}
-
-.stat-note {
-  margin-top: 1.6mm;
-  font-size: 2.8mm;
-  opacity: .72;
-}
-
-.stat-box {
-  background: var(--ink);
-  color: #fff;
-  border-radius: 1.4mm;
-  padding: 1.4mm .5mm 1.2mm;
-  text-align: center;
-}
-
-.stat-box .v {
-  font-family: 'Bangers', cursive;
-  font-size: 6.5mm;
-  line-height: 1;
-  color: var(--accent);
-}
-
-.stat-box .k {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 2.5mm;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  opacity: .85;
-}
-
-.ability {
-  font-size: 2.9mm;
-  line-height: 1.36;
-  background: var(--paper);
-  border-left: 1mm solid var(--primary);
-  padding: 1.5mm 2.2mm;
-  border-radius: 0 1.4mm 1.4mm 0;
-}
-
-.ability .who {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  font-size: 2.9mm;
-  color: var(--primary-ink);
-  display: block;
+  gap: 8mm;
 }
 
 .pros-cons {
@@ -395,11 +325,6 @@ body {
   letter-spacing: .04em;
 }
 
-.aspect .desc {
-  font-size: 2.55mm;
-  line-height: 1.3;
-}
-
 .aspect .dot {
   border-color: rgba(0, 0, 0, .55);
   background: rgba(255, 255, 255, .3);
@@ -429,31 +354,6 @@ body {
   padding: .5mm 1.6mm;
   border-radius: 3mm;
   border: .4mm solid var(--ink);
-}
-
-.flavor {
-  background: var(--secondary);
-  color: var(--on-secondary);
-  border: .7mm solid var(--ink);
-  border-radius: 2mm;
-  padding: 2.4mm 4mm 2.4mm 12mm;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 3.7mm;
-  line-height: 1.35;
-  font-style: italic;
-  position: relative;
-}
-
-.flavor::before {
-  content: "\201C";
-  font-family: 'Bangers', cursive;
-  font-size: 14mm;
-  line-height: 1;
-  position: absolute;
-  top: 1mm;
-  left: 3mm;
-  color: var(--accent);
-  opacity: .85;
 }
 
 /* ---------------- Cara B ---------------- */
@@ -731,40 +631,6 @@ body {
   font-size: 2.75mm;
   line-height: 1.32;
   margin-bottom: 1mm;
-}
-
-.obligation {
-  display: flex;
-  gap: 3mm;
-  align-items: center;
-  padding: 1.6mm 3mm;
-}
-
-.obligation img {
-  flex: 0 0 auto;
-  width: 9mm;
-  display: block;
-  border-radius: 1mm;
-  border: .4mm solid var(--ink);
-}
-
-.obligation .text {
-  font-size: 2.8mm;
-  line-height: 1.35;
-}
-
-.obligation .tag {
-  display: inline-block;
-  background: var(--ink);
-  color: #fff;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 2.5mm;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: .3mm 1.4mm;
-  border-radius: .8mm;
-  margin-right: 1.2mm;
 }
 
 /* ---------------- Notas propias ---------------- */

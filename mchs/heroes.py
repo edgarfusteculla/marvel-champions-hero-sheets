@@ -25,11 +25,8 @@ TONES = ("consejo", "aviso", "neutro")
 
 # Apartados que se pueden quitar de una hoja con "hide", para dejar solo lo que interese.
 HIDEABLE = (
-    "habilidades",
     "fuertes-debiles",
     "aspectos",
-    "obligacion",
-    "estilo",
     "resto-del-kit",
     "combos",
     "curva",

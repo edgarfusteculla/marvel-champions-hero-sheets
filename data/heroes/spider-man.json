@@ -6,8 +6,6 @@
   "difficulty": 1,
   "power": 3,
   "level": "principiante",
-  "beginner_friendly": true,
-  "playstyle": "Aguanta en primera línea y deja que el villano te pegue: cada ataque que recibes se convierte en una carta. Tú machacas al villano, que del plan se ocupe otro.",
   "strengths": [
     "Sentido arácnido: robas una carta cada vez que el villano te ataca. Es el mejor robo gratis del juego y premia quedarte en héroe.",
     "Defensa 3, la mejor del Set Básico. Defender le sale barato y encima activa su robo.",
@@ -15,28 +13,16 @@
     "Peter Parker recupera 3 y genera un recurso mental cada ronda: sus turnos de alter ego nunca son turnos perdidos."
   ],
   "weaknesses": [
-    "Frustrar 1: por sí solo casi no puede contener los planes, necesita que el aspecto se lo cubra.",
+    "Intervención 1: por sí solo casi no puede contener los planes, necesita que el aspecto se lo cubra.",
     "Ataque 2 de base: sin Balanceo con patada su daño por turno es flojo.",
     "Depende de tener Lanzarredes en mesa para pagar sus cartas más caras.",
     "Su obligación le obliga a perder tiempo en forma de alter ego."
   ],
   "aspects": {
-    "justice": {
-      "rating": 5,
-      "note": "Tapa su Frustrar 1, que es su gran agujero. La pareja clásica y la mejor para tu primera partida."
-    },
-    "protection": {
-      "rating": 4,
-      "note": "Con Defensa 3 y el sentido arácnido, defender sale barato y encima te da cartas."
-    },
-    "leadership": {
-      "rating": 4,
-      "note": "Los aliados se ocupan de los planes mientras Spider-Man se centra en pegar."
-    },
-    "aggression": {
-      "rating": 3,
-      "note": "Daño de sobra, pero deja los planes sin atender y ya va justo de Frustrar."
-    }
+    "justice": { "rating": 5 },
+    "protection": { "rating": 4 },
+    "leadership": { "rating": 4 },
+    "aggression": { "rating": 3 }
   },
   "cards": [
     {
@@ -67,7 +53,7 @@
     {
       "code": "01007",
       "priority": 3,
-      "note": "En un esbirro: al derrotarlo quitas 3 de amenaza. Tu parche al Frustrar 1."
+      "note": "En un esbirro: al derrotarlo quitas 3 de amenaza. Tu parche a Intervención 1."
     },
     {
       "code": "01002",
@@ -78,11 +64,6 @@
       "code": "01009",
       "priority": 2,
       "note": "Cuesta 4 para anular un ataque y aturdir. Solo si te sobra de todo."
-    },
-    {
-      "code": "01165",
-      "priority": 1,
-      "note": "te obliga a pasar por Peter Parker; aprovecha para curarte con Tía May."
     }
   ],
   "combos": [
@@ -128,24 +109,12 @@
     "late": [
       "Cuenta la vida del villano y encadena Balanceos con patada.",
       "Gasta las últimas cargas de Lanzarredes, no las guardes.",
-      "Si el plan está a punto de completarse, frustra antes de pegar."
+      "Si el plan está a punto de completarse, interviene antes de pegar."
     ]
   },
-  "sections": [
-    {
-      "title": "Errores típicos de novato",
-      "side": "a",
-      "tone": "aviso",
-      "items": [
-        "Quedarse en Peter Parker por miedo: pierdes el sentido arácnido, que es su mejor baza.",
-        "Olvidar que Lanzarredes se gasta: son 3 usos, no es una mejora permanente."
-      ]
-    }
-  ],
   "variants": {
     "avanzado": {
       "level": "avanzado",
-      "beginner_friendly": false,
       "hide": ["mulligan", "curva"],
       "sections": [
         {

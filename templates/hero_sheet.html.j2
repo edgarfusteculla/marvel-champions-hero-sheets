@@ -48,14 +48,15 @@
 
   <header class="header">
     <div>
-      <div class="eyebrow">Guía rápida de héroe · Marvel Champions LCG</div>
+      <div class="eyebrow">Guía básica de héroe · Marvel Champions LCG</div>
       <div class="hero-name">{{ hero_card.name }}</div>
-      <div class="alter-ego-name">{{ alter_ego.name }} · {{ pack_name }}</div>
+      <div class="alter-ego-name">{{ alter_ego.name }}</div>
     </div>
+    {% if hero.level %}
     <div class="tags">
-      <div class="face-tag">Cara A<br>Presentación</div>
-      {% if hero.level %}<div class="level-tag">Nivel {{ hero.level }}</div>{% endif %}
+      <div class="level-tag">Nivel {{ hero.level }}</div>
     </div>
+    {% endif %}
   </header>
 
   <div class="body">
@@ -64,50 +65,19 @@
         {% if hero_card.image %}
         <img class="card-art" src="{{ hero_card.image }}" alt="{{ hero_card.name }}">
         {% endif %}
-        {% if hero.beginner_friendly %}
-        <div class="badge-beginner">★ Buena elección para empezar</div>
-        {% endif %}
       </div>
 
-      <div class="profile">
-        <div class="panel">
-          <div class="panel-title">Perfil</div>
-          <div class="meters">
-            <div>
-              <div class="meter-label"><span>Dificultad</span><span class="value">{{ hero.difficulty }} / 5</span></div>
-              {{ dots(hero.difficulty) }}
-            </div>
-            <div>
-              <div class="meter-label"><span>Potencia</span><span class="value">{{ hero.power }} / 5</span></div>
-              {{ dots(hero.power, extra='power') }}
-            </div>
+      <div class="panel meters-panel">
+        <div class="meters">
+          <div>
+            <div class="meter-label"><span>Dificultad</span><span class="value">{{ hero.difficulty }} / 5</span></div>
+            {{ dots(hero.difficulty) }}
           </div>
-          <div class="stat-grid">
-            <div class="stat-box"><div class="v">{{ hero_card.attack }}</div><div class="k">ATQ</div></div>
-            <div class="stat-box"><div class="v">{{ hero_card.thwart }}</div><div class="k">FRU</div></div>
-            <div class="stat-box"><div class="v">{{ hero_card.defense }}</div><div class="k">DEF</div></div>
-            <div class="stat-box"><div class="v">{{ hero_card.health }}</div><div class="k">Vida</div></div>
-            <div class="stat-box"><div class="v">{{ alter_ego.recover }}</div><div class="k">Rec.</div></div>
-          </div>
-          <div class="stat-note">
-            Mano en héroe <b>{{ hero_card.hand_size }}</b> · Mano en alter ego <b>{{ alter_ego.hand_size }}</b> ·
-            Set de firma <b>{{ deck_size }} cartas</b>
+          <div>
+            <div class="meter-label"><span>Potencia</span><span class="value">{{ hero.power }} / 5</span></div>
+            {{ dots(hero.power, extra='power') }}
           </div>
         </div>
-
-        {% if 'habilidades' not in hide %}
-        <div class="panel" style="flex:1 1 auto;">
-          <div class="panel-title">Habilidades propias</div>
-          <div class="ability" style="margin-bottom:2mm;">
-            <span class="who">{{ hero_card.name }} (héroe)</span>
-            {{ hero_card.text }}
-          </div>
-          <div class="ability">
-            <span class="who">{{ alter_ego.name }} (alter ego)</span>
-            {{ alter_ego.text }}
-          </div>
-        </div>
-        {% endif %}
       </div>
     </div>
 
@@ -138,30 +108,13 @@
           {% if aspect.recommended %}<span class="pick">Top</span>{% endif %}
           <div class="name">{{ aspect.label }}</div>
           {{ dots(aspect.rating, extra='small') }}
-          <div class="desc">{{ aspect.note }}</div>
         </div>
         {% endfor %}
       </div>
     </div>
     {% endif %}
 
-    {% if 'obligacion' not in hide %}
-    {% for card in obligations %}
-    <div class="panel obligation">
-      {% if card.image %}<img src="{{ card.image }}" alt="{{ card.name }}">{% endif %}
-      <div class="text">
-        <span class="tag">Tu obligación</span>
-        <b>{{ card.name }}</b> — {{ card.note }}
-      </div>
-    </div>
-    {% endfor %}
-    {% endif %}
-
     {{ notes(sections_a) }}
-
-    {% if 'estilo' not in hide %}
-    <div class="flavor">{{ hero.playstyle }}</div>
-    {% endif %}
   </div>
 
   <footer class="footer">Hoja no oficial hecha por aficionados · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
