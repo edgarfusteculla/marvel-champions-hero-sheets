@@ -15,9 +15,13 @@ ASPECT_LABELS = {
     "protection": "Protección",
 }
 
-REQUIRED_FIELDS = ("slug", "hero_card_code", "difficulty", "power")
+# Cada aspecto se valora por número de jugadores, porque lo que brilla en solitario no siempre
+# funciona en mesa llena.
+TABLE_SIZES = ("solo", "duo", "grupo")
 
-LEVELS = ("principiante", "intermedio", "avanzado")
+TABLE_LABELS = {"solo": "Solo", "duo": "2 jugadores", "grupo": "3-4 jugadores"}
+
+REQUIRED_FIELDS = ("slug", "hero_card_code", "difficulty", "power")
 
 SIDES = ("a", "b")
 
@@ -25,11 +29,12 @@ TONES = ("consejo", "aviso", "neutro")
 
 # Apartados que se pueden quitar de una hoja con "hide", para dejar solo lo que interese.
 HIDEABLE = (
-    "fuertes-debiles",
+    "fortalezas",
+    "debilidades",
+    "consideraciones",
     "aspectos",
     "circunstanciales",
     "consejos",
-    "curva",
     "mulligan",
 )
 
@@ -60,7 +65,8 @@ def _validate(data: dict[str, Any]) -> dict[str, Any]:
                 f"[{slug}] falta la valoración del aspecto '{aspect}'. "
                 f"Se esperan los cuatro: {', '.join(ASPECTS)}."
             )
-        _check_rating(aspects[aspect].get("rating"), f"aspects.{aspect}.rating", slug)
+        for size in TABLE_SIZES:
+            _check_rating(aspects[aspect].get(size), f"aspects.{aspect}.{size}", slug)
 
     seen: set[str] = set()
     for card in data.get("cards", []):
@@ -71,12 +77,6 @@ def _validate(data: dict[str, Any]) -> dict[str, Any]:
             raise HeroDataError(f"[{slug}] la carta '{code}' aparece dos veces en 'cards'.")
         seen.add(code)
         _check_rating(card.get("priority"), f"cards[{code}].priority", slug)
-
-    level = data.get("level")
-    if level is not None and level not in LEVELS:
-        raise HeroDataError(
-            f"[{slug}] 'level' debe ser uno de {', '.join(LEVELS)}, y es {level!r}."
-        )
 
     unknown = set(data.get("hide", [])) - set(HIDEABLE)
     if unknown:

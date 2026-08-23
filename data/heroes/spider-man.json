@@ -5,7 +5,6 @@
   "alter_ego_name": "Peter Parker",
   "difficulty": 1,
   "power": 3,
-  "level": "principiante",
   "strengths": [
     "Sentido arácnido: robas una carta cada vez que el villano te ataca. Es el mejor robo gratis del juego y premia quedarte en héroe.",
     "Defensa 3, la mejor del Set Básico. Defender le sale barato y encima activa su robo.",
@@ -18,11 +17,12 @@
     "Depende de tener Lanzarredes en mesa para pagar sus cartas más caras.",
     "Su obligación le obliga a perder tiempo en forma de alter ego."
   ],
+  "considerations": [],
   "aspects": {
-    "justice": { "rating": 5 },
-    "protection": { "rating": 4 },
-    "leadership": { "rating": 4 },
-    "aggression": { "rating": 3 }
+    "justice": { "solo": 5, "duo": 5, "grupo": 5 },
+    "protection": { "solo": 4, "duo": 4, "grupo": 4 },
+    "leadership": { "solo": 4, "duo": 4, "grupo": 4 },
+    "aggression": { "solo": 3, "duo": 3, "grupo": 3 }
   },
   "cards": [
     {
@@ -66,24 +66,7 @@
       "note": "Cuesta 4 para anular un ataque y aturdir. Solo si te sobra de todo."
     }
   ],
-  "combos": [
-    {
-      "chain": "Lanzarredes → Balanceo con patada",
-      "text": "dos en mesa pagan 2 de los 3 puntos de la patada: 8 de daño casi gratis."
-    },
-    {
-      "chain": "Voltereta + Sentido arácnido",
-      "text": "anulas todo el daño y encima robas: quedarse en héroe deja de dar miedo."
-    },
-    {
-      "chain": "Rastreador arácnido → esbirro",
-      "text": "colócalo antes de derrotar al esbirro y te llevas 3 de amenaza."
-    },
-    {
-      "chain": "Tía May + Peter Parker",
-      "text": "recupera 3 y agota a Tía May: 7 de vida en una sola ronda."
-    }
-  ],
+  "consejos": [],
   "mulligan": {
     "keep": [
       "Lanzarredes: hace funcionar el resto de la mano.",

@@ -100,28 +100,6 @@ body {
   opacity: .95;
 }
 
-/* En fila, para que la etiqueta de nivel no haga crecer la cabecera. */
-.tags {
-  display: flex;
-  align-items: center;
-  gap: 2mm;
-}
-
-.level-tag {
-  background: var(--accent);
-  color: #111;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 3mm;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 1mm 2mm;
-  border-radius: 1.2mm;
-  border: .4mm solid var(--ink);
-  white-space: nowrap;
-}
-
 /* ---------------- Estructura ---------------- */
 
 .body {
@@ -252,8 +230,9 @@ body {
 
 .pros-cons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4mm;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  align-items: start;
 }
 
 .pc-list {
@@ -288,45 +267,56 @@ body {
   color: #b3242a;
 }
 
-.aspects {
+.pc-list.consider li::before {
+  content: "●";
+  font-size: 2.6mm;
+  top: .2mm;
+  color: #6f6a5e;
+}
+
+.aspect-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5mm 3mm;
-}
-
-.aspect {
-  border-radius: 1.8mm;
-  border: .7mm solid var(--ink);
-  padding: 1.6mm 2.4mm;
-  color: #fff;
-  display: flex;
+  grid-template-columns: auto repeat(3, 1fr);
+  gap: 1.8mm 3mm;
   align-items: center;
-  justify-content: space-between;
-  gap: 2mm;
 }
 
-.aspect .name {
+.ag-head {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 3.8mm;
+  font-size: 3mm;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  opacity: .65;
+  text-align: center;
+}
+
+.ag-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.6mm;
   text-transform: uppercase;
   letter-spacing: .04em;
+  color: #fff;
+  border: .6mm solid var(--ink);
+  border-radius: 1.4mm;
+  padding: .8mm 2.2mm;
 }
 
-.aspect .dot {
-  border-color: rgba(0, 0, 0, .55);
-  background: rgba(255, 255, 255, .3);
-}
-
-.aspect .dot.on {
-  background: #fff;
+.ag-cell {
+  display: flex;
+  justify-content: center;
 }
 
 .aspect-aggression { background: #a5232a; }
 .aspect-justice { background: #c8a01c; color: #17140a; }
-.aspect-justice .dot.on { background: #17140a; }
 .aspect-leadership { background: #2b5fa8; }
 .aspect-protection { background: #2c7a4d; }
+
+.ag-aggression .dot.on { background: #a5232a; }
+.ag-justice .dot.on { background: #c8a01c; }
+.ag-leadership .dot.on { background: #2b5fa8; }
+.ag-protection .dot.on { background: #2c7a4d; }
 
 /* ---------------- Cara B ---------------- */
 
@@ -459,44 +449,6 @@ body {
   font-size: 3.1mm;
   text-transform: uppercase;
   letter-spacing: .02em;
-}
-
-.curve {
-  display: flex;
-  align-items: flex-end;
-  gap: 2.5mm;
-  height: 21mm;
-  padding: 0 1mm;
-}
-
-.curve-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  height: 100%;
-  gap: .8mm;
-}
-
-.curve-bar {
-  width: 100%;
-  background: linear-gradient(180deg, var(--secondary), var(--primary));
-  border: .4mm solid var(--ink);
-  border-radius: .8mm .8mm 0 0;
-  min-height: .8mm;
-}
-
-.curve-n {
-  font-size: 2.7mm;
-  font-weight: 700;
-}
-
-.curve-cost {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 3mm;
-  font-weight: 700;
-  opacity: .7;
 }
 
 .mulligan {

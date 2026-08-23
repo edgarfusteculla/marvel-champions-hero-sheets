@@ -52,11 +52,6 @@
       <div class="hero-name">{{ hero_card.name }}</div>
       <div class="alter-ego-name">{{ alter_ego.name }}</div>
     </div>
-    {% if hero.level %}
-    <div class="tags">
-      <div class="level-tag">Nivel {{ hero.level }}</div>
-    </div>
-    {% endif %}
   </header>
 
   <div class="body">
@@ -81,13 +76,15 @@
 
         {% if 'aspectos' not in hide %}
         <div>
-          <div class="sub-title">¿Con qué aspecto lo acompaño?</div>
-          <div class="aspects">
+          <div class="sub-title">Aspectos</div>
+          <div class="aspect-grid">
+            <div></div>
+            {% for label in table_headers %}<div class="ag-head">{{ label }}</div>{% endfor %}
             {% for aspect in aspects %}
-            <div class="aspect aspect-{{ aspect.key }}">
-              <div class="name">{{ aspect.label }}</div>
-              {{ dots(aspect.rating, extra='small') }}
-            </div>
+            <div class="ag-name aspect-{{ aspect.key }}">{{ aspect.label }}</div>
+            {% for rating in aspect.ratings %}
+            <div class="ag-cell ag-{{ aspect.key }}">{{ dots(rating, extra='small') }}</div>
+            {% endfor %}
             {% endfor %}
           </div>
         </div>
@@ -95,28 +92,39 @@
       </div>
     </div>
 
-    {% if 'fuertes-debiles' not in hide %}
-    <div class="panel">
-      <div class="panel-title">Puntos fuertes y débiles</div>
-      <div class="pros-cons">
+    <div class="pros-cons">
+      {% if 'fortalezas' not in hide %}
+      <div class="panel">
+        <div class="panel-title">Fortalezas</div>
         <ul class="pc-list pros">
-          {% for item in hero.strengths %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-        <ul class="pc-list cons">
-          {% for item in hero.weaknesses %}
-          <li>{{ item }}</li>
-          {% endfor %}
+          {% for item in hero.strengths %}<li>{{ item }}</li>{% endfor %}
         </ul>
       </div>
+      {% endif %}
+
+      {% if 'debilidades' not in hide %}
+      <div class="panel">
+        <div class="panel-title">Debilidades</div>
+        <ul class="pc-list cons">
+          {% for item in hero.weaknesses %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if 'consideraciones' not in hide %}
+      <div class="panel">
+        <div class="panel-title">Consideraciones</div>
+        <ul class="pc-list consider">
+          {% for item in hero.considerations %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endif %}
     </div>
-    {% endif %}
 
     {{ notes(sections_a) }}
   </div>
 
-  <footer class="footer">Hoja no oficial hecha por aficionados · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+  <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
 </section>
 
 {# ============================ CARA B — CARTAS Y ESTRATEGIA ============================ #}
@@ -128,11 +136,6 @@
       <div class="eyebrow">Cartas propias y consejos de juego</div>
       <div class="hero-name">{{ hero_card.name }}</div>
     </div>
-    {% if hero.level %}
-    <div class="tags">
-      <div class="level-tag">Nivel {{ hero.level }}</div>
-    </div>
-    {% endif %}
   </header>
 
   <div class="body">
@@ -180,53 +183,34 @@
     <div class="combos">
       <div class="panel-title" style="margin-bottom:1.6mm;">Consejos</div>
       <div class="combo-grid">
-        {% for combo in hero.combos %}
+        {% for item in hero.consejos %}
         <div class="combo">
-          <span class="chain">{{ combo.chain }}</span>
-          <span>{{ combo.text }}</span>
+          <span class="chain">{{ item.chain }}</span>
+          <span>{{ item.text }}</span>
         </div>
         {% endfor %}
       </div>
     </div>
     {% endif %}
 
-    {% if not ('curva' in hide and 'mulligan' in hide) %}
-    <div class="row">
-      {% if 'curva' not in hide %}
-      <div class="panel" style="flex:0 0 62mm;">
-        <div class="panel-title">Curva de coste</div>
-        <div class="curve">
-          {% for bucket in curve %}
-          <div class="curve-col">
-            <div class="curve-n">{{ bucket.count }}</div>
-            <div class="curve-bar" style="height:{{ bucket.height }}%;"></div>
-            <div class="curve-cost">{{ bucket.label }}</div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
-
-      {% if 'mulligan' not in hide %}
-      <div class="panel" style="flex:1 1 auto;">
-        <div class="panel-title">Mano inicial: qué quedarse y qué cambiar</div>
-        <ul class="mulligan">
-          {% for item in hero.mulligan.keep %}
-          <li class="keep" data-mark="✔">{{ item }}</li>
-          {% endfor %}
-          {% for item in hero.mulligan.toss %}
-          <li class="toss" data-mark="✘">{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endif %}
+    {% if 'mulligan' not in hide %}
+    <div class="panel">
+      <div class="panel-title">Mulligan</div>
+      <ul class="mulligan">
+        {% for item in hero.mulligan.keep %}
+        <li class="keep" data-mark="✔">{{ item }}</li>
+        {% endfor %}
+        {% for item in hero.mulligan.toss %}
+        <li class="toss" data-mark="✘">{{ item }}</li>
+        {% endfor %}
+      </ul>
     </div>
     {% endif %}
 
     {{ notes(sections_b) }}
   </div>
 
-  <footer class="footer">Hoja no oficial hecha por aficionados · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+  <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
 </section>
 
 </body>

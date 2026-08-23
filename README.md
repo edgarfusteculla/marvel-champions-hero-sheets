@@ -3,10 +3,10 @@
 Fichas de dos caras, en español y listas para imprimir en A4, pensadas para que alguien que
 nunca ha jugado a un LCG pueda elegir héroe y saber qué hacer con él desde la primera partida.
 
-- **Cara A — Presentación:** dificultad, potencia, puntos fuertes y débiles y con qué aspecto
-  acompañarlo.
+- **Cara A — Presentación:** dificultad, potencia, afinidad con cada aspecto según el número de
+  jugadores, fortalezas, debilidades y consideraciones.
 - **Cara B — Estrategia:** las mejores cartas de firma con imagen y prioridad, las
-  circunstanciales, consejos, curva de coste y qué quedarse en la mano inicial.
+  circunstanciales, consejos y mulligan.
 
 Cada héroe se describe en un único archivo JSON. Los datos objetivos de las cartas (nombre en
 español, coste, tipo, texto, imagen y colores del héroe) se descargan de
@@ -45,14 +45,13 @@ descubre solo.
 | `hero_card_code` | Código de la carta de héroe en MarvelCDB. |
 | `display_name`, `alter_ego_name` | Opcionales, para forzar cómo se escribe el nombre. |
 | `difficulty`, `power` | Enteros de 1 a 5. |
-| `level` | Opcional: `principiante`, `intermedio` o `avanzado`. Sale como etiqueta en la cabecera. |
 | `sections` | Bloques de notas propias. Ver más abajo. |
 | `hide` | Apartados que no quieres en esta hoja. Ver más abajo. |
 | `variants` | Otras versiones de la misma hoja. Ver más abajo. |
-| `strengths`, `weaknesses` | Listas de frases. |
-| `aspects` | Los cuatro aspectos, cada uno con su `rating` (1-5). Se ordenan solos de mejor a peor. |
+| `strengths`, `weaknesses`, `considerations` | Listas de frases, una caja cada una. |
+| `aspects` | Los cuatro aspectos, cada uno valorado de 1 a 5 en `solo`, `duo` y `grupo`. Se ordenan solos de mejor a peor. |
 | `cards` | Lista de `{code, priority, note}`. Las cuatro de mayor prioridad salen como «Mejores cartas»; el resto, como «Cartas circunstanciales». |
-| `combos` | Lista de `{chain, text}`. Se imprime bajo el título «Consejos». |
+| `consejos` | Lista de `{chain, text}`. |
 | `mulligan` | `{keep: [...], toss: [...]}`. |
 | `palette` | Opcional. Por defecto se usan los colores oficiales del héroe que da MarvelCDB. |
 
@@ -89,8 +88,8 @@ Si un apartado no aporta para el público de esa hoja, se quita y deja sitio par
 "hide": ["mulligan", "curva"]
 ```
 
-Se pueden ocultar `fuertes-debiles`, `aspectos`, `circunstanciales`, `consejos`, `curva` y
-`mulligan`.
+Se pueden ocultar `fortalezas`, `debilidades`, `consideraciones`, `aspectos`,
+`circunstanciales`, `consejos` y `mulligan`.
 
 ### Dos versiones del mismo héroe
 
@@ -100,7 +99,6 @@ resto se hereda:
 ```json
 "variants": {
   "avanzado": {
-    "level": "avanzado",
     "hide": ["mulligan"],
     "sections": [{ "title": "Detalles finos", "side": "b", "tone": "consejo", "items": ["..."] }]
   }

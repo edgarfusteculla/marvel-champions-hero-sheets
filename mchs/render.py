@@ -9,7 +9,7 @@ from typing import Any
 from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
 from markupsafe import Markup
 
-from .heroes import ASPECTS, ASPECT_LABELS
+from .heroes import ASPECTS, ASPECT_LABELS, TABLE_LABELS, TABLE_SIZES
 from .marvelcdb import Card, MarvelCDB, image_url
 
 # Tipos que no se juegan desde la mano y por tanto no cuentan en la curva de coste.
@@ -120,20 +120,6 @@ def _merge_cards(editorial: list[dict[str, Any]], kit: dict[str, Card]) -> list[
     return merged
 
 
-def _cost_curve(cards: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    buckets = {label: 0 for label in ("0", "1", "2", "3", "4+")}
-    for card in cards:
-        if card["type_code"] in NON_DECK_TYPES or card["cost"] is None:
-            continue
-        label = str(card["cost"]) if card["cost"] < 4 else "4+"
-        buckets[label] += card["quantity"]
-    peak = max(buckets.values()) or 1
-    return [
-        {"label": label, "count": count, "height": round(100 * count / peak)}
-        for label, count in buckets.items()
-    ]
-
-
 def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any]:
     hero_card, kit = client.hero_kit(hero_data["hero_card_code"])
 
@@ -149,10 +135,14 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
     ratings = hero_data["aspects"]
     aspects = sorted(
         (
-            {"key": key, "label": ASPECT_LABELS[key], "rating": ratings[key]["rating"]}
+            {
+                "key": key,
+                "label": ASPECT_LABELS[key],
+                "ratings": [ratings[key][size] for size in TABLE_SIZES],
+            }
             for key in ASPECTS
         ),
-        key=lambda a: -a["rating"],
+        key=lambda a: -sum(a["ratings"]),
     )
 
     return {
@@ -177,13 +167,13 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
             "hand_size": alter_ego.get("hand_size"),
         },
         "aspects": aspects,
+        "table_headers": [TABLE_LABELS[size] for size in TABLE_SIZES],
         "hide": set(hero_data.get("hide", [])),
         "sections_a": [s for s in hero_data.get("sections", []) if s["side"] == "a"],
         "sections_b": [s for s in hero_data.get("sections", []) if s["side"] == "b"],
         "key_cards": playable[:KEY_CARD_COUNT],
         "other_cards": playable[KEY_CARD_COUNT:],
         "obligations": obligations,
-        "curve": _cost_curve(cards),
         "deck_size": sum(c["quantity"] for c in cards if c["type_code"] not in NON_DECK_TYPES),
         "pack_name": hero_card.get("pack_name", ""),
     }
