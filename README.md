@@ -3,7 +3,7 @@
 Fichas de dos caras, en español y listas para imprimir en A4, pensadas para que alguien que
 nunca ha jugado a un LCG pueda elegir héroe y saber qué hacer con él desde la primera partida.
 
-- **Cara A — Presentación:** dificultad, potencia, afinidad con cada aspecto según el número de
+- **Cara A — Presentación:** dificultad, nivel de poder, afinidad con cada aspecto según el número de
   jugadores, fortalezas y debilidades.
 - **Cara B — Estrategia:** las mejores cartas de firma con imagen y prioridad, las
   circunstanciales, consideraciones y mulligan.
@@ -11,7 +11,9 @@ nunca ha jugado a un LCG pueda elegir héroe y saber qué hacer con él desde la
 Cada héroe se describe en un único archivo JSON. Los datos objetivos de las cartas (nombre en
 español, coste, tipo, texto, imagen y colores del héroe) se descargan de
 [MarvelCDB](https://es.marvelcdb.com), así que en el JSON solo escribes lo que es criterio tuyo:
-valoraciones, prioridades, combos y consejos.
+valoraciones, prioridades, combos y consejos. En las cajas de texto, el generador pone en
+negrita los nombres de carta y en cursiva las mecánicas (`alter ego`, `daño derivado`, `héroe`);
+en el JSON se escriben como texto plano.
 
 ## Puesta en marcha
 
@@ -44,7 +46,7 @@ descubre solo.
 | `slug` | Nombre del archivo de salida. |
 | `hero_card_code` | Código de la carta de héroe en MarvelCDB. |
 | `display_name`, `alter_ego_name` | Opcionales, para forzar cómo se escribe el nombre. |
-| `difficulty`, `power` | Enteros de 1 a 5. |
+| `difficulty`, `power` | Enteros de 1 a 5. En la hoja se leen como Dificultad y Nivel de poder. |
 | `sections` | Bloques de notas propias. Ver más abajo. |
 | `hide` | Apartados que no quieres en esta hoja. Ver más abajo. |
 | `variants` | Otras versiones de la misma hoja. Ver más abajo. |

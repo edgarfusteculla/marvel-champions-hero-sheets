@@ -7,7 +7,7 @@
 <title>Hulka — Hoja de héroe · Marvel Champions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root {
   --primary: #572d79;
@@ -110,10 +110,6 @@ body {
   margin: .6mm 0 .8mm;
 }
 
-.sheet-b .hero-name {
-  font-size: 11mm;
-}
-
 .alter-ego-name {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 5mm;
@@ -200,9 +196,9 @@ body {
 .meter-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 4.6mm;
+  font-size: 4.2mm;
   text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: .04em;
   margin-bottom: 2mm;
 }
 
@@ -263,6 +259,18 @@ body {
 
 .item-list li:last-child {
   margin-bottom: 0;
+}
+
+.item-list b,
+.sig-note b,
+.notes b {
+  font-weight: 700;
+}
+
+.item-list i,
+.sig-note i,
+.notes i {
+  font-style: italic;
 }
 
 .split-lists {
@@ -568,7 +576,7 @@ body {
 </div>
           </div>
           <div>
-            <div class="meter-label">Potencia</div>
+            <div class="meter-label">Nivel de poder</div>
             <div class="dots power">
   <div class="dot on power"></div>
   <div class="dot on power"></div>
@@ -679,13 +687,13 @@ body {
     <div class="panel">
       <div class="panel-title">Fortalezas</div>
       <ul class="item-list">
-<li>Empieza con Ataque 3.</li><li>Tiene 15 de vida: aguanta mucho.</li><li>En alter ego, evita 1 de amenaza al entrar en un plan.</li><li>En alter ego recupera 5.</li><li>Al pasar a héroe, hace 2 de daño a un enemigo.</li>      </ul>
+<li>Empieza con Ataque 3.</li><li>Tiene 15 de vida: aguanta mucho.</li><li>En <i>alter ego</i>, evita 1 de amenaza al entrar en un plan.</li><li>En <i>alter ego</i> recupera 5.</li><li>Al pasar a <i>héroe</i>, hace 2 de daño a un enemigo.</li>      </ul>
     </div>
 
     <div class="panel">
       <div class="panel-title">Debilidades</div>
       <ul class="item-list">
-<li>Intervención 1: muy mala gestión de la amenaza.</li><li>En héroe, la mano es de 4 cartas.</li>      </ul>
+<li><i>Intervención</i> 1: muy mala gestión de la amenaza.</li><li>En <i>héroe</i>, la mano es de 4 cartas.</li>      </ul>
     </div>
 
     <div class="panel">
@@ -695,7 +703,7 @@ body {
 <img src="https://marvelcdb.com/bundles/cards/31023.png" alt="Aguante ilimitado">          <div>
             <div class="sig-name">Aguante ilimitado</div>
             <span class="type-tag">Evento</span>
-            <p class="sig-note">Para preparar al héroe.</p>
+            <p class="sig-note">Para <i>preparar</i> al <i>héroe</i>.</p>
           </div>
         </div>
         <div class="rec-basic">
@@ -728,6 +736,7 @@ body {
     <div>
       <div class="eyebrow">Cartas propias y consideraciones de juego</div>
       <div class="hero-name">Hulka</div>
+      <div class="alter-ego-name">Jennifer Walters</div>
     </div>
   </header>
 
@@ -749,7 +758,7 @@ body {
   <div class="dot on small"></div>
 </div>
           </div>
-          <p class="sig-note">Tras un ataque básico, se prepara.</p>
+          <p class="sig-note">Tras un <i>ataque básico</i>, <i>se prepara</i>.</p>
         </div>
         <div class="sig-card">
           <div class="sig-art">
@@ -765,7 +774,7 @@ body {
   <div class="dot on small"></div>
 </div>
           </div>
-          <p class="sig-note">Potencia el ataque y aturde al enemigo.</p>
+          <p class="sig-note">Potencia el ataque y <i>aturde</i> al enemigo.</p>
         </div>
         <div class="sig-card">
           <div class="sig-art">
@@ -834,7 +843,7 @@ body {
   <div class="dot  small"></div>
 </div>
             </div>
-            <p class="sig-note">Ayuda con la intervención y se puede reciclar.</p>
+            <p class="sig-note">Ayuda con la <i>intervención</i> y se puede reciclar.</p>
           </div>
         </div>
         <div class="mini">
@@ -850,7 +859,7 @@ body {
   <div class="dot  small"></div>
 </div>
             </div>
-            <p class="sig-note">Carta de intervención poco poderosa.</p>
+            <p class="sig-note">Carta de <i>intervención</i> poco poderosa.</p>
           </div>
         </div>
         <div class="mini">
@@ -866,7 +875,7 @@ body {
   <div class="dot  small"></div>
 </div>
             </div>
-            <p class="sig-note">En alter ego, gastas un recurso mental y quitas 2 de amenaza.</p>
+            <p class="sig-note">En <i>alter ego</i>, gastas un recurso mental y quitas 2 de amenaza.</p>
           </div>
         </div>
         <div class="mini">
@@ -891,12 +900,12 @@ body {
     <div class="panel">
       <div class="panel-title">Consideraciones</div>
       <ul class="item-list">
-        <li>Tiene un colchón de vida muy alto: puedes aguantar en héroe sin defender.</li>
-        <li>Furia concentrada quita un punto de vida a cambio de una carta, cosa que interesa mucho a Hulka.</li>
-        <li>En alter ego tiene una recuperación muy alta.</li>
-        <li>Doble personalidad permite un cambio de identidad gratis en el turno.</li>
-        <li>Fuerza sobrehumana no se descarta si el objetivo ya está aturdido.</li>
-        <li>Al tener mano 4 en héroe, necesita cartas que mejoren la economía y el robo.</li>
+        <li>Tiene un colchón de vida muy alto: puedes aguantar en <i>héroe</i> sin defender.</li>
+        <li><b>Furia concentrada</b> quita un punto de vida a cambio de una carta, cosa que interesa mucho a <b>Hulka</b>.</li>
+        <li>En <i>alter ego</i> tiene una <i>recuperación</i> muy alta.</li>
+        <li><b>Doble personalidad</b> permite un <i>cambio de identidad</i> gratis en el turno.</li>
+        <li><b>Fuerza sobrehumana</b> no se descarta si el objetivo ya está <i>aturdido</i>.</li>
+        <li>Al tener mano 4 en <i>héroe</i>, necesita cartas que mejoren la economía y el robo.</li>
       </ul>
     </div>
 
@@ -906,12 +915,12 @@ body {
         <div>
           <div class="sub-title">Buscar</div>
           <ul class="item-list">
-<li>Furia concentrada: motor de robo desde el inicio.</li><li>Mansión de los Vengadores y Helitransporte: buenos generadores de recursos para arrancar la partida.</li>          </ul>
+<li><b>Furia concentrada</b>: motor de robo desde el inicio.</li><li><b>Mansión de los Vengadores</b> y <b>Helitransporte</b>: buenos generadores de recursos para arrancar la partida.</li>          </ul>
         </div>
         <div>
           <div class="sub-title">Cambia</div>
           <ul class="item-list">
-<li>Apisonadora gamma: con la vida al máximo no inflige daño.</li><li>División de Derecho Superhumano y Proceso judicial: cartas poco poderosas que no ayudan al inicio.</li>          </ul>
+<li><b>Apisonadora gamma</b>: con la vida al máximo no inflige daño.</li><li><b>División de Derecho Superhumano</b> y <b>Proceso judicial</b>: cartas poco poderosas que no ayudan al inicio.</li>          </ul>
         </div>
       </div>
     </div>

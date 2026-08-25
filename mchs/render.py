@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
-from markupsafe import Markup
+from markupsafe import Markup, escape
 
 from .heroes import ASPECTS, ASPECT_LABELS, TABLE_LABELS, TABLE_SIZES
 from .marvelcdb import Card, MarvelCDB, image_url
@@ -44,6 +44,136 @@ ICON_PATTERN = re.compile(r'<span class="icon-([a-z_]+)"[^>]*></span>')
 TOKEN_PATTERN = re.compile(r"\[([a-z_]+)\]")
 PARAGRAPH_PATTERN = re.compile(r"</p>\s*<p>")
 STRIP_PATTERN = re.compile(r"</?p>")
+
+# Palabras de mecánica (no nombres de carta). Las más largas se sustituyen primero.
+MECHANIC_TERMS = (
+    "cambio de identidad",
+    "daño derivado",
+    "ataque básico",
+    "fase del villano",
+    "turno del villano",
+    "alter ego",
+    "intervención",
+    "recuperación",
+    "represalia",
+    "se prepara",
+    "preparar",
+    "aturdido",
+    "aturdir",
+    "aturde",
+    "confundir",
+    "confunde",
+    "aéreo",
+    "héroe",
+    "rasgo",
+    "oleada",
+)
+
+# Cartas básicas que se citan a menudo aunque no estén en el kit de ese héroe.
+COMMON_CARD_NAMES = (
+    "Helitransporte",
+    "Mansión de los Vengadores",
+    "Quintransporte",
+    "Inventiva",
+    "Aguante ilimitado",
+    "Spider-Woman",
+    "Spiderwoman",
+)
+
+_WORD_EDGE = r"A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9"
+_PLACEHOLDER = re.compile(r"\x00(\d+)\x00")
+
+
+def format_editorial_text(text: str, card_names: list[str]) -> Markup:
+    """Nombres de carta en negrita y mecánicas en cursiva, sin tocar el JSON."""
+    if not text:
+        return Markup("")
+
+    marked = str(escape(text))
+    slots: list[str] = []
+
+    def stash(html: str) -> str:
+        slots.append(html)
+        return f"\x00{len(slots) - 1}\x00"
+
+    names = sorted({name for name in card_names if name and len(name) >= 3}, key=len, reverse=True)
+    for name in names:
+        pattern = re.compile(
+            rf"(?<![{_WORD_EDGE}]){re.escape(str(escape(name)))}(?![{_WORD_EDGE}])",
+            re.IGNORECASE,
+        )
+        marked = pattern.sub(lambda match: stash(f"<b>{match.group(0)}</b>"), marked)
+
+    for term in sorted(MECHANIC_TERMS, key=len, reverse=True):
+        pattern = re.compile(
+            rf"(?<![{_WORD_EDGE}]){re.escape(term)}(?![{_WORD_EDGE}])",
+            re.IGNORECASE,
+        )
+        marked = pattern.sub(lambda match: stash(f"<i>{match.group(0)}</i>"), marked)
+
+    return Markup(_PLACEHOLDER.sub(lambda match: slots[int(match.group(1))], marked))
+
+
+def _collect_card_names(
+    hero_data: dict[str, Any],
+    hero_card: Card,
+    alter_ego: dict[str, Any],
+    kit: dict[str, Card],
+    basic_cards: list[dict[str, Any]],
+) -> list[str]:
+    names = [
+        hero_data.get("display_name"),
+        hero_data.get("alter_ego_name"),
+        hero_card.get("name"),
+        alter_ego.get("name"),
+        *COMMON_CARD_NAMES,
+    ]
+    for card in kit.values():
+        names.append(card.get("name"))
+    for card in basic_cards:
+        names.append(card.get("name"))
+    return [name for name in names if name]
+
+
+def _format_copy_item(item: Any, names: list[str]) -> Any:
+    if isinstance(item, dict):
+        formatted = dict(item)
+        for key in ("text", "chain"):
+            if key in formatted and isinstance(formatted[key], str):
+                formatted[key] = format_editorial_text(formatted[key], names)
+        return formatted
+    return format_editorial_text(str(item), names)
+
+
+def _markup_notes(cards: list[dict[str, Any]], names: list[str]) -> list[dict[str, Any]]:
+    marked = []
+    for card in cards:
+        card = dict(card)
+        if card.get("note"):
+            card["note"] = format_editorial_text(card["note"], names)
+        marked.append(card)
+    return marked
+
+
+def _markup_hero_copy(hero_data: dict[str, Any], names: list[str]) -> dict[str, Any]:
+    hero = dict(hero_data)
+    for key in ("strengths", "weaknesses", "consideraciones"):
+        if key in hero:
+            hero[key] = [_format_copy_item(item, names) for item in hero[key]]
+    if "mulligan" in hero:
+        mulligan = dict(hero["mulligan"])
+        for key in ("keep", "toss"):
+            if key in mulligan:
+                mulligan[key] = [_format_copy_item(item, names) for item in mulligan[key]]
+        hero["mulligan"] = mulligan
+    if "sections" in hero:
+        sections = []
+        for section in hero["sections"]:
+            section = dict(section)
+            section["items"] = [_format_copy_item(item, names) for item in section.get("items", [])]
+            sections.append(section)
+        hero["sections"] = sections
+    return hero
 
 
 def format_card_text(raw: str | None) -> Markup:
@@ -145,11 +275,17 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
     alter_ego = client.card(linked_code) if linked_code else (hero_card.get("linked_card") or {})
 
     cards = _merge_cards(hero_data.get("cards", []), kit)
+    basic_cards = _external_cards(hero_data.get("basics", []), client)
+    names = _collect_card_names(hero_data, hero_card, alter_ego, kit, basic_cards)
+    cards = _markup_notes(cards, names)
+    basic_cards = _markup_notes(basic_cards, names)
+    hero = _markup_hero_copy(hero_data, names)
+
     playable = [c for c in cards if c["type_code"] not in NON_DECK_TYPES]
     playable.sort(key=lambda c: (-c["priority"], c["cost"] if c["cost"] is not None else 99))
     obligations = [c for c in cards if c["type_code"] == "obligation"]
 
-    ratings = hero_data["aspects"]
+    ratings = hero["aspects"]
     aspects = [
         {
             "key": key,
@@ -160,7 +296,7 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
     ]
 
     return {
-        "hero": hero_data,
+        "hero": hero,
         "palette": build_palette(hero_card, hero_data.get("palette")),
         "hero_card": {
             "name": hero_data.get("display_name") or hero_card["name"],
@@ -182,12 +318,12 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
         },
         "aspects": aspects,
         "table_headers": [TABLE_LABELS[size] for size in TABLE_SIZES],
-        "hide": set(hero_data.get("hide", [])),
-        "sections_a": [s for s in hero_data.get("sections", []) if s["side"] == "a"],
-        "sections_b": [s for s in hero_data.get("sections", []) if s["side"] == "b"],
+        "hide": set(hero.get("hide", [])),
+        "sections_a": [s for s in hero.get("sections", []) if s["side"] == "a"],
+        "sections_b": [s for s in hero.get("sections", []) if s["side"] == "b"],
         "key_cards": playable[:KEY_CARD_COUNT],
         "other_cards": playable[KEY_CARD_COUNT:],
-        "basic_cards": _external_cards(hero_data.get("basics", []), client),
+        "basic_cards": basic_cards,
         "obligations": obligations,
         "deck_size": sum(c["quantity"] for c in cards if c["type_code"] not in NON_DECK_TYPES),
         "pack_name": hero_card.get("pack_name", ""),

@@ -14,6 +14,7 @@ Al escribir o reescribir textos de `data/heroes/*.json` (fortalezas, debilidades
 - El héroe y sus atributos en tercera persona (`tiene Intervención 1`, `recupera 5`).
 - Sin relleno (`excelente`, `imprescindible`, `clave`) salvo que Edgar lo haya dicho así.
 - Conserva su criterio y los números; no suavices ni endurezcas valoraciones.
+- No pongas markdown ni HTML en el JSON: el generador pone en **negrita** los nombres de carta y en *cursiva* las mecánicas (`alter ego`, `daño derivado`, `héroe`, `intervención`, `aéreo`…).
 
 ## Dónde encaja cada cosa
 

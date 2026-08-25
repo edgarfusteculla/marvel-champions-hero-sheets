@@ -7,7 +7,7 @@
 <title>Spider-Man — Hoja de héroe · Marvel Champions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root {
   --primary: #982828;
@@ -110,10 +110,6 @@ body {
   margin: .6mm 0 .8mm;
 }
 
-.sheet-b .hero-name {
-  font-size: 11mm;
-}
-
 .alter-ego-name {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 5mm;
@@ -200,9 +196,9 @@ body {
 .meter-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 4.6mm;
+  font-size: 4.2mm;
   text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: .04em;
   margin-bottom: 2mm;
 }
 
@@ -263,6 +259,18 @@ body {
 
 .item-list li:last-child {
   margin-bottom: 0;
+}
+
+.item-list b,
+.sig-note b,
+.notes b {
+  font-weight: 700;
+}
+
+.item-list i,
+.sig-note i,
+.notes i {
+  font-style: italic;
 }
 
 .split-lists {
@@ -568,7 +576,7 @@ body {
 </div>
           </div>
           <div>
-            <div class="meter-label">Potencia</div>
+            <div class="meter-label">Nivel de poder</div>
             <div class="dots power">
   <div class="dot on power"></div>
   <div class="dot on power"></div>
@@ -679,13 +687,13 @@ body {
     <div class="panel">
       <div class="panel-title">Fortalezas</div>
       <ul class="item-list">
-<li>En héroe, robas una carta cada vez que el villano te ataca.</li><li>Defensa 3 y una carta de defensa muy buena: aguanta bien los ataques del villano.</li><li>Buena economía: el recurso de Peter Parker y la carta extra al recibir el ataque.</li><li>Recuperación muy alta gracias a Tía May.</li><li>Control del villano con Envuelto en telaraña y Sentido arácnido mejorado.</li>      </ul>
+<li>En <i>héroe</i>, robas una carta cada vez que el villano te ataca.</li><li>Defensa 3 y una carta de defensa muy buena: aguanta bien los ataques del villano.</li><li>Buena economía: el recurso de <b>Peter Parker</b> y la carta extra al recibir el ataque.</li><li><i>Recuperación</i> muy alta gracias a <b>Tía May</b>.</li><li>Control del villano con <b>Envuelto en telaraña</b> y <b>Sentido arácnido mejorado</b>.</li>      </ul>
     </div>
 
     <div class="panel">
       <div class="panel-title">Debilidades</div>
       <ul class="item-list">
-<li>Intervención 1: te cuesta mucho gestionar la amenaza.</li><li>Su carta de intervención es circunstancial y débil.</li><li>Ataque poco flexible: solo tiene 2 de atributo y un evento de 8, así que te cuesta limpiar esbirros.</li>      </ul>
+<li><i>Intervención</i> 1: te cuesta mucho gestionar la amenaza.</li><li>Su carta de <i>intervención</i> es circunstancial y débil.</li><li>Ataque poco flexible: solo tiene 2 de atributo y un evento de 8, así que te cuesta limpiar esbirros.</li>      </ul>
     </div>
 
     <div class="panel">
@@ -695,7 +703,7 @@ body {
 <img src="https://marvelcdb.com/bundles/cards/29027.png" alt="Inventiva">          <div>
             <div class="sig-name">Inventiva</div>
             <span class="type-tag">Mejora</span>
-            <p class="sig-note">Muy buen generador de recursos para Peter Parker.</p>
+            <p class="sig-note">Muy buen generador de recursos para <b>Peter Parker</b>.</p>
           </div>
         </div>
         <div class="rec-basic">
@@ -728,6 +736,7 @@ body {
     <div>
       <div class="eyebrow">Cartas propias y consideraciones de juego</div>
       <div class="hero-name">Spider-Man</div>
+      <div class="alter-ego-name">Peter Parker</div>
     </div>
   </header>
 
@@ -765,7 +774,7 @@ body {
   <div class="dot on small"></div>
 </div>
           </div>
-          <p class="sig-note">Recuperación gratis al pasar a alter ego.</p>
+          <p class="sig-note"><i>Recuperación</i> gratis al pasar a <i>alter ego</i>.</p>
         </div>
         <div class="sig-card">
           <div class="sig-art">
@@ -834,7 +843,7 @@ body {
   <div class="dot  small"></div>
 </div>
             </div>
-            <p class="sig-note">Aliado sin daño derivado al atacar.</p>
+            <p class="sig-note">Aliado sin <i>daño derivado</i> al atacar.</p>
           </div>
         </div>
         <div class="mini">
@@ -875,13 +884,13 @@ body {
     <div class="panel">
       <div class="panel-title">Consideraciones</div>
       <ul class="item-list">
-        <li>Gata Negra no tiene daño derivado: si ataca con ella, puede quedarse en mesa toda la partida.</li>
-        <li>Los recursos de Lanzarredes se gastan de uno en uno; después de usarlo, se agota hasta el siguiente turno.</li>
-        <li>Con la vida baja, al final del turno pasa a alter ego y recupera 4 con Tía May. Al inicio del siguiente, otros 4 antes de volver a héroe.</li>
-        <li>Voltereta hacia atrás y Sentido arácnido mejorado se juegan durante la fase del villano.</li>
-        <li>Inventiva solo se puede jugar en alter ego. Una vez en mesa, también se usa en héroe.</li>
-        <li>El Helitransporte puede abaratar una carta del compañero.</li>
-        <li>La Mansión de los Vengadores puede dar un robo a un compañero.</li>
+        <li><b>Gata Negra</b> no tiene <i>daño derivado</i>: si ataca con ella, puede quedarse en mesa toda la partida.</li>
+        <li>Los recursos de <b>Lanzarredes</b> se gastan de uno en uno; después de usarlo, se agota hasta el siguiente turno.</li>
+        <li>Con la vida baja, al final del turno pasa a <i>alter ego</i> y recupera 4 con <b>Tía May</b>. Al inicio del siguiente, otros 4 antes de volver a <i>héroe</i>.</li>
+        <li><b>Voltereta hacia atrás</b> y <b>Sentido arácnido mejorado</b> se juegan durante la <i>fase del villano</i>.</li>
+        <li><b>Inventiva</b> solo se puede jugar en <i>alter ego</i>. Una vez en mesa, también se usa en <i>héroe</i>.</li>
+        <li>El <b>Helitransporte</b> puede abaratar una carta del compañero.</li>
+        <li>La <b>Mansión de los Vengadores</b> puede dar un robo a un compañero.</li>
       </ul>
     </div>
 
@@ -891,12 +900,12 @@ body {
         <div>
           <div class="sub-title">Buscar</div>
           <ul class="item-list">
-<li>Lanzarredes: economía flexible para los primeros turnos.</li><li>Tía May: asegura una recuperación excelente al ir a alter ego.</li><li>Gata Negra: aliado que te acompaña durante toda la partida.</li><li>Inventiva, Mansión de los Vengadores y Helitransporte: buenos generadores de recursos para arrancar la partida.</li>          </ul>
+<li><b>Lanzarredes</b>: economía flexible para los primeros turnos.</li><li><b>Tía May</b>: asegura una <i>recuperación</i> excelente al ir a <i>alter ego</i>.</li><li><b>Gata Negra</b>: aliado que te acompaña durante toda la partida.</li><li><b>Inventiva</b>, <b>Mansión de los Vengadores</b> y <b>Helitransporte</b>: buenos generadores de recursos para arrancar la partida.</li>          </ul>
         </div>
         <div>
           <div class="sub-title">Cambia</div>
           <ul class="item-list">
-<li>Voltereta hacia atrás: se juega en el turno del villano.</li><li>Sentido arácnido mejorado: se juega en el turno del villano.</li>          </ul>
+<li><b>Voltereta hacia atrás</b>: se juega en el <i>turno del villano</i>.</li><li><b>Sentido arácnido mejorado</b>: se juega en el <i>turno del villano</i>.</li>          </ul>
         </div>
       </div>
     </div>

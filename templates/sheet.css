@@ -88,10 +88,6 @@ body {
   margin: .6mm 0 .8mm;
 }
 
-.sheet-b .hero-name {
-  font-size: 11mm;
-}
-
 .alter-ego-name {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 5mm;
@@ -178,9 +174,9 @@ body {
 .meter-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 4.6mm;
+  font-size: 4.2mm;
   text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: .04em;
   margin-bottom: 2mm;
 }
 
@@ -241,6 +237,18 @@ body {
 
 .item-list li:last-child {
   margin-bottom: 0;
+}
+
+.item-list b,
+.sig-note b,
+.notes b {
+  font-weight: 700;
+}
+
+.item-list i,
+.sig-note i,
+.notes i {
+  font-style: italic;
 }
 
 .split-lists {
