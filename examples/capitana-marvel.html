@@ -1,0 +1,909 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Capitana Marvel — Hoja de héroe · Marvel Champions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #2a377b;
+  --secondary: #902b26;
+  --on-primary: #ffffff;
+  --on-secondary: #ffffff;
+  --primary-ink: color-mix(in srgb, #2a377b 72%, #000);
+  --ink: #141414;
+  --paper: #f4efe4;
+  --paper-light: #fbf8f1;
+  --accent: #f2b705;
+}
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  padding: 8mm 0;
+  background: #4a4a4a;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: var(--ink);
+}
+
+.sheet {
+  width: 210mm;
+  /* Con min-height, si el contenido no cabe se va a otra página impresa en vez de recortarse
+     en silencio: así el aviso de páginas del generador lo detecta. */
+  min-height: 297mm;
+  margin: 0 auto 8mm;
+  background: var(--paper);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4mm 10mm rgba(0, 0, 0, .45);
+}
+
+.halftone {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--ink) .35mm, transparent .45mm);
+  background-size: 2.6mm 2.6mm;
+  opacity: .045;
+  pointer-events: none;
+}
+
+/* ---------------- Cabecera ---------------- */
+
+.header {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 5mm 9mm 4.5mm;
+  background: linear-gradient(115deg, var(--primary) 0%, var(--secondary) 130%);
+  color: var(--on-primary);
+  border-bottom: 1.4mm solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6mm;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(48deg, rgba(0, 0, 0, .14) 0 .6mm, transparent .6mm 7mm);
+  pointer-events: none;
+}
+
+.header > * {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: .18em;
+  font-size: 2.9mm;
+  text-transform: uppercase;
+  opacity: .92;
+}
+
+.hero-name {
+  font-family: 'Bangers', cursive;
+  font-size: 16mm;
+  line-height: .95;
+  letter-spacing: .02em;
+  text-shadow: .7mm .7mm 0 var(--ink);
+  margin: .6mm 0 .8mm;
+}
+
+.sheet-b .hero-name {
+  font-size: 11mm;
+}
+
+.alter-ego-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 5mm;
+  font-weight: 600;
+  font-style: italic;
+  opacity: .95;
+}
+
+/* ---------------- Estructura ---------------- */
+
+.body {
+  flex: 1 1 auto;
+  padding: 4mm 9mm 1.5mm;
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+}
+
+.row {
+  display: flex;
+  gap: 4mm;
+  align-items: stretch;
+}
+
+.panel {
+  background: var(--paper-light);
+  border: .7mm solid var(--ink);
+  border-radius: 2mm;
+  padding: 2.6mm 3.2mm;
+  position: relative;
+}
+
+.panel-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: 3.9mm;
+  color: var(--primary-ink);
+  margin: 0 0 1.7mm;
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+}
+
+.panel-title::before {
+  content: "";
+  width: 2.4mm;
+  height: 2.4mm;
+  flex: 0 0 auto;
+  background: var(--primary);
+  border-radius: 50%;
+  border: .5mm solid var(--ink);
+}
+
+/* ---------------- Cara A ---------------- */
+
+.portrait {
+  flex: 0 0 52mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5mm;
+}
+
+.card-art {
+  width: 100%;
+  display: block;
+  border-radius: 2.4mm;
+  border: .6mm solid var(--ink);
+  background: #ddd;
+}
+
+.meters-panel {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5mm;
+}
+
+.meter-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 4.6mm;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 2mm;
+}
+
+.sub-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: 3.4mm;
+  opacity: .7;
+  margin-bottom: 1.8mm;
+}
+
+.dots {
+  display: flex;
+  gap: 1.6mm;
+}
+
+.dot {
+  width: 7mm;
+  height: 7mm;
+  border-radius: 50%;
+  border: .6mm solid var(--ink);
+  background: #ded8ca;
+}
+
+.dot.on {
+  background: var(--secondary);
+}
+
+.dot.on.power {
+  background: var(--accent);
+}
+
+.dots.small .dot {
+  width: 2.8mm;
+  height: 2.8mm;
+  border-width: .35mm;
+}
+
+.meters {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+}
+
+.item-list {
+  margin: 0;
+  padding: 0 0 0 4.5mm;
+}
+
+.item-list li {
+  font-size: 3.05mm;
+  line-height: 1.38;
+  margin-bottom: 1.1mm;
+}
+
+.item-list li:last-child {
+  margin-bottom: 0;
+}
+
+.split-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+}
+
+.split-lists .sub-title {
+  margin-bottom: 1.2mm;
+}
+
+.rec-basics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+}
+
+.rec-basic {
+  display: flex;
+  gap: 2.4mm;
+  align-items: flex-start;
+}
+
+.rec-basic img {
+  flex: 0 0 auto;
+  width: 16mm;
+  border-radius: 1mm;
+  border: .4mm solid var(--ink);
+  background: #ddd;
+}
+
+.rec-basic .sig-note {
+  margin-top: .8mm;
+}
+
+.aspect-grid {
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr);
+  gap: 1.8mm 3mm;
+  align-items: center;
+}
+
+.ag-head {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3mm;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  opacity: .65;
+  text-align: center;
+}
+
+.ag-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.6mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #fff;
+  border: .6mm solid var(--ink);
+  border-radius: 1.4mm;
+  padding: .8mm 2.2mm;
+}
+
+.ag-cell {
+  display: flex;
+  justify-content: center;
+}
+
+.aspect-aggression { background: #a5232a; }
+.aspect-justice { background: #c8a01c; color: #17140a; }
+.aspect-leadership { background: #2b5fa8; }
+.aspect-protection { background: #2c7a4d; }
+
+.ag-aggression .dot.on { background: #a5232a; }
+.ag-justice .dot.on { background: #c8a01c; }
+.ag-leadership .dot.on { background: #2b5fa8; }
+.ag-protection .dot.on { background: #2c7a4d; }
+
+/* ---------------- Cara B ---------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5mm;
+}
+
+.sig-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2mm;
+}
+
+.sig-art {
+  position: relative;
+}
+
+.sig-art img {
+  width: 100%;
+  display: block;
+  border-radius: 1.8mm;
+  border: .5mm solid var(--ink);
+  background: #ddd;
+}
+
+.sig-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  line-height: 1.05;
+  color: var(--primary-ink);
+  text-transform: uppercase;
+}
+
+.sig-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1mm;
+}
+
+.type-tag {
+  font-size: 2.4mm;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  background: #e3ddce;
+  border-radius: .8mm;
+  padding: .3mm 1.2mm;
+}
+
+.sig-note {
+  font-size: 2.75mm;
+  line-height: 1.32;
+  margin: 0;
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5mm 4mm;
+}
+
+.mini {
+  display: flex;
+  gap: 2.5mm;
+  align-items: flex-start;
+}
+
+.mini img {
+  flex: 0 0 auto;
+  width: 11mm;
+  display: block;
+  border-radius: 1mm;
+  border: .4mm solid var(--ink);
+  background: #ddd;
+}
+
+.mini-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.mini .sig-meta {
+  margin: .6mm 0;
+}
+
+.res {
+  display: inline-block;
+  font-size: .82em;
+  font-weight: 800;
+  letter-spacing: .02em;
+  padding: 0 .35em;
+  border-radius: .25em;
+  color: #fff;
+}
+
+.res-physical { background: #b8480f; }
+.res-energy { background: #1a6fbf; }
+.res-mental { background: #6b3f9e; }
+.res-wild { background: #4b4b4b; }
+.res-per_hero { background: #7a7a7a; }
+.res-star { background: #b8941f; }
+
+/* ---------------- Notas propias ---------------- */
+
+.notes {
+  border: .7mm solid var(--ink);
+  border-left-width: 2.5mm;
+  border-radius: 1.8mm;
+  padding: 2mm 3mm 2.2mm;
+  background: var(--paper-light);
+}
+
+.notes-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: 3.6mm;
+  margin-bottom: 1.2mm;
+}
+
+.notes ul {
+  margin: 0;
+  padding-left: 4mm;
+}
+
+.notes li {
+  font-size: 2.9mm;
+  line-height: 1.33;
+  margin-bottom: .8mm;
+}
+
+.notes li:last-child {
+  margin-bottom: 0;
+}
+
+.notes-consejo {
+  border-left-color: var(--secondary);
+  background: #eef2fb;
+}
+
+.notes-consejo .notes-title {
+  color: var(--secondary);
+}
+
+.notes-aviso {
+  border-left-color: #b3242a;
+  background: #fdeeee;
+}
+
+.notes-aviso .notes-title {
+  color: #8e1c22;
+}
+
+.notes-neutro {
+  border-left-color: var(--ink);
+}
+
+/* ---------------- Pie ---------------- */
+
+.footer {
+  flex: 0 0 auto;
+  background: var(--ink);
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.7mm;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.8mm;
+  opacity: .9;
+}
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .sheet {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+  .sheet:last-of-type {
+    page-break-after: auto;
+  }
+}</style>
+</head>
+<body>
+
+<section class="sheet sheet-a">
+  <div class="halftone"></div>
+
+  <header class="header">
+    <div>
+      <div class="eyebrow">Guía básica de héroe · Marvel Champions LCG</div>
+      <div class="hero-name">Capitana Marvel</div>
+      <div class="alter-ego-name">Carol Danvers</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div class="row">
+      <div class="portrait">
+        <img class="card-art" src="https://marvelcdb.com/bundles/cards/01010a.png" alt="Capitana Marvel">
+      </div>
+
+      <div class="panel meters-panel">
+        <div class="meters">
+          <div>
+            <div class="meter-label">Dificultad</div>
+            <div class="dots ">
+  <div class="dot on "></div>
+  <div class="dot on "></div>
+  <div class="dot  "></div>
+  <div class="dot  "></div>
+  <div class="dot  "></div>
+</div>
+          </div>
+          <div>
+            <div class="meter-label">Potencia</div>
+            <div class="dots power">
+  <div class="dot on power"></div>
+  <div class="dot on power"></div>
+  <div class="dot on power"></div>
+  <div class="dot on power"></div>
+  <div class="dot  power"></div>
+</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="sub-title">Aspectos</div>
+          <div class="aspect-grid">
+            <div></div>
+<div class="ag-head">Solo</div><div class="ag-head">2 jugadores</div><div class="ag-head">3-4 jugadores</div>            <div class="ag-name aspect-aggression">Agresividad</div>
+            <div class="ag-cell ag-aggression"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div></div>
+            <div class="ag-cell ag-aggression"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div></div>
+            <div class="ag-cell ag-aggression"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div></div>
+            <div class="ag-name aspect-justice">Justicia</div>
+            <div class="ag-cell ag-justice"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div></div>
+            <div class="ag-cell ag-justice"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div></div>
+            <div class="ag-cell ag-justice"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div></div>
+            <div class="ag-name aspect-leadership">Liderazgo</div>
+            <div class="ag-cell ag-leadership"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div></div>
+            <div class="ag-cell ag-leadership"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div></div>
+            <div class="ag-cell ag-leadership"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div></div>
+            <div class="ag-name aspect-protection">Protección</div>
+            <div class="ag-cell ag-protection"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div></div>
+            <div class="ag-cell ag-protection"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div></div>
+            <div class="ag-cell ag-protection"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Fortalezas</div>
+      <ul class="item-list">
+<li>Robas muchas cartas.</li><li>Buena economía gracias a sus recursos triples.</li><li>Sus cartas rinden más con recursos de energía.</li><li>Buena supervivencia: mucha vida, buena recuperación y su habilidad de curar.</li>      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Debilidades</div>
+      <ul class="item-list">
+<li>Mala gestión de la amenaza con sus cartas.</li><li>Defensa muy baja y no tiene cartas de defensa recurrentes.</li>      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Cartas básicas indispensables</div>
+      <div class="rec-basics">
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/08023.png" alt="Quintransporte">          <div>
+            <div class="sig-name">Quintransporte</div>
+            <span class="type-tag">Apoyo</span>
+            <p class="sig-note">Recurso universal para las sinergias de energía.</p>
+          </div>
+        </div>
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/01092.png" alt="Helitransporte">          <div>
+            <div class="sig-name">Helitransporte</div>
+            <span class="type-tag">Apoyo</span>
+            <p class="sig-note">Mejora de economía.</p>
+          </div>
+        </div>
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/01091.png" alt="Mansión de los Vengadores">          <div>
+            <div class="sig-name">Mansión de los Vengadores</div>
+            <span class="type-tag">Apoyo</span>
+            <p class="sig-note">Robo extra de cartas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+</section>
+
+<section class="sheet sheet-b">
+  <div class="halftone"></div>
+
+  <header class="header">
+    <div>
+      <div class="eyebrow">Cartas propias y consideraciones de juego</div>
+      <div class="hero-name">Capitana Marvel</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div>
+      <div class="panel-title">Mejores cartas</div>
+      <div class="card-grid">
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/01015.png" alt="Base orbital de Alpha Flight">          </div>
+          <div class="sig-name">Base orbital de Alpha Flight</div>
+          <div class="sig-meta">
+            <span class="type-tag">Apoyo · x1</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div>
+          </div>
+          <p class="sig-note">Filtro de mano.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/01014.png" alt="Absorción de energía">          </div>
+          <div class="sig-name">Absorción de energía</div>
+          <div class="sig-meta">
+            <span class="type-tag">Recurso · x2</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div>
+          </div>
+          <p class="sig-note">Recurso de energía triple.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/01018.png" alt="Canalizar energía">          </div>
+          <div class="sig-name">Canalizar energía</div>
+          <div class="sig-meta">
+            <span class="type-tag">Mejora · x2</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+          </div>
+          <p class="sig-note">Permite gastar recursos sobrantes.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/01013.png" alt="Rayo fotónico">          </div>
+          <div class="sig-name">Rayo fotónico</div>
+          <div class="sig-meta">
+            <span class="type-tag">Evento · x3</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+          </div>
+          <p class="sig-note">Ataque que da robo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel-title">Cartas circunstanciales</div>
+      <div class="mini-grid">
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01011.png" alt="Spiderwoman">          <div class="mini-info">
+            <div class="sig-name">Spiderwoman</div>
+            <div class="sig-meta">
+              <span class="type-tag">Aliado · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Aliado que ayuda a la intervención y a ir a alter ego.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01017.png" alt="Vuelo cósmico">          <div class="mini-info">
+            <div class="sig-name">Vuelo cósmico</div>
+            <div class="sig-meta">
+              <span class="type-tag">Mejora · x2</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Da el rasgo Aéreo.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01016.png" alt="Casco de la Capitana Marvel">          <div class="mini-info">
+            <div class="sig-name">Casco de la Capitana Marvel</div>
+            <div class="sig-meta">
+              <span class="type-tag">Mejora · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Sube la defensa en 1 (en 2 si Vuelo cósmico está en mesa).</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01012.png" alt="Evitar una crisis">          <div class="mini-info">
+            <div class="sig-name">Evitar una crisis</div>
+            <div class="sig-meta">
+              <span class="type-tag">Evento · x3</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Intervención de poco poder.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Consideraciones</div>
+      <ul class="item-list">
+        <li>Tiene mucho valor ir a alter ego, de forma recurrente, si la amenaza no es un problema. Spider-Woman puede confundir al villano.</li>
+        <li>En alter ego, su acción roba una carta y la Base orbital de Alpha Flight da 2 cartas por 1.</li>
+        <li>Los recursos de energía que sobran al final del turno se pueden gastar para llenar Canalizar energía.</li>
+        <li>A Canalizar energía se le puede dar más de una carta por turno.</li>
+        <li>El recurso universal del Quintransporte vale para su acción de héroe, para Canalizar energía o para el requisito de Rayo fotónico.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Mulligan</div>
+      <div class="split-lists">
+        <div>
+          <div class="sub-title">Buscar</div>
+          <ul class="item-list">
+<li>Absorción de energía: recurso triple para montar mesa.</li><li>Base orbital de Alpha Flight: mucha consistencia desde el principio.</li><li>Quintransporte, Helitransporte y Mansión de los Vengadores: recursos y robo para abrir.</li>          </ul>
+        </div>
+        <div>
+          <div class="sub-title">Cambia</div>
+          <ul class="item-list">
+<li>Vuelo cósmico: poco interesante en los primeros turnos.</li><li>Casco de la Capitana Marvel: flojo al principio si no tienes Vuelo cósmico.</li><li>Evitar una crisis: floja si aún no tienes Vuelo cósmico.</li>          </ul>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+</section>
+
+</body>
+</html>

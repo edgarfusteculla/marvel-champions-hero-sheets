@@ -136,6 +136,7 @@ templates/hero_sheet.html.j2 Maquetación de las dos caras
 templates/sheet.css          Estilos (en milímetros, pensados para impresión)
 data/heroes/*.json           Un archivo por héroe
 notas/*.md                   Apuntes en bruto, no se imprimen
+examples/                    HTML de ejemplo de las hojas ya cerradas
 tools/inspect.py             Mide el espacio libre de cada cara y saca un PNG
 ```
 
