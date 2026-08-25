@@ -21,7 +21,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>{{ hero_card.name }} — Hoja de héroe · Marvel Champions</title>
+<title>Propuesta — {{ hero_card.name }} · cartas recomendadas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -38,13 +38,111 @@
   --accent: #f2b705;
 }
 {% include "sheet.css" %}
+
+.proposal-banner {
+  background: var(--accent);
+  color: #111;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3.1mm;
+  padding: 1.4mm 4mm;
+  border-bottom: .6mm solid var(--ink);
+}
+
+.rec-basics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+}
+
+.rec-basic {
+  display: flex;
+  gap: 2.4mm;
+  align-items: flex-start;
+}
+
+.rec-basic img {
+  flex: 0 0 auto;
+  width: 16mm;
+  border-radius: 1mm;
+  border: .4mm solid var(--ink);
+  background: #ddd;
+}
+
+.rec-aspects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4mm;
+}
+
+.rec-aspect {
+  border: .6mm solid var(--ink);
+  border-radius: 1.6mm;
+  overflow: hidden;
+  background: #fff;
+}
+
+.rec-aspect .bar {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 2.7mm;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: .8mm 1.6mm;
+  text-align: center;
+}
+
+.rec-aspect.aggression .bar { background: #a5232a; }
+.rec-aspect.justice .bar { background: #c8a01c; color: #17140a; }
+.rec-aspect.leadership .bar { background: #2b5fa8; }
+.rec-aspect.protection .bar { background: #2c7a4d; }
+
+.rec-aspect .inner {
+  display: flex;
+  gap: 2mm;
+  padding: 1.8mm;
+  align-items: flex-start;
+}
+
+.rec-aspect img {
+  width: 12mm;
+  border-radius: .8mm;
+  border: .35mm solid var(--ink);
+}
+
+.rec-aspect .name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.1mm;
+  text-transform: uppercase;
+  color: var(--primary-ink);
+  line-height: 1.1;
+}
+
+.rec-aspect .note,
+.rec-basic .note {
+  font-size: 2.55mm;
+  line-height: 1.3;
+  margin: .6mm 0 0;
+}
+
+.aside-note {
+  font-size: 2.6mm;
+  line-height: 1.35;
+  opacity: .72;
+  margin: 0;
+}
 </style>
 </head>
 <body>
 
-{# ============================ CARA A — PRESENTACIÓN ============================ #}
 <section class="sheet sheet-a">
   <div class="halftone"></div>
+  <div class="proposal-banner">Propuesta · no es la hoja oficial · las cartas de abajo son ejemplos</div>
 
   <header class="header">
     <div>
@@ -74,7 +172,6 @@
           </div>
         </div>
 
-        {% if 'aspectos' not in hide %}
         <div>
           <div class="sub-title">Aspectos</div>
           <div class="aspect-grid">
@@ -88,55 +185,66 @@
             {% endfor %}
           </div>
         </div>
-        {% endif %}
       </div>
     </div>
 
-    {% if 'fortalezas' not in hide %}
     <div class="panel">
       <div class="panel-title">Fortalezas</div>
       <ul class="item-list">
         {% for item in hero.strengths %}<li>{{ item }}</li>{% endfor %}
       </ul>
     </div>
-    {% endif %}
 
-    {% if 'debilidades' not in hide %}
     <div class="panel">
       <div class="panel-title">Debilidades</div>
       <ul class="item-list">
         {% for item in hero.weaknesses %}<li>{{ item }}</li>{% endfor %}
       </ul>
     </div>
-    {% endif %}
 
-    {% if 'basicas' not in hide and basic_cards %}
     <div class="panel">
-      <div class="panel-title">Cartas básicas indispensables</div>
-      <div class="rec-basics">
-        {% for card in basic_cards %}
+      <div class="panel-title">Básicas que pegan con él</div>
+      <p class="aside-note">Van en casi cualquier mazo de este héroe, da igual el aspecto.</p>
+      <div class="rec-basics" style="margin-top:2mm;">
+        {% for card in recommended_basics %}
         <div class="rec-basic">
           {% if card.image %}<img src="{{ card.image }}" alt="{{ card.name }}">{% endif %}
           <div>
             <div class="sig-name">{{ card.name }}</div>
-            <span class="type-tag">{{ card.type_label }}</span>
-            <p class="sig-note">{{ card.note }}</p>
+            <div class="type-tag">{{ card.type_label }} · básica</div>
+            <p class="note">{{ card.note }}</p>
           </div>
         </div>
         {% endfor %}
       </div>
     </div>
-    {% endif %}
 
-    {{ notes(sections_a) }}
+    <div class="panel">
+      <div class="panel-title">Si juegas este aspecto</div>
+      <p class="aside-note">Una carta por color, solo como avance. El mazo entero iría en su propia ficha.</p>
+      <div class="rec-aspects" style="margin-top:2mm;">
+        {% for card in recommended_aspects %}
+        <div class="rec-aspect {{ card.aspect }}">
+          <div class="bar">{{ card.aspect_label }}</div>
+          <div class="inner">
+            {% if card.image %}<img src="{{ card.image }}" alt="{{ card.name }}">{% endif %}
+            <div>
+              <div class="name">{{ card.name }}</div>
+              <p class="note">{{ card.note }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 
-  <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+  <footer class="footer">Propuesta de maquetación · no sustituye a la hoja de héroe</footer>
 </section>
 
-{# ============================ CARA B — CARTAS Y ESTRATEGIA ============================ #}
 <section class="sheet sheet-b">
   <div class="halftone"></div>
+  <div class="proposal-banner">Cara B sin cartas ajenas al kit · aquí solo el set de firma</div>
 
   <header class="header">
     <div>
@@ -165,7 +273,6 @@
       </div>
     </div>
 
-    {% if 'circunstanciales' not in hide %}
     <div>
       <div class="panel-title">Cartas circunstanciales</div>
       <div class="mini-grid">
@@ -184,20 +291,14 @@
         {% endfor %}
       </div>
     </div>
-    {% endif %}
 
-    {% if 'consideraciones' not in hide %}
     <div class="panel">
       <div class="panel-title">Consideraciones</div>
       <ul class="item-list">
-        {% for item in hero.consideraciones %}
-        <li>{% if item is mapping %}{% if item.chain %}<b>{{ item.chain }}.</b> {% endif %}{{ item.text }}{% else %}{{ item }}{% endif %}</li>
-        {% endfor %}
+        {% for item in hero.consideraciones %}<li>{{ item }}</li>{% endfor %}
       </ul>
     </div>
-    {% endif %}
 
-    {% if 'mulligan' not in hide %}
     <div class="panel">
       <div class="panel-title">Mulligan</div>
       <div class="split-lists">
@@ -215,12 +316,9 @@
         </div>
       </div>
     </div>
-    {% endif %}
-
-    {{ notes(sections_b) }}
   </div>
 
-  <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+  <footer class="footer">Propuesta de maquetación · no sustituye a la hoja de héroe</footer>
 </section>
 
 </body>

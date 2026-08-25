@@ -1,0 +1,104 @@
+{
+  "slug": "pantera-negra",
+  "hero_card_code": "01040a",
+  "display_name": "Pantera Negra",
+  "alter_ego_name": "T'Challa",
+  "difficulty": 3,
+  "power": 4,
+  "strengths": [
+    "Represalia 1: el villano se pega solo al atacarte.",
+    "T'Challa busca una mejora Pantera Negra cada ronda: el combo se monta solo.",
+    "¡Wakanda por siempre! dispara todas las mejoras a la vez; la última pega el doble.",
+    "Estadísticas equilibradas: 2/2/2 y 11 de vida."
+  ],
+  "weaknesses": [
+    "Hasta que no están las cuatro mejoras, ¡Wakanda por siempre! rinde poco.",
+    "Las mejoras no hacen nada por sí solas: sin el evento, son cartón.",
+    "Hay que flipar a T'Challa para buscar piezas: pierdes turnos de héroe."
+  ],
+  "aspects": {
+    "aggression": { "solo": 3, "duo": 3, "grupo": 2 },
+    "justice": { "solo": 3, "duo": 3, "grupo": 3 },
+    "leadership": { "solo": 3, "duo": 4, "grupo": 4 },
+    "protection": { "solo": 4, "duo": 4, "grupo": 3 }
+  },
+  "cards": [
+    {
+      "code": "01043a",
+      "priority": 5,
+      "quantity": 5,
+      "note": "5 copias. Dispara todas las mejoras; deja para el final la que más te importe."
+    },
+    {
+      "code": "01047",
+      "priority": 5,
+      "note": "2 de daño, 4 si es el último paso. Suele cerrar la secuencia."
+    },
+    {
+      "code": "01048",
+      "priority": 4,
+      "note": "1 de amenaza, 2 si es el último paso. Tu parche de intervención."
+    },
+    {
+      "code": "01049",
+      "priority": 4,
+      "note": "Pasa daño tuyo al enemigo. Encaja con Represalia y Defensa 2."
+    },
+    {
+      "code": "01046",
+      "priority": 3,
+      "note": "Daño al villano y a los esbirros de un jugador."
+    },
+    {
+      "code": "01041",
+      "priority": 3,
+      "note": "Al entrar, busca una mejora. Acelera el montaje."
+    },
+    {
+      "code": "01044",
+      "priority": 3,
+      "note": "3 recursos comodín. Paga las mejoras de 2."
+    },
+    {
+      "code": "01045",
+      "priority": 2,
+      "note": "En T'Challa, roba 2. Para cuando ya buscas menos."
+    },
+    {
+      "code": "01042",
+      "priority": 1,
+      "note": "Recupera hasta 3 cartas del descarte. Tarde, no al abrir."
+    }
+  ],
+  "basics": [
+    {
+      "code": "01092",
+      "note": "Recurso extra para bajar las cuatro mejoras."
+    },
+    {
+      "code": "01091",
+      "note": "Robo extra los turnos en T'Challa."
+    },
+    {
+      "code": "01090",
+      "note": "Recurso de fuerza. Paga garras y daga."
+    }
+  ],
+  "consideraciones": [
+    "El orden de ¡Wakanda por siempre! importa: lo que resuelves al final hace el doble.",
+    "T'Challa en preparación busca una mejora cada ronda: flipa pronto hasta tener las cuatro.",
+    "Shuri busca otra mejora al entrar: no la bajes si ya las tienes todas.",
+    "Vibránium paga cualquier mejora del kit."
+  ],
+  "mulligan": {
+    "keep": [
+      "Cualquier mejora Pantera Negra.",
+      "Vibránium: para pagarlas.",
+      "Shuri: busca la pieza que te falta."
+    ],
+    "toss": [
+      "¡Wakanda por siempre! sin mejoras en mesa.",
+      "Sabiduría ancestral: todavía no hay descarte que recuperar."
+    ]
+  }
+}

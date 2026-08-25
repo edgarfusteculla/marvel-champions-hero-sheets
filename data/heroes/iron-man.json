@@ -1,0 +1,108 @@
+{
+  "slug": "iron-man",
+  "hero_card_code": "01029a",
+  "display_name": "Iron Man",
+  "alter_ego_name": "Tony Stark",
+  "difficulty": 3,
+  "power": 4,
+  "strengths": [
+    "Cada mejora Tecnología sube el tamaño de mano: montado, roba más que nadie.",
+    "Tony mira 3 y se queda 1: filtra el mazo hacia las piezas de la armadura.",
+    "La armadura Mark V da +6 de vida: de 9 pasa a un tanque.",
+    "Con Aéreo, casco, guanteletes y puñetazo rinden el doble."
+  ],
+  "weaknesses": [
+    "Empieza con mano 1 y Defensa 1: los primeros turnos son frágiles.",
+    "Hasta que no está montado, Ataque 1 e Intervención 2 no dan guerra.",
+    "El kit es caro: sin Torre, Pepper o Helitransporte tarda en salir."
+  ],
+  "aspects": {
+    "aggression": { "solo": 3, "duo": 3, "grupo": 2 },
+    "justice": { "solo": 4, "duo": 3, "grupo": 2 },
+    "leadership": { "solo": 3, "duo": 4, "grupo": 4 },
+    "protection": { "solo": 2, "duo": 3, "grupo": 3 }
+  },
+  "cards": [
+    {
+      "code": "01036",
+      "priority": 5,
+      "note": "+6 de vida. Prioridad uno al montar la armadura."
+    },
+    {
+      "code": "01037",
+      "priority": 5,
+      "note": "Quita 1 de amenaza (todos los planes si eres Aéreo)."
+    },
+    {
+      "code": "01038",
+      "priority": 4,
+      "note": "Ataque barato cada turno. 2 de daño si eres Aéreo."
+    },
+    {
+      "code": "01039",
+      "priority": 4,
+      "note": "+1 de vida y Aéreo si gastas un mental. Activa el resto del traje."
+    },
+    {
+      "code": "01035",
+      "priority": 3,
+      "note": "Prepara a Iron Man. Más acciones cuando ya está montado."
+    },
+    {
+      "code": "01033",
+      "priority": 3,
+      "note": "Copia los recursos del descarte. Economía cuando el traje ya salió."
+    },
+    {
+      "code": "01031",
+      "priority": 3,
+      "note": "1 de daño más 2 por cada energía que millees. Mejor con mano grande."
+    },
+    {
+      "code": "01034",
+      "priority": 2,
+      "note": "En Tony, recupera una Tecnología del descarte."
+    },
+    {
+      "code": "01032",
+      "priority": 2,
+      "note": "4 de daño, 8 si eres Aéreo. Para cerrar, no para abrir."
+    },
+    {
+      "code": "01030",
+      "priority": 1,
+      "note": "Daño a todos los enemigos. Caro y situacional."
+    }
+  ],
+  "basics": [
+    {
+      "code": "01092",
+      "note": "Recurso extra. Imprescindible para montar el traje a tiempo."
+    },
+    {
+      "code": "01091",
+      "note": "Robo extra. Compensa la mano de 1 del principio."
+    },
+    {
+      "code": "01089",
+      "note": "Recurso de genio. Paga las Botas y filtra con Tony."
+    }
+  ],
+  "consideraciones": [
+    "El plan es montar: Botas, Casco, Guanteletes y Armadura antes de pegar de verdad.",
+    "Aéreo (Botas + un mental) dispara casco, guanteletes y puñetazo.",
+    "Tony cada ronda: mira 3, quédate una pieza de la armadura.",
+    "Pepper copia la última carta del descarte: úsala cuando ya hay Tecnologías gastadas."
+  ],
+  "mulligan": {
+    "keep": [
+      "Cualquier pieza de la armadura (Botas, Casco, Guanteletes, Mark V).",
+      "Helitransporte y Mansión: para salir del turno 1 con mano 1.",
+      "Pepper Potts o Torre Stark si ya tienes una mejora que jugar."
+    ],
+    "toss": [
+      "Rayo repulsor y Puñetazo supersónico: todavía no hay con qué pagarlos.",
+      "Máquina de Guerra: cuesta 4 y no monta el traje."
+    ]
+  }
+}

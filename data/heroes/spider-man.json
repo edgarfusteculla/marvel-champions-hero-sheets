@@ -6,76 +6,98 @@
   "difficulty": 1,
   "power": 3,
   "strengths": [
-    "Sentido arácnido: robas una carta cada vez que el villano te ataca. Es el mejor robo gratis del juego y premia quedarte en héroe.",
-    "Defensa 3, la mejor del Set Básico. Defender le sale barato y encima activa su robo.",
-    "Casi todo su set cuesta 0 o 1, así que monta su motor desde el primer turno.",
-    "Peter Parker recupera 3 y genera un recurso mental cada ronda: sus turnos de alter ego nunca son turnos perdidos."
+    "En héroe, robas una carta cada vez que el villano te ataca.",
+    "Defensa 3 y una carta de defensa muy buena: aguanta bien los ataques del villano.",
+    "Buena economía: el recurso de Peter Parker y la carta extra al recibir el ataque.",
+    "Recuperación muy alta gracias a Tía May.",
+    "Control del villano con Envuelto en telaraña y Sentido arácnido mejorado."
   ],
   "weaknesses": [
-    "Intervención 1: por sí solo casi no puede contener los planes, necesita que el aspecto se lo cubra.",
-    "Ataque 2 de base: sin Balanceo con patada su daño por turno es flojo.",
-    "Depende de tener Lanzarredes en mesa para pagar sus cartas más caras.",
-    "Su obligación le obliga a perder tiempo en forma de alter ego."
+    "Intervención 1: te cuesta mucho gestionar la amenaza.",
+    "Su carta de intervención es circunstancial y débil.",
+    "Ataque poco flexible: solo tiene 2 de atributo y un evento de 8, así que te cuesta limpiar esbirros."
   ],
-  "considerations": [],
   "aspects": {
-    "justice": { "solo": 5, "duo": 5, "grupo": 5 },
-    "protection": { "solo": 4, "duo": 4, "grupo": 4 },
+    "justice": { "solo": 5, "duo": 2, "grupo": 1 },
     "leadership": { "solo": 4, "duo": 4, "grupo": 4 },
-    "aggression": { "solo": 3, "duo": 3, "grupo": 3 }
+    "protection": { "solo": 2, "duo": 5, "grupo": 3 },
+    "aggression": { "solo": 1, "duo": 3, "grupo": 2 }
   },
   "cards": [
     {
-      "code": "01008",
+      "code": "01006",
       "priority": 5,
-      "note": "Cada copia son 3 recursos comodín. Ponla en mesa el turno 1."
-    },
-    {
-      "code": "01005",
-      "priority": 5,
-      "note": "8 de daño de golpe. Guárdala para el villano, no para esbirros."
+      "note": "Recuperación gratis al pasar a alter ego."
     },
     {
       "code": "01003",
+      "priority": 5,
+      "note": "Evita todo el daño de un ataque del villano."
+    },
+    {
+      "code": "01008",
       "priority": 4,
-      "note": "Anula todo el daño de un ataque, gratis. Y defender te hace robar."
+      "note": "Generador de recursos barato y flexible."
     },
     {
       "code": "01004",
       "priority": 4,
-      "note": "Cancela el «Al ser revelada» de una traición: tu seguro antidesastre."
+      "note": "Anula una carta de encuentro por coste 1."
     },
     {
-      "code": "01006",
-      "priority": 4,
-      "note": "Cura 4 sin gastar tu activación: con Recuperar 3 son 7 en un turno."
-    },
-    {
-      "code": "01007",
+      "code": "01005",
       "priority": 3,
-      "note": "En un esbirro: al derrotarlo quitas 3 de amenaza. Tu parche a Intervención 1."
-    },
-    {
-      "code": "01002",
-      "priority": 3,
-      "note": "Recupera cartas mentales del descarte. Útil, pero no urgente."
+      "note": "Ataque potente. A veces excesivo contra esbirros."
     },
     {
       "code": "01009",
       "priority": 2,
-      "note": "Cuesta 4 para anular un ataque y aturdir. Solo si te sobra de todo."
+      "note": "Control del villano: evita dos de sus ataques."
+    },
+    {
+      "code": "01002",
+      "priority": 2,
+      "note": "Aliado sin daño derivado al atacar."
+    },
+    {
+      "code": "01007",
+      "priority": 1,
+      "note": "Muy situacional y de poder bajo."
     }
   ],
-  "consejos": [],
+  "basics": [
+    {
+      "code": "29027",
+      "note": "Muy buen generador de recursos para Peter Parker."
+    },
+    {
+      "code": "01092",
+      "note": "Mejora de economía."
+    },
+    {
+      "code": "01091",
+      "note": "Robo extra de cartas."
+    }
+  ],
+  "consideraciones": [
+    "Gata Negra no tiene daño derivado: si ataca con ella, puede quedarse en mesa toda la partida.",
+    "Los recursos de Lanzarredes se gastan de uno en uno; después de usarlo, se agota hasta el siguiente turno.",
+    "Con la vida baja, al final del turno pasa a alter ego y recupera 4 con Tía May. Al inicio del siguiente, otros 4 antes de volver a héroe.",
+    "Voltereta hacia atrás y Sentido arácnido mejorado se juegan durante la fase del villano.",
+    "Inventiva solo se puede jugar en alter ego. Una vez en mesa, también se usa en héroe.",
+    "El Helitransporte puede abaratar una carta del compañero.",
+    "La Mansión de los Vengadores puede dar un robo a un compañero."
+  ],
   "mulligan": {
     "keep": [
-      "Lanzarredes: hace funcionar el resto de la mano.",
-      "Cualquier carta de coste 0 o 1, para jugar ya el turno 1.",
-      "Algo con lo que generar recursos de tu aspecto."
+      "Lanzarredes: economía flexible para los primeros turnos.",
+      "Tía May: asegura una recuperación excelente al ir a alter ego.",
+      "Gata Negra: aliado que te acompaña durante toda la partida.",
+      "Inventiva, Mansión de los Vengadores y Helitransporte: buenos generadores de recursos para arrancar la partida."
     ],
     "toss": [
-      "Envuelto en telaraña y todo lo de coste 4.",
-      "Manos con dos Balanceos y nada barato: no los pagarás."
+      "Voltereta hacia atrás: se juega en el turno del villano.",
+      "Sentido arácnido mejorado: se juega en el turno del villano."
     ]
   }
 }

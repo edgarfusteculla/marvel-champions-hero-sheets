@@ -1,0 +1,104 @@
+{
+  "slug": "hulka",
+  "hero_card_code": "01019a",
+  "display_name": "Hulka",
+  "alter_ego_name": "Jennifer Walters",
+  "difficulty": 2,
+  "power": 3,
+  "strengths": [
+    "Empieza con Ataque 3.",
+    "Tiene 15 de vida: aguanta mucho.",
+    "En alter ego, evita 1 de amenaza al entrar en un plan.",
+    "En alter ego recupera 5.",
+    "Al pasar a héroe, hace 2 de daño a un enemigo."
+  ],
+  "weaknesses": [
+    "Intervención 1: muy mala gestión de la amenaza.",
+    "En héroe, la mano es de 4 cartas."
+  ],
+  "aspects": {
+    "aggression": { "solo": 2, "duo": 4, "grupo": 4 },
+    "justice": { "solo": 5, "duo": 3, "grupo": 1 },
+    "leadership": { "solo": 4, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 1, "duo": 5, "grupo": 5 }
+  },
+  "cards": [
+    {
+      "code": "01024",
+      "priority": 5,
+      "note": "Tras un ataque básico, se prepara."
+    },
+    {
+      "code": "01028",
+      "priority": 5,
+      "note": "Potencia el ataque y aturde al enemigo."
+    },
+    {
+      "code": "01027",
+      "priority": 4,
+      "note": "Recibir un daño para robar una carta extra."
+    },
+    {
+      "code": "01021",
+      "priority": 4,
+      "note": "Daño igual a tus puntos de vida faltantes, hasta 15."
+    },
+    {
+      "code": "01025",
+      "priority": 3,
+      "note": "Permite cambiar de identidad y ciclar la mano."
+    },
+    {
+      "code": "01020",
+      "priority": 2,
+      "note": "Ayuda con la intervención y se puede reciclar."
+    },
+    {
+      "code": "01022",
+      "priority": 1,
+      "note": "1 de daño a cada enemigo."
+    },
+    {
+      "code": "01026",
+      "priority": 1,
+      "note": "En alter ego, gastas un recurso mental y quitas 2 de amenaza."
+    },
+    {
+      "code": "01023",
+      "priority": 1,
+      "note": "Carta de intervención poco poderosa."
+    }
+  ],
+  "basics": [
+    {
+      "code": "31023",
+      "note": "Para preparar al héroe."
+    },
+    {
+      "code": "01092",
+      "note": "Mejora de economía."
+    },
+    {
+      "code": "01091",
+      "note": "Robo extra de cartas."
+    }
+  ],
+  "consideraciones": [
+    "Tiene un colchón de vida muy alto: puedes aguantar en héroe sin defender.",
+    "Furia concentrada quita un punto de vida a cambio de una carta, cosa que interesa mucho a Hulka.",
+    "En alter ego tiene una recuperación muy alta.",
+    "Doble personalidad permite un cambio de identidad gratis en el turno.",
+    "Fuerza sobrehumana no se descarta si el objetivo ya está aturdido.",
+    "Al tener mano 4 en héroe, necesita cartas que mejoren la economía y el robo."
+  ],
+  "mulligan": {
+    "keep": [
+      "Furia concentrada: motor de robo desde el inicio.",
+      "Mansión de los Vengadores y Helitransporte: buenos generadores de recursos para arrancar la partida."
+    ],
+    "toss": [
+      "Apisonadora gamma: con la vida al máximo no inflige daño.",
+      "División de Derecho Superhumano y Proceso judicial: cartas poco poderosas que no ayudan al inicio."
+    ]
+  }
+}

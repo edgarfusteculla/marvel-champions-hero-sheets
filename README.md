@@ -4,9 +4,9 @@ Fichas de dos caras, en español y listas para imprimir en A4, pensadas para que
 nunca ha jugado a un LCG pueda elegir héroe y saber qué hacer con él desde la primera partida.
 
 - **Cara A — Presentación:** dificultad, potencia, afinidad con cada aspecto según el número de
-  jugadores, fortalezas, debilidades y consideraciones.
+  jugadores, fortalezas y debilidades.
 - **Cara B — Estrategia:** las mejores cartas de firma con imagen y prioridad, las
-  circunstanciales, consejos y mulligan.
+  circunstanciales, consideraciones y mulligan.
 
 Cada héroe se describe en un único archivo JSON. Los datos objetivos de las cartas (nombre en
 español, coste, tipo, texto, imagen y colores del héroe) se descargan de
@@ -48,10 +48,11 @@ descubre solo.
 | `sections` | Bloques de notas propias. Ver más abajo. |
 | `hide` | Apartados que no quieres en esta hoja. Ver más abajo. |
 | `variants` | Otras versiones de la misma hoja. Ver más abajo. |
-| `strengths`, `weaknesses`, `considerations` | Listas de frases, una caja cada una. |
-| `aspects` | Los cuatro aspectos, cada uno valorado de 1 a 5 en `solo`, `duo` y `grupo`. Se ordenan solos de mejor a peor. |
+| `strengths`, `weaknesses` | Listas de frases, una caja cada una. |
+| `aspects` | Los cuatro aspectos, cada uno valorado de 1 a 5 en `solo`, `duo` y `grupo`. El orden es siempre Agresividad, Justicia, Liderazgo y Protección. |
 | `cards` | Lista de `{code, priority, note}`. Las cuatro de mayor prioridad salen como «Mejores cartas»; el resto, como «Cartas circunstanciales». |
-| `consejos` | Lista de `{chain, text}`. |
+| `basics` | Cartas básicas ajenas al kit: `{code, note}`. |
+| `consideraciones` | Lista de frases (o de `{chain, text}`). |
 | `mulligan` | `{keep: [...], toss: [...]}`. |
 | `palette` | Opcional. Por defecto se usan los colores oficiales del héroe que da MarvelCDB. |
 
@@ -88,8 +89,8 @@ Si un apartado no aporta para el público de esa hoja, se quita y deja sitio par
 "hide": ["mulligan", "curva"]
 ```
 
-Se pueden ocultar `fortalezas`, `debilidades`, `consideraciones`, `aspectos`,
-`circunstanciales`, `consejos` y `mulligan`.
+Se pueden ocultar `fortalezas`, `debilidades`, `aspectos`, `basicas`,
+`circunstanciales`, `consideraciones` y `mulligan`.
 
 ### Dos versiones del mismo héroe
 

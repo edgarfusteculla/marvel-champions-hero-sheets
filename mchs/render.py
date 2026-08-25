@@ -108,13 +108,30 @@ def _merge_cards(editorial: list[dict[str, Any]], kit: dict[str, Card]) -> list[
                 "type_code": card["type_code"],
                 "type_label": TYPE_LABELS.get(card["type_code"], card.get("type_name", "")),
                 "cost": card.get("cost"),
-                "quantity": card.get("quantity", 1),
+                "quantity": entry.get("quantity", card.get("quantity", 1)),
                 "traits": card.get("traits") or "",
                 "text": format_card_text(card.get("text") or card.get("real_text")),
                 "image": image_url(card),
                 "priority": entry["priority"],
                 "note": entry.get("note", ""),
                 "mulligan": entry.get("mulligan"),
+            }
+        )
+    return merged
+
+
+def _external_cards(editorial: list[dict[str, Any]], client: MarvelCDB) -> list[dict[str, Any]]:
+    """Cartas que no son del set de firma (básicas u otras) y se piden a MarvelCDB una a una."""
+    merged = []
+    for entry in editorial:
+        card = client.card(entry["code"])
+        merged.append(
+            {
+                "code": card["code"],
+                "name": card["name"],
+                "type_label": TYPE_LABELS.get(card["type_code"], card.get("type_name", "")),
+                "image": image_url(card),
+                "note": entry.get("note", ""),
             }
         )
     return merged
@@ -133,17 +150,14 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
     obligations = [c for c in cards if c["type_code"] == "obligation"]
 
     ratings = hero_data["aspects"]
-    aspects = sorted(
-        (
-            {
-                "key": key,
-                "label": ASPECT_LABELS[key],
-                "ratings": [ratings[key][size] for size in TABLE_SIZES],
-            }
-            for key in ASPECTS
-        ),
-        key=lambda a: -sum(a["ratings"]),
-    )
+    aspects = [
+        {
+            "key": key,
+            "label": ASPECT_LABELS[key],
+            "ratings": [ratings[key][size] for size in TABLE_SIZES],
+        }
+        for key in ASPECTS
+    ]
 
     return {
         "hero": hero_data,
@@ -173,6 +187,7 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
         "sections_b": [s for s in hero_data.get("sections", []) if s["side"] == "b"],
         "key_cards": playable[:KEY_CARD_COUNT],
         "other_cards": playable[KEY_CARD_COUNT:],
+        "basic_cards": _external_cards(hero_data.get("basics", []), client),
         "obligations": obligations,
         "deck_size": sum(c["quantity"] for c in cards if c["type_code"] not in NON_DECK_TYPES),
         "pack_name": hero_card.get("pack_name", ""),

@@ -1,0 +1,36 @@
+---
+description: Tono editorial de las hojas de héroe (textos en español)
+alwaysApply: true
+---
+
+# Tono de las hojas
+
+Al escribir o reescribir textos de `data/heroes/*.json` (fortalezas, debilidades, notas de carta, consideraciones, mulligan), usa siempre este registro. No inventes criterio de juego: solo unifica la voz.
+
+## Registro
+
+- Frases cortas y completas (sujeto y verbo). Una idea por viñeta.
+- Tuteo al jugador cuando describes lo que hace en mesa (`robas`, `te cuesta`, `pasa a alter ego`).
+- El héroe y sus atributos en tercera persona (`tiene Intervención 1`, `recupera 5`).
+- Sin relleno (`excelente`, `imprescindible`, `clave`) salvo que Edgar lo haya dicho así.
+- Conserva su criterio y los números; no suavices ni endurezcas valoraciones.
+
+## Dónde encaja cada cosa
+
+- **Fortalezas / debilidades:** quién es el héroe. No expliques timing de cartas concretas (eso va en consideraciones).
+- **Notas de carta:** qué hace esa carta para este héroe, en una línea. Impersonal, sin `nosotros`.
+- **Consideraciones:** timing y trucos de *este* héroe. Lo que vale para cualquier mazo (Helitransporte, Mansión) no se copia en cada hoja.
+- **Mulligan:** `Carta: motivo.` El motivo cabe en una frase.
+
+## Ejemplo
+
+```
+❌ Atributo de ataque 3 de inicio
+✅ Empieza con Ataque 3.
+
+❌ Ataque que nos da robo
+✅ Ataque que da robo.
+
+❌ Tiene un colchón de vida muy alto, lo cual permite aguantar en heroe sin necesidad de defender.
+✅ Tiene un colchón de vida muy alto: puedes aguantar en héroe sin defender.
+```

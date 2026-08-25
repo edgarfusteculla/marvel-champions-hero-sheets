@@ -9,7 +9,7 @@ from typing import Any
 ASPECTS = ("aggression", "justice", "leadership", "protection")
 
 ASPECT_LABELS = {
-    "aggression": "Agresión",
+    "aggression": "Agresividad",
     "justice": "Justicia",
     "leadership": "Liderazgo",
     "protection": "Protección",
@@ -31,10 +31,10 @@ TONES = ("consejo", "aviso", "neutro")
 HIDEABLE = (
     "fortalezas",
     "debilidades",
-    "consideraciones",
     "aspectos",
     "circunstanciales",
-    "consejos",
+    "basicas",
+    "consideraciones",
     "mulligan",
 )
 
@@ -77,6 +77,10 @@ def _validate(data: dict[str, Any]) -> dict[str, Any]:
             raise HeroDataError(f"[{slug}] la carta '{code}' aparece dos veces en 'cards'.")
         seen.add(code)
         _check_rating(card.get("priority"), f"cards[{code}].priority", slug)
+
+    for index, card in enumerate(data.get("basics", [])):
+        if not card.get("code"):
+            raise HeroDataError(f"[{slug}] basics[{index}] necesita un 'code'.")
 
     unknown = set(data.get("hide", [])) - set(HIDEABLE)
     if unknown:

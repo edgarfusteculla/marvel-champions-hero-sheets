@@ -1,0 +1,99 @@
+{
+  "slug": "capitana-marvel",
+  "hero_card_code": "01010a",
+  "display_name": "Capitana Marvel",
+  "alter_ego_name": "Carol Danvers",
+  "difficulty": 2,
+  "power": 4,
+  "strengths": [
+    "Robas muchas cartas.",
+    "Buena economía gracias a sus recursos triples.",
+    "Sus cartas rinden más con recursos de energía.",
+    "Buena supervivencia: mucha vida, buena recuperación y su habilidad de curar."
+  ],
+  "weaknesses": [
+    "Mala gestión de la amenaza con sus cartas.",
+    "Defensa muy baja y no tiene cartas de defensa recurrentes."
+  ],
+  "aspects": {
+    "aggression": { "solo": 1, "duo": 3, "grupo": 2 },
+    "justice": { "solo": 4, "duo": 3, "grupo": 3 },
+    "leadership": { "solo": 5, "duo": 4, "grupo": 4 },
+    "protection": { "solo": 2, "duo": 2, "grupo": 2 }
+  },
+  "cards": [
+    {
+      "code": "01015",
+      "priority": 5,
+      "note": "Filtro de mano."
+    },
+    {
+      "code": "01014",
+      "priority": 5,
+      "note": "Recurso de energía triple."
+    },
+    {
+      "code": "01013",
+      "priority": 3,
+      "note": "Ataque que da robo."
+    },
+    {
+      "code": "01018",
+      "priority": 3,
+      "note": "Permite gastar recursos sobrantes."
+    },
+    {
+      "code": "01011",
+      "priority": 3,
+      "note": "Aliado que ayuda a la intervención y a ir a alter ego."
+    },
+    {
+      "code": "01017",
+      "priority": 2,
+      "note": "Da el rasgo Aéreo."
+    },
+    {
+      "code": "01016",
+      "priority": 2,
+      "note": "Sube la defensa en 1 (en 2 si Vuelo cósmico está en mesa)."
+    },
+    {
+      "code": "01012",
+      "priority": 1,
+      "note": "Intervención de poco poder."
+    }
+  ],
+  "basics": [
+    {
+      "code": "08023",
+      "note": "Recurso universal para las sinergias de energía."
+    },
+    {
+      "code": "01092",
+      "note": "Mejora de economía."
+    },
+    {
+      "code": "01091",
+      "note": "Robo extra de cartas."
+    }
+  ],
+  "consideraciones": [
+    "Tiene mucho valor ir a alter ego, de forma recurrente, si la amenaza no es un problema. Spider-Woman puede confundir al villano.",
+    "En alter ego, su acción roba una carta y la Base orbital de Alpha Flight da 2 cartas por 1.",
+    "Los recursos de energía que sobran al final del turno se pueden gastar para llenar Canalizar energía.",
+    "A Canalizar energía se le puede dar más de una carta por turno.",
+    "El recurso universal del Quintransporte vale para su acción de héroe, para Canalizar energía o para el requisito de Rayo fotónico."
+  ],
+  "mulligan": {
+    "keep": [
+      "Absorción de energía: recurso triple para montar mesa.",
+      "Base orbital de Alpha Flight: mucha consistencia desde el principio.",
+      "Quintransporte, Helitransporte y Mansión de los Vengadores: recursos y robo para abrir."
+    ],
+    "toss": [
+      "Vuelo cósmico: poco interesante en los primeros turnos.",
+      "Casco de la Capitana Marvel: flojo al principio si no tienes Vuelo cósmico.",
+      "Evitar una crisis: floja si aún no tienes Vuelo cósmico."
+    ]
+  }
+}

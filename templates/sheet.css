@@ -228,50 +228,53 @@ body {
   gap: 8mm;
 }
 
-.pros-cons {
+.item-list {
+  margin: 0;
+  padding: 0 0 0 4.5mm;
+}
+
+.item-list li {
+  font-size: 3.05mm;
+  line-height: 1.38;
+  margin-bottom: 1.1mm;
+}
+
+.item-list li:last-child {
+  margin-bottom: 0;
+}
+
+.split-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+}
+
+.split-lists .sub-title {
+  margin-bottom: 1.2mm;
+}
+
+.rec-basics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3mm;
-  align-items: start;
 }
 
-.pc-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.rec-basic {
+  display: flex;
+  gap: 2.4mm;
+  align-items: flex-start;
 }
 
-.pc-list li {
-  font-size: 3.05mm;
-  line-height: 1.38;
-  margin-bottom: 1.3mm;
-  padding-left: 5mm;
-  position: relative;
+.rec-basic img {
+  flex: 0 0 auto;
+  width: 16mm;
+  border-radius: 1mm;
+  border: .4mm solid var(--ink);
+  background: #ddd;
 }
 
-.pc-list li::before {
-  position: absolute;
-  left: 0;
-  top: -.2mm;
-  font-weight: 800;
-  font-size: 3.6mm;
-}
-
-.pc-list.pros li::before {
-  content: "✔";
-  color: #2f7d4f;
-}
-
-.pc-list.cons li::before {
-  content: "✘";
-  color: #b3242a;
-}
-
-.pc-list.consider li::before {
-  content: "●";
-  font-size: 2.6mm;
-  top: .2mm;
-  color: #6f6a5e;
+.rec-basic .sig-note {
+  margin-top: .8mm;
 }
 
 .aspect-grid {
@@ -422,61 +425,6 @@ body {
 .res-wild { background: #4b4b4b; }
 .res-per_hero { background: #7a7a7a; }
 .res-star { background: #b8941f; }
-
-.combos {
-  border: .7mm dashed var(--primary);
-  border-radius: 2mm;
-  background: #fff;
-  padding: 2.2mm 3.5mm 2.2mm;
-}
-
-.combo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.6mm 4mm;
-}
-
-.combo {
-  font-size: 2.85mm;
-  line-height: 1.32;
-}
-
-.combo .chain {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  color: var(--primary-ink);
-  font-size: 3.1mm;
-  text-transform: uppercase;
-  letter-spacing: .02em;
-}
-
-.mulligan {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 4mm;
-}
-
-.mulligan li {
-  font-size: 2.85mm;
-  line-height: 1.32;
-  margin-bottom: 1.1mm;
-  padding-left: 4.5mm;
-  position: relative;
-}
-
-.mulligan li::before {
-  content: attr(data-mark);
-  position: absolute;
-  left: 0;
-  font-weight: 800;
-}
-
-.mulligan li.keep::before { color: #2f7d4f; }
-.mulligan li.toss::before { color: #b3242a; }
 
 /* ---------------- Notas propias ---------------- */
 
