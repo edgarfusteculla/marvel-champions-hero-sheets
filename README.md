@@ -12,7 +12,7 @@ Cada héroe se describe en un único archivo JSON. Los datos objetivos de las ca
 español, coste, tipo, texto, imagen y colores del héroe) se descargan de
 [MarvelCDB](https://es.marvelcdb.com), así que en el JSON solo escribes lo que es criterio tuyo:
 valoraciones, prioridades, combos y consejos. En las cajas de texto, el generador pone en
-negrita los nombres de carta y en cursiva las mecánicas (`alter ego`, `daño derivado`, `héroe`);
+negrita los nombres de carta y en cursiva las mecánicas (`alter ego`, `héroe`, `daño`, `amenaza`, `villano`);
 en el JSON se escriben como texto plano.
 
 ## Puesta en marcha
