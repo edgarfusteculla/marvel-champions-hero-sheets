@@ -149,13 +149,13 @@ def _collect_card_names(
     basic_cards: list[dict[str, Any]],
 ) -> list[str]:
     names = [
-        hero_data.get("display_name"),
         hero_data.get("alter_ego_name"),
-        hero_card.get("name"),
         alter_ego.get("name"),
         *COMMON_CARD_NAMES,
     ]
     for card in kit.values():
+        if card.get("type_code") in NON_DECK_TYPES:
+            continue
         names.append(card.get("name"))
     for card in basic_cards:
         names.append(card.get("name"))
