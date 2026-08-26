@@ -3,101 +3,101 @@
   "hero_card_code": "01040a",
   "display_name": "Pantera Negra",
   "alter_ego_name": "T'Challa",
-  "difficulty": 3,
-  "power": 4,
+  "difficulty": 2,
+  "power": 3,
   "strengths": [
-    "Represalia 1: el villano se pega solo al atacarte.",
-    "T'Challa busca una mejora Pantera Negra cada ronda: el combo se monta solo.",
-    "¡Wakanda por siempre! dispara todas las mejoras a la vez; la última pega el doble.",
-    "Estadísticas equilibradas: 2/2/2 y 11 de vida."
+    "Empieza con Represalia 1.",
+    "Atributos básicos muy equilibrados.",
+    "Muy buena economía con recursos universales.",
+    "Con las 4 mejoras Pantera Negra en mesa, puede atacar, intervenir y defender en el mismo turno.",
+    "En alter ego, sus apoyos le hacen robar muchas cartas."
   ],
   "weaknesses": [
-    "Hasta que no están las cuatro mejoras, ¡Wakanda por siempre! rinde poco.",
-    "Las mejoras no hacen nada por sí solas: sin el evento, son cartón.",
-    "Hay que flipar a T'Challa para buscar piezas: pierdes turnos de héroe."
+    "Tiene un inicio lento: hasta que no tiene las mejoras Pantera Negra en mesa, rinde poco.",
+    "Las activaciones de las mejoras Pantera Negra son muy flexibles, pero no muy potentes.",
+    "No destaca en un atributo concreto: ni en ataque, ni en intervención, ni en defensa."
   ],
   "aspects": {
-    "aggression": { "solo": 3, "duo": 3, "grupo": 2 },
-    "justice": { "solo": 3, "duo": 3, "grupo": 3 },
-    "leadership": { "solo": 3, "duo": 4, "grupo": 4 },
-    "protection": { "solo": 4, "duo": 4, "grupo": 3 }
+    "aggression": { "solo": 3, "duo": 4, "grupo": 4 },
+    "justice": { "solo": 4, "duo": 3, "grupo": 2 },
+    "leadership": { "solo": 4, "duo": 4, "grupo": 4 },
+    "protection": { "solo": 3, "duo": 3, "grupo": 3 }
   },
   "cards": [
     {
       "code": "01043a",
       "priority": 5,
       "quantity": 5,
-      "note": "5 copias. Dispara todas las mejoras; deja para el final la que más te importe."
+      "note": "Activa todas las mejoras Pantera Negra a la vez. Rinde cuando hay varias en mesa."
     },
     {
       "code": "01047",
-      "priority": 5,
-      "note": "2 de daño, 4 si es el último paso. Suele cerrar la secuencia."
+      "priority": 4,
+      "note": "Mejora que hace daño a los enemigos."
     },
     {
       "code": "01048",
       "priority": 4,
-      "note": "1 de amenaza, 2 si es el último paso. Tu parche de intervención."
+      "note": "Mejora que quita amenaza."
     },
     {
       "code": "01049",
       "priority": 4,
-      "note": "Pasa daño tuyo al enemigo. Encaja con Represalia y Defensa 2."
+      "note": "Mejora que pasa el daño del héroe al enemigo."
     },
     {
       "code": "01046",
       "priority": 3,
-      "note": "Daño al villano y a los esbirros de un jugador."
-    },
-    {
-      "code": "01041",
-      "priority": 3,
-      "note": "Al entrar, busca una mejora. Acelera el montaje."
+      "note": "Mejora que hace daño en área al villano y a los esbirros."
     },
     {
       "code": "01044",
       "priority": 3,
-      "note": "3 recursos comodín. Paga las mejoras de 2."
+      "note": "Recurso doble universal: potencia su economía."
+    },
+    {
+      "code": "01041",
+      "priority": 3,
+      "note": "Aliado que busca mejoras y acelera el montaje."
     },
     {
       "code": "01045",
-      "priority": 2,
-      "note": "En T'Challa, roba 2. Para cuando ya buscas menos."
+      "priority": 3,
+      "note": "Roba extra al estar en alter ego."
     },
     {
       "code": "01042",
-      "priority": 1,
-      "note": "Recupera hasta 3 cartas del descarte. Tarde, no al abrir."
+      "priority": 2,
+      "note": "En alter ego, recupera cartas del descarte."
     }
   ],
   "basics": [
     {
       "code": "01092",
-      "note": "Recurso extra para bajar las cuatro mejoras."
+      "note": "Mejora de economía."
     },
     {
       "code": "01091",
-      "note": "Robo extra los turnos en T'Challa."
+      "note": "Robo extra de cartas."
     },
     {
-      "code": "01090",
-      "note": "Recurso de fuerza. Paga garras y daga."
+      "code": "01084",
+      "note": "Un buen aliado flexible."
     }
   ],
   "consideraciones": [
-    "El orden de ¡Wakanda por siempre! importa: lo que resuelves al final hace el doble.",
-    "T'Challa en preparación busca una mejora cada ronda: flipa pronto hasta tener las cuatro.",
-    "Shuri busca otra mejora al entrar: no la bajes si ya las tienes todas.",
-    "Vibránium paga cualquier mejora del kit."
+    "Al jugar ¡Wakanda por siempre!, elige el orden de las mejoras Pantera Negra según la situación.",
+    "Tiene recursos dobles en el kit: la economía es excelente.",
+    "Según el escenario, te interesa empezar con una mejora Pantera Negra u otra."
   ],
   "mulligan": {
     "keep": [
-      "Cualquier mejora Pantera Negra.",
-      "Vibránium: para pagarlas.",
-      "Shuri: busca la pieza que te falta."
+      "Cualquier mejora Pantera Negra: hay que ponerlas en mesa cuanto antes.",
+      "Vibránium: para jugar las mejoras.",
+      "Shuri: busca las mejoras Pantera Negra."
     ],
     "toss": [
-      "¡Wakanda por siempre! sin mejoras en mesa.",
+      "¡Wakanda por siempre!: sin mejoras en mesa no hace nada.",
       "Sabiduría ancestral: todavía no hay descarte que recuperar."
     ]
   }
