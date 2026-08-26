@@ -267,6 +267,15 @@ body {
   gap: 3mm;
 }
 
+.rec-basics-4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.2mm;
+}
+
+.rec-basics-4 .rec-basic img {
+  width: 14mm;
+}
+
 .rec-basic {
   display: flex;
   gap: 2.4mm;

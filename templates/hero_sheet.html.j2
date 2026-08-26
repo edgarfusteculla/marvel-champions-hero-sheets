@@ -113,7 +113,7 @@
     {% if 'basicas' not in hide and basic_cards %}
     <div class="panel">
       <div class="panel-title">Cartas básicas indispensables</div>
-      <div class="rec-basics">
+      <div class="rec-basics rec-basics-{{ basic_cards|length }}">
         {% for card in basic_cards %}
         <div class="rec-basic">
           {% if card.image %}<img src="{{ card.image }}" alt="{{ card.name }}">{% endif %}
