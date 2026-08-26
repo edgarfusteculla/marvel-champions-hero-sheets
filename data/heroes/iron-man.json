@@ -6,103 +6,100 @@
   "difficulty": 3,
   "power": 4,
   "strengths": [
-    "Cada mejora Tecnología sube el tamaño de mano: montado, roba más que nadie.",
-    "Tony mira 3 y se queda 1: filtra el mazo hacia las piezas de la armadura.",
-    "La armadura Mark V da +6 de vida: de 9 pasa a un tanque.",
-    "Con Aéreo, casco, guanteletes y puñetazo rinden el doble."
+    "Con las mejoras de la armadura en mesa, tiene unos turnos muy potentes.",
+    "Aporta tanto daño como intervención a la partida.",
+    "Tiene un alter ego muy bueno: si controlas la amenaza, ayuda mucho a montar mesa."
   ],
   "weaknesses": [
-    "Empieza con mano 1 y Defensa 1: los primeros turnos son frágiles.",
-    "Hasta que no está montado, Ataque 1 e Intervención 2 no dan guerra.",
-    "El kit es caro: sin Torre, Pepper o Helitransporte tarda en salir."
+    "En héroe tiene mano 1: debe bajar mejoras para aumentarla.",
+    "Tiene un inicio de partida difícil: debe aguantar los primeros turnos para estabilizar."
   ],
   "aspects": {
-    "aggression": { "solo": 3, "duo": 3, "grupo": 2 },
-    "justice": { "solo": 4, "duo": 3, "grupo": 2 },
-    "leadership": { "solo": 3, "duo": 4, "grupo": 4 },
-    "protection": { "solo": 2, "duo": 3, "grupo": 3 }
+    "aggression": { "solo": 2, "duo": 2, "grupo": 2 },
+    "justice": { "solo": 4, "duo": 3, "grupo": 3 },
+    "leadership": { "solo": 3, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 3, "duo": 5, "grupo": 5 }
   },
   "cards": [
     {
-      "code": "01036",
+      "code": "01035",
       "priority": 5,
-      "note": "+6 de vida. Prioridad uno al montar la armadura."
+      "note": "Prepara a Iron Man: más acciones cada turno."
     },
     {
       "code": "01037",
       "priority": 5,
-      "note": "Quita 1 de amenaza (todos los planes si eres Aéreo)."
-    },
-    {
-      "code": "01038",
-      "priority": 4,
-      "note": "Ataque barato cada turno. 2 de daño si eres Aéreo."
+      "note": "Mejora barata que ayuda a controlar la amenaza del plan."
     },
     {
       "code": "01039",
       "priority": 4,
-      "note": "+1 de vida y Aéreo si gastas un mental. Activa el resto del traje."
-    },
-    {
-      "code": "01035",
-      "priority": 3,
-      "note": "Prepara a Iron Man. Más acciones cuando ya está montado."
+      "note": "Mejora barata que da el rasgo Aéreo y mejora las otras acciones de la armadura."
     },
     {
       "code": "01033",
+      "priority": 4,
+      "note": "Copia el recurso del descarte: ayuda mucho a montar mesa."
+    },
+    {
+      "code": "01038",
       "priority": 3,
-      "note": "Copia los recursos del descarte. Economía cuando el traje ya salió."
+      "note": "Daño constante cada turno."
+    },
+    {
+      "code": "01036",
+      "priority": 3,
+      "note": "Un buen colchón de vida para aguantar en héroe."
     },
     {
       "code": "01031",
       "priority": 3,
-      "note": "1 de daño más 2 por cada energía que millees. Mejor con mano grande."
+      "note": "Puede hacer mucho daño por poco coste."
+    },
+    {
+      "code": "01032",
+      "priority": 3,
+      "note": "Un buen evento de ataque."
     },
     {
       "code": "01034",
       "priority": 2,
-      "note": "En Tony, recupera una Tecnología del descarte."
-    },
-    {
-      "code": "01032",
-      "priority": 2,
-      "note": "4 de daño, 8 si eres Aéreo. Para cerrar, no para abrir."
+      "note": "Situacional: puede ayudar al principio si sale en el mulligan."
     },
     {
       "code": "01030",
       "priority": 1,
-      "note": "Daño a todos los enemigos. Caro y situacional."
+      "note": "Aliado caro y poco potente."
     }
   ],
   "basics": [
     {
-      "code": "01092",
-      "note": "Recurso extra. Imprescindible para montar el traje a tiempo."
+      "code": "29027",
+      "note": "Muy buen generador de recursos para Tony Stark."
     },
     {
-      "code": "01091",
-      "note": "Robo extra. Compensa la mano de 1 del principio."
+      "code": "56019",
+      "note": "Aliado que ayuda a buscar mejoras."
     },
     {
-      "code": "01089",
-      "note": "Recurso de genio. Paga las Botas y filtra con Tony."
+      "code": "40057",
+      "note": "Aliado que se juega solo con la mecánica de descarte de Iron Man."
     }
   ],
   "consideraciones": [
-    "El plan es montar: Botas, Casco, Guanteletes y Armadura antes de pegar de verdad.",
-    "Aéreo (Botas + un mental) dispara casco, guanteletes y puñetazo.",
-    "Tony cada ronda: mira 3, quédate una pieza de la armadura.",
-    "Pepper copia la última carta del descarte: úsala cuando ya hay Tecnologías gastadas."
+    "El plan inicial es bajar mejoras baratas para aumentar el tamaño de mano en héroe.",
+    "Controla la carta de encima del descarte: deja recursos dobles para aprovechar Pepper Potts.",
+    "Inventiva da el recurso necesario para activar la acción de las Botas propulsoras."
   ],
   "mulligan": {
     "keep": [
-      "Cualquier pieza de la armadura (Botas, Casco, Guanteletes, Mark V).",
-      "Helitransporte y Mansión: para salir del turno 1 con mano 1.",
-      "Pepper Potts o Torre Stark si ya tienes una mejora que jugar."
+      "Cualquier pieza de la armadura: si son baratas, mejor.",
+      "Pepper Potts o Torre Stark: ayudan con la economía y a recuperar mejoras del descarte para montar mesa al inicio.",
+      "Inventiva: recurso muy útil para montar mesa."
     ],
     "toss": [
-      "Rayo repulsor y Puñetazo supersónico: todavía no hay con qué pagarlos.",
-      "Máquina de Guerra: cuesta 4 y no monta el traje."
+      "Rayo repulsor y Puñetazo supersónico: no montan mesa.",
+      "Máquina de Guerra: aliado caro y poco potente."
     ]
   }
 }
