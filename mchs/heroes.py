@@ -34,6 +34,7 @@ HIDEABLE = (
     "aspectos",
     "circunstanciales",
     "basicas",
+    "mazos",
     "consideraciones",
     "mulligan",
 )
@@ -82,6 +83,9 @@ def _validate(data: dict[str, Any]) -> dict[str, Any]:
         if not card.get("code"):
             raise HeroDataError(f"[{slug}] basics[{index}] necesita un 'code'.")
 
+    for index, entry in enumerate(data.get("mazos", [])):
+        parse_mazo_ref(entry, slug, index)
+
     unknown = set(data.get("hide", [])) - set(HIDEABLE)
     if unknown:
         raise HeroDataError(
@@ -106,6 +110,22 @@ def _validate(data: dict[str, Any]) -> dict[str, Any]:
             )
 
     return data
+
+
+def parse_mazo_ref(entry: Any, slug: str, index: int) -> dict[str, str]:
+    """Normaliza una entrada de 'mazos': slug suelto o {slug, note}."""
+    where = f"mazos[{index}]"
+    if isinstance(entry, str):
+        if not entry.strip():
+            raise HeroDataError(f"[{slug}] {where} está vacío.")
+        return {"slug": entry, "note": ""}
+    if isinstance(entry, dict):
+        if not entry.get("slug"):
+            raise HeroDataError(f"[{slug}] {where} necesita un 'slug'.")
+        return {"slug": entry["slug"], "note": entry.get("note") or ""}
+    raise HeroDataError(
+        f"[{slug}] {where} debe ser el slug del mazo o un objeto con 'slug'."
+    )
 
 
 def apply_variant(data: dict[str, Any], name: str) -> dict[str, Any]:

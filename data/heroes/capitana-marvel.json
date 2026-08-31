@@ -77,6 +77,10 @@
       "note": "Un buen aliado flexible."
     }
   ],
+  "mazos": [
+    "aliados-vengadores",
+    "logistica-shield"
+  ],
   "consideraciones": [
     "Tiene mucho valor ir a alter ego, de forma recurrente, si la amenaza no es un problema. Spider-Woman puede confundir al villano.",
     "En alter ego, su acción roba una carta y la Base orbital de Alpha Flight da 2 cartas por 1.",

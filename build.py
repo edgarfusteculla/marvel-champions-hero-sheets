@@ -11,6 +11,7 @@ Ejemplos:
 from __future__ import annotations
 
 import argparse
+import shutil
 import sys
 import webbrowser
 from pathlib import Path
@@ -23,6 +24,7 @@ from mchs.render import make_environment, render_hero
 
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "heroes"
+ART_DIR = ROOT / "data" / "art"
 TEMPLATES_DIR = ROOT / "templates"
 CACHE_DIR = ROOT / "cache"
 DIST_DIR = ROOT / "dist"
@@ -59,6 +61,12 @@ def main(argv: list[str] | None = None) -> int:
     client = MarvelCDB(CACHE_DIR, locale=args.locale, refresh=args.refresh)
     env = make_environment(TEMPLATES_DIR)
     DIST_DIR.mkdir(exist_ok=True)
+    cards_dir = DIST_DIR / "cards"
+    if ART_DIR.exists():
+        cards_dir.mkdir(exist_ok=True)
+        for art in ART_DIR.iterdir():
+            if art.is_file():
+                shutil.copy2(art, cards_dir / art.name)
     warnings = 0
 
     for hero in heroes:

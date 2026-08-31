@@ -83,6 +83,10 @@
       "note": "Robo extra de cartas."
     }
   ],
+  "mazos": [
+    "justicia-planificacion",
+    "proteccion-cambio-seguro"
+  ],
   "consideraciones": [
     "Tiene un colchón de vida muy alto: puedes aguantar en héroe sin defender.",
     "Furia concentrada quita un punto de vida a cambio de una carta, cosa que interesa mucho a Hulka.",

@@ -86,6 +86,10 @@
       "note": "Aliado que se juega solo con la mecánica de descarte de Iron Man."
     }
   ],
+  "mazos": [
+    "logistica-shield",
+    "tecnologias"
+  ],
   "consideraciones": [
     "El plan inicial es bajar mejoras baratas para aumentar el tamaño de mano en héroe.",
     "Controla la carta de encima del descarte: deja recursos dobles para aprovechar Pepper Potts.",

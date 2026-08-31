@@ -79,6 +79,10 @@
       "note": "Roba al pagarla con recursos mentales."
     }
   ],
+  "mazos": [
+    "justicia-planificacion",
+    "defensa-total"
+  ],
   "consideraciones": [
     "Gata Negra no tiene daño derivado: si ataca con ella, puede quedarse en mesa toda la partida.",
     "Los recursos de Lanzarredes se gastan de uno en uno; después de usarlo, se agota hasta el siguiente turno.",

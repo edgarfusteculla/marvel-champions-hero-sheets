@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -190,7 +191,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5mm;
+  gap: 4.2mm;
 }
 
 .meter-label {
@@ -217,6 +218,31 @@ body {
   gap: 1.6mm;
 }
 
+.shields {
+  display: flex;
+  gap: 1.5mm;
+  align-items: center;
+}
+
+.shield {
+  width: 8.8mm;
+  height: 8.8mm;
+  display: block;
+  flex: 0 0 8.8mm;
+  fill: #ded8ca;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.shield.on {
+  fill: var(--secondary);
+}
+
+.shield.on.power {
+  fill: var(--accent);
+}
+
 .dot {
   width: 7mm;
   height: 7mm;
@@ -233,10 +259,14 @@ body {
   background: var(--accent);
 }
 
+.dots.small {
+  gap: 1.1mm;
+}
+
 .dots.small .dot {
-  width: 2.8mm;
-  height: 2.8mm;
-  border-width: .35mm;
+  width: 3.8mm;
+  height: 3.8mm;
+  border-width: .4mm;
 }
 
 .meters {
@@ -316,10 +346,103 @@ body {
   margin-top: .8mm;
 }
 
+.rec-mazos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3mm;
+}
+
+.rec-mazos-1 {
+  grid-template-columns: 1fr;
+}
+
+.rec-mazos-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.rec-mazos-4 {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6mm;
+}
+
+.rec-mazos-4 .rec-mazo {
+  padding: 1.2mm 1.6mm;
+  gap: 1.8mm;
+}
+
+.rec-mazos-4 .rec-mazo-art {
+  flex-basis: 14mm;
+  width: 14mm;
+}
+
+.rec-mazos-4 .rec-mazo-title {
+  font-size: 3mm;
+}
+
+.rec-mazo {
+  display: flex;
+  gap: 2.6mm;
+  align-items: center;
+  background: #fff;
+  border: .6mm solid var(--ink);
+  border-left-width: 2.4mm;
+  border-radius: 1.6mm;
+  padding: 2mm 2.4mm;
+}
+
+.rec-mazo-aggression { border-left-color: #a5232a; }
+.rec-mazo-justice { border-left-color: #c8a01c; }
+.rec-mazo-leadership { border-left-color: #2b5fa8; }
+.rec-mazo-protection { border-left-color: #2c7a4d; }
+
+.rec-mazo-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  line-height: 1.12;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.rec-mazo-title .sig-note {
+  margin-top: 1.1mm;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.rec-mazo-art {
+  flex: 0 0 22mm;
+  width: 22mm;
+  aspect-ratio: 300 / 419;
+  overflow: hidden;
+  border-radius: 1mm;
+  border: .4mm solid var(--ink);
+  background: #ddd;
+}
+
+.rec-mazo-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Escaneo de MarvelCDB con margen blanco a la izquierda. */
+.rec-mazo-art img[src*="27016"] {
+  width: 108%;
+  max-width: none;
+  object-position: right top;
+}
+
 .aspect-grid {
   display: grid;
   grid-template-columns: auto repeat(3, 1fr);
-  gap: 1.8mm 3mm;
+  gap: 2.1mm 3mm;
   align-items: center;
 }
 
@@ -576,28 +699,48 @@ body {
         <div class="meters">
           <div>
             <div class="meter-label">Dificultad</div>
-            <div class="dots ">
-  <div class="dot on "></div>
-  <div class="dot on "></div>
-  <div class="dot on "></div>
-  <div class="dot  "></div>
-  <div class="dot  "></div>
+            <div class="shields ">
+  <svg class="shield on " viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
+  <svg class="shield on " viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
+  <svg class="shield on " viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
+  <svg class="shield  " viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
+  <svg class="shield  " viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
 </div>
           </div>
           <div>
             <div class="meter-label">Nivel de poder</div>
-            <div class="dots power">
-  <div class="dot on power"></div>
-  <div class="dot on power"></div>
-  <div class="dot on power"></div>
-  <div class="dot on power"></div>
-  <div class="dot  power"></div>
+            <div class="shields power">
+  <svg class="shield on power" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
+  <svg class="shield on power" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
+  <svg class="shield on power" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
+  <svg class="shield on power" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
+  <svg class="shield  power" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
 </div>
           </div>
         </div>
 
         <div>
-          <div class="sub-title">Aspectos</div>
+          <div class="meter-label">Aspectos</div>
           <div class="aspect-grid">
             <div></div>
 <div class="ag-head">Solo</div><div class="ag-head">2 jugadores</div><div class="ag-head">3-4 jugadores</div>            <div class="ag-name aspect-aggression">Agresividad</div>
@@ -727,6 +870,26 @@ body {
             <div class="sig-name">White Fox</div>
             <span class="type-tag">Aliado</span>
             <p class="sig-note"><i>Aliado</i> que se juega solo con la mecánica de <i>descarte</i> de Iron Man.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Mazos recomendados</div>
+      <div class="rec-mazos rec-mazos-2">
+        <div class="rec-mazo rec-mazo-justice">
+          <div class="rec-mazo-art">
+<img src="https://marvelcdb.com/bundles/cards/01064.png" alt="Equipo de vigilancia">          </div>
+          <div class="rec-mazo-title">
+            Logística de S.H.I.E.L.D.
+          </div>
+        </div>
+        <div class="rec-mazo rec-mazo-protection">
+          <div class="rec-mazo-art">
+<img src="https://marvelcdb.com/bundles/cards/31016.png" alt="Readaptación">          </div>
+          <div class="rec-mazo-title">
+            Armamento tecnológico
           </div>
         </div>
       </div>

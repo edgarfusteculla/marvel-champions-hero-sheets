@@ -11,6 +11,9 @@ from markupsafe import Markup, escape
 
 from .heroes import ASPECTS, ASPECT_LABELS, TABLE_LABELS, TABLE_SIZES
 from .marvelcdb import Card, MarvelCDB, image_url
+from .mazos import load_catalog, resolve_hero_mazos
+
+ART_DIR = Path(__file__).resolve().parent.parent / "data" / "art"
 
 # Tipos que no se juegan desde la mano y por tanto no cuentan en la curva de coste.
 NON_DECK_TYPES = {"hero", "alter_ego", "obligation"}
@@ -147,7 +150,9 @@ def _collect_card_names(
     alter_ego: dict[str, Any],
     kit: dict[str, Card],
     basic_cards: list[dict[str, Any]],
+    extra_cards: list[dict[str, Any]] | None = None,
 ) -> list[str]:
+    extra_cards = extra_cards or []
     names = [
         hero_data.get("alter_ego_name"),
         alter_ego.get("name"),
@@ -159,6 +164,9 @@ def _collect_card_names(
         names.append(card.get("name"))
     for card in basic_cards:
         names.append(card.get("name"))
+    for card in extra_cards:
+        names.append(card.get("name"))
+        names.append(card.get("face_name"))
     return [name for name in names if name]
 
 
@@ -294,6 +302,34 @@ def _external_cards(editorial: list[dict[str, Any]], client: MarvelCDB) -> list[
     return merged
 
 
+def _mazo_face_src(mazo: dict[str, Any], card: Card) -> str | None:
+    local = mazo.get("face_image")
+    if local:
+        path = ART_DIR / local
+        if path.exists():
+            return f"cards/{path.name}"
+    return image_url(card)
+
+
+def _mazo_cards(editorial: list[dict[str, Any]], client: MarvelCDB) -> list[dict[str, Any]]:
+    """Mazos de aspecto: nombre del catálogo y carta cara de MarvelCDB."""
+    merged = []
+    for mazo in editorial:
+        card = client.card(mazo["face_card"])
+        merged.append(
+            {
+                "slug": mazo["slug"],
+                "name": mazo["name"],
+                "aspect": mazo["aspect"],
+                "aspect_label": ASPECT_LABELS[mazo["aspect"]],
+                "face_name": card["name"],
+                "image": _mazo_face_src(mazo, card),
+                "note": mazo.get("note") or "",
+            }
+        )
+    return merged
+
+
 def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any]:
     hero_card, kit = client.hero_kit(hero_data["hero_card_code"])
 
@@ -303,9 +339,13 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
 
     cards = _merge_cards(hero_data.get("cards", []), kit)
     basic_cards = _external_cards(hero_data.get("basics", []), client)
-    names = _collect_card_names(hero_data, hero_card, alter_ego, kit, basic_cards)
+    mazos = _mazo_cards(resolve_hero_mazos(hero_data, load_catalog()), client)
+    names = _collect_card_names(
+        hero_data, hero_card, alter_ego, kit, basic_cards, extra_cards=mazos
+    )
     cards = _markup_notes(cards, names)
     basic_cards = _markup_notes(basic_cards, names)
+    mazos = _markup_notes(mazos, names)
     hero = _markup_hero_copy(hero_data, names)
 
     playable = [c for c in cards if c["type_code"] not in NON_DECK_TYPES]
@@ -351,6 +391,7 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
         "key_cards": playable[:KEY_CARD_COUNT],
         "other_cards": playable[KEY_CARD_COUNT:],
         "basic_cards": basic_cards,
+        "mazos": mazos,
         "obligations": obligations,
         "deck_size": sum(c["quantity"] for c in cards if c["type_code"] not in NON_DECK_TYPES),
         "pack_name": hero_card.get("pack_name", ""),

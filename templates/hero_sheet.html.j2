@@ -9,6 +9,16 @@
 {% endfor %}
 {%- endmacro %}
 
+{% macro shields(value, total=5, extra='') -%}
+<div class="shields {{ extra }}">
+  {% for i in range(1, total + 1) %}
+  <svg class="shield {% if i <= value %}on{% endif %} {{ extra }}" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </svg>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
 {% macro dots(value, total=5, extra='') -%}
 <div class="dots {{ extra }}">
   {% for i in range(1, total + 1) %}
@@ -66,17 +76,17 @@
         <div class="meters">
           <div>
             <div class="meter-label">Dificultad</div>
-            {{ dots(hero.difficulty) }}
+            {{ shields(hero.difficulty) }}
           </div>
           <div>
             <div class="meter-label">Nivel de poder</div>
-            {{ dots(hero.power, extra='power') }}
+            {{ shields(hero.power, extra='power') }}
           </div>
         </div>
 
         {% if 'aspectos' not in hide %}
         <div>
-          <div class="sub-title">Aspectos</div>
+          <div class="meter-label">Aspectos</div>
           <div class="aspect-grid">
             <div></div>
             {% for label in table_headers %}<div class="ag-head">{{ label }}</div>{% endfor %}
@@ -121,6 +131,25 @@
             <div class="sig-name">{{ card.name }}</div>
             <span class="type-tag">{{ card.type_label }}</span>
             <p class="sig-note">{{ card.note }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if 'mazos' not in hide and mazos %}
+    <div class="panel">
+      <div class="panel-title">Mazos recomendados</div>
+      <div class="rec-mazos rec-mazos-{{ mazos|length }}">
+        {% for mazo in mazos %}
+        <div class="rec-mazo rec-mazo-{{ mazo.aspect }}">
+          <div class="rec-mazo-art">
+            {% if mazo.image %}<img src="{{ mazo.image }}" alt="{{ mazo.face_name }}">{% endif %}
+          </div>
+          <div class="rec-mazo-title">
+            {{ mazo.name }}
+            {% if mazo.note %}<p class="sig-note">{{ mazo.note }}</p>{% endif %}
           </div>
         </div>
         {% endfor %}

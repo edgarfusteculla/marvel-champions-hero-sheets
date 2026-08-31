@@ -168,7 +168,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5mm;
+  gap: 4.2mm;
 }
 
 .meter-label {
@@ -195,6 +195,31 @@ body {
   gap: 1.6mm;
 }
 
+.shields {
+  display: flex;
+  gap: 1.5mm;
+  align-items: center;
+}
+
+.shield {
+  width: 8.8mm;
+  height: 8.8mm;
+  display: block;
+  flex: 0 0 8.8mm;
+  fill: #ded8ca;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.shield.on {
+  fill: var(--secondary);
+}
+
+.shield.on.power {
+  fill: var(--accent);
+}
+
 .dot {
   width: 7mm;
   height: 7mm;
@@ -211,10 +236,14 @@ body {
   background: var(--accent);
 }
 
+.dots.small {
+  gap: 1.1mm;
+}
+
 .dots.small .dot {
-  width: 2.8mm;
-  height: 2.8mm;
-  border-width: .35mm;
+  width: 3.8mm;
+  height: 3.8mm;
+  border-width: .4mm;
 }
 
 .meters {
@@ -294,10 +323,96 @@ body {
   margin-top: .8mm;
 }
 
+.rec-mazos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3mm;
+}
+
+.rec-mazos-1 {
+  grid-template-columns: 1fr;
+}
+
+.rec-mazos-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.rec-mazos-4 {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6mm;
+}
+
+.rec-mazos-4 .rec-mazo {
+  padding: 1.2mm 1.6mm;
+  gap: 1.8mm;
+}
+
+.rec-mazos-4 .rec-mazo-art {
+  flex-basis: 14mm;
+  width: 14mm;
+}
+
+.rec-mazos-4 .rec-mazo-title {
+  font-size: 3mm;
+}
+
+.rec-mazo {
+  display: flex;
+  gap: 2.6mm;
+  align-items: center;
+  background: #fff;
+  border: .6mm solid var(--ink);
+  border-left-width: 2.4mm;
+  border-radius: 1.6mm;
+  padding: 2mm 2.4mm;
+}
+
+.rec-mazo-aggression { border-left-color: #a5232a; }
+.rec-mazo-justice { border-left-color: #c8a01c; }
+.rec-mazo-leadership { border-left-color: #2b5fa8; }
+.rec-mazo-protection { border-left-color: #2c7a4d; }
+
+.rec-mazo-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  line-height: 1.12;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.rec-mazo-title .sig-note {
+  margin-top: 1.1mm;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.rec-mazo-art {
+  flex: 0 0 22mm;
+  width: 22mm;
+  aspect-ratio: 300 / 419;
+  overflow: hidden;
+  border-radius: 1mm;
+  border: .4mm solid var(--ink);
+  background: #ddd;
+}
+
+.rec-mazo-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .aspect-grid {
   display: grid;
   grid-template-columns: auto repeat(3, 1fr);
-  gap: 1.8mm 3mm;
+  gap: 2.1mm 3mm;
   align-items: center;
 }
 
