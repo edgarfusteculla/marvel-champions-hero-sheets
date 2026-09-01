@@ -101,7 +101,7 @@ body {
   padding: 3.6mm 9mm 2mm;
   display: flex;
   flex-direction: column;
-  gap: 2.8mm;
+  gap: 2.4mm;
   position: relative;
   z-index: 1;
 }
@@ -124,7 +124,7 @@ body {
   background: var(--paper-light);
   border: .7mm solid var(--ink);
   border-radius: 2mm;
-  padding: 0 3.4mm 2.8mm;
+  padding: 0 3.4mm 2.4mm;
   position: relative;
 }
 .panel-title {
@@ -399,7 +399,7 @@ body {
 .type-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 3mm;
+  gap: 2.4mm;
 }
 .type-card { text-align: center; }
 .type-card img {
@@ -648,7 +648,7 @@ body {
   <div class="body">
 
     <div class="panel">
-      <div class="panel-title">Carta de héroe con 2 caras</div>
+      <div class="panel-title">Carta de héroe</div>
       <p class="lead">Tu personaje es una sola carta con dos caras: <i>alter ego</i> y <i>héroe</i>. Solo una está boca arriba. Los atributos que puedes usar cambian según la cara.</p>
       <div class="fig-row">
         <div class="card-fig">
@@ -784,7 +784,7 @@ body {
   <div class="body">
 
     <div class="panel">
-      <div class="panel-title">Jugar una carta cuesta recursos</div>
+      <div class="panel-title">Jugar una carta</div>
       <div class="fig-row">
         <div class="card-fig">
           <div class="card-hold" style="width:44mm">
@@ -815,7 +815,7 @@ body {
     </div>
 
     <div class="panel">
-      <div class="panel-title">Los cinco tipos de carta</div>
+      <div class="panel-title">Tipos de carta de jugador</div>
       <div class="type-grid">
         <div class="type-card">
           <img src="https://marvelcdb.com/bundles/cards/01008.png" alt="Lanzarredes, mejora">
@@ -846,7 +846,7 @@ body {
     </div>
 
     <div class="panel">
-      <div class="panel-title">El aliado y su daño derivado</div>
+      <div class="panel-title">Aliados</div>
       <div class="fig-row">
         <div class="card-fig both">
           <div class="card-hold" style="width:43mm">
@@ -875,6 +875,7 @@ body {
           </li>
         </ol>
       </div>
+      <p class="lead" style="margin-top:.8mm;margin-bottom:0"><b>Límite.</b> Cada héroe puede tener como máximo 3 aliados en juego.</p>
     </div>
 
   </div>
@@ -897,7 +898,39 @@ body {
     <p class="lead">Cuando todos los héroes han jugado su turno, por orden, empieza la fase del <i>villano</i>. Son tres pasos, siempre iguales.</p>
 
     <div class="panel">
-      <div class="panel-title">Los tres pasos</div>
+      <div class="panel-title">Carta del villano</div>
+      <div class="fig-row">
+        <div class="card-fig both">
+          <div class="card-hold">
+            <img src="https://marvelcdb.com/bundles/cards/01094.png" alt="Rino, carta de villano">
+            <span class="pin l" style="top:22%">1</span>
+            <span class="pin l" style="top:35%">2</span>
+            <span class="pin r" style="top:95%">3</span>
+          </div>
+          <div class="fig-cap">Villano<span>Rino, etapa I</span></div>
+        </div>
+        <ol class="legend">
+          <li>
+            <span class="num">1</span>
+            <span class="abbr int">PLA</span>
+            <span class="txt"><b>Plan.</b> La amenaza que pone en el <i>plan principal</i> cuando planifica contra un héroe en <i>alter ego</i>.</span>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <span class="abbr atq">ATQ</span>
+            <span class="txt"><b>Ataque.</b> El <i>daño</i> que hace cuando ataca a un héroe. A esto se le suman los iconos de la carta de aumento.</span>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <span class="abbr neutro">&#9679;</span>
+            <span class="txt"><b>Puntos de vida.</b> Cuando llegan a 0 pasa a la etapa siguiente. En modo normal hay que derrotar las etapas I y II para ganar.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Fase del villano</div>
 
       <div class="step">
         <span class="step-num">1</span>
@@ -973,38 +1006,6 @@ body {
       </div>
     </div>
 
-    <div class="panel">
-      <div class="panel-title">La carta del villano</div>
-      <div class="fig-row">
-        <div class="card-fig both">
-          <div class="card-hold">
-            <img src="https://marvelcdb.com/bundles/cards/01094.png" alt="Rino, carta de villano">
-            <span class="pin l" style="top:22%">1</span>
-            <span class="pin l" style="top:35%">2</span>
-            <span class="pin r" style="top:95%">3</span>
-          </div>
-          <div class="fig-cap">Villano<span>Rino, etapa I</span></div>
-        </div>
-        <ol class="legend">
-          <li>
-            <span class="num">1</span>
-            <span class="abbr int">PLA</span>
-            <span class="txt"><b>Plan.</b> La amenaza que pone en el <i>plan principal</i> cuando planifica contra un héroe en <i>alter ego</i>.</span>
-          </li>
-          <li>
-            <span class="num">2</span>
-            <span class="abbr atq">ATQ</span>
-            <span class="txt"><b>Ataque.</b> El <i>daño</i> que hace cuando ataca a un héroe. A esto se le suman los iconos de la carta de aumento.</span>
-          </li>
-          <li>
-            <span class="num">3</span>
-            <span class="abbr neutro">&#9679;</span>
-            <span class="txt"><b>Puntos de vida.</b> Cuando llegan a 0 pasa a la etapa siguiente. En modo normal hay que derrotar las etapas I y II para ganar.</span>
-          </li>
-        </ol>
-      </div>
-    </div>
-
   </div>
   <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel</footer>
 </section>
@@ -1023,7 +1024,7 @@ body {
   <div class="body">
 
     <div class="panel">
-      <div class="panel-title">Cartas de encuentro</div>
+      <div class="panel-title">Tipos de cartas de encuentro</div>
       <p class="lead">En el paso 3 de la fase del villano se reparte una a cada jugador. Se muestran y se resuelven de una en una, por orden.</p>
       <div class="type-grid">
         <div class="type-card">
@@ -1099,7 +1100,6 @@ body {
       <div class="panel-title">Otras reglas</div>
       <div class="rules">
         <p><b>Mazo de encuentros.</b> Si se acaba, se baraja el descarte y se pone una ficha de aceleración en el plan principal.</p>
-        <p><b>Límite de aliados.</b> Cada héroe puede tener como máximo 3 aliados en juego.</p>
         <p><b>Tu mazo.</b> Si se acaba, recibes una carta de encuentro extra y barajas tu descarte para formar el mazo otra vez.</p>
         <p><b>De qué va el mazo.</b> Cartas de héroe, cartas básicas y las de un aspecto concreto (Agresividad, Justicia, Liderazgo o Protección).</p>
       </div>
