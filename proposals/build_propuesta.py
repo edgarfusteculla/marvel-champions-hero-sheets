@@ -1,6 +1,6 @@
 """Genera una hoja de propuesta, sin tocar la plantilla oficial.
 
-    python propuestas/build_propuesta.py
+    python proposals/build_propuesta.py
 """
 
 from __future__ import annotations
@@ -70,7 +70,7 @@ def enrich(entry: dict, client: MarvelCDB) -> dict:
 
 def main() -> int:
     client = MarvelCDB(ROOT / "cache", locale="es")
-    env = make_environment(ROOT / "propuestas")
+    env = make_environment(ROOT / "proposals")
     env.loader.searchpath.append(str(ROOT / "templates"))
 
     hero = load_hero(ROOT / "data" / "heroes" / "spider-man.json")

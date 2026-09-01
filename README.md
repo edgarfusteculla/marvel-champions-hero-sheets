@@ -19,7 +19,7 @@ en el JSON se escriben como texto plano.
 
 ```bash
 pip install -r requirements.txt
-python build.py                     # genera todas las hojas en dist/
+python build.py                     # genera todas las hojas en dist/ (mesa de trabajo)
 python build.py spider-man --open   # genera una y la abre en el navegador
 python build.py --pdf               # genera además el PDF (necesita Edge o Chrome)
 python build.py --refresh           # vuelve a descargar los datos de MarvelCDB
@@ -108,7 +108,8 @@ resto se hereda:
 }
 ```
 
-Cada variante genera su propio archivo: `dist/spider-man-avanzado.html`. Ojo, una clave declarada
+Cada variante genera su propio archivo: `dist/spider-man-avanzado.html`. Cuando la hoja está cerrada,
+HTML y PDF se copian a `finals/`. Ojo, una clave declarada
 en la variante **sustituye entera** a la de la hoja base, no se fusionan elemento a elemento.
 
 ### Cuidado con el espacio
@@ -138,8 +139,12 @@ templates/hero_sheet.html.j2 Maquetación de las dos caras
 templates/sheet.css          Estilos (en milímetros, pensados para impresión)
 data/heroes/*.json           Un archivo por héroe
 notas/*.md                   Apuntes en bruto, no se imprimen
-examples/                    HTML de ejemplo de las hojas ya cerradas
-tools/inspect.py             Mide el espacio libre de cada cara y saca un PNG
+dist/                        Mesa de trabajo: HTML y PDF que se están preparando
+finals/html/                 Hojas ya cerradas (HTML)
+finals/pdf/                  Hojas ya cerradas (PDF, para imprimir)
+proposals/                   Pruebas de diseño que no son la plantilla oficial
+versions/                    Historial visual de las hojas
+tools/inspect.py             Mide el espacio libre de cada cara
 ```
 
 Para ver cuánto sitio queda en una hoja antes de añadir nada:
