@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Opciones de medidores — Dificultad y Nivel de poder</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0;
+  padding: 8mm 0;
+  background: #4a4a4a;
+  font-family: Inter, "Segoe UI", sans-serif;
+  color: #141414;
+}
+.sheet {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 8mm;
+  background: #f4efe4;
+  padding: 8mm 9mm 7mm;
+  box-shadow: 0 4mm 10mm rgba(0,0,0,.45);
+}
+h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 8mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 0 1.5mm;
+}
+.lead {
+  font-size: 3.2mm;
+  line-height: 1.4;
+  margin: 0 0 5mm;
+  max-width: 192mm;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+}
+.card {
+  background: #fbf8f1;
+  border: .45mm solid #141414;
+  border-radius: 2mm;
+  padding: 3.2mm 3.6mm 3.6mm;
+}
+.card h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 3.6mm;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 0 0 2.4mm;
+}
+.card p.note {
+  font-size: 2.6mm;
+  line-height: 1.35;
+  margin: 2.4mm 0 0;
+  opacity: .78;
+}
+.meters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+}
+.meter-label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 3.3mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 1.4mm;
+}
+.pips { display: flex; gap: 1.4mm; align-items: center; }
+.pip {
+  width: 7mm;
+  height: 7mm;
+  display: block;
+  flex: 0 0 7mm;
+  overflow: visible;
+  fill: #ded8ca;
+  stroke: #141414;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.pip.on { fill: #1f2f6b; }
+.pip.on.power { fill: #f2b705; }
+/* Bola actual */
+.pip.bola {
+  border-radius: 50%;
+  border: .6mm solid #141414;
+  background: #ded8ca;
+  width: 7mm;
+  height: 7mm;
+}
+.pip.bola.on { background: #1f2f6b; }
+.pip.bola.on.power { background: #f2b705; }
+.aspects {
+  display: flex;
+  gap: 3mm;
+  margin-top: 2.6mm;
+  align-items: center;
+}
+.aspects span {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2.5mm;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  opacity: .65;
+  margin-right: .4mm;
+}
+.mini {
+  width: 2.8mm;
+  height: 2.8mm;
+  border-radius: 50%;
+  border: .35mm solid #141414;
+  background: #ded8ca;
+}
+.mini.on.agg { background: #a5232a; }
+.mini.on.jus { background: #c8a01c; }
+.mini.on.lid { background: #2b5fa8; }
+.mini.on.pro { background: #2c7a4d; }
+.legend {
+  display: flex;
+  gap: 1.2mm;
+  align-items: center;
+}
+.card.wide { grid-column: 1 / -1; }
+.pips.big .pip, .pips.big svg.pip {
+  width: 9mm;
+  height: 9mm;
+  flex-basis: 9mm;
+}
+.pips.big { gap: 2mm; }
+</style>
+</head>
+<body>
+<svg class="defs" aria-hidden="true">
+  <symbol id="rayo" viewBox="0 0 24 24">
+    <polygon points="13,2 5,13.5 11.2,13.5 9,22 19.5,10.2 13.2,10.2"/>
+  </symbol>
+  <symbol id="exclamacion" viewBox="0 0 24 24">
+    <path d="M12 3.2c1.15 0 1.9.95 1.72 2.15L12.4 14.2h-2.8L9.28 5.35C9.1 4.15 9.85 3.2 12 3.2z"/>
+    <circle cx="12" cy="19.2" r="2.15"/>
+  </symbol>
+  <symbol id="estrella" viewBox="0 0 24 24">
+    <polygon points="12,2.2 14.7,9.1 22,9.4 16.4,14.2 18.3,21.5 12,17.4 5.7,21.5 7.6,14.2 2,9.4 9.3,9.1"/>
+  </symbol>
+  <symbol id="escudo" viewBox="0 0 24 24">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </symbol>
+  <symbol id="puno" viewBox="0 0 24 24">
+    <path d="M8.2 10.6V6.8a1.5 1.5 0 0 1 3 0v2.6m1.1.1V5.7a1.5 1.5 0 0 1 3 0v5.1m1.1-.9V6.4a1.5 1.5 0 0 1 3 0v5.8m1.6.6c.9 0 1.7.8 1.6 1.7l-.5 4.1A2.7 2.7 0 0 1 18.3 21H8.1A3.2 3.2 0 0 1 5 17.7l-.2-3.3A1.9 1.9 0 0 1 6.7 12.4h1.5"/>
+  </symbol>
+  <symbol id="diamante" viewBox="0 0 24 24">
+    <polygon points="12,2.4 21.4,12 12,21.6 2.6,12"/>
+  </symbol>
+  <symbol id="gema" viewBox="0 0 24 24">
+    <polygon points="12,1.8 20.6,6.6 20.6,17.4 12,22.2 3.4,17.4 3.4,6.6"/>
+    <path fill="none" d="M12 1.8v20.4M3.4 6.6l16.2 10.8M20.6 6.6L4.4 17.4"/>
+  </symbol>
+  <symbol id="reactor" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9.2"/>
+    <circle cx="12" cy="12" r="5.4" fill="none"/>
+    <circle cx="12" cy="12" r="2.1"/>
+  </symbol>
+</svg>
+
+<section class="sheet">
+  <h1>Opciones de medidores</h1>
+  <p class="lead">
+    Misma escala (dificultad 3, poder 4) y las bolas de aspecto al lado, para ver cuál se confunde menos.
+    Dificultad en azul, nivel de poder en amarillo. Abajo, un par mezclado por si quieres un icono distinto en cada medidor.
+  </p>
+
+  <div class="grid">
+
+    <article class="card">
+      <h2>A · Bolas (actual)</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips">
+            <span class="pip bola on"></span><span class="pip bola on"></span><span class="pip bola on"></span>
+            <span class="pip bola"></span><span class="pip bola"></span>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips">
+            <span class="pip bola on power"></span><span class="pip bola on power"></span><span class="pip bola on power"></span>
+            <span class="pip bola on power"></span><span class="pip bola"></span>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Control. Misma figura que los aspectos.</p>
+    </article>
+
+    <article class="card">
+      <h2>B · Rayo</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Muy legible a 7 mm. Encaja con “poder”; un poco agresivo para dificultad.</p>
+    </article>
+
+    <article class="card">
+      <h2>C · Exclamación</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Clara para dificultad. En poder suena más a aviso que a potencia.</p>
+    </article>
+
+    <article class="card">
+      <h2>D · Puño</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#puno"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#puno"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Temático, pero a 7 mm se ensucia al imprimir. Mejor para poder que para dificultad.</p>
+    </article>
+
+    <article class="card">
+      <h2>E · Estrella</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#estrella"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#estrella"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#estrella"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#estrella"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#estrella"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#estrella"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#estrella"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#estrella"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#estrella"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#estrella"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Se cuenta bien. Un poco “puntuación / reseña”, no tanto comic.</p>
+    </article>
+
+    <article class="card">
+      <h2>F · Escudo</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Sólido y de cómic. Puede leerse como defensa / protección.</p>
+    </article>
+
+    <article class="card">
+      <h2>G · Mix: ! dificultad + rayo poder</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#rayo"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Cada medidor dice lo suyo. Un poco más de ruido visual en la cabecera.</p>
+    </article>
+
+    <article class="card">
+      <h2>H · Mix: ! dificultad + puño poder</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#exclamacion"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#puno"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#puno"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">La idea de “aviso vs golpe”. El puño sigue siendo el más frágil en impresión.</p>
+    </article>
+
+    <article class="card">
+      <h2>I · Gema del infinito</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#gema"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#gema"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Lectura Marvel clara. El hexágono no se parece a las bolas de aspecto.</p>
+    </article>
+
+    <article class="card">
+      <h2>J · Reactor (otra Marvel)</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#reactor"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#reactor"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#reactor"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#reactor"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#reactor"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#reactor"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#reactor"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#reactor"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#reactor"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#reactor"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Muy Iron Man. A 7 mm los anillos se pueden perder, y sigue siendo redondo.</p>
+    </article>
+
+  </div>
+</section>
+
+<section class="sheet">
+  <h1>Escudo vs gema</h1>
+  <p class="lead">
+    Las dos opciones Marvel que mejor encajan con la hoja. Mismo tamaño grande (9 mm) y las bolas de aspecto debajo.
+    Otras Marvel posibles: el reactor (arriba) se parece demasiado a una bola; un martillo o una telaraña atan el icono a un héroe.
+  </p>
+
+  <div class="grid">
+    <article class="card">
+      <h2>Escudo</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips big">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips big">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#escudo"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Silueta nítida, se cuenta fácil, pega con cómic. El riesgo: alguien lo lee como “protección” o Cap.</p>
+    </article>
+
+    <article class="card">
+      <h2>Gema del infinito</h2>
+      <div class="meters">
+        <div>
+          <div class="meter-label">Dificultad</div>
+          <div class="pips big">
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip on" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#gema"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="meter-label">Nivel de poder</div>
+          <div class="pips big">
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip on power" viewBox="0 0 24 24"><use href="#gema"/></svg>
+            <svg class="pip" viewBox="0 0 24 24"><use href="#gema"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="aspects">
+        <span>Aspectos</span>
+        <div class="legend"><i class="mini on agg"></i><i class="mini on agg"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on jus"></i><i class="mini on jus"></i><i class="mini on jus"></i></div>
+        <div class="legend"><i class="mini on lid"></i><i class="mini"></i><i class="mini"></i></div>
+        <div class="legend"><i class="mini on pro"></i><i class="mini on pro"></i><i class="mini"></i></div>
+      </div>
+      <p class="note">Más “poder cósmico” que defensa. El hexágono no choca con las bolas. Las facetas se ven; a 7 mm igual hay que simplificarlas.</p>
+    </article>
+  </div>
+</section>
+</body>
+</html>

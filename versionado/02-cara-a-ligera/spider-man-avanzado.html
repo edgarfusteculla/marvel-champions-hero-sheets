@@ -1,0 +1,1082 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Spider-Man — Hoja de héroe · Marvel Champions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #982828;
+  --secondary: #2b3681;
+  --on-primary: #ffffff;
+  --on-secondary: #ffffff;
+  --primary-ink: color-mix(in srgb, #982828 72%, #000);
+  --ink: #141414;
+  --paper: #f4efe4;
+  --paper-light: #fbf8f1;
+  --accent: #f2b705;
+}
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  padding: 8mm 0;
+  background: #4a4a4a;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: var(--ink);
+}
+
+.sheet {
+  width: 210mm;
+  /* Con min-height, si el contenido no cabe se va a otra página impresa en vez de recortarse
+     en silencio: así el aviso de páginas del generador lo detecta. */
+  min-height: 297mm;
+  margin: 0 auto 8mm;
+  background: var(--paper);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4mm 10mm rgba(0, 0, 0, .45);
+}
+
+.halftone {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--ink) .35mm, transparent .45mm);
+  background-size: 2.6mm 2.6mm;
+  opacity: .045;
+  pointer-events: none;
+}
+
+/* ---------------- Cabecera ---------------- */
+
+.header {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 5mm 9mm 4.5mm;
+  background: linear-gradient(115deg, var(--primary) 0%, var(--secondary) 130%);
+  color: var(--on-primary);
+  border-bottom: 1.4mm solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6mm;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(48deg, rgba(0, 0, 0, .14) 0 .6mm, transparent .6mm 7mm);
+  pointer-events: none;
+}
+
+.header > * {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: .18em;
+  font-size: 2.9mm;
+  text-transform: uppercase;
+  opacity: .92;
+}
+
+.hero-name {
+  font-family: 'Bangers', cursive;
+  font-size: 16mm;
+  line-height: .95;
+  letter-spacing: .02em;
+  text-shadow: .7mm .7mm 0 var(--ink);
+  margin: .6mm 0 .8mm;
+}
+
+.sheet-b .hero-name {
+  font-size: 11mm;
+}
+
+.alter-ego-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 5mm;
+  font-weight: 600;
+  font-style: italic;
+  opacity: .95;
+}
+
+/* En fila, para que la etiqueta de nivel no haga crecer la cabecera. */
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+}
+
+.level-tag {
+  background: var(--accent);
+  color: #111;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3mm;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1mm 2mm;
+  border-radius: 1.2mm;
+  border: .4mm solid var(--ink);
+  white-space: nowrap;
+}
+
+.face-tag {
+  background: var(--ink);
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  letter-spacing: .1em;
+  line-height: 1.25;
+  padding: 2mm 3.5mm;
+  border-radius: 1.5mm;
+  border: .5mm solid #fff;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* ---------------- Estructura ---------------- */
+
+.body {
+  flex: 1 1 auto;
+  padding: 4mm 9mm 1.5mm;
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+}
+
+.row {
+  display: flex;
+  gap: 4mm;
+  align-items: stretch;
+}
+
+.panel {
+  background: var(--paper-light);
+  border: .7mm solid var(--ink);
+  border-radius: 2mm;
+  padding: 2.6mm 3.2mm;
+  position: relative;
+}
+
+.panel-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: 3.9mm;
+  color: var(--primary-ink);
+  margin: 0 0 1.7mm;
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+}
+
+.panel-title::before {
+  content: "";
+  width: 2.4mm;
+  height: 2.4mm;
+  flex: 0 0 auto;
+  background: var(--primary);
+  border-radius: 50%;
+  border: .5mm solid var(--ink);
+}
+
+/* ---------------- Cara A ---------------- */
+
+.portrait {
+  flex: 0 0 52mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5mm;
+}
+
+.card-art {
+  width: 100%;
+  display: block;
+  border-radius: 2.4mm;
+  border: .6mm solid var(--ink);
+  background: #ddd;
+}
+
+.meters-panel {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+
+.meter-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 4.6mm;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2mm;
+}
+
+.meter-label .value {
+  font-size: 3.8mm;
+  opacity: .65;
+}
+
+.dots {
+  display: flex;
+  gap: 1.6mm;
+}
+
+.dot {
+  width: 7mm;
+  height: 7mm;
+  border-radius: 50%;
+  border: .6mm solid var(--ink);
+  background: #ded8ca;
+}
+
+.dot.on {
+  background: var(--secondary);
+}
+
+.dot.on.power {
+  background: var(--accent);
+}
+
+.dots.small .dot {
+  width: 2.8mm;
+  height: 2.8mm;
+  border-width: .35mm;
+}
+
+.meters {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+}
+
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+}
+
+.pc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pc-list li {
+  font-size: 3.05mm;
+  line-height: 1.38;
+  margin-bottom: 1.3mm;
+  padding-left: 5mm;
+  position: relative;
+}
+
+.pc-list li::before {
+  position: absolute;
+  left: 0;
+  top: -.2mm;
+  font-weight: 800;
+  font-size: 3.6mm;
+}
+
+.pc-list.pros li::before {
+  content: "✔";
+  color: #2f7d4f;
+}
+
+.pc-list.cons li::before {
+  content: "✘";
+  color: #b3242a;
+}
+
+.aspects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5mm;
+}
+
+.aspect {
+  border-radius: 1.8mm;
+  border: .7mm solid var(--ink);
+  padding: 1.8mm 1.8mm 1.9mm;
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2mm;
+}
+
+.aspect .name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.8mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.aspect .dot {
+  border-color: rgba(0, 0, 0, .55);
+  background: rgba(255, 255, 255, .3);
+}
+
+.aspect .dot.on {
+  background: #fff;
+}
+
+.aspect-aggression { background: #a5232a; }
+.aspect-justice { background: #c8a01c; color: #17140a; }
+.aspect-justice .dot.on { background: #17140a; }
+.aspect-leadership { background: #2b5fa8; }
+.aspect-protection { background: #2c7a4d; }
+
+.aspect .pick {
+  position: absolute;
+  top: -2.2mm;
+  right: -1.5mm;
+  background: var(--accent);
+  color: #111;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 2.5mm;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .5mm 1.6mm;
+  border-radius: 3mm;
+  border: .4mm solid var(--ink);
+}
+
+/* ---------------- Cara B ---------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5mm;
+}
+
+.sig-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2mm;
+}
+
+.sig-art {
+  position: relative;
+}
+
+.sig-art img {
+  width: 100%;
+  display: block;
+  border-radius: 1.8mm;
+  border: .5mm solid var(--ink);
+  background: #ddd;
+}
+
+.cost-badge {
+  position: absolute;
+  top: -1.8mm;
+  left: -1.8mm;
+  width: 7mm;
+  height: 7mm;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: var(--on-secondary);
+  border: .5mm solid var(--ink);
+  font-family: 'Bangers', cursive;
+  font-size: 4.4mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-badge {
+  position: absolute;
+  bottom: 1.2mm;
+  right: -1.5mm;
+  background: var(--ink);
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 2.6mm;
+  padding: .4mm 1.4mm;
+  border-radius: 1mm;
+}
+
+.sig-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  line-height: 1.05;
+  color: var(--primary-ink);
+  text-transform: uppercase;
+}
+
+.sig-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1mm;
+}
+
+.type-tag {
+  font-size: 2.4mm;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  background: #e3ddce;
+  border-radius: .8mm;
+  padding: .3mm 1.2mm;
+}
+
+.sig-note {
+  font-size: 2.75mm;
+  line-height: 1.32;
+  margin: 0;
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5mm 4mm;
+}
+
+.mini {
+  display: flex;
+  gap: 2.5mm;
+  align-items: flex-start;
+}
+
+.mini img {
+  flex: 0 0 auto;
+  width: 11mm;
+  display: block;
+  border-radius: 1mm;
+  border: .4mm solid var(--ink);
+  background: #ddd;
+}
+
+.mini-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.mini .sig-meta {
+  margin: .6mm 0;
+}
+
+.res {
+  display: inline-block;
+  font-size: .82em;
+  font-weight: 800;
+  letter-spacing: .02em;
+  padding: 0 .35em;
+  border-radius: .25em;
+  color: #fff;
+}
+
+.res-physical { background: #b8480f; }
+.res-energy { background: #1a6fbf; }
+.res-mental { background: #6b3f9e; }
+.res-wild { background: #4b4b4b; }
+.res-per_hero { background: #7a7a7a; }
+.res-star { background: #b8941f; }
+
+.combos {
+  border: .7mm dashed var(--primary);
+  border-radius: 2mm;
+  background: #fff;
+  padding: 2.2mm 3.5mm 2.2mm;
+}
+
+.combo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6mm 4mm;
+}
+
+.combo {
+  font-size: 2.85mm;
+  line-height: 1.32;
+}
+
+.combo .chain {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  color: var(--primary-ink);
+  font-size: 3.1mm;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.curve {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5mm;
+  height: 21mm;
+  padding: 0 1mm;
+}
+
+.curve-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  gap: .8mm;
+}
+
+.curve-bar {
+  width: 100%;
+  background: linear-gradient(180deg, var(--secondary), var(--primary));
+  border: .4mm solid var(--ink);
+  border-radius: .8mm .8mm 0 0;
+  min-height: .8mm;
+}
+
+.curve-n {
+  font-size: 2.7mm;
+  font-weight: 700;
+}
+
+.curve-cost {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3mm;
+  font-weight: 700;
+  opacity: .7;
+}
+
+.mulligan {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 4mm;
+}
+
+.mulligan li {
+  font-size: 2.85mm;
+  line-height: 1.32;
+  margin-bottom: 1.1mm;
+  padding-left: 4.5mm;
+  position: relative;
+}
+
+.mulligan li::before {
+  content: attr(data-mark);
+  position: absolute;
+  left: 0;
+  font-weight: 800;
+}
+
+.mulligan li.keep::before { color: #2f7d4f; }
+.mulligan li.toss::before { color: #b3242a; }
+
+.phases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+}
+
+.phase {
+  border: .7mm solid var(--ink);
+  border-radius: 1.8mm;
+  padding: 1.8mm 2.4mm 1.8mm;
+}
+
+.phase h4 {
+  margin: 0 0 1.4mm;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 3.4mm;
+  letter-spacing: .06em;
+  display: flex;
+  align-items: center;
+  gap: 1.5mm;
+}
+
+.phase h4::before {
+  content: "";
+  width: 2.6mm;
+  height: 2.6mm;
+  border-radius: .5mm;
+  border: .4mm solid var(--ink);
+}
+
+.phase-early { background: #fdeeee; }
+.phase-early h4::before { background: #cf4646; }
+.phase-mid { background: #eaf0fd; }
+.phase-mid h4::before { background: #3f6dc0; }
+.phase-late { background: #ecf7ef; }
+.phase-late h4::before { background: #3f9b63; }
+
+.phase ul {
+  margin: 0;
+  padding-left: 3.6mm;
+}
+
+.phase li {
+  font-size: 2.75mm;
+  line-height: 1.32;
+  margin-bottom: 1mm;
+}
+
+/* ---------------- Notas propias ---------------- */
+
+.notes {
+  border: .7mm solid var(--ink);
+  border-left-width: 2.5mm;
+  border-radius: 1.8mm;
+  padding: 2mm 3mm 2.2mm;
+  background: var(--paper-light);
+}
+
+.notes-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: 3.6mm;
+  margin-bottom: 1.2mm;
+}
+
+.notes ul {
+  margin: 0;
+  padding-left: 4mm;
+}
+
+.notes li {
+  font-size: 2.9mm;
+  line-height: 1.33;
+  margin-bottom: .8mm;
+}
+
+.notes li:last-child {
+  margin-bottom: 0;
+}
+
+.notes-consejo {
+  border-left-color: var(--secondary);
+  background: #eef2fb;
+}
+
+.notes-consejo .notes-title {
+  color: var(--secondary);
+}
+
+.notes-aviso {
+  border-left-color: #b3242a;
+  background: #fdeeee;
+}
+
+.notes-aviso .notes-title {
+  color: #8e1c22;
+}
+
+.notes-neutro {
+  border-left-color: var(--ink);
+}
+
+/* ---------------- Pie ---------------- */
+
+.footer {
+  flex: 0 0 auto;
+  background: var(--ink);
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.7mm;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.8mm;
+  opacity: .9;
+}
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .sheet {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+  .sheet:last-of-type {
+    page-break-after: auto;
+  }
+}</style>
+</head>
+<body>
+
+<section class="sheet sheet-a">
+  <div class="halftone"></div>
+
+  <header class="header">
+    <div>
+      <div class="eyebrow">Guía básica de héroe · Marvel Champions LCG</div>
+      <div class="hero-name">Spider-Man</div>
+      <div class="alter-ego-name">Peter Parker</div>
+    </div>
+    <div class="tags">
+      <div class="level-tag">Nivel avanzado</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div class="row">
+      <div class="portrait">
+        <img class="card-art" src="https://marvelcdb.com/bundles/cards/01001a.png" alt="Spider-Man">
+      </div>
+
+      <div class="panel meters-panel">
+        <div class="meters">
+          <div>
+            <div class="meter-label"><span>Dificultad</span><span class="value">1 / 5</span></div>
+            <div class="dots ">
+  <div class="dot on "></div>
+  <div class="dot  "></div>
+  <div class="dot  "></div>
+  <div class="dot  "></div>
+  <div class="dot  "></div>
+</div>
+          </div>
+          <div>
+            <div class="meter-label"><span>Potencia</span><span class="value">3 / 5</span></div>
+            <div class="dots power">
+  <div class="dot on power"></div>
+  <div class="dot on power"></div>
+  <div class="dot on power"></div>
+  <div class="dot  power"></div>
+  <div class="dot  power"></div>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Puntos fuertes y débiles</div>
+      <div class="pros-cons">
+        <ul class="pc-list pros">
+          <li>Sentido arácnido: robas una carta cada vez que el villano te ataca. Es el mejor robo gratis del juego y premia quedarte en héroe.</li>
+          <li>Defensa 3, la mejor del Set Básico. Defender le sale barato y encima activa su robo.</li>
+          <li>Casi todo su set cuesta 0 o 1, así que monta su motor desde el primer turno.</li>
+          <li>Peter Parker recupera 3 y genera un recurso mental cada ronda: sus turnos de alter ego nunca son turnos perdidos.</li>
+        </ul>
+        <ul class="pc-list cons">
+          <li>Intervención 1: por sí solo casi no puede contener los planes, necesita que el aspecto se lo cubra.</li>
+          <li>Ataque 2 de base: sin Balanceo con patada su daño por turno es flojo.</li>
+          <li>Depende de tener Lanzarredes en mesa para pagar sus cartas más caras.</li>
+          <li>Su obligación le obliga a perder tiempo en forma de alter ego.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">¿Con qué aspecto lo acompaño?</div>
+      <div class="aspects">
+        <div class="aspect aspect-justice">
+<span class="pick">Top</span>          <div class="name">Justicia</div>
+          <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div>
+        </div>
+        <div class="aspect aspect-leadership">
+          <div class="name">Liderazgo</div>
+          <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+        </div>
+        <div class="aspect aspect-protection">
+          <div class="name">Protección</div>
+          <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+        </div>
+        <div class="aspect aspect-aggression">
+          <div class="name">Agresión</div>
+          <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <footer class="footer">Hoja no oficial hecha por aficionados · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+</section>
+
+<section class="sheet sheet-b">
+  <div class="halftone"></div>
+
+  <header class="header">
+    <div>
+      <div class="eyebrow">Cartas propias, combos y plan de juego</div>
+      <div class="hero-name">Spider-Man</div>
+    </div>
+    <div class="tags">
+      <div class="face-tag">Cara B<br>Estrategia</div>
+<div class="level-tag">Nivel avanzado</div>    </div>
+  </header>
+
+  <div class="body">
+    <div>
+      <div class="panel-title">Las imprescindibles · juégalas siempre que puedas</div>
+      <div class="card-grid">
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/01008.png" alt="Lanzarredes">            <div class="cost-badge">1</div>
+            <div class="qty-badge">x2</div>
+          </div>
+          <div class="sig-name">Lanzarredes</div>
+          <div class="sig-meta">
+            <span class="type-tag">Mejora</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div>
+          </div>
+          <p class="sig-note">Cada copia son 3 recursos comodín. Ponla en mesa el turno 1.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/01005.png" alt="Balanceo con patada">            <div class="cost-badge">3</div>
+            <div class="qty-badge">x3</div>
+          </div>
+          <div class="sig-name">Balanceo con patada</div>
+          <div class="sig-meta">
+            <span class="type-tag">Evento</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div>
+          </div>
+          <p class="sig-note">8 de daño de golpe. Guárdala para el villano, no para esbirros.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/01003.png" alt="Voltereta hacia atrás">            <div class="cost-badge">0</div>
+            <div class="qty-badge">x2</div>
+          </div>
+          <div class="sig-name">Voltereta hacia atrás</div>
+          <div class="sig-meta">
+            <span class="type-tag">Evento</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+          </div>
+          <p class="sig-note">Anula todo el daño de un ataque, gratis. Y defender te hace robar.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/01004.png" alt="Sentido arácnido mejorado">            <div class="cost-badge">1</div>
+            <div class="qty-badge">x2</div>
+          </div>
+          <div class="sig-name">Sentido arácnido mejorado</div>
+          <div class="sig-meta">
+            <span class="type-tag">Evento</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+          </div>
+          <p class="sig-note">Cancela el «Al ser revelada» de una traición: tu seguro antidesastre.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel-title">El resto del kit</div>
+      <div class="mini-grid">
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01006.png" alt="Tía May">          <div class="mini-info">
+            <div class="sig-name">Tía May</div>
+            <div class="sig-meta">
+              <span class="type-tag">Apoyo · coste 1 · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Cura 4 sin gastar tu activación: con Recuperar 3 son 7 en un turno.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01007.png" alt="Rastreador arácnido">          <div class="mini-info">
+            <div class="sig-name">Rastreador arácnido</div>
+            <div class="sig-meta">
+              <span class="type-tag">Mejora · coste 1 · x2</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">En un esbirro: al derrotarlo quitas 3 de amenaza. Tu parche a Intervención 1.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01002.png" alt="Gata Negra">          <div class="mini-info">
+            <div class="sig-name">Gata Negra</div>
+            <div class="sig-meta">
+              <span class="type-tag">Aliado · coste 2 · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Recupera cartas mentales del descarte. Útil, pero no urgente.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01009.png" alt="Envuelto en telaraña">          <div class="mini-info">
+            <div class="sig-name">Envuelto en telaraña</div>
+            <div class="sig-meta">
+              <span class="type-tag">Mejora · coste 4 · x2</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Cuesta 4 para anular un ataque y aturdir. Solo si te sobra de todo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="combos">
+      <div class="panel-title" style="margin-bottom:1.6mm;">Combos que tienes que conocer</div>
+      <div class="combo-grid">
+        <div class="combo">
+          <span class="chain">Lanzarredes → Balanceo con patada</span>
+          <span>dos en mesa pagan 2 de los 3 puntos de la patada: 8 de daño casi gratis.</span>
+        </div>
+        <div class="combo">
+          <span class="chain">Voltereta + Sentido arácnido</span>
+          <span>anulas todo el daño y encima robas: quedarse en héroe deja de dar miedo.</span>
+        </div>
+        <div class="combo">
+          <span class="chain">Rastreador arácnido → esbirro</span>
+          <span>colócalo antes de derrotar al esbirro y te llevas 3 de amenaza.</span>
+        </div>
+        <div class="combo">
+          <span class="chain">Tía May + Peter Parker</span>
+          <span>recupera 3 y agota a Tía May: 7 de vida en una sola ronda.</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="panel-title">Plan de juego por fases</div>
+      <div class="phases">
+        <div class="phase phase-early">
+          <h4>Inicio</h4>
+          <ul>
+<li>Monta primero: Lanzarredes y mejoras baratas antes que atacar.</li><li>Quédate en héroe sin miedo: si el villano te pega, robas.</li><li>Deja el plan principal para tus aliados o tu compañero.</li>          </ul>
+        </div>
+        <div class="phase phase-mid">
+          <h4>Mitad</h4>
+          <ul>
+<li>Derrota esbirros con el Rastreador puesto para bajar amenaza.</li><li>Pasa a Peter Parker al bajar de media vida, no al borde de caer.</li><li>Reserva una Voltereta para el ataque más fuerte del villano.</li>          </ul>
+        </div>
+        <div class="phase phase-late">
+          <h4>Final</h4>
+          <ul>
+<li>Cuenta la vida del villano y encadena Balanceos con patada.</li><li>Gasta las últimas cargas de Lanzarredes, no las guardes.</li><li>Si el plan está a punto de completarse, interviene antes de pegar.</li>          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes notes-consejo">
+  <div class="notes-title">Detalles que marcan la diferencia</div>
+  <ul>
+<li>El sentido arácnido se dispara al iniciarse el ataque, antes del daño: con Voltereta anulas el golpe y aun así robas.</li><li>La segunda copia de Lanzarredes vale más que cualquier aliado: es lo que hace sostenible el Balanceo con patada.</li>  </ul>
+</div>
+
+  </div>
+
+  <footer class="footer">Hoja no oficial hecha por aficionados · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+</section>
+
+</body>
+</html>

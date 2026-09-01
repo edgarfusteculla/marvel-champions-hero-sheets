@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Prueba — bolas, iconos de aspecto y barra de poder</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0;
+  padding: 8mm 0;
+  background: #4a4a4a;
+  color: #141414;
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+.sheet {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 8mm;
+  background: #f4efe4;
+  padding: 7mm 9mm 8mm;
+  box-shadow: 0 4mm 10mm rgba(0,0,0,.45);
+}
+h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 7.2mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 0 1.4mm;
+}
+.lead {
+  font-size: 3.15mm;
+  line-height: 1.4;
+  margin: 0 0 4.5mm;
+}
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.card {
+  background: #fbf8f1;
+  border: .5mm solid #141414;
+  border-radius: 2mm;
+  padding: 2.8mm 3mm 3.2mm;
+}
+.card.full { grid-column: 1 / -1; }
+.card h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 3.5mm;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 0 0 .8mm;
+}
+.card .note {
+  font-size: 2.55mm;
+  line-height: 1.35;
+  margin: 0 0 2.4mm;
+  opacity: .78;
+}
+.panel {
+  background: #fff;
+  border: .6mm solid #141414;
+  border-radius: 1.8mm;
+  padding: 3mm 3.4mm 3.4mm;
+}
+.meter-label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 3.8mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 1.4mm;
+}
+.meters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm;
+  margin-bottom: 3.4mm;
+}
+.dots { display: flex; gap: 1.5mm; }
+.dot {
+  width: 6.4mm;
+  height: 6.4mm;
+  border-radius: 50%;
+  border: .55mm solid #141414;
+  background: #ded8ca;
+}
+.dot.on { background: #2b3681; }
+.dot.on.power { background: #f2b705; }
+
+.bar-track {
+  height: 6.4mm;
+  border: .55mm solid #141414;
+  border-radius: 1.2mm;
+  background: #ded8ca;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  width: 60%;
+  background: #f2b705;
+}
+.bar-fill.grad {
+  background: linear-gradient(90deg, #c48a00, #f2b705 45%, #ffe27a);
+}
+.bar-seg {
+  display: flex;
+  gap: 1mm;
+  height: 6.4mm;
+}
+.bar-seg i {
+  flex: 1;
+  display: block;
+  border: .55mm solid #141414;
+  border-radius: .8mm;
+  background: #ded8ca;
+}
+.bar-seg i.on { background: #f2b705; }
+.bar-seg i.on.grad {
+  background: linear-gradient(180deg, #ffe27a, #f2b705 40%, #c48a00);
+}
+
+.aspect-grid {
+  display: grid;
+  grid-template-columns: 28mm repeat(3, 1fr);
+  gap: 1.8mm 2.2mm;
+  align-items: center;
+}
+.ag-head {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 2.55mm;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  opacity: .6;
+  text-align: center;
+}
+.ag-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 3.05mm;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: #fff;
+  border: .5mm solid #141414;
+  border-radius: 1.2mm;
+  padding: .6mm 1.4mm;
+  display: flex;
+  align-items: center;
+  gap: 1.2mm;
+  min-height: 6.2mm;
+}
+.ag-name svg {
+  width: 3.8mm;
+  height: 3.8mm;
+  flex: 0 0 3.8mm;
+  fill: currentColor;
+  stroke: none;
+}
+.aspect-aggression { background: #a5232a; }
+.aspect-justice { background: #c8a01c; color: #17140a; }
+.aspect-leadership { background: #2b5fa8; }
+.aspect-protection { background: #2c7a4d; }
+.ag-cell { display: flex; justify-content: center; }
+
+.pips { display: flex; gap: 1mm; align-items: center; }
+.pip {
+  width: 3.6mm;
+  height: 3.6mm;
+  border-radius: 50%;
+  border: .35mm solid #141414;
+  background: #ded8ca;
+}
+.ag-aggression .pip.on { background: #a5232a; }
+.ag-justice .pip.on { background: #c8a01c; }
+.ag-leadership .pip.on { background: #2b5fa8; }
+.ag-protection .pip.on { background: #2c7a4d; }
+
+.ico { display: flex; gap: .85mm; align-items: center; }
+.ico svg {
+  width: 4mm;
+  height: 4mm;
+  flex: 0 0 4mm;
+  fill: #ded8ca;
+  stroke: #141414;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.ico svg.on.aggression { fill: #a5232a; }
+.ico svg.on.justice { fill: #c8a01c; }
+.ico svg.on.leadership { fill: #2b5fa8; }
+.ico svg.on.protection { fill: #2c7a4d; }
+
+.mini-bar {
+  width: 18mm;
+  height: 3.4mm;
+  border: .35mm solid #141414;
+  border-radius: .8mm;
+  background: #ded8ca;
+  overflow: hidden;
+}
+.mini-bar span { display: block; height: 100%; }
+.ag-aggression .mini-bar span { background: #a5232a; }
+.ag-justice .mini-bar span { background: #c8a01c; }
+.ag-leadership .mini-bar span { background: #2b5fa8; }
+.ag-protection .mini-bar span { background: #2c7a4d; }
+
+svg.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+</style>
+</head>
+<body>
+
+<svg class="defs" aria-hidden="true">
+  <symbol id="puno" viewBox="0 0 256 256">
+    <path d="M200 80a28 28 0 0 0-27.71 24H167A28 28 0 0 0 141 76.28 28 28 0 0 0 88 48v80.46A47.83 47.83 0 0 0 48 176v12a12 12 0 0 0 12 12h137.31a35.9 35.9 0 0 0 35.43-29.21c.86-4.72 1.26-21.16 1.26-22.79A28 28 0 0 0 200 80z"/>
+  </symbol>
+  <symbol id="exclamacion" viewBox="0 0 24 24">
+    <path d="M12 3.2c1.15 0 1.9.95 1.72 2.15L12.4 14.2h-2.8L9.28 5.35C9.1 4.15 9.85 3.2 12 3.2z"/>
+    <circle cx="12" cy="19.2" r="2.15"/>
+  </symbol>
+  <symbol id="bandera" viewBox="0 0 24 24">
+    <path d="M5 2.4h2.2v19.2H5z"/>
+    <path d="M7.2 3.2h12.2c.55 0 .85.62.5 1.05L16.6 8.4l3.3 4.15c.35.44.05 1.05-.5 1.05H7.2z"/>
+  </symbol>
+  <symbol id="escudo" viewBox="0 0 24 24">
+    <path d="M12 2.4l8.2 3.2v6.3c0 5.1-3.4 8.7-8.2 10.3C7.2 20.6 3.8 17 3.8 11.9V5.6z"/>
+  </symbol>
+</svg>
+
+<section class="sheet">
+  <h1>Bolas, iconos y barra de poder</h1>
+  <p class="lead">
+    Ejemplo con Spider-Man: dificultad 1, poder 3.
+    Dificultad vuelve a círculos. Lo que cambia es cómo se lee el poder y los aspectos,
+    para no llenar el recuadro de bolas iguales.
+  </p>
+  <div class="grid">
+    <article class="card">
+      <h2>A · Todo bolas</h2>
+      <p class="note">Dificultad, poder y aspectos en círculos. Es el problema: demasiado del mismo signo.</p>
+      <div class="panel" data-opt="a"></div>
+    </article>
+    <article class="card">
+      <h2>B · Icono en el nombre</h2>
+      <p class="note">Puño, admiración, bandera y escudo marcan cada fila. Las notas de aspecto siguen en bolas.</p>
+      <div class="panel" data-opt="b"></div>
+    </article>
+    <article class="card">
+      <h2>C · Cinco iconos por celda</h2>
+      <p class="note">El 1–5 se mantiene, pero cada aspecto tiene su figura. Ya no compite con las bolas de arriba.</p>
+      <div class="panel" data-opt="c"></div>
+    </article>
+    <article class="card">
+      <h2>D · Barrita de aspecto</h2>
+      <p class="note">Una sola barra por celda, del color del aspecto. Cero bolas en la tabla.</p>
+      <div class="panel" data-opt="d"></div>
+    </article>
+  </div>
+</section>
+
+<section class="sheet">
+  <h1>Nivel de poder en barra</h1>
+  <p class="lead">
+    Dificultad se queda en bolas azules. El poder deja de ser otro círculo.
+    Abajo, las dos lecturas de aspecto: iconos (idea 1) y barritas.
+  </p>
+  <div class="grid">
+    <article class="card">
+      <h2>E · Barra sólida + iconos</h2>
+      <p class="note">Un bloque dorado al 3/5. Limpia y fácil de imprimir. Aspectos en cinco iconos.</p>
+      <div class="panel" data-opt="e"></div>
+    </article>
+    <article class="card">
+      <h2>F · Barra degradada + barritas</h2>
+      <p class="note">Mismo 3/5, con brillo. En color se nota; en blanco y negro se pierde un poco.</p>
+      <div class="panel" data-opt="f"></div>
+    </article>
+    <article class="card full">
+      <h2>G · Poder en cinco segmentos + iconos en el nombre</h2>
+      <p class="note">Se cuenta igual que las bolas (1–5), pero rectangular y dorado. No se confunde con dificultad. En aspectos, el icono va en la etiqueta y el valor sigue en bolas pequeñas.</p>
+      <div class="panel" data-opt="g"></div>
+    </article>
+  </div>
+</section>
+
+<script>
+const ASPECTS = [
+  { name: "Agresividad", cls: "aggression", icon: "puno", vals: [1, 3, 2] },
+  { name: "Justicia", cls: "justice", icon: "exclamacion", vals: [5, 2, 1] },
+  { name: "Liderazgo", cls: "leadership", icon: "bandera", vals: [4, 4, 4] },
+  { name: "Protección", cls: "protection", icon: "escudo", vals: [2, 5, 3] },
+];
+
+function dots(filled, kind) {
+  let html = '<div class="dots">';
+  for (let i = 0; i < 5; i++) {
+    const on = i < filled ? ` on${kind === "power" ? " power" : ""}` : "";
+    html += `<i class="dot${on}"></i>`;
+  }
+  return html + "</div>";
+}
+
+function powerBar(style) {
+  if (style === "solid") return '<div class="bar-track"><div class="bar-fill"></div></div>';
+  if (style === "grad") return '<div class="bar-track"><div class="bar-fill grad"></div></div>';
+  if (style === "seg") {
+    return '<div class="bar-seg"><i class="on grad"></i><i class="on grad"></i><i class="on grad"></i><i></i><i></i></div>';
+  }
+  return dots(3, "power");
+}
+
+function pips(n, cls) {
+  let html = `<span class="pips ag-${cls}">`;
+  for (let i = 0; i < 5; i++) html += `<i class="pip${i < n ? " on" : ""}"></i>`;
+  return html + "</span>";
+}
+
+function icoSvg(icon, cls) {
+  return `<svg class="${cls}" viewBox="0 0 24 24"><use href="#${icon}" width="24" height="24"/></svg>`;
+}
+
+function icons(n, aspect) {
+  let html = '<span class="ico">';
+  for (let i = 0; i < 5; i++) {
+    const on = i < n ? `on ${aspect.cls}` : "";
+    html += icoSvg(aspect.icon, on);
+  }
+  return html + "</span>";
+}
+
+function miniBar(n, cls) {
+  return `<div class="ag-cell ag-${cls}"><div class="mini-bar"><span style="width:${n * 20}%"></span></div></div>`;
+}
+
+function nameCell(aspect, withIcon) {
+  const icon = withIcon ? icoSvg(aspect.icon, "") : "";
+  return `<div class="ag-name aspect-${aspect.cls}">${icon}${aspect.name}</div>`;
+}
+
+function aspectGrid(mode, labelIcon) {
+  let html = '<div class="aspect-grid"><div></div><div class="ag-head">Solo</div><div class="ag-head">2 jugadores</div><div class="ag-head">3-4 jugadores</div>';
+  for (const a of ASPECTS) {
+    html += nameCell(a, labelIcon);
+    for (const v of a.vals) {
+      if (mode === "pips") html += `<div class="ag-cell">${pips(v, a.cls)}</div>`;
+      else if (mode === "icons") html += `<div class="ag-cell">${icons(v, a)}</div>`;
+      else html += miniBar(v, a.cls);
+    }
+  }
+  return html + "</div>";
+}
+
+function panel(power, aspects, labelIcon) {
+  return `
+    <div class="meters">
+      <div>
+        <div class="meter-label">Dificultad</div>
+        ${dots(1)}
+      </div>
+      <div>
+        <div class="meter-label">Nivel de poder</div>
+        ${powerBar(power)}
+      </div>
+    </div>
+    <div class="meter-label">Aspectos</div>
+    ${aspectGrid(aspects, labelIcon)}
+  `;
+}
+
+const OPTS = {
+  a: panel("dots", "pips", false),
+  b: panel("dots", "pips", true),
+  c: panel("dots", "icons", false),
+  d: panel("dots", "bars", false),
+  e: panel("solid", "icons", true),
+  f: panel("grad", "bars", false),
+  g: panel("seg", "pips", true),
+};
+
+document.querySelectorAll("[data-opt]").forEach((el) => {
+  el.innerHTML = OPTS[el.dataset.opt];
+});
+</script>
+</body>
+</html>

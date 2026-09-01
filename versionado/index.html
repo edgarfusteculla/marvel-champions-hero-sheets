@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Evolución de las hojas · Marvel Champions</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #4a4a4a;
+  color: #141414;
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+.wrap {
+  max-width: 210mm;
+  margin: 8mm auto;
+  background: #f4efe4;
+  padding: 8mm 9mm 10mm;
+  box-shadow: 0 4mm 10mm rgba(0,0,0,.45);
+}
+h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 8mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 0 2mm;
+}
+.lead {
+  font-size: 3.3mm;
+  line-height: 1.45;
+  margin: 0 0 6mm;
+}
+h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 4.2mm;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 6mm 0 2mm;
+}
+ol { margin: 0; padding: 0; list-style: none; }
+.step {
+  border: .45mm solid #141414;
+  border-radius: 2mm;
+  background: #fbf8f1;
+  padding: 3mm 3.4mm;
+  margin-bottom: 2.4mm;
+}
+.num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 3mm;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+.step h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 4mm;
+  text-transform: uppercase;
+  margin: .4mm 0 1.2mm;
+}
+.step p {
+  font-size: 2.9mm;
+  line-height: 1.4;
+  margin: 0 0 2mm;
+}
+.links { display: flex; flex-wrap: wrap; gap: 1.4mm; }
+.links a {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 2.8mm;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #2b3681;
+  text-decoration: none;
+  padding: 1mm 2.2mm;
+  border-radius: 1mm;
+  border: .4mm solid #141414;
+}
+.links a.main { background: #982828; }
+.note {
+  font-size: 2.7mm;
+  opacity: .75;
+  margin-top: 5mm;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Evolución de las hojas</h1>
+  <p class="lead">
+    Reconstrucción a partir del historial de git. El hilo conductor es
+    <b>Spider-Man</b>: está en todas las etapas. A partir del Set Básico
+    cerrado aparecen también los otros cuatro héroes. Abre cada HTML en el
+    navegador (las imágenes de carta salen de MarvelCDB).
+  </p>
+
+  <ol>
+    <li class="step">
+      <div class="num">01 · 5fd6753</div>
+      <h3>Generador inicial</h3>
+      <p>Primera maqueta imprimible. Medidores en círculos, una sola hoja de Spider-Man.</p>
+      <div class="links">
+        <a class="main" href="01-generador-inicial/spider-man.html">Spider-Man</a>
+      </div>
+    </li>
+    <li class="step">
+      <div class="num">02 · 593f46d</div>
+      <h3>Cara A más ligera</h3>
+      <p>Se aligera la presentación y Thwart pasa a Intervención. Hubo una variante «avanzado» que luego se dejó.</p>
+      <div class="links">
+        <a class="main" href="02-cara-a-ligera/spider-man.html">Spider-Man</a>
+        <a href="02-cara-a-ligera/spider-man-avanzado.html">Variante avanzado</a>
+      </div>
+    </li>
+    <li class="step">
+      <div class="num">03 · b8d5889</div>
+      <h3>Caras armonizadas</h3>
+      <p>Las dos caras comparten el mismo lenguaje visual. Los rótulos de la cara B se simplifican.</p>
+      <div class="links">
+        <a class="main" href="03-caras-armonizadas/spider-man.html">Spider-Man</a>
+      </div>
+    </li>
+    <li class="step">
+      <div class="num">04 · 5f85656</div>
+      <h3>Aspectos por número de jugadores</h3>
+      <p>La tabla de aspectos pasa a Solo / 2 jugadores / 3–4 y el perfil del héroe se desglosa.</p>
+      <div class="links">
+        <a class="main" href="04-aspectos-por-mesa/spider-man.html">Spider-Man</a>
+      </div>
+    </li>
+    <li class="step">
+      <div class="num">05 · 6bda6f6</div>
+      <h3>Set Básico cerrado</h3>
+      <p>Entran los cinco héroes del core. La estructura de dos caras ya es la que se mantiene.</p>
+      <div class="links">
+        <a class="main" href="05-set-basico-cerrado/spider-man.html">Spider-Man</a>
+        <a href="05-set-basico-cerrado/hulka.html">Hulka</a>
+        <a href="05-set-basico-cerrado/capitana-marvel.html">Capitana Marvel</a>
+        <a href="05-set-basico-cerrado/iron-man.html">Iron Man</a>
+        <a href="05-set-basico-cerrado/pantera-negra.html">Pantera Negra</a>
+      </div>
+    </li>
+    <li class="step">
+      <div class="num">06 · 220d007</div>
+      <h3>Cabeceras y tipografía editorial</h3>
+      <p>Cabeceras unificadas. El generador pone en negrita los nombres de carta y en cursiva las mecánicas.</p>
+      <div class="links">
+        <a class="main" href="06-cabeceras-y-tipografia/spider-man.html">Spider-Man</a>
+        <a href="06-cabeceras-y-tipografia/hulka.html">Hulka</a>
+        <a href="06-cabeceras-y-tipografia/capitana-marvel.html">Capitana Marvel</a>
+        <a href="06-cabeceras-y-tipografia/iron-man.html">Iron Man</a>
+        <a href="06-cabeceras-y-tipografia/pantera-negra.html">Pantera Negra</a>
+      </div>
+    </li>
+    <li class="step">
+      <div class="num">07 · actual</div>
+      <h3>Mazos recomendados y escudos</h3>
+      <p>Dificultad y nivel de poder en escudos. Mazos de aspecto en la cara A, con filete de color.</p>
+      <div class="links">
+        <a class="main" href="07-mazos-y-escudos/spider-man.html">Spider-Man</a>
+        <a href="07-mazos-y-escudos/hulka.html">Hulka</a>
+        <a href="07-mazos-y-escudos/capitana-marvel.html">Capitana Marvel</a>
+        <a href="07-mazos-y-escudos/iron-man.html">Iron Man</a>
+        <a href="07-mazos-y-escudos/pantera-negra.html">Pantera Negra</a>
+      </div>
+    </li>
+  </ol>
+
+  <h2>Opciones que no llegaron a producción (o se eligió una)</h2>
+  <div class="step">
+    <p>Comparativas que usamos para decidir medidores y el recuadro de mazos. No son hojas completas.</p>
+    <div class="links">
+      <a href="opciones/medidores.html">Medidores (círculos, escudos, barras…)</a>
+      <a href="opciones/mazos.html">Mazos (franja, filete, etiqueta)</a>
+    </div>
+  </div>
+
+  <p class="note">
+    Los HTML se regeneraron con el generador de cada commit, usando el contenido editorial de aquel momento.
+    Lo que no estaba en git (pruebas locales sin commitear) no se puede recuperar.
+  </p>
+</div>
+</body>
+</html>

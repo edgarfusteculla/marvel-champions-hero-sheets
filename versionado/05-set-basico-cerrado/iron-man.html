@@ -1,21 +1,20 @@
 
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Pantera Negra — Hoja de héroe · Marvel Champions</title>
+<title>Iron Man — Hoja de héroe · Marvel Champions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --primary: #492b5f;
-  --secondary: #492b5f;
+  --primary: #8f2928;
+  --secondary: #8c2d23;
   --on-primary: #ffffff;
   --on-secondary: #ffffff;
-  --primary-ink: color-mix(in srgb, #492b5f 72%, #000);
+  --primary-ink: color-mix(in srgb, #8f2928 72%, #000);
   --ink: #141414;
   --paper: #f4efe4;
   --paper-light: #fbf8f1;
@@ -111,6 +110,10 @@ body {
   margin: .6mm 0 .8mm;
 }
 
+.sheet-b .hero-name {
+  font-size: 11mm;
+}
+
 .alter-ego-name {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 5mm;
@@ -142,9 +145,8 @@ body {
   background: var(--paper-light);
   border: .7mm solid var(--ink);
   border-radius: 2mm;
-  padding: 0 3.2mm 2.6mm;
+  padding: 2.6mm 3.2mm;
   position: relative;
-  overflow: hidden;
 }
 
 .panel-title {
@@ -152,23 +154,22 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .07em;
-  font-size: 3.8mm;
-  background: var(--primary);
-  color: var(--on-primary);
-  border: .6mm solid var(--ink);
-  border-radius: 1.4mm;
-  margin: 0 0 2.2mm;
-  padding: 1.1mm 2.6mm .9mm;
-  box-shadow: inset 0 -.7mm 0 rgba(0, 0, 0, .22);
+  font-size: 3.9mm;
+  color: var(--primary-ink);
+  margin: 0 0 1.7mm;
+  display: flex;
+  align-items: center;
+  gap: 2mm;
 }
 
-/* Dentro de un panel la banda sangra hasta los bordes. */
-.panel > .panel-title {
-  border: 0;
-  border-bottom: .5mm solid var(--ink);
-  border-radius: 0;
-  margin: 0 -3.2mm 2.4mm;
-  padding: 1.3mm 3.2mm 1.1mm;
+.panel-title::before {
+  content: "";
+  width: 2.4mm;
+  height: 2.4mm;
+  flex: 0 0 auto;
+  background: var(--primary);
+  border-radius: 50%;
+  border: .5mm solid var(--ink);
 }
 
 /* ---------------- Cara A ---------------- */
@@ -192,17 +193,16 @@ body {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 3mm;
-  padding: 2.2mm 2.6mm 2.4mm;
+  justify-content: center;
+  gap: 5mm;
 }
 
 .meter-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 4.2mm;
+  font-size: 4.6mm;
   text-transform: uppercase;
-  letter-spacing: .04em;
+  letter-spacing: .05em;
   margin-bottom: 2mm;
 }
 
@@ -222,8 +222,8 @@ body {
 }
 
 .dot {
-  width: 8.2mm;
-  height: 8.2mm;
+  width: 7mm;
+  height: 7mm;
   border-radius: 50%;
   border: .6mm solid var(--ink);
   background: #ded8ca;
@@ -237,21 +237,14 @@ body {
   background: var(--accent);
 }
 
-.dots.small {
-  gap: 1.1mm;
-}
-
 .dots.small .dot {
-  width: 3.8mm;
-  height: 3.8mm;
-  border-width: .4mm;
-}
-
-.dots.small .dot.on {
-  background: #3a3a3a;
+  width: 2.8mm;
+  height: 2.8mm;
+  border-width: .35mm;
 }
 
 .meters {
+  flex: 1 1 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8mm;
@@ -272,18 +265,6 @@ body {
   margin-bottom: 0;
 }
 
-.item-list b,
-.sig-note b,
-.notes b {
-  font-weight: 700;
-}
-
-.item-list i,
-.sig-note i,
-.notes i {
-  font-style: italic;
-}
-
 .split-lists {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -298,15 +279,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3mm;
-}
-
-.rec-basics-4 {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.2mm;
-}
-
-.rec-basics-4 .rec-basic img {
-  width: 14mm;
 }
 
 .rec-basic {
@@ -327,120 +299,10 @@ body {
   margin-top: .8mm;
 }
 
-.rec-mazos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3mm;
-}
-
-.rec-mazos-1 {
-  grid-template-columns: 1fr;
-}
-
-.rec-mazos-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.rec-mazos-4 {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.6mm;
-}
-
-.rec-mazos-4 .rec-mazo {
-  padding: 1.2mm 1.6mm;
-  gap: 1.8mm;
-}
-
-.rec-mazos-4 .rec-mazo-art {
-  flex-basis: 14mm;
-  width: 14mm;
-}
-
-.rec-mazos-4 .rec-mazo-title {
-  font-size: 3mm;
-}
-
-.rec-mazo {
-  display: flex;
-  gap: 2.6mm;
-  align-items: center;
-  background: #fff;
-  border: .6mm solid var(--ink);
-  border-left-width: 2.4mm;
-  border-radius: 1.6mm;
-  padding: 2mm 2.4mm;
-}
-
-.rec-mazo-aggression { border-left-color: #b5262d; }
-.rec-mazo-justice { border-left-color: #d9ae1e; }
-.rec-mazo-leadership { border-left-color: #2f66b5; }
-.rec-mazo-protection { border-left-color: #2f9455; }
-
-.rec-mazo-title {
-  flex: 1 1 auto;
-  min-width: 0;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 3.4mm;
-  line-height: 1.12;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  overflow-wrap: break-word;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.4mm;
-}
-
-.rec-mazo-title .sig-note {
-  margin-top: 0;
-  text-transform: none;
-  letter-spacing: 0;
-  font-weight: 500;
-}
-
-.rec-mazo-aspecto {
-  font-size: 2.6mm;
-  letter-spacing: .06em;
-  color: #fff;
-  border: .45mm solid var(--ink);
-  border-radius: 1mm;
-  padding: .3mm 1.4mm;
-}
-
-.rec-mazo-art {
-  flex: 0 0 22mm;
-  width: 22mm;
-  aspect-ratio: 300 / 419;
-  overflow: hidden;
-  border-radius: 1mm;
-  border: .4mm solid var(--ink);
-  background: #ddd;
-}
-
-.rec-mazo-art img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-
-.aspects-block {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  border-top: .35mm solid rgba(20, 20, 20, .28);
-  padding-top: 2mm;
-}
-
 .aspect-grid {
-  flex: 1 1 auto;
   display: grid;
-  width: 100%;
-  grid-template-columns: auto repeat(3, minmax(0, 1fr));
-  gap: 2.6mm 2mm;
+  grid-template-columns: auto repeat(3, 1fr);
+  gap: 1.8mm 3mm;
   align-items: center;
 }
 
@@ -454,54 +316,32 @@ body {
   text-align: center;
 }
 
-.ag-head-aspects {
-  text-align: left;
-}
-
 .ag-name {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 3.7mm;
+  font-size: 3.6mm;
   text-transform: uppercase;
   letter-spacing: .04em;
   color: #fff;
   border: .6mm solid var(--ink);
   border-radius: 1.4mm;
-  padding: 0 2.2mm;
-  height: 7.2mm;
-  display: flex;
-  align-items: center;
+  padding: .8mm 2.2mm;
 }
 
 .ag-cell {
   display: flex;
-  align-items: center;
-  min-width: 0;
+  justify-content: center;
 }
 
-.aspect-aggression { background: #b5262d; }
-.aspect-justice { background: #d9ae1e; color: #17140a; }
-.aspect-leadership { background: #2f66b5; }
-.aspect-protection { background: #2f9455; }
+.aspect-aggression { background: #a5232a; }
+.aspect-justice { background: #c8a01c; color: #17140a; }
+.aspect-leadership { background: #2b5fa8; }
+.aspect-protection { background: #2c7a4d; }
 
-.aspect-bar {
-  width: 100%;
-  height: 7.2mm;
-  border: .45mm solid var(--ink);
-  border-radius: 1mm;
-  background: #e7e1d3;
-  overflow: hidden;
-}
-
-.aspect-bar span {
-  display: block;
-  height: 100%;
-}
-
-.ag-aggression .aspect-bar span { background: #b5262d; }
-.ag-justice .aspect-bar span { background: #d9ae1e; }
-.ag-leadership .aspect-bar span { background: #2f66b5; }
-.ag-protection .aspect-bar span { background: #2f9455; }
+.ag-aggression .dot.on { background: #a5232a; }
+.ag-justice .dot.on { background: #c8a01c; }
+.ag-leadership .dot.on { background: #2b5fa8; }
+.ag-protection .dot.on { background: #2c7a4d; }
 
 /* ---------------- Cara B ---------------- */
 
@@ -676,8 +516,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   padding: 1.8mm;
-  border-top: 1mm solid var(--accent);
-  opacity: 1;
+  opacity: .9;
 }
 
 @media print {
@@ -705,15 +544,15 @@ body {
   <header class="header">
     <div>
       <div class="eyebrow">Guía básica de héroe · Marvel Champions LCG</div>
-      <div class="hero-name">Pantera Negra</div>
-      <div class="alter-ego-name">T'Challa</div>
+      <div class="hero-name">Iron Man</div>
+      <div class="alter-ego-name">Tony Stark</div>
     </div>
   </header>
 
   <div class="body">
     <div class="row">
       <div class="portrait">
-        <img class="card-art" src="https://marvelcdb.com/bundles/cards/01040a.png" alt="Pantera Negra">
+        <img class="card-art" src="https://marvelcdb.com/bundles/cards/01029a.png" alt="Iron Man">
       </div>
 
       <div class="panel meters-panel">
@@ -723,65 +562,114 @@ body {
             <div class="dots ">
   <div class="dot on "></div>
   <div class="dot on "></div>
-  <div class="dot  "></div>
+  <div class="dot on "></div>
   <div class="dot  "></div>
   <div class="dot  "></div>
 </div>
           </div>
           <div>
-            <div class="meter-label">Nivel de poder</div>
+            <div class="meter-label">Potencia</div>
             <div class="dots power">
   <div class="dot on power"></div>
   <div class="dot on power"></div>
   <div class="dot on power"></div>
-  <div class="dot  power"></div>
+  <div class="dot on power"></div>
   <div class="dot  power"></div>
 </div>
           </div>
         </div>
 
-        <div class="aspects-block">
+        <div>
+          <div class="sub-title">Aspectos</div>
           <div class="aspect-grid">
-            <div class="ag-head ag-head-aspects">Aspectos</div>
+            <div></div>
 <div class="ag-head">Solo</div><div class="ag-head">2 jugadores</div><div class="ag-head">3-4 jugadores</div>            <div class="ag-name aspect-aggression">Agresividad</div>
-            <div class="ag-cell ag-aggression"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 60.0%"></span>
+            <div class="ag-cell ag-aggression"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
 </div></div>
-            <div class="ag-cell ag-aggression"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 80.0%"></span>
+            <div class="ag-cell ag-aggression"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
 </div></div>
-            <div class="ag-cell ag-aggression"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 80.0%"></span>
+            <div class="ag-cell ag-aggression"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
 </div></div>
             <div class="ag-name aspect-justice">Justicia</div>
-            <div class="ag-cell ag-justice"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 80.0%"></span>
+            <div class="ag-cell ag-justice"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
 </div></div>
-            <div class="ag-cell ag-justice"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 60.0%"></span>
+            <div class="ag-cell ag-justice"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
 </div></div>
-            <div class="ag-cell ag-justice"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 40.0%"></span>
+            <div class="ag-cell ag-justice"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
 </div></div>
             <div class="ag-name aspect-leadership">Liderazgo</div>
-            <div class="ag-cell ag-leadership"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 80.0%"></span>
+            <div class="ag-cell ag-leadership"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
 </div></div>
-            <div class="ag-cell ag-leadership"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 80.0%"></span>
+            <div class="ag-cell ag-leadership"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
 </div></div>
-            <div class="ag-cell ag-leadership"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 80.0%"></span>
+            <div class="ag-cell ag-leadership"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
 </div></div>
             <div class="ag-name aspect-protection">Protección</div>
-            <div class="ag-cell ag-protection"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 60.0%"></span>
+            <div class="ag-cell ag-protection"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
 </div></div>
-            <div class="ag-cell ag-protection"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 60.0%"></span>
+            <div class="ag-cell ag-protection"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
 </div></div>
-            <div class="ag-cell ag-protection"><div class="aspect-bar" aria-hidden="true">
-  <span style="width: 60.0%"></span>
+            <div class="ag-cell ag-protection"><div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
 </div></div>
           </div>
         </div>
@@ -791,59 +679,37 @@ body {
     <div class="panel">
       <div class="panel-title">Fortalezas</div>
       <ul class="item-list">
-<li>Empieza con <i>Represalia</i> 1.</li><li>Atributos básicos muy equilibrados.</li><li>Muy buena economía con <i>recursos</i> universales.</li><li>Con las 4 <i>mejoras</i> Pantera Negra en mesa, puede atacar, intervenir y defender en el mismo turno.</li><li>En <i>alter ego</i>, sus <i>apoyos</i> le hacen robar muchas cartas.</li>      </ul>
+<li>Cada mejora Tecnología sube el tamaño de mano: montado, roba más que nadie.</li><li>Tony mira 3 y se queda 1: filtra el mazo hacia las piezas de la armadura.</li><li>La armadura Mark V da +6 de vida: de 9 pasa a un tanque.</li><li>Con Aéreo, casco, guanteletes y puñetazo rinden el doble.</li>      </ul>
     </div>
 
     <div class="panel">
       <div class="panel-title">Debilidades</div>
       <ul class="item-list">
-<li>Tiene un inicio lento: hasta que no tiene las <i>mejoras</i> Pantera Negra en mesa, rinde poco.</li><li>Las activaciones de las <i>mejoras</i> Pantera Negra son muy flexibles, pero no muy potentes.</li><li>No destaca en un atributo concreto: ni en ataque, ni en <i>intervención</i>, ni en defensa.</li>      </ul>
+<li>Empieza con mano 1 y Defensa 1: los primeros turnos son frágiles.</li><li>Hasta que no está montado, Ataque 1 e Intervención 2 no dan guerra.</li><li>El kit es caro: sin Torre, Pepper o Helitransporte tarda en salir.</li>      </ul>
     </div>
 
     <div class="panel">
       <div class="panel-title">Cartas básicas indispensables</div>
-      <div class="rec-basics rec-basics-3">
+      <div class="rec-basics">
         <div class="rec-basic">
 <img src="https://marvelcdb.com/bundles/cards/01092.png" alt="Helitransporte">          <div>
             <div class="sig-name">Helitransporte</div>
             <span class="type-tag">Apoyo</span>
-            <p class="sig-note"><i>Mejora</i> de economía.</p>
+            <p class="sig-note">Recurso extra. Imprescindible para montar el traje a tiempo.</p>
           </div>
         </div>
         <div class="rec-basic">
 <img src="https://marvelcdb.com/bundles/cards/01091.png" alt="Mansión de los Vengadores">          <div>
             <div class="sig-name">Mansión de los Vengadores</div>
             <span class="type-tag">Apoyo</span>
-            <p class="sig-note">Robo extra de cartas.</p>
+            <p class="sig-note">Robo extra. Compensa la mano de 1 del principio.</p>
           </div>
         </div>
         <div class="rec-basic">
-<img src="https://marvelcdb.com/bundles/cards/01084.png" alt="Nick Furia">          <div>
-            <div class="sig-name">Nick Furia</div>
-            <span class="type-tag">Aliado</span>
-            <p class="sig-note">Un buen <i>aliado</i> flexible.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="panel-title">Mazos recomendados</div>
-      <div class="rec-mazos rec-mazos-2">
-        <div class="rec-mazo rec-mazo-leadership">
-          <div class="rec-mazo-art">
-<img src="https://marvelcdb.com/bundles/cards/03015.png" alt="¡Vengadores, reuníos!">          </div>
-          <div class="rec-mazo-title">
-            <span class="rec-mazo-aspecto aspect-leadership">Liderazgo</span>
-            Aliados Vengadores
-          </div>
-        </div>
-        <div class="rec-mazo rec-mazo-aggression">
-          <div class="rec-mazo-art">
-<img src="https://marvelcdb.com/bundles/cards/28017.png" alt="Técnica depurada">          </div>
-          <div class="rec-mazo-title">
-            <span class="rec-mazo-aspecto aspect-aggression">Agresividad</span>
-            Supereventos
+<img src="https://marvelcdb.com/bundles/cards/01089.png" alt="Genio">          <div>
+            <div class="sig-name">Genio</div>
+            <span class="type-tag">Recurso</span>
+            <p class="sig-note">Recurso de genio. Paga las Botas y filtra con Tony.</p>
           </div>
         </div>
       </div>
@@ -861,8 +727,7 @@ body {
   <header class="header">
     <div>
       <div class="eyebrow">Cartas propias y consideraciones de juego</div>
-      <div class="hero-name">Pantera Negra</div>
-      <div class="alter-ego-name">T'Challa</div>
+      <div class="hero-name">Iron Man</div>
     </div>
   </header>
 
@@ -872,10 +737,10 @@ body {
       <div class="card-grid">
         <div class="sig-card">
           <div class="sig-art">
-<img src="https://marvelcdb.com/bundles/cards/01043a.png" alt="¡Wakanda por siempre!">          </div>
-          <div class="sig-name">¡Wakanda por siempre!</div>
+<img src="https://marvelcdb.com/bundles/cards/01037.png" alt="Casco Mark V">          </div>
+          <div class="sig-name">Casco Mark V</div>
           <div class="sig-meta">
-            <span class="type-tag">Evento · x5</span>
+            <span class="type-tag">Mejora · x1</span>
             <div class="dots small">
   <div class="dot on small"></div>
   <div class="dot on small"></div>
@@ -884,14 +749,30 @@ body {
   <div class="dot on small"></div>
 </div>
           </div>
-          <p class="sig-note">Activa todas las <i>mejoras</i> Pantera Negra a la vez. Rinde cuando hay varias en mesa.</p>
+          <p class="sig-note">Quita 1 de amenaza (todos los planes si eres Aéreo).</p>
         </div>
         <div class="sig-card">
           <div class="sig-art">
-<img src="https://marvelcdb.com/bundles/cards/01047.png" alt="Garras de pantera">          </div>
-          <div class="sig-name">Garras de pantera</div>
+<img src="https://marvelcdb.com/bundles/cards/01036.png" alt="Armadura Mark V">          </div>
+          <div class="sig-name">Armadura Mark V</div>
           <div class="sig-meta">
             <span class="type-tag">Mejora · x1</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div>
+          </div>
+          <p class="sig-note">+6 de vida. Prioridad uno al montar la armadura.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/01039.png" alt="Botas propulsoras">          </div>
+          <div class="sig-name">Botas propulsoras</div>
+          <div class="sig-meta">
+            <span class="type-tag">Mejora · x2</span>
             <div class="dots small">
   <div class="dot on small"></div>
   <div class="dot on small"></div>
@@ -900,14 +781,14 @@ body {
   <div class="dot  small"></div>
 </div>
           </div>
-          <p class="sig-note"><i>Mejora</i> que hace <i>daño</i> a los enemigos.</p>
+          <p class="sig-note">+1 de vida y Aéreo si gastas un mental. Activa el resto del traje.</p>
         </div>
         <div class="sig-card">
           <div class="sig-art">
-<img src="https://marvelcdb.com/bundles/cards/01048.png" alt="Ingenio táctico">          </div>
-          <div class="sig-name">Ingenio táctico</div>
+<img src="https://marvelcdb.com/bundles/cards/01038.png" alt="Guanteletes potenciados">          </div>
+          <div class="sig-name">Guanteletes potenciados</div>
           <div class="sig-meta">
-            <span class="type-tag">Mejora · x1</span>
+            <span class="type-tag">Mejora · x2</span>
             <div class="dots small">
   <div class="dot on small"></div>
   <div class="dot on small"></div>
@@ -916,23 +797,7 @@ body {
   <div class="dot  small"></div>
 </div>
           </div>
-          <p class="sig-note"><i>Mejora</i> que quita <i>amenaza</i>.</p>
-        </div>
-        <div class="sig-card">
-          <div class="sig-art">
-<img src="https://marvelcdb.com/bundles/cards/01049.png" alt="Traje de vibránium">          </div>
-          <div class="sig-name">Traje de vibránium</div>
-          <div class="sig-meta">
-            <span class="type-tag">Mejora · x1</span>
-            <div class="dots small">
-  <div class="dot on small"></div>
-  <div class="dot on small"></div>
-  <div class="dot on small"></div>
-  <div class="dot on small"></div>
-  <div class="dot  small"></div>
-</div>
-          </div>
-          <p class="sig-note"><i>Mejora</i> que pasa el <i>daño</i> del <i>héroe</i> al enemigo.</p>
+          <p class="sig-note">Ataque barato cada turno. 2 de daño si eres Aéreo.</p>
         </div>
       </div>
     </div>
@@ -941,8 +806,24 @@ body {
       <div class="panel-title">Cartas circunstanciales</div>
       <div class="mini-grid">
         <div class="mini">
-<img src="https://marvelcdb.com/bundles/cards/01046.png" alt="Dagas de energía">          <div class="mini-info">
-            <div class="sig-name">Dagas de energía</div>
+<img src="https://marvelcdb.com/bundles/cards/01031.png" alt="Rayo repulsor">          <div class="mini-info">
+            <div class="sig-name">Rayo repulsor</div>
+            <div class="sig-meta">
+              <span class="type-tag">Evento · x3</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">1 de daño más 2 por cada energía que millees. Mejor con mano grande.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01035.png" alt="Reactor ARK">          <div class="mini-info">
+            <div class="sig-name">Reactor ARK</div>
             <div class="sig-meta">
               <span class="type-tag">Mejora · x1</span>
               <div class="dots small">
@@ -953,28 +834,12 @@ body {
   <div class="dot  small"></div>
 </div>
             </div>
-            <p class="sig-note"><i>Mejora</i> que hace <i>daño</i> en área al <i>villano</i> y a los <i>esbirros</i>.</p>
+            <p class="sig-note">Prepara a Iron Man. Más acciones cuando ya está montado.</p>
           </div>
         </div>
         <div class="mini">
-<img src="https://marvelcdb.com/bundles/cards/01041.png" alt="Shuri">          <div class="mini-info">
-            <div class="sig-name">Shuri</div>
-            <div class="sig-meta">
-              <span class="type-tag">Aliado · x1</span>
-              <div class="dots small">
-  <div class="dot on small"></div>
-  <div class="dot on small"></div>
-  <div class="dot on small"></div>
-  <div class="dot  small"></div>
-  <div class="dot  small"></div>
-</div>
-            </div>
-            <p class="sig-note"><i>Aliado</i> que busca <i>mejoras</i> y acelera el montaje.</p>
-          </div>
-        </div>
-        <div class="mini">
-<img src="https://marvelcdb.com/bundles/cards/01045.png" alt="La Ciudad Dorada">          <div class="mini-info">
-            <div class="sig-name">La Ciudad Dorada</div>
+<img src="https://marvelcdb.com/bundles/cards/01033.png" alt="Pepper Potts">          <div class="mini-info">
+            <div class="sig-name">Pepper Potts</div>
             <div class="sig-meta">
               <span class="type-tag">Apoyo · x1</span>
               <div class="dots small">
@@ -985,30 +850,14 @@ body {
   <div class="dot  small"></div>
 </div>
             </div>
-            <p class="sig-note">Roba extra al estar en <i>alter ego</i>.</p>
+            <p class="sig-note">Copia los recursos del descarte. Economía cuando el traje ya salió.</p>
           </div>
         </div>
         <div class="mini">
-<img src="https://marvelcdb.com/bundles/cards/01044.png" alt="Vibránium">          <div class="mini-info">
-            <div class="sig-name">Vibránium</div>
+<img src="https://marvelcdb.com/bundles/cards/01034.png" alt="Torre Stark">          <div class="mini-info">
+            <div class="sig-name">Torre Stark</div>
             <div class="sig-meta">
-              <span class="type-tag">Recurso · x3</span>
-              <div class="dots small">
-  <div class="dot on small"></div>
-  <div class="dot on small"></div>
-  <div class="dot on small"></div>
-  <div class="dot  small"></div>
-  <div class="dot  small"></div>
-</div>
-            </div>
-            <p class="sig-note"><i>Recurso</i> doble universal: potencia su economía.</p>
-          </div>
-        </div>
-        <div class="mini">
-<img src="https://marvelcdb.com/bundles/cards/01042.png" alt="Sabiduría ancestral">          <div class="mini-info">
-            <div class="sig-name">Sabiduría ancestral</div>
-            <div class="sig-meta">
-              <span class="type-tag">Evento · x1</span>
+              <span class="type-tag">Apoyo · x1</span>
               <div class="dots small">
   <div class="dot on small"></div>
   <div class="dot on small"></div>
@@ -1017,7 +866,39 @@ body {
   <div class="dot  small"></div>
 </div>
             </div>
-            <p class="sig-note">En <i>alter ego</i>, recupera cartas del <i>descarte</i>.</p>
+            <p class="sig-note">En Tony, recupera una Tecnología del descarte.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01032.png" alt="Puñetazo supersónico">          <div class="mini-info">
+            <div class="sig-name">Puñetazo supersónico</div>
+            <div class="sig-meta">
+              <span class="type-tag">Evento · x2</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">4 de daño, 8 si eres Aéreo. Para cerrar, no para abrir.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/01030.png" alt="Máquina de Guerra">          <div class="mini-info">
+            <div class="sig-name">Máquina de Guerra</div>
+            <div class="sig-meta">
+              <span class="type-tag">Aliado · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Daño a todos los enemigos. Caro y situacional.</p>
           </div>
         </div>
       </div>
@@ -1026,9 +907,10 @@ body {
     <div class="panel">
       <div class="panel-title">Consideraciones</div>
       <ul class="item-list">
-        <li>Al jugar <b>¡Wakanda por siempre!</b>, elige el orden de las <i>mejoras</i> Pantera Negra según la situación.</li>
-        <li>Tiene <i>recursos</i> dobles en el kit: la economía es excelente.</li>
-        <li>Según el escenario, te interesa empezar con una <i>mejora</i> Pantera Negra u otra.</li>
+        <li>El plan es montar: Botas, Casco, Guanteletes y Armadura antes de pegar de verdad.</li>
+        <li>Aéreo (Botas + un mental) dispara casco, guanteletes y puñetazo.</li>
+        <li>Tony cada ronda: mira 3, quédate una pieza de la armadura.</li>
+        <li>Pepper copia la última carta del descarte: úsala cuando ya hay Tecnologías gastadas.</li>
       </ul>
     </div>
 
@@ -1038,12 +920,12 @@ body {
         <div>
           <div class="sub-title">Buscar</div>
           <ul class="item-list">
-<li>Cualquier <i>mejora</i> Pantera Negra: hay que ponerlas en mesa cuanto antes.</li><li><b>Vibránium</b>: para jugar las <i>mejoras</i>.</li><li><b>Shuri</b>: busca las <i>mejoras</i> Pantera Negra.</li>          </ul>
+<li>Cualquier pieza de la armadura (Botas, Casco, Guanteletes, Mark V).</li><li>Helitransporte y Mansión: para salir del turno 1 con mano 1.</li><li>Pepper Potts o Torre Stark si ya tienes una mejora que jugar.</li>          </ul>
         </div>
         <div>
           <div class="sub-title">Cambia</div>
           <ul class="item-list">
-<li><b>¡Wakanda por siempre!</b>: sin <i>mejoras</i> en mesa no hace nada.</li><li><b>Sabiduría ancestral</b>: todavía no hay <i>descarte</i> que recuperar.</li>          </ul>
+<li>Rayo repulsor y Puñetazo supersónico: todavía no hay con qué pagarlos.</li><li>Máquina de Guerra: cuesta 4 y no monta el traje.</li>          </ul>
         </div>
       </div>
     </div>

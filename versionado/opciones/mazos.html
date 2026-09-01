@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Opciones de mazos recomendados</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0;
+  padding: 8mm 0;
+  background: #4a4a4a;
+  font-family: Inter, "Segoe UI", sans-serif;
+  color: #141414;
+}
+.sheet {
+  width: 210mm;
+  margin: 0 auto 8mm;
+  background: #f4efe4;
+  padding: 8mm 9mm 8mm;
+  box-shadow: 0 4mm 10mm rgba(0,0,0,.45);
+}
+h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 7.2mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 0 1.4mm;
+}
+.lead {
+  font-size: 3.15mm;
+  line-height: 1.4;
+  margin: 0 0 5mm;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4.5mm;
+}
+.option {
+  background: #fbf8f1;
+  border: .55mm solid #141414;
+  border-radius: 2mm;
+  padding: 3mm 3.4mm 3.4mm;
+}
+.option h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 3.6mm;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 0 0 1mm;
+}
+.option .note {
+  font-size: 2.7mm;
+  line-height: 1.35;
+  margin: 0 0 2.6mm;
+  opacity: .78;
+}
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+}
+.sig-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  line-height: 1.12;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+img.card {
+  display: block;
+  background: #ddd;
+  border: .4mm solid #141414;
+}
+
+/* A — franja */
+.a .tile {
+  border: .6mm solid #141414;
+  border-radius: 1.6mm;
+  overflow: hidden;
+  background: #fff;
+}
+.a .bar {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 3.1mm;
+  line-height: 1.12;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.4mm 2.2mm;
+  color: #fff;
+}
+.a .art {
+  display: flex;
+  justify-content: center;
+  padding: 2mm;
+}
+.a img.card { width: 28mm; border-radius: 1mm; }
+
+/* B — filete */
+.b .tile {
+  display: flex;
+  gap: 2.6mm;
+  align-items: center;
+  background: #fff;
+  border: .6mm solid #141414;
+  border-radius: 1.6mm;
+  border-left-width: 2.4mm;
+  padding: 2mm 2.4mm;
+}
+.b.justice .tile { border-left-color: #c8a01c; }
+.b.protection .tile { border-left-color: #2c7a4d; }
+.b img.card { width: 22mm; border-radius: 1mm; flex: 0 0 22mm; }
+.b .sig-name { color: #141414; }
+
+/* C — etiqueta */
+.c .tile {
+  display: flex;
+  gap: 2.6mm;
+  align-items: center;
+  background: #fff;
+  border: .6mm solid #141414;
+  border-radius: 1.6mm;
+  padding: 2mm 2.4mm;
+}
+.c img.card { width: 22mm; border-radius: 1mm; flex: 0 0 22mm; }
+.chip {
+  display: inline-block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 2.6mm;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #fff;
+  border: .45mm solid #141414;
+  border-radius: 1.1mm;
+  padding: .4mm 1.6mm;
+  margin-bottom: 1.1mm;
+}
+.chip.justice { background: #c8a01c; color: #17140a; }
+.chip.protection { background: #2c7a4d; }
+
+.justice .bar { background: #c8a01c; color: #17140a; }
+.protection .bar { background: #2c7a4d; }
+</style>
+</head>
+<body>
+<section class="sheet">
+  <h1>Mazos recomendados — otras formas</h1>
+  <p class="lead">
+    Misma pareja de Hulka, sin el recuadro de color a pantalla completa.
+    La carta sigue siendo el gancho; el color del aspecto se usa como acento.
+  </p>
+
+  <div class="grid">
+    <article class="option">
+      <h2>A · Franja y carta</h2>
+      <p class="note">Solo se pinta una cinta con el título. Debajo, la carta grande centra el recuadro y evita el hueco blanco.</p>
+      <div class="pair">
+        <div class="a justice">
+          <div class="tile">
+            <div class="bar">Prevención de amenaza con Planificaciones</div>
+            <div class="art"><img class="card" src="https://marvelcdb.com/bundles/cards/08011.png" alt="Agente Coulson"></div>
+          </div>
+        </div>
+        <div class="a protection">
+          <div class="tile">
+            <div class="bar">Preparaciones con Listos para luchar</div>
+            <div class="art"><img class="card" src="https://marvelcdb.com/bundles/cards/52019.jpg" alt="Listos para luchar"></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="option">
+      <h2>B · Filete de color</h2>
+      <p class="note">Como las básicas: carta + título en crema. El aspecto se lee en el borde izquierdo, sin inundar.</p>
+      <div class="pair">
+        <div class="b justice">
+          <div class="tile">
+            <img class="card" src="https://marvelcdb.com/bundles/cards/08011.png" alt="Agente Coulson">
+            <div class="sig-name">Prevención de amenaza con Planificaciones</div>
+          </div>
+        </div>
+        <div class="b protection">
+          <div class="tile">
+            <img class="card" src="https://marvelcdb.com/bundles/cards/52019.jpg" alt="Listos para luchar">
+            <div class="sig-name">Preparaciones con Listos para luchar</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="option">
+      <h2>C · Etiqueta de aspecto</h2>
+      <p class="note">Misma estructura que B, pero el color va en una pastilla Justicia / Protección, igual que en la tabla de aspectos.</p>
+      <div class="pair">
+        <div class="c">
+          <div class="tile">
+            <img class="card" src="https://marvelcdb.com/bundles/cards/08011.png" alt="Agente Coulson">
+            <div>
+              <span class="chip justice">Justicia</span>
+              <div class="sig-name">Prevención de amenaza con Planificaciones</div>
+            </div>
+          </div>
+        </div>
+        <div class="c">
+          <div class="tile">
+            <img class="card" src="https://marvelcdb.com/bundles/cards/52019.jpg" alt="Listos para luchar">
+            <div>
+              <span class="chip protection">Protección</span>
+              <div class="sig-name">Preparaciones con Listos para luchar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+</body>
+</html>
