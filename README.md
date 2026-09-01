@@ -140,6 +140,7 @@ templates/sheet.css          Estilos (en milímetros, pensados para impresión)
 data/heroes/*.json           Un archivo por héroe
 notas/*.md                   Apuntes en bruto, no se imprimen
 dist/                        Mesa de trabajo: HTML y PDF que se están preparando
+docs/guia-principiantes.html Guía de iniciación (se edita aquí)
 finals/html/                 Hojas ya cerradas (HTML)
 finals/pdf/                  Hojas ya cerradas (PDF, para imprimir)
 proposals/                   Pruebas de diseño que no son la plantilla oficial
