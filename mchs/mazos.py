@@ -67,4 +67,5 @@ def resolve_hero_mazos(
                 f"[{slug}] no existe el mazo '{ref['slug']}'. Definidos: {known}."
             )
         resolved.append({**mazo, "note": ref["note"]})
+    resolved.sort(key=lambda mazo: ASPECTS.index(mazo["aspect"]))
     return resolved
