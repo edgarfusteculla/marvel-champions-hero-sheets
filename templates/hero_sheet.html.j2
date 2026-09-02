@@ -50,8 +50,6 @@
 
 {# ============================ CARA A — PRESENTACIÓN ============================ #}
 <section class="sheet sheet-a">
-  <div class="halftone"></div>
-
   <header class="header">
     <div>
       <div class="eyebrow">Guía básica de héroe · Marvel Champions LCG</div>
@@ -68,7 +66,7 @@
         {% endif %}
       </div>
 
-      <div class="panel meters-panel">
+      <div class="meters-panel">
         <div class="meters">
           <div>
             <div class="meter-label">Dificultad</div>
@@ -116,7 +114,7 @@
     {% endif %}
 
     {% if 'basicas' not in hide and basic_cards %}
-    <div class="panel">
+    <div>
       <div class="panel-title">Cartas básicas indispensables</div>
       <div class="rec-basics rec-basics-{{ basic_cards|length }}">
         {% for card in basic_cards %}
@@ -134,7 +132,7 @@
     {% endif %}
 
     {% if 'mazos' not in hide and mazos %}
-    <div class="panel">
+    <div>
       <div class="panel-title">Mazos recomendados</div>
       <div class="rec-mazos rec-mazos-{{ mazos|length }}">
         {% for mazo in mazos %}
@@ -161,8 +159,6 @@
 
 {# ============================ CARA B — CARTAS Y ESTRATEGIA ============================ #}
 <section class="sheet sheet-b">
-  <div class="halftone"></div>
-
   <header class="header">
     <div>
       <div class="eyebrow">Cartas propias y consideraciones de juego</div>

@@ -56,15 +56,6 @@ body {
   box-shadow: 0 4mm 10mm rgba(0, 0, 0, .45);
 }
 
-.halftone {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(var(--ink) .35mm, transparent .45mm);
-  background-size: 2.6mm 2.6mm;
-  opacity: .045;
-  pointer-events: none;
-}
-
 /* ---------------- Cabecera ---------------- */
 
 .header {
@@ -140,10 +131,9 @@ body {
 
 .panel {
   background: var(--paper-light);
-  border: .7mm solid var(--ink);
+  border: .4mm solid var(--ink);
   border-radius: 2mm;
-  padding: 0 3.2mm 2.6mm;
-  position: relative;
+  padding: 0 0 2.4mm;
   overflow: hidden;
 }
 
@@ -155,20 +145,14 @@ body {
   font-size: 3.8mm;
   background: var(--primary);
   color: var(--on-primary);
-  border: .6mm solid var(--ink);
   border-radius: 1.4mm;
   margin: 0 0 2.2mm;
   padding: 1.1mm 2.6mm .9mm;
   box-shadow: inset 0 -.7mm 0 rgba(0, 0, 0, .22);
 }
 
-/* Dentro de un panel la banda sangra hasta los bordes. */
 .panel > .panel-title {
-  border: 0;
-  border-bottom: .5mm solid var(--ink);
   border-radius: 0;
-  margin: 0 -3.2mm 2.4mm;
-  padding: 1.3mm 3.2mm 1.1mm;
 }
 
 /* ---------------- Cara A ---------------- */
@@ -184,7 +168,7 @@ body {
   width: 100%;
   display: block;
   border-radius: 2.4mm;
-  border: .6mm solid var(--ink);
+  border: .4mm solid var(--ink);
   background: #ddd;
 }
 
@@ -194,7 +178,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 3mm;
-  padding: 2.2mm 2.6mm 2.4mm;
 }
 
 .meter-label {
@@ -222,10 +205,10 @@ body {
 }
 
 .dot {
-  width: 8.2mm;
-  height: 8.2mm;
+  width: 7mm;
+  height: 7mm;
   border-radius: 50%;
-  border: .6mm solid var(--ink);
+  border: .55mm solid var(--ink);
   background: #ded8ca;
 }
 
@@ -258,7 +241,7 @@ body {
 }
 
 .item-list {
-  margin: 0;
+  margin: 0 6mm;
   padding: 0 0 0 4.5mm;
 }
 
@@ -288,6 +271,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4mm;
+  padding: 0 6mm;
+}
+
+.split-lists .item-list {
+  margin: 0;
 }
 
 .split-lists .sub-title {
@@ -298,6 +286,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3mm;
+  padding: 0 6mm;
 }
 
 .rec-basics-4 {
@@ -306,20 +295,24 @@ body {
 }
 
 .rec-basics-4 .rec-basic img {
+  flex-basis: 14mm;
   width: 14mm;
 }
 
 .rec-basic {
   display: flex;
-  gap: 2.4mm;
-  align-items: flex-start;
+  gap: 2.6mm;
+  align-items: center;
 }
 
 .rec-basic img {
-  flex: 0 0 auto;
-  width: 16mm;
+  flex: 0 0 22mm;
+  width: 22mm;
+  aspect-ratio: 300 / 419;
+  object-fit: cover;
+  object-position: center center;
   border-radius: 1mm;
-  border: .4mm solid var(--ink);
+  border: .3mm solid var(--ink);
   background: #ddd;
 }
 
@@ -331,10 +324,16 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3mm;
+  padding: 0 6mm;
 }
 
 .rec-mazos-1 {
   grid-template-columns: 1fr;
+}
+
+.rec-mazos-2 {
+  grid-template-columns: repeat(2, minmax(0, calc((100% - 6mm) / 3)));
+  justify-content: center;
 }
 
 .rec-mazos-3 {
@@ -347,7 +346,6 @@ body {
 }
 
 .rec-mazos-4 .rec-mazo {
-  padding: 1.2mm 1.6mm;
   gap: 1.8mm;
 }
 
@@ -364,17 +362,7 @@ body {
   display: flex;
   gap: 2.6mm;
   align-items: center;
-  background: #fff;
-  border: .6mm solid var(--ink);
-  border-left-width: 2.4mm;
-  border-radius: 1.6mm;
-  padding: 2mm 2.4mm;
 }
-
-.rec-mazo-aggression { border-left-color: #b5262d; }
-.rec-mazo-justice { border-left-color: #d9ae1e; }
-.rec-mazo-leadership { border-left-color: #2f66b5; }
-.rec-mazo-protection { border-left-color: #2f9455; }
 
 .rec-mazo-title {
   flex: 1 1 auto;
@@ -402,10 +390,7 @@ body {
 .rec-mazo-aspecto {
   font-size: 2.6mm;
   letter-spacing: .06em;
-  color: #fff;
-  border: .45mm solid var(--ink);
-  border-radius: 1mm;
-  padding: .3mm 1.4mm;
+  padding: 0;
 }
 
 .rec-mazo-art {
@@ -414,7 +399,7 @@ body {
   aspect-ratio: 300 / 419;
   overflow: hidden;
   border-radius: 1mm;
-  border: .4mm solid var(--ink);
+  border: .3mm solid var(--ink);
   background: #ddd;
 }
 
@@ -440,7 +425,7 @@ body {
   display: grid;
   width: 100%;
   grid-template-columns: auto repeat(3, minmax(0, 1fr));
-  gap: 2.6mm 2mm;
+  gap: 2mm 2mm;
   align-items: center;
 }
 
@@ -464,13 +449,10 @@ body {
   font-size: 3.7mm;
   text-transform: uppercase;
   letter-spacing: .04em;
-  color: #fff;
-  border: .6mm solid var(--ink);
-  border-radius: 1.4mm;
-  padding: 0 2.2mm;
-  height: 7.2mm;
+  padding-right: 1.6mm;
   display: flex;
   align-items: center;
+  line-height: 1;
 }
 
 .ag-cell {
@@ -479,16 +461,16 @@ body {
   min-width: 0;
 }
 
-.aspect-aggression { background: #b5262d; }
-.aspect-justice { background: #d9ae1e; color: #17140a; }
-.aspect-leadership { background: #2f66b5; }
-.aspect-protection { background: #2f9455; }
+.aspect-aggression { color: #b5262d; }
+.aspect-justice { color: #a07e10; }
+.aspect-leadership { color: #2f66b5; }
+.aspect-protection { color: #2f9455; }
 
 .aspect-bar {
   width: 100%;
-  height: 7.2mm;
-  border: .45mm solid var(--ink);
-  border-radius: 1mm;
+  height: 3.6mm;
+  border: .4mm solid var(--ink);
+  border-radius: .8mm;
   background: #e7e1d3;
   overflow: hidden;
 }
@@ -509,23 +491,26 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2.5mm;
+  justify-items: center;
 }
 
 .sig-card {
   display: flex;
   flex-direction: column;
   gap: 1.2mm;
+  width: 35mm;
 }
 
 .sig-art {
   position: relative;
+  width: 100%;
 }
 
 .sig-art img {
   width: 100%;
   display: block;
   border-radius: 1.8mm;
-  border: .5mm solid var(--ink);
+  border: .35mm solid var(--ink);
   background: #ddd;
 }
 
@@ -565,6 +550,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5mm 4mm;
+  /* Mismo aire lateral que las imágenes de Mejores cartas. */
+  padding: 0 6mm;
 }
 
 .mini {
@@ -578,7 +565,7 @@ body {
   width: 11mm;
   display: block;
   border-radius: 1mm;
-  border: .4mm solid var(--ink);
+  border: .3mm solid var(--ink);
   background: #ddd;
 }
 
@@ -611,10 +598,10 @@ body {
 /* ---------------- Notas propias ---------------- */
 
 .notes {
-  border: .7mm solid var(--ink);
-  border-left-width: 2.5mm;
-  border-radius: 1.8mm;
-  padding: 2mm 3mm 2.2mm;
+  margin: 0 6mm;
+  border-left: 2.5mm solid var(--ink);
+  border-radius: 0 1.4mm 1.4mm 0;
+  padding: 1.6mm 3mm 1.8mm 2.6mm;
   background: var(--paper-light);
 }
 
@@ -700,8 +687,6 @@ body {
 <body>
 
 <section class="sheet sheet-a">
-  <div class="halftone"></div>
-
   <header class="header">
     <div>
       <div class="eyebrow">Guía básica de héroe · Marvel Champions LCG</div>
@@ -716,7 +701,7 @@ body {
         <img class="card-art" src="https://marvelcdb.com/bundles/cards/01010a.png" alt="Capitana Marvel">
       </div>
 
-      <div class="panel meters-panel">
+      <div class="meters-panel">
         <div class="meters">
           <div>
             <div class="meter-label">Dificultad</div>
@@ -800,7 +785,7 @@ body {
 <li>Mala gestión de la <i>amenaza</i> con sus cartas.</li><li>Defensa muy baja y no tiene cartas de defensa recurrentes.</li>      </ul>
     </div>
 
-    <div class="panel">
+    <div>
       <div class="panel-title">Cartas básicas indispensables</div>
       <div class="rec-basics rec-basics-3">
         <div class="rec-basic">
@@ -827,7 +812,7 @@ body {
       </div>
     </div>
 
-    <div class="panel">
+    <div>
       <div class="panel-title">Mazos recomendados</div>
       <div class="rec-mazos rec-mazos-2">
         <div class="rec-mazo rec-mazo-leadership">
@@ -856,8 +841,6 @@ body {
 </section>
 
 <section class="sheet sheet-b">
-  <div class="halftone"></div>
-
   <header class="header">
     <div>
       <div class="eyebrow">Cartas propias y consideraciones de juego</div>

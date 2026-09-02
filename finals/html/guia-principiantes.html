@@ -43,14 +43,6 @@ body {
   flex-direction: column;
   box-shadow: 0 4mm 10mm rgba(0, 0, 0, .45);
 }
-.halftone {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(var(--ink) .35mm, transparent .45mm);
-  background-size: 2.6mm 2.6mm;
-  opacity: .045;
-  pointer-events: none;
-}
 .header {
   position: relative;
   flex: 0 0 auto;
@@ -122,10 +114,11 @@ body {
 
 .panel {
   background: var(--paper-light);
-  border: .7mm solid var(--ink);
+  border: .4mm solid var(--ink);
   border-radius: 2mm;
   padding: 0 3.4mm 2.4mm;
   position: relative;
+  overflow: hidden;
 }
 .panel-title {
   font-family: 'Barlow Condensed', sans-serif;
@@ -137,9 +130,8 @@ body {
   color: var(--on-primary);
   margin: 0 -3.4mm 2.4mm;
   padding: 1.2mm 3.4mm 1mm;
-  border-bottom: .5mm solid var(--ink);
   box-shadow: inset 0 -.7mm 0 rgba(0, 0, 0, .22);
-  border-radius: 1.3mm 1.3mm 0 0;
+  border-radius: 0;
 }
 .lead {
   font-size: 3.1mm;
@@ -171,7 +163,7 @@ body {
   width: 100%;
   display: block;
   border-radius: 1.8mm;
-  border: .5mm solid var(--ink);
+  border: .35mm solid var(--ink);
   background: #ddd;
 }
 .pin {
@@ -366,7 +358,7 @@ body {
 .state img {
   display: block;
   border-radius: 1.4mm;
-  border: .45mm solid var(--ink);
+  border: .3mm solid var(--ink);
   background: #ddd;
 }
 .state .tag {
@@ -406,7 +398,7 @@ body {
   width: 100%;
   display: block;
   border-radius: 1.4mm;
-  border: .45mm solid var(--ink);
+  border: .3mm solid var(--ink);
   background: #ddd;
 }
 .type-card .t-name {
@@ -496,7 +488,7 @@ body {
   border-radius: 50%;
   background: var(--primary);
   color: #fff;
-  border: .5mm solid var(--ink);
+  border: .4mm solid var(--ink);
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: 4.6mm;
@@ -566,7 +558,7 @@ body {
   width: 26mm;
   height: 36mm;
   border-radius: 1.6mm;
-  border: .5mm solid var(--ink);
+  border: .35mm solid var(--ink);
   background:
     repeating-linear-gradient(45deg, rgba(0,0,0,.16) 0 1mm, transparent 1mm 3mm),
     linear-gradient(160deg, #6d1220 0%, #3a0a12 100%);
@@ -586,7 +578,7 @@ body {
 /* ---------------- Aviso ---------------- */
 
 .warn {
-  border: .7mm solid var(--ink);
+  border: .4mm solid var(--ink);
   border-left: 3mm solid var(--secondary);
   border-radius: 2mm;
   background: #fbf1ef;
@@ -636,7 +628,6 @@ body {
 
 <!-- ==================== 1 · TU PERSONAJE ==================== -->
 <section class="sheet">
-  <div class="halftone"></div>
   <header class="header">
     <div>
       <div class="eyebrow">Guía de iniciación · Marvel Champions LCG</div>
@@ -772,7 +763,6 @@ body {
 
 <!-- ==================== 2 · LAS CARTAS ==================== -->
 <section class="sheet">
-  <div class="halftone"></div>
   <header class="header">
     <div>
       <div class="eyebrow">Guía de iniciación · Marvel Champions LCG</div>
@@ -873,9 +863,13 @@ body {
             <span class="abbr neutro">&#9679;</span>
             <span class="txt"><b>Puntos de vida.</b> Cuando el daño acumulado iguala sus puntos de vida, el aliado va a la pila de descartes. El aliado también se agota para atacar o intervenir.</span>
           </li>
+          <li>
+            <span class="num">·</span>
+            <span class="abbr neutro">&#9679;</span>
+            <span class="txt"><b>Límite.</b> Cada héroe puede tener como máximo 3 aliados en juego.</span>
+          </li>
         </ol>
       </div>
-      <p class="lead" style="margin-top:.8mm;margin-bottom:0"><b>Límite.</b> Cada héroe puede tener como máximo 3 aliados en juego.</p>
     </div>
 
   </div>
@@ -884,7 +878,6 @@ body {
 
 <!-- ==================== 3 · EL TURNO DEL VILLANO ==================== -->
 <section class="sheet">
-  <div class="halftone"></div>
   <header class="header">
     <div>
       <div class="eyebrow">Guía de iniciación · Marvel Champions LCG</div>
@@ -1012,7 +1005,6 @@ body {
 
 <!-- ==================== 4 · ENCUENTROS Y MESA ==================== -->
 <section class="sheet">
-  <div class="halftone"></div>
   <header class="header">
     <div>
       <div class="eyebrow">Guía de iniciación · Marvel Champions LCG</div>
