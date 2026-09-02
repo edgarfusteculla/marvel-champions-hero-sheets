@@ -157,6 +157,14 @@ body {
   gap: 3mm;
 }
 
+.wip-banner {
+  font-size: 3.1mm;
+  line-height: 1.35;
+  padding: 2.4mm 3mm;
+  border-left: 2.5mm solid var(--accent);
+  background: var(--paper-light);
+}
+
 .meter-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;

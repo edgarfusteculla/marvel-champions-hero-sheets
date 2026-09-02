@@ -1,0 +1,91 @@
+{
+  "slug": "spider-woman",
+  "hero_card_code": "04031a",
+  "display_name": "Spider-Woman",
+  "alter_ego_name": "Jessica Drew",
+  "wip": true,
+  "difficulty": 3,
+  "power": 3,
+  "strengths": [],
+  "weaknesses": [],
+  "aspects": {
+    "aggression": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "justice": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "leadership": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "protection": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    }
+  },
+  "cards": [
+    {
+      "code": "04032",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "04033",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "04034",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "04035",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "04036",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "04037",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "04038",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "04039",
+      "priority": 3,
+      "note": ""
+    }
+  ],
+  "basics": [],
+  "mazos": [],
+  "consideraciones": [],
+  "mulligan": {
+    "keep": [],
+    "toss": []
+  },
+  "hide": [
+    "fortalezas",
+    "debilidades",
+    "aspectos",
+    "basicas",
+    "mazos",
+    "consideraciones",
+    "mulligan"
+  ]
+}

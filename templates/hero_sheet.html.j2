@@ -67,6 +67,9 @@
       </div>
 
       <div class="meters-panel">
+        {% if hero.wip %}
+        <div class="wip-banner">Borrador. Faltan valoraciones y textos; las cartas del kit están para ir anotándolas.</div>
+        {% else %}
         <div class="meters">
           <div>
             <div class="meter-label">Dificultad</div>
@@ -77,6 +80,7 @@
             {{ dots(hero.power, extra='power') }}
           </div>
         </div>
+        {% endif %}
 
         {% if 'aspectos' not in hide %}
         <div class="aspects-block">

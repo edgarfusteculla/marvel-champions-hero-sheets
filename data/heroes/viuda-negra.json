@@ -1,0 +1,96 @@
+{
+  "slug": "viuda-negra",
+  "hero_card_code": "08001a",
+  "display_name": "Viuda Negra",
+  "alter_ego_name": "Natasha Romanoff",
+  "wip": true,
+  "difficulty": 3,
+  "power": 3,
+  "strengths": [],
+  "weaknesses": [],
+  "aspects": {
+    "aggression": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "justice": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "leadership": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "protection": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    }
+  },
+  "cards": [
+    {
+      "code": "08002",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "08003",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "08004",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "08005",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "08006",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "08007",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "08008",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "08009",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "08010",
+      "priority": 3,
+      "note": ""
+    }
+  ],
+  "basics": [],
+  "mazos": [],
+  "consideraciones": [],
+  "mulligan": {
+    "keep": [],
+    "toss": []
+  },
+  "hide": [
+    "fortalezas",
+    "debilidades",
+    "aspectos",
+    "basicas",
+    "mazos",
+    "consideraciones",
+    "mulligan"
+  ]
+}

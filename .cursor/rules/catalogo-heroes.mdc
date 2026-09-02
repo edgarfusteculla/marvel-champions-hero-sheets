@@ -1,0 +1,26 @@
+---
+description: Cómo abrir plantillas, cerrar hojas y actualizar el catálogo de héroes
+alwaysApply: true
+---
+
+# Catálogo de héroes
+
+El listado está en `data/catalogo.json`. El HTML se regenera con `python tools/build_catalog.py` (`docs/catalogo.html`). En la hoja se lee: **Terminado** si existe `finals/heroes/html/<slug>.html`, **Trabajando** si existe `data/heroes/<slug>.json` y aún no está en finals, **Pendiente** si no hay JSON. Solo héroes que ya estén en MarvelCDB.
+
+## Plantilla inicial (pasa a Trabajando)
+
+Si Edgar pide la plantilla de un héroe:
+
+1. `python tools/init_hero.py <slug>` (el código sale del catálogo).
+2. Crea `data/heroes/<slug>.json` (`wip: true`, sin consejos inventados) y `notas/<slug>.md`.
+3. Regenera el catálogo (el script ya lo hace).
+4. No copies nada a `finals/`.
+
+## Cerrar una hoja (pasa a Terminado)
+
+Si Edgar da una hoja por cerrada o terminada:
+
+1. `python tools/close_hero.py <slug>` (HTML+PDF a `finals/`, quita `wip`, limpia `dist/`, actualiza el catálogo).
+2. No inventes textos ni valoraciones al cerrar.
+
+No pongas en finals una plantilla vacía. Si un héroe nuevo no está en `data/catalogo.json` y ya existe en MarvelCDB, añádelo antes de crear la plantilla.

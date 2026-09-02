@@ -1,0 +1,227 @@
+{
+  "groups": [
+    {
+      "id": "core",
+      "name": "Caja básica",
+      "kind": "caja",
+      "heroes": [
+        {"slug": "spider-man", "name": "Spider-Man", "code": "01001a"},
+        {"slug": "capitana-marvel", "name": "Capitana Marvel", "code": "01010a"},
+        {"slug": "hulka", "name": "Hulka", "code": "01019a"},
+        {"slug": "iron-man", "name": "Iron Man", "code": "01029a"},
+        {"slug": "pantera-negra", "name": "Pantera Negra", "code": "01040a"}
+      ]
+    },
+    {
+      "id": "ola-1",
+      "name": "Oleada 1",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "capitan-america", "name": "Capitán América", "code": "03001a"},
+        {"slug": "ms-marvel", "name": "Ms. Marvel", "code": "05001a"},
+        {"slug": "thor", "name": "Thor", "code": "06001a"},
+        {"slug": "viuda-negra", "name": "Viuda Negra", "code": "08001a"},
+        {"slug": "doctor-extrano", "name": "Doctor Extraño", "code": "09001a"},
+        {"slug": "hulk", "name": "Hulk", "code": "10001a"}
+      ]
+    },
+    {
+      "id": "trors",
+      "name": "La Tiranía de Cráneo Rojo",
+      "kind": "campana",
+      "heroes": [
+        {"slug": "ojo-de-halcon", "name": "Ojo de Halcón", "code": "04001a"},
+        {"slug": "spider-woman", "name": "Spider-Woman", "code": "04031a"}
+      ]
+    },
+    {
+      "id": "ola-2",
+      "name": "Oleada 2",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "hombre-hormiga", "name": "Hombre Hormiga", "code": "12001a"},
+        {"slug": "avispa", "name": "Avispa", "code": "13001a"},
+        {"slug": "mercurio", "name": "Mercurio", "code": "14001a"},
+        {"slug": "bruja-escarlata", "name": "Bruja Escarlata", "code": "15001a"}
+      ]
+    },
+    {
+      "id": "gmw",
+      "name": "Los más buscados de la galaxia",
+      "kind": "campana",
+      "heroes": [
+        {"slug": "groot", "name": "Groot", "code": "16001a"},
+        {"slug": "mapache-cohete", "name": "Mapache Cohete", "code": "16029a"}
+      ]
+    },
+    {
+      "id": "ola-3",
+      "name": "Oleada 3",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "star-lord", "name": "Star-Lord", "code": "17001a"},
+        {"slug": "gamora", "name": "Gamora", "code": "18001a"},
+        {"slug": "drax", "name": "Drax", "code": "19001a"},
+        {"slug": "veneno", "name": "Veneno", "code": "20001a"}
+      ]
+    },
+    {
+      "id": "mts",
+      "name": "La sombra del titán loco",
+      "kind": "campana",
+      "heroes": [
+        {"slug": "spectrum", "name": "Spectrum", "code": "21001a"},
+        {"slug": "adam-warlock", "name": "Adam Warlock", "code": "21031a"}
+      ]
+    },
+    {
+      "id": "ola-4",
+      "name": "Oleada 4",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "nebula", "name": "Nébula", "code": "22001a"},
+        {"slug": "maquina-de-guerra", "name": "Máquina de Guerra", "code": "23001a"},
+        {"slug": "valquiria", "name": "Valquiria", "code": "25001a"},
+        {"slug": "vision", "name": "La Visión", "code": "26001a"}
+      ]
+    },
+    {
+      "id": "sm",
+      "name": "Motivos siniestros",
+      "kind": "campana",
+      "heroes": [
+        {"slug": "ghost-spider", "name": "Ghost-Spider", "code": "27001a"},
+        {"slug": "spider-man-miles", "name": "Spider-Man (Miles Morales)", "code": "27030a"}
+      ]
+    },
+    {
+      "id": "ola-5",
+      "name": "Oleada 5",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "nova", "name": "Nova", "code": "28001a"},
+        {"slug": "ironheart", "name": "Ironheart", "code": "29001a"},
+        {"slug": "spider-ham", "name": "Spider-Ham", "code": "30001a"},
+        {"slug": "spdr", "name": "SP//dr", "code": "31001a"}
+      ]
+    },
+    {
+      "id": "mut-gen",
+      "name": "Génesis Mutante",
+      "kind": "campana",
+      "heroes": [
+        {"slug": "coloso", "name": "Coloso", "code": "32001a"},
+        {"slug": "gatasombra", "name": "Gatasombra", "code": "32030a"}
+      ]
+    },
+    {
+      "id": "ola-6",
+      "name": "Oleada 6",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "ciclope", "name": "Cíclope", "code": "33001a"},
+        {"slug": "fenix", "name": "Fénix", "code": "34001a"},
+        {"slug": "lobezno", "name": "Lobezno", "code": "35001a"},
+        {"slug": "tormenta", "name": "Tormenta", "code": "36001a"},
+        {"slug": "gambito", "name": "Gambito", "code": "37001a"},
+        {"slug": "picara", "name": "Pícara", "code": "38001a"}
+      ]
+    },
+    {
+      "id": "next-evol",
+      "name": "Próxima Evolución",
+      "kind": "campana",
+      "heroes": [
+        {"slug": "cable", "name": "Cable", "code": "40001a"},
+        {"slug": "domino", "name": "Dominó", "code": "40037a"}
+      ]
+    },
+    {
+      "id": "ola-7",
+      "name": "Oleada 7",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "mariposa-mental", "name": "Mariposa Mental", "code": "41001a"},
+        {"slug": "angel", "name": "Ángel", "code": "42001a"},
+        {"slug": "x-23", "name": "X-23", "code": "43001a"},
+        {"slug": "masacre", "name": "Masacre", "code": "44001a"}
+      ]
+    },
+    {
+      "id": "aoa",
+      "name": "La Era de Apocalipsis",
+      "kind": "campana",
+      "heroes": [
+        {"slug": "bishop", "name": "Bishop", "code": "45001a"},
+        {"slug": "magik", "name": "Magik", "code": "45030a"}
+      ]
+    },
+    {
+      "id": "ola-8",
+      "name": "Oleada 8",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "hombre-de-hielo", "name": "Hombre de Hielo", "code": "46001a"},
+        {"slug": "jubilo", "name": "Júbilo", "code": "47001a"},
+        {"slug": "rondador-nocturno", "name": "Rondador Nocturno", "code": "48001a"},
+        {"slug": "magneto", "name": "Magneto", "code": "49001a"}
+      ]
+    },
+    {
+      "id": "aos",
+      "name": "Agentes de S.H.I.E.L.D.",
+      "kind": "campana",
+      "heroes": [
+        {"slug": "maria-hill", "name": "Maria Hill", "code": "50001a"},
+        {"slug": "nick-furia", "name": "Nick Furia", "code": "50034a"}
+      ]
+    },
+    {
+      "id": "ola-9",
+      "name": "Oleada 9",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "pantera-negra-shuri", "name": "Pantera Negra (Shuri)", "code": "51001a"},
+        {"slug": "seda", "name": "Seda", "code": "52001a"},
+        {"slug": "halcon", "name": "Halcón", "code": "53001a"},
+        {"slug": "soldado-de-invierno", "name": "Soldado de Invierno", "code": "54001a"}
+      ]
+    },
+    {
+      "id": "cw",
+      "name": "Civil War",
+      "kind": "campana",
+      "heroes": [
+        {"slug": "tigra", "name": "Tigra", "code": "56001a"},
+        {"slug": "hulkling", "name": "Hulkling", "code": "56029a"}
+      ]
+    },
+    {
+      "id": "ola-civil-war",
+      "name": "Oleada Civil War",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "hombre-maravilla", "name": "Hombre Maravilla", "code": "58001a"},
+        {"slug": "hercules", "name": "Hércules", "code": "59001a"}
+      ]
+    },
+    {
+      "id": "fne",
+      "name": "Fear No Evil",
+      "kind": "campana",
+      "heroes": [
+        {"slug": "daredevil", "name": "Daredevil", "code": "60001a"},
+        {"slug": "echo", "name": "Echo", "code": "60037a"}
+      ]
+    },
+    {
+      "id": "ola-defenders",
+      "name": "Oleada Defenders",
+      "kind": "pack",
+      "heroes": [
+        {"slug": "jessica-jones", "name": "Jessica Jones", "code": "61001a"},
+        {"slug": "luke-cage", "name": "Luke Cage", "code": "62001a"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "slug": "capitan-america",
+  "hero_card_code": "03001a",
+  "display_name": "Capitán América",
+  "alter_ego_name": "Steve Rogers",
+  "wip": true,
+  "difficulty": 3,
+  "power": 3,
+  "strengths": [],
+  "weaknesses": [],
+  "aspects": {
+    "aggression": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "justice": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "leadership": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "protection": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    }
+  },
+  "cards": [
+    {
+      "code": "03002",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "03003",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "03004",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "03005",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "03006",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "03007",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "03008",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "03009",
+      "priority": 3,
+      "note": ""
+    },
+    {
+      "code": "03010",
+      "priority": 3,
+      "note": ""
+    }
+  ],
+  "basics": [],
+  "mazos": [],
+  "consideraciones": [],
+  "mulligan": {
+    "keep": [],
+    "toss": []
+  },
+  "hide": [
+    "fortalezas",
+    "debilidades",
+    "aspectos",
+    "basicas",
+    "mazos",
+    "consideraciones",
+    "mulligan"
+  ]
+}

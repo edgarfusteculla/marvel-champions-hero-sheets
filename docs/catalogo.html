@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Catálogo de héroes · Marvel Champions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #141414;
+  --paper: #f4efe4;
+  --paper-light: #fbf8f1;
+  --cerrado: #2f9455;
+  --wip: #b8860b;
+  --pendiente: #6b6560;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #4a4a4a;
+  color: var(--ink);
+  font-family: Inter, sans-serif;
+}
+.page {
+  max-width: 1100px;
+  margin: 24px auto;
+  background: var(--paper);
+  padding: 28px 32px 40px;
+  border-radius: 8px;
+}
+h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 42px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+.counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.counts span {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+}
+.counts .cerrado { background: var(--cerrado); }
+.counts .wip { background: var(--wip); }
+.counts .pendiente { background: var(--pendiente); }
+.group {
+  margin-bottom: 22px;
+}
+.group h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 18px;
+  margin: 0 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #141414;
+}
+.group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 8px;
+}
+.hero {
+  background: var(--paper-light);
+  border: 1px solid #d7d0c3;
+  border-left: 5px solid #bbb;
+  border-radius: 6px;
+  padding: 8px 10px 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.hero .name { font-weight: 700; }
+.hero .pill {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.hero.cerrado { border-left-color: var(--cerrado); }
+.hero.wip { border-left-color: var(--wip); }
+.hero.pendiente { border-left-color: var(--pendiente); }
+.hero.cerrado .pill { color: var(--cerrado); }
+.hero.wip .pill { color: var(--wip); }
+.hero.pendiente .pill { color: var(--pendiente); }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Catálogo de héroes</h1>
+  <div class="counts">
+    <span class="cerrado">5 terminados</span><span class="wip">10 trabajando</span><span class="pendiente">54 pendientes</span>
+  </div>
+  <section class="group kind-caja"><h2>Caja básica</h2><ul><li class="hero cerrado"><span class="name">Spider-Man</span><span class="pill">Terminado</span></li><li class="hero cerrado"><span class="name">Capitana Marvel</span><span class="pill">Terminado</span></li><li class="hero cerrado"><span class="name">Hulka</span><span class="pill">Terminado</span></li><li class="hero cerrado"><span class="name">Iron Man</span><span class="pill">Terminado</span></li><li class="hero cerrado"><span class="name">Pantera Negra</span><span class="pill">Terminado</span></li></ul></section><section class="group kind-pack"><h2>Oleada 1</h2><ul><li class="hero wip"><span class="name">Capitán América</span><span class="pill">Trabajando</span></li><li class="hero wip"><span class="name">Ms. Marvel</span><span class="pill">Trabajando</span></li><li class="hero wip"><span class="name">Thor</span><span class="pill">Trabajando</span></li><li class="hero wip"><span class="name">Viuda Negra</span><span class="pill">Trabajando</span></li><li class="hero wip"><span class="name">Doctor Extraño</span><span class="pill">Trabajando</span></li><li class="hero wip"><span class="name">Hulk</span><span class="pill">Trabajando</span></li></ul></section><section class="group kind-campana"><h2>La Tiranía de Cráneo Rojo</h2><ul><li class="hero wip"><span class="name">Ojo de Halcón</span><span class="pill">Trabajando</span></li><li class="hero wip"><span class="name">Spider-Woman</span><span class="pill">Trabajando</span></li></ul></section><section class="group kind-pack"><h2>Oleada 2</h2><ul><li class="hero wip"><span class="name">Hombre Hormiga</span><span class="pill">Trabajando</span></li><li class="hero pendiente"><span class="name">Avispa</span><span class="pill">Pendiente</span></li><li class="hero wip"><span class="name">Mercurio</span><span class="pill">Trabajando</span></li><li class="hero pendiente"><span class="name">Bruja Escarlata</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-campana"><h2>Los más buscados de la galaxia</h2><ul><li class="hero pendiente"><span class="name">Groot</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Mapache Cohete</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-pack"><h2>Oleada 3</h2><ul><li class="hero pendiente"><span class="name">Star-Lord</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Gamora</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Drax</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Veneno</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-campana"><h2>La sombra del titán loco</h2><ul><li class="hero pendiente"><span class="name">Spectrum</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Adam Warlock</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-pack"><h2>Oleada 4</h2><ul><li class="hero pendiente"><span class="name">Nébula</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Máquina de Guerra</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Valquiria</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">La Visión</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-campana"><h2>Motivos siniestros</h2><ul><li class="hero pendiente"><span class="name">Ghost-Spider</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Spider-Man (Miles Morales)</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-pack"><h2>Oleada 5</h2><ul><li class="hero pendiente"><span class="name">Nova</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Ironheart</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Spider-Ham</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">SP//dr</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-campana"><h2>Génesis Mutante</h2><ul><li class="hero pendiente"><span class="name">Coloso</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Gatasombra</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-pack"><h2>Oleada 6</h2><ul><li class="hero pendiente"><span class="name">Cíclope</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Fénix</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Lobezno</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Tormenta</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Gambito</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Pícara</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-campana"><h2>Próxima Evolución</h2><ul><li class="hero pendiente"><span class="name">Cable</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Dominó</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-pack"><h2>Oleada 7</h2><ul><li class="hero pendiente"><span class="name">Mariposa Mental</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Ángel</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">X-23</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Masacre</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-campana"><h2>La Era de Apocalipsis</h2><ul><li class="hero pendiente"><span class="name">Bishop</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Magik</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-pack"><h2>Oleada 8</h2><ul><li class="hero pendiente"><span class="name">Hombre de Hielo</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Júbilo</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Rondador Nocturno</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Magneto</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-campana"><h2>Agentes de S.H.I.E.L.D.</h2><ul><li class="hero pendiente"><span class="name">Maria Hill</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Nick Furia</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-pack"><h2>Oleada 9</h2><ul><li class="hero pendiente"><span class="name">Pantera Negra (Shuri)</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Seda</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Halcón</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Soldado de Invierno</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-campana"><h2>Civil War</h2><ul><li class="hero pendiente"><span class="name">Tigra</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Hulkling</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-pack"><h2>Oleada Civil War</h2><ul><li class="hero pendiente"><span class="name">Hombre Maravilla</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Hércules</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-campana"><h2>Fear No Evil</h2><ul><li class="hero pendiente"><span class="name">Daredevil</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Echo</span><span class="pill">Pendiente</span></li></ul></section><section class="group kind-pack"><h2>Oleada Defenders</h2><ul><li class="hero pendiente"><span class="name">Jessica Jones</span><span class="pill">Pendiente</span></li><li class="hero pendiente"><span class="name">Luke Cage</span><span class="pill">Pendiente</span></li></ul></section>
+</div>
+</body>
+</html>

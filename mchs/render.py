@@ -347,6 +347,7 @@ def build_context(hero_data: dict[str, Any], client: MarvelCDB) -> dict[str, Any
     basic_cards = _markup_notes(basic_cards, names)
     mazos = _markup_notes(mazos, names)
     hero = _markup_hero_copy(hero_data, names)
+    hero.setdefault("wip", False)
 
     playable = [c for c in cards if c["type_code"] not in NON_DECK_TYPES]
     playable.sort(key=lambda c: (-c["priority"], c["cost"] if c["cost"] is not None else 99))

@@ -23,6 +23,9 @@ python build.py                     # genera todas las hojas en dist/ (mesa de t
 python build.py spider-man --open   # genera una y la abre en el navegador
 python build.py --pdf               # genera además el PDF (necesita Edge o Chrome)
 python build.py --refresh           # vuelve a descargar los datos de MarvelCDB
+python tools/init_hero.py thor      # plantilla inicial (JSON + notas, sin inventar textos)
+python tools/close_hero.py thor     # hoja cerrada a finals/ y catálogo al día
+python tools/build_catalog.py       # regenera docs/catalogo.html
 ```
 
 Las respuestas de MarvelCDB se guardan en `cache/`, de modo que después de la primera
@@ -109,7 +112,7 @@ resto se hereda:
 ```
 
 Cada variante genera su propio archivo: `dist/spider-man-avanzado.html`. Cuando la hoja está cerrada,
-HTML y PDF se copian a `finals/`. Ojo, una clave declarada
+HTML y PDF se copian a `finals/heroes/`. Ojo, una clave declarada
 en la variante **sustituye entera** a la de la hoja base, no se fusionan elemento a elemento.
 
 ### Cuidado con el espacio
@@ -138,14 +141,20 @@ mchs/pdf.py                  Exportación a PDF con navegador headless
 templates/hero_sheet.html.j2 Maquetación de las dos caras
 templates/sheet.css          Estilos (en milímetros, pensados para impresión)
 data/heroes/*.json           Un archivo por héroe
+data/catalogo.json           Listado de héroes del juego
 notas/*.md                   Apuntes en bruto, no se imprimen
 dist/                        Mesa de trabajo: HTML y PDF que se están preparando
 docs/guia-principiantes.html Guía de iniciación (se edita aquí)
-finals/html/                 Hojas ya cerradas (HTML)
-finals/pdf/                  Hojas ya cerradas (PDF, para imprimir)
+docs/catalogo.html           Tablero de estado de las hojas
+finals/heroes/html/          Hojas ya terminadas (HTML)
+finals/heroes/pdf/           Hojas ya terminadas (PDF, para imprimir)
+finals/basic_guide/          Guía de iniciación cerrada
 proposals/                   Pruebas de diseño que no son la plantilla oficial
 versions/                    Historial visual de las hojas
 tools/inspect.py             Mide el espacio libre de cada cara
+tools/init_hero.py           Crea la plantilla inicial de un héroe
+tools/close_hero.py          Pasa una hoja a finals/ y actualiza el catálogo
+tools/build_catalog.py       Regenera docs/catalogo.html
 ```
 
 Para ver cuánto sitio queda en una hoja antes de añadir nada:
