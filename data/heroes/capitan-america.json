@@ -4,93 +4,59 @@
   "display_name": "Capitán América",
   "alter_ego_name": "Steve Rogers",
   "wip": true,
-  "difficulty": 3,
-  "power": 3,
-  "strengths": [],
-  "weaknesses": [],
+  "difficulty": 2,
+  "power": 4,
+  "strengths": [
+    "Puede prepararse descartando una carta: saca más acciones por turno.",
+    "El escudo sube la defensa y da Represalia 1.",
+    "En alter ego abarata el primer aliado de cada ronda.",
+    "Tiene un evento de defensa que evita todo el daño."
+  ],
+  "weaknesses": [
+    "Intervención 2: no gestiona la amenaza con el atributo.",
+    "Sin el escudo en mesa, defiende peor y pierde el bloqueo."
+  ],
   "aspects": {
-    "aggression": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "justice": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "leadership": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "protection": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    }
+    "aggression": { "solo": 2, "duo": 3, "grupo": 3 },
+    "justice": { "solo": 3, "duo": 3, "grupo": 2 },
+    "leadership": { "solo": 5, "duo": 5, "grupo": 5 },
+    "protection": { "solo": 3, "duo": 4, "grupo": 4 }
   },
   "cards": [
-    {
-      "code": "03002",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "03003",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "03004",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "03005",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "03006",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "03007",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "03008",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "03009",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "03010",
-      "priority": 3,
-      "note": ""
-    }
+    { "code": "03009", "priority": 5, "note": "Da +1 DEF y Represalia 1." },
+    { "code": "03003", "priority": 5, "note": "Coste 0: +1 INT y robo." },
+    { "code": "03005", "priority": 4, "note": "Evita todo el daño si el escudo está listo." },
+    { "code": "03010", "priority": 4, "note": "Recurso físico cada turno." },
+    { "code": "03004", "priority": 3, "note": "Ataque de 6 que puede aturdir." },
+    { "code": "03002", "priority": 3, "note": "Aliado que quita 2 de amenaza al entrar." },
+    { "code": "03007", "priority": 2, "note": "Robo y cura en alter ego." },
+    { "code": "03008", "priority": 2, "note": "Evita la derrota una vez." },
+    { "code": "03006", "priority": 1, "note": "Ataque que devuelve el escudo a la mano." }
   ],
-  "basics": [],
-  "mazos": [],
-  "consideraciones": [],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas para alimentar la acción de preparar." },
+    { "code": "01084", "note": "Un buen aliado flexible." },
+    { "code": "29027", "note": "Generador de recursos para montar mesa." }
+  ],
+  "mazos": [
+    "aliados-vengadores",
+    "defensa-total"
+  ],
+  "consideraciones": [
+    "Steve Rogers busca el Escudo del Capitán América al preparar mesa: bájalo pronto.",
+    "La acción de héroe descarta 1 carta para prepararse: una vez por ronda.",
+    "Bloqueo de escudo pide agotar el escudo: no lo uses si ya está agotado.",
+    "Lanzamiento de escudo devuelve el escudo a la mano: después hay que volver a jugarlo."
+  ],
   "mulligan": {
-    "keep": [],
-    "toss": []
-  },
-  "hide": [
-    "fortalezas",
-    "debilidades",
-    "aspectos",
-    "basicas",
-    "mazos",
-    "consideraciones",
-    "mulligan"
-  ]
+    "keep": [
+      "Escudo del Capitán América: conviene tenerlo en mesa desde el primer turno.",
+      "Determinación audaz: robo y +1 INT por coste 0.",
+      "Suero de supersoldado: recurso físico para montar mesa."
+    ],
+    "toss": [
+      "Lanzamiento de escudo: pide descartar mano y devolver el escudo.",
+      "Casco del Capitán América: no ayuda a abrir."
+    ]
+  }
 }

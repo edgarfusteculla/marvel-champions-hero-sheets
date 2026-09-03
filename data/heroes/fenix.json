@@ -1,0 +1,67 @@
+{
+  "slug": "fenix",
+  "hero_card_code": "34001a",
+  "display_name": "Fénix",
+  "alter_ego_name": "Jean Grey",
+  "wip": true,
+  "difficulty": 4,
+  "power": 4,
+  "strengths": [
+    "Empieza con Intervención 3.",
+    "Jean Grey pone en juego la Fuerza Fénix con 4 contadores de Poder.",
+    "Puede gastar 1 contador para un recurso comodín, una vez por fase.",
+    "Varias cartas rinden más con el rasgo Desatada."
+  ],
+  "weaknesses": [
+    "Empieza con Ataque 1 y 9 de vida.",
+    "Al quitar el último contador, la Fuerza Fénix pasa a Desatada.",
+    "Hay que decidir cuándo gastar contadores y cuándo recargarlos."
+  ],
+  "aspects": {
+    "aggression": { "solo": 3, "duo": 3, "grupo": 2 },
+    "justice": { "solo": 5, "duo": 4, "grupo": 4 },
+    "leadership": { "solo": 3, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 4, "duo": 4, "grupo": 3 }
+  },
+  "cards": [
+    { "code": "34002a", "priority": 5, "note": "Permanente. Empieza Contenida. Al quedarse sin contadores, se da la vuelta." },
+    { "code": "34013", "priority": 5, "note": "Quita 1 contador y prepara, o coloca 2." },
+    { "code": "34012", "priority": 4, "note": "Quita 4 de amenaza. Si está Desatada, aturde y confunde." },
+    { "code": "34004", "priority": 4, "note": "Coloca 1 contador o cura 2 en alter ego." },
+    { "code": "34010", "priority": 3, "note": "Ataque de 7. Si está Desatada, 2 extra y Brutalidad." },
+    { "code": "34005", "priority": 3, "note": "Aéreo. Tesón si está Contenida. Represalia 1 si está Desatada." },
+    { "code": "34003", "priority": 3, "note": "Al entrar coloca 2 contadores. Al salir quita 2." },
+    { "code": "34007", "priority": 2, "note": "Absorbe el daño de un ataque hasta 5." },
+    { "code": "34011", "priority": 2, "note": "4 de daño al villano. Si está Desatada, también a los esbirros." },
+    { "code": "34008", "priority": 2, "note": "Un esbirro que no sea Élite no se activa." },
+    { "code": "34006", "priority": 1, "note": "Evita la derrota una vez y vacía los contadores." },
+    { "code": "34009", "priority": 1, "note": "Toma el control de un esbirro que no sea Élite." }
+  ],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "28018", "note": "Roba al pagarla con recursos mentales." },
+    { "code": "01084", "note": "Un buen aliado flexible." }
+  ],
+  "mazos": [
+    "justicia-planificacion",
+    "defensa-total"
+  ],
+  "consideraciones": [
+    "Jean Grey pone la Fuerza Fénix en juego Contenida, con 4 contadores.",
+    "En héroe puedes quitar 1 contador para un recurso comodín, una vez por fase.",
+    "Si quitas el último contador, la carta se da la vuelta a Desatada.",
+    "Fénix de Fuego coloca 2 contadores o quita 1 para prepararse.",
+    "Tras una recuperación básica, Jean Grey coloca 1 contador."
+  ],
+  "mulligan": {
+    "keep": [
+      "Fénix de Fuego: coloca contadores o prepara.",
+      "La Sala Blanca: recarga Poder en alter ego.",
+      "Ardid telepático: intervención de 4."
+    ],
+    "toss": [
+      "Control mental: coste 4 para abrir.",
+      "Resurgir de las cenizas: no ayuda a montar mesa."
+    ]
+  }
+}

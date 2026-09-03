@@ -1,0 +1,64 @@
+{
+  "slug": "drax",
+  "hero_card_code": "19001a",
+  "display_name": "Drax",
+  "alter_ego_name": "Drax",
+  "wip": true,
+  "difficulty": 2,
+  "power": 3,
+  "strengths": [
+    "Tiene 14 de vida: aguanta varios ataques.",
+    "Recibe +1 ATQ por cada contador de Venganza, hasta 3.",
+    "Cuando el villano le ataca, coloca 1 contador de Venganza o roba.",
+    "Parada evita el doble de su ATQ."
+  ],
+  "weaknesses": [
+    "Empieza con Ataque 1 e Intervención 1.",
+    "Roba 4 cartas en héroe: menos opciones por turno.",
+    "Al pasar a alter ego pierde todos los contadores de Venganza."
+  ],
+  "aspects": {
+    "aggression": { "solo": 4, "duo": 4, "grupo": 3 },
+    "justice": { "solo": 3, "duo": 3, "grupo": 3 },
+    "leadership": { "solo": 2, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 5, "duo": 4, "grupo": 4 }
+  },
+  "cards": [
+    { "code": "19003", "priority": 5, "note": "Prepara, roba y recibe el ataque del villano." },
+    { "code": "19008", "priority": 5, "note": "+1 ATQ en héroe." },
+    { "code": "19006", "priority": 4, "note": "Evita el doble de su ATQ." },
+    { "code": "19007", "priority": 4, "note": "Tras el ataque del villano, inflige tanto daño como su ATQ." },
+    { "code": "19005", "priority": 4, "note": "+5 ATQ, Brutalidad y Penetrante. Más barato con Venganza." },
+    { "code": "19004", "priority": 3, "note": "Quita tanta amenaza como su ATQ." },
+    { "code": "19009", "priority": 3, "note": "Represalia 1 en héroe." },
+    { "code": "19010", "priority": 3, "note": "Roba después de un ataque básico." },
+    { "code": "19002", "priority": 2, "note": "Cura 3 a un superhéroe." },
+    { "code": "19011", "priority": 1, "note": "Evita la derrota una vez y pasa a alter ego." }
+  ],
+  "basics": [
+    { "code": "01091", "note": "Robo extra: en héroe solo roba 4." },
+    { "code": "01092", "note": "Mejora de economía." },
+    { "code": "01084", "note": "Un buen aliado flexible." }
+  ],
+  "mazos": [
+    "eventos-tecnica-depurada",
+    "proteccion-cambio-seguro"
+  ],
+  "consideraciones": [
+    "Cuando el villano ataca a Drax, coloca 1 contador de Venganza (máximo 3). Si ya tiene 3, roba 1.",
+    "Enfréntate a mí, cobarde prepara y roba: el villano te ataca y suele dar otro contador.",
+    "Al pasar a alter ego quita todos los contadores y cura 2 por cada uno.",
+    "Intimidación y Parada usan el ATQ actual: rinden más con Venganza en mesa."
+  ],
+  "mulligan": {
+    "keep": [
+      "El puñal de Drax: +1 ATQ desde el primer turno.",
+      "\"¡Enfréntate a mí, cobarde!\": prepara, roba y pide el ataque.",
+      "Parada: defensa que escala con el ATQ."
+    ],
+    "toss": [
+      "Demasiado terco para morir: no ayuda a abrir.",
+      "Salto y apuñalamiento: pide Venganza para abaratar."
+    ]
+  }
+}

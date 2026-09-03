@@ -5,87 +5,58 @@
   "alter_ego_name": "Jessica Drew",
   "wip": true,
   "difficulty": 3,
-  "power": 3,
-  "strengths": [],
-  "weaknesses": [],
+  "power": 4,
+  "strengths": [
+    "Elige dos aspectos al montar el mazo, con el mismo número de cartas de cada uno.",
+    "Al jugar una carta de aspecto, recibe +1 INT, +1 ATQ y +1 DEF hasta el final de la ronda.",
+    "Ese bonus es una vez por ronda para cada aspecto.",
+    "En alter ego puede mirar la primera carta de cualquier mazo."
+  ],
+  "weaknesses": [
+    "Empieza con Ataque 1, Intervención 1 y Defensa 1.",
+    "El mazo debe equilibrar dos aspectos: menos copias de cada carta.",
+    "Sin jugar cartas de aspecto, los atributos básicos rinden poco."
+  ],
   "aspects": {
-    "aggression": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "justice": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "leadership": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "protection": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    }
+    "aggression": { "solo": 4, "duo": 4, "grupo": 3 },
+    "justice": { "solo": 4, "duo": 4, "grupo": 3 },
+    "leadership": { "solo": 3, "duo": 3, "grupo": 4 },
+    "protection": { "solo": 3, "duo": 3, "grupo": 3 }
   },
   "cards": [
-    {
-      "code": "04032",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04033",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04034",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04035",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04036",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04037",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04038",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04039",
-      "priority": 3,
-      "note": ""
-    }
+    { "code": "04033", "priority": 5, "note": "Recurso comodín para una carta de aspecto." },
+    { "code": "04039", "priority": 5, "note": "Prepara a Spider-Woman y da Aéreo." },
+    { "code": "04035", "priority": 4, "note": "Ataque de 5. También cuenta como Agresividad." },
+    { "code": "04038", "priority": 4, "note": "Quita 3 de amenaza entre los planes. También cuenta como Justicia." },
+    { "code": "04036", "priority": 3, "note": "Aturde y confunde a un enemigo. También cuenta como Liderazgo." },
+    { "code": "04032", "priority": 3, "note": "Aliado: al usar un atributo básico, da robo." },
+    { "code": "04034", "priority": 3, "note": "Busca una carta de aspecto entre las 5 primeras del mazo." },
+    { "code": "04037", "priority": 2, "note": "Cura 3 y da Duro. También cuenta como Protección." }
   ],
-  "basics": [],
-  "mazos": [],
-  "consideraciones": [],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "08023", "note": "Recurso universal para pagar cartas de aspecto." },
+    { "code": "01084", "note": "Un buen aliado flexible." }
+  ],
+  "mazos": [
+    "eventos-tecnica-depurada",
+    "justicia-planificacion"
+  ],
+  "consideraciones": [
+    "Al montar mesa elige dos aspectos y el mismo número de cartas de cada uno.",
+    "Jugar una carta de aspecto da +1 a los tres atributos hasta el final de la ronda, una vez por aspecto.",
+    "Sutileza genera un recurso comodín para una carta de aspecto y dispara esa habilidad.",
+    "Jessica Drew puede mirar la primera carta de cualquier mazo una vez por ronda."
+  ],
   "mulligan": {
-    "keep": [],
-    "toss": []
-  },
-  "hide": [
-    "fortalezas",
-    "debilidades",
-    "aspectos",
-    "basicas",
-    "mazos",
-    "consideraciones",
-    "mulligan"
-  ]
+    "keep": [
+      "Sutileza: recurso para cartas de aspecto.",
+      "Planeo controlado: prepara al héroe.",
+      "Rayo venenoso o Pasar desapercibida: disparan el bonus de aspecto."
+    ],
+    "toss": [
+      "Inmunidad a toxinas: cura más tarde.",
+      "Capitana Marvel: aliado caro para abrir."
+    ]
+  }
 }

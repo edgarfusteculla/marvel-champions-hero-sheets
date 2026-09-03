@@ -4,93 +4,60 @@
   "display_name": "Ojo de Halcón",
   "alter_ego_name": "Clint Barton",
   "wip": true,
-  "difficulty": 3,
+  "difficulty": 2,
   "power": 3,
-  "strengths": [],
-  "weaknesses": [],
+  "strengths": [
+    "Puede preparar el arco agotándose.",
+    "El arco da +1 ATQ y A distancia a los ataques de flecha.",
+    "El carcaj guarda flechas y permite jugarlas desde ahí.",
+    "Clint Barton puede buscar el arco una vez por fase."
+  ],
+  "weaknesses": [
+    "Intervención 1 y Defensa 1.",
+    "Tiene 9 de vida: aguanta poco.",
+    "Las flechas piden agotar el arco: sin él, no se juegan."
+  ],
   "aspects": {
-    "aggression": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "justice": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "leadership": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "protection": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    }
+    "aggression": { "solo": 4, "duo": 3, "grupo": 3 },
+    "justice": { "solo": 3, "duo": 3, "grupo": 3 },
+    "leadership": { "solo": 4, "duo": 5, "grupo": 5 },
+    "protection": { "solo": 2, "duo": 2, "grupo": 2 }
   },
   "cards": [
-    {
-      "code": "04002",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04003",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04004",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04005",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04006",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04007",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04008",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04009",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "04010",
-      "priority": 3,
-      "note": ""
-    }
+    { "code": "04002", "priority": 5, "note": "Da +1 ATQ y A distancia a las flechas." },
+    { "code": "04003", "priority": 5, "note": "Busca una flecha y permite jugarla vinculada." },
+    { "code": "04010", "priority": 4, "note": "Recurso comodín para un evento Flecha." },
+    { "code": "04009", "priority": 3, "note": "Ataque de 6 con Penetrante." },
+    { "code": "04008", "priority": 3, "note": "Quita 3 de amenaza ignorando crisis." },
+    { "code": "04005", "priority": 3, "note": "Confunde e inflige 3 de daño, 5 si ya estaba confundido." },
+    { "code": "04007", "priority": 3, "note": "Aturde e inflige 3 de daño, 5 si ya estaba aturdido." },
+    { "code": "04006", "priority": 2, "note": "3 de daño al villano y a los esbirros de un jugador." },
+    { "code": "04004", "priority": 2, "note": "Aliado que evita un ataque del villano y vuelve a la mano." }
   ],
-  "basics": [],
-  "mazos": [],
-  "consideraciones": [],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "29027", "note": "Generador de recursos para las flechas." },
+    { "code": "01084", "note": "Un buen aliado flexible." }
+  ],
+  "mazos": [
+    "eventos-tecnica-depurada",
+    "aliados-vengadores"
+  ],
+  "consideraciones": [
+    "Clint Barton busca el Arco de Ojo de Halcón al preparar mesa y una vez por fase: bájalo pronto.",
+    "Las flechas piden agotar el arco. La acción de héroe prepara el arco.",
+    "El carcaj vincula una flecha de las 5 primeras del mazo: puedes jugarla desde ahí.",
+    "Tirador experto genera un recurso comodín para un evento Flecha."
+  ],
   "mulligan": {
-    "keep": [],
-    "toss": []
-  },
-  "hide": [
-    "fortalezas",
-    "debilidades",
-    "aspectos",
-    "basicas",
-    "mazos",
-    "consideraciones",
-    "mulligan"
-  ]
+    "keep": [
+      "Arco de Ojo de Halcón: hace falta para las flechas.",
+      "Carcaj de Ojo de Halcón: busca y guarda flechas.",
+      "Tirador experto: recurso para flechas."
+    ],
+    "toss": [
+      "Flecha explosiva: pide el arco y varios enemigos.",
+      "Pájaro Burlón: no ayuda a montar mesa."
+    ]
+  }
 }

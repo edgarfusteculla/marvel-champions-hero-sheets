@@ -4,93 +4,60 @@
   "display_name": "Hulk",
   "alter_ego_name": "Bruce Banner",
   "wip": true,
-  "difficulty": 3,
+  "difficulty": 2,
   "power": 3,
-  "strengths": [],
-  "weaknesses": [],
+  "strengths": [
+    "Empieza con Ataque 3 y Defensa 3.",
+    "Tiene 18 de vida: aguanta mucho.",
+    "Fuerza ilimitada es un recurso doble de héroe.",
+    "Fuerza imparable lo prepara y puede dar robo."
+  ],
+  "weaknesses": [
+    "Intervención 0: no quita amenaza con el atributo.",
+    "Al final del turno de héroe, descarta la mano.",
+    "En héroe, la mano es de 4 cartas."
+  ],
   "aspects": {
-    "aggression": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "justice": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "leadership": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "protection": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    }
+    "aggression": { "solo": 5, "duo": 5, "grupo": 5 },
+    "justice": { "solo": 1, "duo": 1, "grupo": 1 },
+    "leadership": { "solo": 2, "duo": 2, "grupo": 2 },
+    "protection": { "solo": 2, "duo": 3, "grupo": 4 }
   },
   "cards": [
-    {
-      "code": "10002",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "10003",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "10004",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "10005",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "10006",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "10007",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "10008",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "10009",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "10010",
-      "priority": 3,
-      "note": ""
-    }
+    { "code": "10007", "priority": 5, "note": "Recurso doble que solo se gasta en héroe." },
+    { "code": "10006", "priority": 5, "note": "Prepara a Hulk. Si se paga con recursos físicos, da robo." },
+    { "code": "10003", "priority": 4, "note": "+10 ATQ en un ataque básico. Puede ganar Brutalidad." },
+    { "code": "10002", "priority": 4, "note": "Ataque igual al ATQ. Solo se paga con recursos físicos." },
+    { "code": "10008", "priority": 3, "note": "En alter ego, +2 REC y un recurso mental." },
+    { "code": "10005", "priority": 3, "note": "3 de daño a hasta 3 enemigos." },
+    { "code": "10009", "priority": 3, "note": "+1 ATQ. Se descarta al cambiar de identidad." },
+    { "code": "10010", "priority": 2, "note": "+4 de vida y Represalia 1." },
+    { "code": "10004", "priority": 2, "note": "La única intervención del kit: quita 3 o 5 de amenaza." }
   ],
-  "basics": [],
-  "mazos": [],
-  "consideraciones": [],
+  "basics": [
+    { "code": "01092", "note": "Mejora de economía para compensar la mano 4." },
+    { "code": "31023", "note": "Para preparar al héroe." },
+    { "code": "01091", "note": "Robo extra de cartas." }
+  ],
+  "mazos": [
+    "eventos-tecnica-depurada",
+    "justicia-planificacion"
+  ],
+  "consideraciones": [
+    "Al final del turno de héroe descarta la mano: gasta o juega lo que puedas antes.",
+    "Varias cartas piden pagarse solo con recursos físicos.",
+    "Furia desatada se descarta al cambiar de identidad.",
+    "Salto suborbital es la carta de intervención del kit: Intervención 0 no cubre la amenaza."
+  ],
   "mulligan": {
-    "keep": [],
-    "toss": []
-  },
-  "hide": [
-    "fortalezas",
-    "debilidades",
-    "aspectos",
-    "basicas",
-    "mazos",
-    "consideraciones",
-    "mulligan"
-  ]
+    "keep": [
+      "Fuerza ilimitada: recurso doble en héroe.",
+      "Fuerza imparable: preparar y posible robo.",
+      "Laboratorio de Banner: economía y recuperación en alter ego."
+    ],
+    "toss": [
+      "Palmada atronadora: cara si no hay varios enemigos.",
+      "Objeto inamovible: no ayuda a abrir."
+    ]
+  }
 }

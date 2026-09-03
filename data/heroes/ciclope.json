@@ -1,0 +1,63 @@
+{
+  "slug": "ciclope",
+  "hero_card_code": "33001a",
+  "display_name": "Cíclope",
+  "alter_ego_name": "Scott Summers",
+  "wip": true,
+  "difficulty": 3,
+  "power": 3,
+  "strengths": [
+    "Tiene Intervención 2.",
+    "El rayo óptico inflige 3 de daño a un enemigo con una mejora vinculada.",
+    "Las Tácticas se vinculan a enemigos: más daño, menos ATQ o robo al derrotarlos.",
+    "Scott Summers puede incluir aliados Patrulla-X de cualquier aspecto."
+  ],
+  "weaknesses": [
+    "Empieza con Ataque 1.",
+    "Sin Táctica vinculada, el rayo óptico no se usa.",
+    "Las Tácticas son Temporales salvo que Dotes de mando esté en mesa."
+  ],
+  "aspects": {
+    "aggression": { "solo": 3, "duo": 3, "grupo": 3 },
+    "justice": { "solo": 4, "duo": 4, "grupo": 3 },
+    "leadership": { "solo": 5, "duo": 5, "grupo": 5 },
+    "protection": { "solo": 3, "duo": 3, "grupo": 3 }
+  },
+  "cards": [
+    { "code": "33005", "priority": 5, "note": "El enemigo sufre 1 de daño extra en cada ataque." },
+    { "code": "33003", "priority": 5, "note": "Paga el rayo óptico. Ese ataque gana A distancia y Penetrante." },
+    { "code": "33007", "priority": 4, "note": "Al derrotar al enemigo, ese jugador roba 2." },
+    { "code": "33006", "priority": 4, "note": "El enemigo recibe -1 ATQ." },
+    { "code": "33010", "priority": 4, "note": "Quita 3 de amenaza y recupera una Táctica." },
+    { "code": "33004", "priority": 3, "note": "Juegas el primer turno. Las Tácticas en esbirros dejan de ser Temporales." },
+    { "code": "33009", "priority": 3, "note": "3 de daño a un enemigo y 3 a otro con mejora vinculada." },
+    { "code": "33008", "priority": 2, "note": "El rayo óptico inflige 8 extra y gana Brutalidad." },
+    { "code": "33002", "priority": 2, "note": "Al entrar, recupera una carta de Cíclope del descarte." }
+  ],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "01084", "note": "Un buen aliado flexible." },
+    { "code": "29027", "note": "Generador de recursos para el rayo óptico." }
+  ],
+  "mazos": [
+    "justicia-planificacion",
+    "aliados-vengadores"
+  ],
+  "consideraciones": [
+    "El rayo óptico pide 1 recurso y un enemigo con una mejora vinculada: una vez por ronda.",
+    "Scott Summers busca una Táctica en el mazo, una vez por ronda.",
+    "El visor paga el rayo y le da A distancia y Penetrante.",
+    "Agudeza táctica quita amenaza y saca una Táctica del descarte."
+  ],
+  "mulligan": {
+    "keep": [
+      "Aprovechar una debilidad: Táctica para activar el rayo.",
+      "Visor de cuarzo de rubí: paga el rayo con energía.",
+      "Defensa practicada: Táctica barata para vincular."
+    ],
+    "toss": [
+      "Rayo a plena potencia: pide el visor y el rayo ya listo.",
+      "Fénix: aliado caro para abrir."
+    ]
+  }
+}

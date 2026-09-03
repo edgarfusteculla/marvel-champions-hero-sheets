@@ -1,0 +1,63 @@
+{
+  "slug": "veneno",
+  "hero_card_code": "20001a",
+  "display_name": "Veneno",
+  "alter_ego_name": "Flash Thompson",
+  "wip": true,
+  "difficulty": 2,
+  "power": 4,
+  "strengths": [
+    "Puede controlar 1 mejora Restringida extra.",
+    "Una vez por fase puede sufrir 1 de daño para generar un recurso comodín.",
+    "Flash Thompson busca un Arma al preparar mesa.",
+    "Tiene Defensa 2 y 12 de vida."
+  ],
+  "weaknesses": [
+    "Empieza con Intervención 1.",
+    "El recurso comodín cuesta 1 de daño cada vez.",
+    "Sin armas en mesa, Disparo en movimiento rinde poco."
+  ],
+  "aspects": {
+    "aggression": { "solo": 4, "duo": 3, "grupo": 3 },
+    "justice": { "solo": 5, "duo": 4, "grupo": 3 },
+    "leadership": { "solo": 3, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 3, "duo": 4, "grupo": 4 }
+  },
+  "cards": [
+    { "code": "20010", "priority": 5, "note": "+1 al atributo básico que uses." },
+    { "code": "20004", "priority": 5, "note": "Busca un Arma en el mazo." },
+    { "code": "20005", "priority": 4, "note": "Prepara a Veneno y todas las armas." },
+    { "code": "20008", "priority": 4, "note": "Elige daño, daño a esbirros o quitar amenaza." },
+    { "code": "20002", "priority": 3, "note": "Quita 3 de amenaza. Con mentales, confunde." },
+    { "code": "20003", "priority": 3, "note": "Evita el ataque del villano. Con físicos, aturde." },
+    { "code": "20006", "priority": 3, "note": "Ataque de 5. Con energéticos, Brutalidad." },
+    { "code": "20009", "priority": 2, "note": "Roba cuando el villano te ataca." },
+    { "code": "20007", "priority": 2, "note": "Robo o cura 3 en alter ego." }
+  ],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "29027", "note": "Generador de recursos para bajar armas." },
+    { "code": "01084", "note": "Un buen aliado flexible." }
+  ],
+  "mazos": [
+    "justicia-confundir",
+    "tecnologias"
+  ],
+  "consideraciones": [
+    "Puedes controlar 1 Restringida extra: baja Pistola de Veneno y otra arma a la vez.",
+    "Flash Thompson busca un Arma al preparar mesa: bájala pronto.",
+    "Una vez por fase puedes sufrir 1 de daño para un recurso comodín.",
+    "Disparo en movimiento prepara a Veneno y todas las armas."
+  ],
+  "mulligan": {
+    "keep": [
+      "Pistola de Veneno: +1 al atributo básico.",
+      "Armas a punto: busca un Arma.",
+      "Multicañón: daño, esbirros o amenaza."
+    ],
+    "toss": [
+      "Proyecto Renacimiento 2.0: no ayuda a abrir en héroe.",
+      "Sentido arácnido: no monta mesa."
+    ]
+  }
+}

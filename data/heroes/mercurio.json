@@ -4,98 +4,61 @@
   "display_name": "Mercurio",
   "alter_ego_name": "Pietro Maximoff",
   "wip": true,
-  "difficulty": 3,
+  "difficulty": 2,
   "power": 3,
-  "strengths": [],
-  "weaknesses": [],
+  "strengths": [
+    "Después de usar un atributo básico, se prepara una vez por fase.",
+    "Siempre corriendo lo prepara otra vez por 1.",
+    "Máxima velocidad da +2 a los tres atributos hasta el final de la ronda.",
+    "Resistencia a la fricción genera un recurso físico cada vez que se prepara."
+  ],
+  "weaknesses": [
+    "Empieza con Ataque 1, Intervención 1 y Defensa 1.",
+    "Tiene 9 de vida: aguanta poco.",
+    "Sin las mejoras de atributo, cada acción básica rinde poco."
+  ],
   "aspects": {
-    "aggression": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "justice": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "leadership": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "protection": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    }
+    "aggression": { "solo": 4, "duo": 4, "grupo": 3 },
+    "justice": { "solo": 3, "duo": 2, "grupo": 2 },
+    "leadership": { "solo": 2, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 4, "duo": 5, "grupo": 4 }
   },
   "cards": [
-    {
-      "code": "14002",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "14003",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "14004",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "14005",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "14006",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "14007",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "14008",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "14009",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "14010",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "14011",
-      "priority": 3,
-      "note": ""
-    }
+    { "code": "14003", "priority": 5, "note": "Prepara a Mercurio por coste 1." },
+    { "code": "14005", "priority": 5, "note": "+2 INT, ATQ y DEF hasta el final de la ronda." },
+    { "code": "14009", "priority": 4, "note": "Se prepara con Mercurio y genera un recurso físico." },
+    { "code": "14004", "priority": 4, "note": "Elige dos veces: 2 de daño o 2 de amenaza." },
+    { "code": "14011", "priority": 3, "note": "Da +1 ATQ." },
+    { "code": "14010", "priority": 3, "note": "Da +1 INT." },
+    { "code": "14008", "priority": 3, "note": "Da +1 DEF." },
+    { "code": "14002", "priority": 2, "note": "Aliado que puede subir un atributo según el mazo de encuentros." },
+    { "code": "14006", "priority": 2, "note": "Aturde a X enemigos." },
+    { "code": "14007", "priority": 1, "note": "Recicla cartas de Mercurio del descarte en alter ego." }
   ],
-  "basics": [],
-  "mazos": [],
-  "consideraciones": [],
+  "basics": [
+    { "code": "31023", "note": "Para preparar al héroe." },
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "01092", "note": "Mejora de economía." }
+  ],
+  "mazos": [
+    "eventos-tecnica-depurada",
+    "defensa-total"
+  ],
+  "consideraciones": [
+    "Después de un ataque, intervención o defensa básica, se prepara una vez por fase.",
+    "Siempre corriendo da otra preparación: puedes encadenar más acciones básicas.",
+    "Resistencia a la fricción se prepara cuando se prepara Mercurio: recurso físico repetible.",
+    "Máxima velocidad es máximo 1 por fase y dura hasta el final de la ronda."
+  ],
   "mulligan": {
-    "keep": [],
-    "toss": []
-  },
-  "hide": [
-    "fortalezas",
-    "debilidades",
-    "aspectos",
-    "basicas",
-    "mazos",
-    "consideraciones",
-    "mulligan"
-  ]
+    "keep": [
+      "Siempre corriendo: más preparaciones.",
+      "Máxima velocidad: +2 a los tres atributos.",
+      "Resistencia a la fricción: recurso cuando se prepara."
+    ],
+    "toss": [
+      "Velocidad de huracán: no ayuda a montar mesa.",
+      "Industrias Serval: recicla el descarte más tarde."
+    ]
+  }
 }

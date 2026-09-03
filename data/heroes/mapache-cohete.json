@@ -1,0 +1,64 @@
+{
+  "slug": "mapache-cohete",
+  "hero_card_code": "16029a",
+  "display_name": "Mapache Cohete",
+  "alter_ego_name": "Mapache Cohete",
+  "wip": true,
+  "difficulty": 3,
+  "power": 3,
+  "strengths": [
+    "Tiene Intervención 2.",
+    "Si haces daño sobrante a un enemigo, robas 1 carta.",
+    "Las armas de Tecnología entran con contadores de Carga.",
+    "Recarga prepara todas las mejoras Tecnología."
+  ],
+  "weaknesses": [
+    "Empieza con Ataque 1 y Defensa 1.",
+    "Tiene 9 de vida: aguanta poco.",
+    "Sin cargas en las armas, dejan de disparar."
+  ],
+  "aspects": {
+    "aggression": { "solo": 5, "duo": 4, "grupo": 3 },
+    "justice": { "solo": 4, "duo": 3, "grupo": 3 },
+    "leadership": { "solo": 3, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 2, "duo": 3, "grupo": 4 }
+  },
+  "cards": [
+    { "code": "16038", "priority": 5, "note": "Arma barata: 2 de daño por carga." },
+    { "code": "16031", "priority": 5, "note": "Prepara todas las mejoras Tecnología." },
+    { "code": "16034", "priority": 4, "note": "Pasa cargas a otra mejora Tecnología." },
+    { "code": "16033", "priority": 4, "note": "Al gastarla, pone una Tecnología del descarte encima del mazo." },
+    { "code": "16030", "priority": 3, "note": "Tras una intervención básica, prepara y da +1 INT." },
+    { "code": "16039", "priority": 3, "note": "+1 INT y Aéreo en héroe." },
+    { "code": "16036", "priority": 3, "note": "4 de daño a distancia con Brutalidad." },
+    { "code": "16035", "priority": 2, "note": "+3 de vida y +1 ATQ en héroe." },
+    { "code": "16037", "priority": 2, "note": "2 de daño al villano y a los esbirros de un jugador." },
+    { "code": "16032", "priority": 1, "note": "Cura 2 cada vez que infliges daño en ese turno." }
+  ],
+  "basics": [
+    { "code": "01092", "note": "Mejora de economía." },
+    { "code": "29027", "note": "Generador de recursos para bajar armas." },
+    { "code": "01091", "note": "Robo extra de cartas." }
+  ],
+  "mazos": [
+    "eventos-tecnica-depurada",
+    "tecnologias"
+  ],
+  "consideraciones": [
+    "Las armas entran con cargas: sin cargas, la acción de ataque no se usa.",
+    "Batería auxiliar mueve 1 carga a otra Tecnología. Recarga prepara todas.",
+    "Al hacer daño sobrante a un enemigo, robas 1.",
+    "En alter ego puedes descartar una Tecnología para robar 2, una vez por ronda."
+  ],
+  "mulligan": {
+    "keep": [
+      "Pistola de Cohete: arma barata para empezar a disparar.",
+      "Recarga: prepara las Tecnologías.",
+      "Batería auxiliar: mueve cargas."
+    ],
+    "toss": [
+      "Mala baba: no ayuda a montar mesa.",
+      "Lanzacohetes: caro para abrir."
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "lobezno",
+  "hero_card_code": "35001a",
+  "display_name": "Lobezno",
+  "alter_ego_name": "Logan",
+  "wip": true,
+  "difficulty": 2,
+  "power": 4,
+  "strengths": [
+    "Al empezar la fase de los jugadores, se cura 2.",
+    "Logan pone en juego las Garras de Lobezno al preparar mesa.",
+    "Las garras pagan un evento de Ataque sufriendo su coste: ese ataque gana Penetrante.",
+    "Logan tiene Recuperación 6."
+  ],
+  "weaknesses": [
+    "Pagar eventos con las garras te hace daño igual a su coste.",
+    "Sin las garras listas, esos eventos se pagan normal.",
+    "Me mataron y mejoré es cara y se descarta al usarla."
+  ],
+  "aspects": {
+    "aggression": { "solo": 5, "duo": 5, "grupo": 4 },
+    "justice": { "solo": 3, "duo": 3, "grupo": 3 },
+    "leadership": { "solo": 2, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 4, "duo": 4, "grupo": 4 }
+  },
+  "cards": [
+    { "code": "35002", "priority": 5, "note": "Permanente. Paga un evento de Ataque sufriendo su coste. Gana Penetrante." },
+    { "code": "35004", "priority": 5, "note": "+4 de vida, +1 ATQ y Penetrante en ataques básicos." },
+    { "code": "35010", "priority": 4, "note": "Ataque de 8. Si has agotado las garras para pagarlo, Brutalidad." },
+    { "code": "35008", "priority": 4, "note": "4 de daño. Si derrota, puedes sufrir 2 y repetir." },
+    { "code": "35009", "priority": 3, "note": "Dos ataques de 3." },
+    { "code": "35011", "priority": 3, "note": "Quita 3 de amenaza. Si limpia el plan, roba 2." },
+    { "code": "35012", "priority": 3, "note": "Cura 4 o descarta Aturdido y Confundido." },
+    { "code": "35005", "priority": 2, "note": "Roba al sufrir daño de un ataque enemigo. Se descarta al pasar a alter ego." },
+    { "code": "35003", "priority": 2, "note": "Da +2 ATQ contra un enemigo en ataques básicos." },
+    { "code": "35007", "priority": 2, "note": "Devuelve una carta de Lobezno del descarte al mazo." },
+    { "code": "35006", "priority": 1, "note": "Evita la derrota una vez, deja la vida en 5 y prepara." }
+  ],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "01092", "note": "Mejora de economía." },
+    { "code": "01084", "note": "Un buen aliado flexible." }
+  ],
+  "mazos": [
+    "eventos-tecnica-depurada",
+    "proteccion-cambio-seguro"
+  ],
+  "consideraciones": [
+    "Logan busca las Garras de Lobezno y las pone en juego al preparar mesa.",
+    "La acción de las garras las agota, te hace daño igual al coste del evento y lo juega gratis con Penetrante.",
+    "Al empezar tu fase, cúrate 2.",
+    "Tirarse de cabeza inflige 8. Si las has agotado para pagarlo, gana Brutalidad."
+  ],
+  "mulligan": {
+    "keep": [
+      "Esqueleto de adamántium: más vida, más ATQ y Penetrante.",
+      "Tirarse de cabeza: ataque de 8.",
+      "Torbellino de garras: 4 de daño y se puede repetir."
+    ],
+    "toss": [
+      "\"Me mataron y mejoré\": cara y no monta mesa.",
+      "La cabaña de Logan: pide alter ego."
+    ]
+  }
+}

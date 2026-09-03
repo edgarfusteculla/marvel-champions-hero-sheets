@@ -1,0 +1,62 @@
+{
+  "slug": "bruja-escarlata",
+  "hero_card_code": "15001a",
+  "display_name": "Bruja Escarlata",
+  "alter_ego_name": "Wanda Maximoff",
+  "wip": true,
+  "difficulty": 3,
+  "power": 4,
+  "strengths": [
+    "Puede cambiar los iconos de aumento de una carta de encuentro una vez por fase.",
+    "Tiene Intervención 2.",
+    "Maleficio descarta el mazo de encuentros y da daño, amenaza o robo según los aumentos.",
+    "Alterar la realidad anula una carta de encuentro."
+  ],
+  "weaknesses": [
+    "Empieza con Ataque 1.",
+    "Varias cartas dependen de cuántos iconos de aumento salgan: el resultado cambia cada vez.",
+    "Magia del caos descarta tantas cartas de encuentro como el coste de la carta que juegas gratis."
+  ],
+  "aspects": {
+    "aggression": { "solo": 3, "duo": 3, "grupo": 2 },
+    "justice": { "solo": 5, "duo": 4, "grupo": 4 },
+    "leadership": { "solo": 3, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 3, "duo": 3, "grupo": 3 }
+  },
+  "cards": [
+    { "code": "15004", "priority": 5, "note": "Descarta 3 del mazo de encuentros y resuelve según los aumentos." },
+    { "code": "15009", "priority": 5, "note": "Sube o baja en 1 los iconos de aumento de una carta." },
+    { "code": "15006", "priority": 4, "note": "Anula una carta de encuentro." },
+    { "code": "15003", "priority": 4, "note": "Juega una carta ignorando el coste. Descarta encuentros igual a ese coste." },
+    { "code": "15008", "priority": 3, "note": "Evita 3 de daño a un personaje amigo y se descarta." },
+    { "code": "15005", "priority": 3, "note": "Ataque de 5 más daño extra por aumentos descartados." },
+    { "code": "15007", "priority": 3, "note": "Mira 3 del mazo y quédate una en alter ego." },
+    { "code": "15002", "priority": 2, "note": "Aliado que se puede preparar una vez por fase." }
+  ],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "28018", "note": "Roba al pagarla con recursos mentales." },
+    { "code": "01084", "note": "Un buen aliado flexible." }
+  ],
+  "mazos": [
+    "justicia-confundir",
+    "defensa-total"
+  ],
+  "consideraciones": [
+    "La habilidad de héroe cambia qué carta cuenta los aumentos: una vez por fase.",
+    "La tiara sube o baja en 1 ese recuento: úsala con Maleficio.",
+    "Magia del caos juega una carta gratis y descarta encuentros igual a su coste.",
+    "Wanda descarta 2 para robar 2, o 3 si Mercurio está en juego."
+  ],
+  "mulligan": {
+    "keep": [
+      "Maleficio: motor de descartar encuentros.",
+      "Tiara de la Bruja Escarlata: controla los aumentos.",
+      "Agatha Harkness: filtro de mazo en alter ego."
+    ],
+    "toss": [
+      "Descomposición molecular: ataque caro para abrir.",
+      "Mercurio: aliado caro para el primer turno."
+    ]
+  }
+}

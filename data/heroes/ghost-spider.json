@@ -1,0 +1,62 @@
+{
+  "slug": "ghost-spider",
+  "hero_card_code": "27001a",
+  "display_name": "Ghost-Spider",
+  "alter_ego_name": "Gwen Stacy",
+  "wip": true,
+  "difficulty": 2,
+  "power": 4,
+  "strengths": [
+    "Defensa 3: aguanta los ataques del villano.",
+    "Después de resolver la interrupción o respuesta de un evento, se prepara una vez por fase.",
+    "Patada fantasma y Voltereta espectral se disparan tras un atributo básico.",
+    "George Stacy guarda eventos boca abajo para jugarlos después."
+  ],
+  "weaknesses": [
+    "Empieza con Intervención 1.",
+    "Sin eventos de interrupción o respuesta, no se prepara.",
+    "El Billete al multiverso se retira de la partida al usarlo."
+  ],
+  "aspects": {
+    "aggression": { "solo": 3, "duo": 3, "grupo": 3 },
+    "justice": { "solo": 4, "duo": 4, "grupo": 3 },
+    "leadership": { "solo": 3, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 5, "duo": 5, "grupo": 4 }
+  },
+  "cards": [
+    { "code": "27002", "priority": 5, "note": "Tras un atributo básico, inflige 6 de daño." },
+    { "code": "27004", "priority": 5, "note": "Tras un atributo básico, quita 5 de amenaza." },
+    { "code": "27009", "priority": 4, "note": "Roba tras la interrupción o respuesta de un evento." },
+    { "code": "27007", "priority": 4, "note": "Guarda eventos boca abajo. Se pueden jugar desde ahí." },
+    { "code": "27006", "priority": 3, "note": "Anula la activación de un enemigo. A un esbirro le inflige 4." },
+    { "code": "27005", "priority": 3, "note": "Daño al villano y anula el Cuando se muestre." },
+    { "code": "27003", "priority": 2, "note": "Busca a George Stacy o le vincula un evento." },
+    { "code": "27008", "priority": 1, "note": "Descarta la mano, baraja, roba hasta el máximo y prepara sus cartas." }
+  ],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "01092", "note": "Mejora de economía." },
+    { "code": "31023", "note": "Otra forma de prepararse." }
+  ],
+  "mazos": [
+    "justicia-planificacion",
+    "proteccion-cambio-seguro"
+  ],
+  "consideraciones": [
+    "Después de resolver la interrupción o respuesta de un evento, Ghost-Spider se prepara: una vez por fase.",
+    "Patada fantasma y Voltereta espectral son respuestas: disparan esa preparación.",
+    "La pulsera roba tras el mismo tipo de evento: agótala cuando resuelvas uno.",
+    "Gwen Stacy puede devolver el Billete al mazo o preparar a George Stacy, una vez por ronda."
+  ],
+  "mulligan": {
+    "keep": [
+      "Patada fantasma: 6 de daño tras un atributo básico.",
+      "Voltereta espectral: 5 de amenaza tras un atributo básico.",
+      "George Stacy: guarda eventos para más tarde."
+    ],
+    "toss": [
+      "Billete al multiverso: caro y se retira al usarlo.",
+      "Consejos paternos: pide a George Stacy o lo busca en alter ego."
+    ]
+  }
+}

@@ -6,91 +6,58 @@
   "wip": true,
   "difficulty": 3,
   "power": 3,
-  "strengths": [],
-  "weaknesses": [],
+  "strengths": [
+    "Tiene dos identidades de héroe: Gigante y Diminuto.",
+    "Al pasar a héroe, quita 1 de amenaza de un plan.",
+    "Cambio de tamaño cambia de forma y da robo por coste 0.",
+    "El casco cura al pasar a Gigante y da robo al pasar a Diminuto."
+  ],
+  "weaknesses": [
+    "Hay que recordar qué forma está en juego: varias cartas solo se juegan en una.",
+    "Sin Ejército de hormigas, Mente colmena rinde poco.",
+    "El casco cuesta 3."
+  ],
   "aspects": {
-    "aggression": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "justice": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "leadership": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "protection": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    }
+    "aggression": { "solo": 3, "duo": 3, "grupo": 2 },
+    "justice": { "solo": 3, "duo": 3, "grupo": 3 },
+    "leadership": { "solo": 5, "duo": 4, "grupo": 4 },
+    "protection": { "solo": 2, "duo": 3, "grupo": 3 }
   },
   "cards": [
-    {
-      "code": "12002",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "12003",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "12004",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "12005",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "12006",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "12007",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "12008",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "12009",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "12010",
-      "priority": 3,
-      "note": ""
-    }
+    { "code": "12005", "priority": 5, "note": "Cambia de forma de héroe y da robo por coste 0." },
+    { "code": "12008", "priority": 5, "note": "Cura 2 al pasar a Gigante. Roba 1 al pasar a Diminuto." },
+    { "code": "12007", "priority": 4, "note": "En Diminuto, 1 de daño a un enemigo." },
+    { "code": "12006", "priority": 4, "note": "Al gastarla, cura 2 en Gigante o roba 1 en Diminuto." },
+    { "code": "12002", "priority": 3, "note": "Aliado: 2 de daño en Gigante o 2 de amenaza en Diminuto." },
+    { "code": "12003", "priority": 3, "note": "En Gigante: 1 de daño a cada esbirro y 8 a un enemigo." },
+    { "code": "12004", "priority": 3, "note": "En Diminuto: quita amenaza extra por cada Ejército de hormigas." },
+    { "code": "12009", "priority": 2, "note": "+1 ATQ el turno en que pasas a Gigante." },
+    { "code": "12010", "priority": 2, "note": "Aturde en Gigante o confunde en Diminuto." }
   ],
-  "basics": [],
-  "mazos": [],
-  "consideraciones": [],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "01084", "note": "Un buen aliado flexible." },
+    { "code": "29027", "note": "Generador de recursos para bajar el casco." }
+  ],
+  "mazos": [
+    "justicia-planificacion",
+    "aliados-vengadores"
+  ],
+  "consideraciones": [
+    "Al pasar a héroe quita 1 de amenaza. Al pasar a alter ego, Scott Lang cura 1.",
+    "Cambio de tamaño cambia entre Gigante y Diminuto y da robo.",
+    "Pisotón de gigante solo se juega en Gigante. Mente colmena solo en Diminuto.",
+    "Ejército de hormigas ataca en Diminuto: baja varios si puedes."
+  ],
   "mulligan": {
-    "keep": [],
-    "toss": []
-  },
-  "hide": [
-    "fortalezas",
-    "debilidades",
-    "aspectos",
-    "basicas",
-    "mazos",
-    "consideraciones",
-    "mulligan"
-  ]
+    "keep": [
+      "Cambio de tamaño: cambia de forma y da robo.",
+      "Casco del Hombre Hormiga: cura o roba al cambiar de forma.",
+      "Ejército de hormigas: motor en Diminuto."
+    ],
+    "toss": [
+      "Pisotón de gigante: solo se juega en Gigante.",
+      "Guantes de descargas: piden recursos extra."
+    ]
+  }
 }

@@ -1,0 +1,63 @@
+{
+  "slug": "tormenta",
+  "hero_card_code": "36001a",
+  "display_name": "Tormenta",
+  "alter_ego_name": "Ororo Munroe",
+  "wip": true,
+  "difficulty": 3,
+  "power": 4,
+  "strengths": [
+    "Empieza con un mazo de Clima y un apoyo Clima en juego.",
+    "Puede cambiar ese apoyo y resolver su capacidad Especial, una vez por ronda.",
+    "Diosa de los elementos hace el mismo cambio otra vez en el turno.",
+    "La capa da Defensa extra, Aéreo y puede prepararla."
+  ],
+  "weaknesses": [
+    "Empieza con Intervención 1 y Defensa 1.",
+    "Sin el apoyo Clima adecuado, los eventos no resuelven su Extra.",
+    "Hay que gestionar el mazo de Clima además de la mano."
+  ],
+  "aspects": {
+    "aggression": { "solo": 3, "duo": 3, "grupo": 3 },
+    "justice": { "solo": 4, "duo": 4, "grupo": 3 },
+    "leadership": { "solo": 5, "duo": 5, "grupo": 4 },
+    "protection": { "solo": 3, "duo": 3, "grupo": 3 }
+  },
+  "cards": [
+    { "code": "36009", "priority": 5, "note": "Cambia el Clima y resuelve su Especial." },
+    { "code": "36007", "priority": 5, "note": "+1 DEF, Aéreo. Prepara a Tormenta tras un Especial." },
+    { "code": "36006", "priority": 4, "note": "+1 INT. Genera el recurso impreso en el Clima." },
+    { "code": "36010", "priority": 4, "note": "Quita 3 de amenaza entre los planes. Si hay Huracán, resuelve su Especial." },
+    { "code": "36011", "priority": 3, "note": "Ataque de 8. Si hay Tormenta eléctrica, resuelve su Especial." },
+    { "code": "36013", "priority": 3, "note": "3 de daño al villano y a los esbirros de un jugador. Resuelve el Especial del Clima." },
+    { "code": "36012", "priority": 3, "note": "-3 ATQ al villano y a los esbirros que te ataquen. Si hay Ventisca, resuelve su Especial." },
+    { "code": "36008", "priority": 2, "note": "Cura 2 en alter ego." }
+  ],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "01084", "note": "Un buen aliado flexible." },
+    { "code": "29027", "note": "Generador de recursos." }
+  ],
+  "mazos": [
+    "justicia-planificacion",
+    "aliados-vengadores"
+  ],
+  "consideraciones": [
+    "Ororo Munroe empieza con un mazo de Clima. Al preparar mesa elige un apoyo de ese mazo y lo pone en juego.",
+    "La acción de héroe cambia ese apoyo por otro del mazo de Clima y resuelve su Especial: una vez por ronda.",
+    "Diosa de los elementos hace el mismo cambio otra vez, sin gastar esa acción.",
+    "La diadema genera el recurso impreso en el Clima que tengas en juego.",
+    "La capa prepara a Tormenta después de resolver un Especial."
+  ],
+  "mulligan": {
+    "keep": [
+      "Diosa de los elementos: segundo cambio de Clima.",
+      "Diadema de Tormenta: recurso del Clima.",
+      "Capa de Tormenta: Aéreo y preparar."
+    ],
+    "toss": [
+      "El jardín de Ororo: pide alter ego.",
+      "Descarga eléctrica: cara si el Clima no es Tormenta eléctrica."
+    ]
+  }
+}

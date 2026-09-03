@@ -1,0 +1,64 @@
+{
+  "slug": "groot",
+  "hero_card_code": "16001a",
+  "display_name": "Groot",
+  "alter_ego_name": "Groot",
+  "wip": true,
+  "difficulty": 2,
+  "power": 3,
+  "strengths": [
+    "Defensa 3: aguanta los ataques del villano.",
+    "Los contadores de Crecimiento evitan daño: 1 de daño por contador que quites.",
+    "En alter ego coloca 2 contadores de Crecimiento una vez por ronda.",
+    "Los eventos de firma escalan con los contadores que tenga."
+  ],
+  "weaknesses": [
+    "Intervención 1: sin contadores, quita poca amenaza.",
+    "Gastar contadores para atacar o defender los deja más bajos para el siguiente golpe.",
+    "El máximo de Crecimiento es 10."
+  ],
+  "aspects": {
+    "aggression": { "solo": 3, "duo": 3, "grupo": 2 },
+    "justice": { "solo": 3, "duo": 3, "grupo": 3 },
+    "leadership": { "solo": 2, "duo": 3, "grupo": 3 },
+    "protection": { "solo": 5, "duo": 5, "grupo": 4 }
+  },
+  "cards": [
+    { "code": "16002", "priority": 5, "note": "Coloca 2 contadores de Crecimiento por coste 0." },
+    { "code": "16003", "priority": 5, "note": "Quita tanta amenaza como contadores de Crecimiento." },
+    { "code": "16004", "priority": 4, "note": "Inflige tanto daño como contadores de Crecimiento." },
+    { "code": "16007", "priority": 4, "note": "En alter ego, 1 contador y robo." },
+    { "code": "16005", "priority": 3, "note": "Ataque de 5. Si derrota, coloca 1 contador." },
+    { "code": "16011", "priority": 3, "note": "+2 ATQ en un ataque básico a cambio de 1 contador." },
+    { "code": "16010", "priority": 3, "note": "+3 DEF al defender a cambio de 1 contador." },
+    { "code": "16008", "priority": 2, "note": "+2 INT en una intervención básica a cambio de 1 contador." },
+    { "code": "16009", "priority": 2, "note": "Prepara a Groot a cambio de 2 contadores." },
+    { "code": "16006", "priority": 1, "note": "Gasta hasta 4 contadores para dar Duro a amigos." }
+  ],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "01092", "note": "Mejora de economía." },
+    { "code": "01084", "note": "Un buen aliado flexible." }
+  ],
+  "mazos": [
+    "justicia-planificacion",
+    "defensa-total"
+  ],
+  "consideraciones": [
+    "Cuando Groot va a sufrir daño, quita contadores de Crecimiento: cada uno evita 1 de ese daño.",
+    "En alter ego coloca 2 contadores una vez por ronda. Germinación coloca 2 más por coste 0.",
+    "Soy Groot y ¡SOY GROOT! escalan con los contadores que tenga en ese momento.",
+    "Las lianas gastan contadores para subir un atributo básico: no las uses si te deja sin colchón."
+  ],
+  "mulligan": {
+    "keep": [
+      "Germinación: 2 contadores por coste 0.",
+      "Terreno fértil: contador y robo en alter ego.",
+      "\"Soy Groot\": intervención que escala con los contadores."
+    ],
+    "toss": [
+      "\"Somos Groot\": gasta contadores para dar Duro.",
+      "Lianas lacerantes: pide 2 contadores para preparar."
+    ]
+  }
+}

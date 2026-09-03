@@ -6,91 +6,58 @@
   "wip": true,
   "difficulty": 3,
   "power": 3,
-  "strengths": [],
-  "weaknesses": [],
+  "strengths": [
+    "Después de usar una carta de Planificación, inflige 1 de daño a un enemigo.",
+    "En alter ego, jugar Planificación da robo una vez por fase.",
+    "Tiene Intervención 2 y un evento que quita 4 y confunde al villano.",
+    "El traje puede prepararla después de usar Planificación."
+  ],
+  "weaknesses": [
+    "Tiene 9 de vida: aguanta poco si no defiende.",
+    "Sin cartas de Planificación en mesa, la habilidad de héroe no dispara.",
+    "Varias cartas de firma se descartan al usarse."
+  ],
   "aspects": {
-    "aggression": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "justice": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "leadership": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    },
-    "protection": {
-      "solo": 3,
-      "duo": 3,
-      "grupo": 3
-    }
+    "aggression": { "solo": 3, "duo": 3, "grupo": 3 },
+    "justice": { "solo": 5, "duo": 5, "grupo": 4 },
+    "leadership": { "solo": 3, "duo": 4, "grupo": 4 },
+    "protection": { "solo": 2, "duo": 2, "grupo": 2 }
   },
   "cards": [
-    {
-      "code": "08002",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "08003",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "08004",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "08005",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "08006",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "08007",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "08008",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "08009",
-      "priority": 3,
-      "note": ""
-    },
-    {
-      "code": "08010",
-      "priority": 3,
-      "note": ""
-    }
+    { "code": "08007", "priority": 5, "note": "Recurso comodín para una carta de Planificación." },
+    { "code": "08003", "priority": 5, "note": "Quita 4 de amenaza y confunde al villano." },
+    { "code": "08009", "priority": 4, "note": "Da +1 DEF y puede preparar a la Viuda Negra." },
+    { "code": "08002", "priority": 4, "note": "Aliado que se abarata por cada Planificación en mesa." },
+    { "code": "08005", "priority": 3, "note": "Recupera una Planificación del descarte en alter ego." },
+    { "code": "08008", "priority": 3, "note": "Anula una perfidia y se descarta." },
+    { "code": "08004", "priority": 3, "note": "Tres ataques encadenados." },
+    { "code": "08010", "priority": 2, "note": "2 de daño y aturde a un esbirro que acaba de entrar." },
+    { "code": "08006", "priority": 2, "note": "Anula iconos de aumento y se descarta." }
   ],
-  "basics": [],
-  "mazos": [],
-  "consideraciones": [],
+  "basics": [
+    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "01092", "note": "Mejora de economía." },
+    { "code": "01084", "note": "Un buen aliado flexible." }
+  ],
+  "mazos": [
+    "justicia-planificacion",
+    "aliados-vengadores"
+  ],
+  "consideraciones": [
+    "Las cartas de Planificación disparan 1 de daño en héroe y robo en alter ego.",
+    "El Soldado de Invierno se abarata 1 por cada Planificación que controles.",
+    "Gancho de escalada y Combate acrobático se descartan al usarse: el Piso franco puede recuperar Planificación.",
+    "El Traje sintético prepara a la Viuda Negra después de usar Planificación."
+  ],
   "mulligan": {
-    "keep": [],
-    "toss": []
-  },
-  "hide": [
-    "fortalezas",
-    "debilidades",
-    "aspectos",
-    "basicas",
-    "mazos",
-    "consideraciones",
-    "mulligan"
-  ]
+    "keep": [
+      "Brazaletes de la Viuda Negra: recurso para Planificación.",
+      "Traje sintético: +1 DEF y prepara al héroe.",
+      "Operación encubierta: amenaza y confundir."
+    ],
+    "toss": [
+      "Danza mortal: ataque caro para abrir.",
+      "Picadura de Viuda: espera a que entre un esbirro."
+    ]
+  }
 }
