@@ -30,7 +30,7 @@
     { "code": "36010", "priority": 4, "note": "Quita 3 de amenaza entre los planes. Si hay Huracán, resuelve su Especial." },
     { "code": "36011", "priority": 3, "note": "Ataque de 8. Si hay Tormenta eléctrica, resuelve su Especial." },
     { "code": "36013", "priority": 3, "note": "3 de daño al villano y a los esbirros de un jugador. Resuelve el Especial del Clima." },
-    { "code": "36012", "priority": 3, "note": "-3 ATQ al villano y a los esbirros que te ataquen. Si hay Ventisca, resuelve su Especial." },
+    { "code": "36012", "priority": 3, "note": "-3 ATQ al villano y a los esbirros que ataquen al héroe. Si hay Ventisca, resuelve su Especial." },
     { "code": "36008", "priority": 2, "note": "Cura 2 en alter ego." }
   ],
   "basics": [

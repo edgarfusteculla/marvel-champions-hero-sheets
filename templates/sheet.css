@@ -100,6 +100,10 @@ body {
   min-height: 0;
 }
 
+.sheet-b .body {
+  gap: 2mm;
+}
+
 .row {
   display: flex;
   gap: 4mm;
@@ -261,6 +265,11 @@ body {
 
 .split-lists .item-list {
   margin: 0;
+}
+
+.split-lists .item-list li {
+  font-size: 2.8mm;
+  line-height: 1.28;
 }
 
 .split-lists .sub-title {

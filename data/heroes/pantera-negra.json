@@ -18,10 +18,26 @@
     "No destaca en un atributo concreto: ni en ataque, ni en intervención, ni en defensa."
   ],
   "aspects": {
-    "aggression": { "solo": 3, "duo": 4, "grupo": 4 },
-    "justice": { "solo": 4, "duo": 3, "grupo": 2 },
-    "leadership": { "solo": 4, "duo": 4, "grupo": 4 },
-    "protection": { "solo": 3, "duo": 3, "grupo": 3 }
+    "aggression": {
+      "solo": 3,
+      "duo": 4,
+      "grupo": 4
+    },
+    "justice": {
+      "solo": 4,
+      "duo": 3,
+      "grupo": 2
+    },
+    "leadership": {
+      "solo": 4,
+      "duo": 4,
+      "grupo": 4
+    },
+    "protection": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    }
   },
   "cards": [
     {

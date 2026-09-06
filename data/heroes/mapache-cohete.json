@@ -8,7 +8,7 @@
   "power": 3,
   "strengths": [
     "Tiene Intervención 2.",
-    "Si haces daño sobrante a un enemigo, robas 1 carta.",
+    "Si inflige daño sobrante a un enemigo, roba 1 carta.",
     "Las armas de Tecnología entran con contadores de Carga.",
     "Recarga prepara todas las mejoras Tecnología."
   ],
@@ -33,7 +33,7 @@
     { "code": "16036", "priority": 3, "note": "4 de daño a distancia con Brutalidad." },
     { "code": "16035", "priority": 2, "note": "+3 de vida y +1 ATQ en héroe." },
     { "code": "16037", "priority": 2, "note": "2 de daño al villano y a los esbirros de un jugador." },
-    { "code": "16032", "priority": 1, "note": "Cura 2 cada vez que infliges daño en ese turno." }
+    { "code": "16032", "priority": 1, "note": "Cura 2 cada vez que inflige daño en ese turno." }
   ],
   "basics": [
     { "code": "01092", "note": "Mejora de economía." },

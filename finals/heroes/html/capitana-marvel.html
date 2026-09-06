@@ -123,6 +123,10 @@ body {
   min-height: 0;
 }
 
+.sheet-b .body {
+  gap: 2mm;
+}
+
 .row {
   display: flex;
   gap: 4mm;
@@ -178,6 +182,14 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 3mm;
+}
+
+.wip-banner {
+  font-size: 3.1mm;
+  line-height: 1.35;
+  padding: 2.4mm 3mm;
+  border-left: 2.5mm solid var(--accent);
+  background: var(--paper-light);
 }
 
 .meter-label {
@@ -276,6 +288,11 @@ body {
 
 .split-lists .item-list {
   margin: 0;
+}
+
+.split-lists .item-list li {
+  font-size: 2.8mm;
+  line-height: 1.28;
 }
 
 .split-lists .sub-title {
@@ -776,7 +793,7 @@ body {
     <div class="panel">
       <div class="panel-title">Fortalezas</div>
       <ul class="item-list">
-<li>Robas muchas cartas.</li><li>Buena economía gracias a sus <i>recursos</i> triples.</li><li>Sus cartas rinden más con <i>recursos</i> de energía.</li><li>Buena supervivencia: mucha vida, buena <i>recuperación</i> y su habilidad de curar.</li>      </ul>
+<li>Roba muchas cartas.</li><li>Buena economía gracias a sus <i>recursos</i> triples.</li><li>Sus cartas rinden más con <i>recursos</i> de energía.</li><li>Buena supervivencia: mucha vida, buena <i>recuperación</i> y su habilidad de curar.</li>      </ul>
     </div>
 
     <div class="panel">
@@ -789,13 +806,6 @@ body {
       <div class="panel-title">Cartas básicas indispensables</div>
       <div class="rec-basics rec-basics-3">
         <div class="rec-basic">
-<img src="https://marvelcdb.com/bundles/cards/08023.png" alt="Quintransporte">          <div>
-            <div class="sig-name">Quintransporte</div>
-            <span class="type-tag">Apoyo</span>
-            <p class="sig-note"><i>Recurso</i> universal para las sinergias de energía.</p>
-          </div>
-        </div>
-        <div class="rec-basic">
 <img src="https://marvelcdb.com/bundles/cards/01091.png" alt="Mansión de los Vengadores">          <div>
             <div class="sig-name">Mansión de los Vengadores</div>
             <span class="type-tag">Apoyo</span>
@@ -807,6 +817,13 @@ body {
             <div class="sig-name">Nick Furia</div>
             <span class="type-tag">Aliado</span>
             <p class="sig-note">Un buen <i>aliado</i> flexible.</p>
+          </div>
+        </div>
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/08023.png" alt="Quintransporte">          <div>
+            <div class="sig-name">Quintransporte</div>
+            <span class="type-tag">Apoyo</span>
+            <p class="sig-note"><i>Recurso</i> universal para las sinergias de energía.</p>
           </div>
         </div>
       </div>
@@ -993,7 +1010,7 @@ body {
     <div class="panel">
       <div class="panel-title">Consideraciones</div>
       <ul class="item-list">
-        <li>Tiene mucho valor ir a <i>alter ego</i>, de forma recurrente, si la <i>amenaza</i> no es un problema. <b>Spider-Woman</b> puede <i>confundir</i> al <i>villano</i>.</li>
+        <li>Te interesa ir a <i>alter ego</i> de forma recurrente si la <i>amenaza</i> no es un problema. <b>Spider-Woman</b> puede <i>confundir</i> al <i>villano</i>.</li>
         <li>En <i>alter ego</i>, su <i>acción</i> roba una carta y la <b>Base orbital de Alpha Flight</b> da 2 cartas por 1.</li>
         <li>Los <i>recursos</i> de energía que sobran al final del turno se pueden gastar para llenar <b>Canalizar energía</b>.</li>
         <li>A <b>Canalizar energía</b> se le puede dar más de una carta por turno.</li>
@@ -1012,7 +1029,7 @@ body {
         <div>
           <div class="sub-title">Cambia</div>
           <ul class="item-list">
-<li><b>Vuelo cósmico</b>: poco interesante en los primeros turnos.</li><li><b>Casco de la Capitana Marvel</b>: flojo al principio si no tienes <b>Vuelo cósmico</b>.</li><li><b>Evitar una crisis</b>: floja si aún no tienes <b>Vuelo cósmico</b>.</li>          </ul>
+<li><b>Vuelo cósmico</b>: poco interesante en los primeros turnos.</li><li><b>Casco de la Capitana Marvel</b>: flojo al principio si <b>Vuelo cósmico</b> no está en mesa.</li><li><b>Evitar una crisis</b>: floja si <b>Vuelo cósmico</b> no está en mesa.</li>          </ul>
         </div>
       </div>
     </div>

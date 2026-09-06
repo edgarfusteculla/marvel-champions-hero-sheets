@@ -31,7 +31,7 @@
     { "code": "12002", "priority": 3, "note": "Aliado: 2 de daño en Gigante o 2 de amenaza en Diminuto." },
     { "code": "12003", "priority": 3, "note": "En Gigante: 1 de daño a cada esbirro y 8 a un enemigo." },
     { "code": "12004", "priority": 3, "note": "En Diminuto: quita amenaza extra por cada Ejército de hormigas." },
-    { "code": "12009", "priority": 2, "note": "+1 ATQ el turno en que pasas a Gigante." },
+    { "code": "12009", "priority": 2, "note": "+1 ATQ el turno en que pasa a Gigante." },
     { "code": "12010", "priority": 2, "note": "Aturde en Gigante o confunde en Diminuto." }
   ],
   "basics": [

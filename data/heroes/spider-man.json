@@ -6,22 +6,38 @@
   "difficulty": 1,
   "power": 3,
   "strengths": [
-    "En héroe, robas una carta cada vez que el villano te ataca.",
+    "En héroe, roba una carta cada vez que el villano le ataca.",
     "Defensa 3 y una carta de defensa muy buena: aguanta bien los ataques del villano.",
     "Buena economía: el recurso de Peter Parker y la carta extra al recibir el ataque.",
     "Recuperación muy alta gracias a Tía May.",
     "Control del villano con Envuelto en telaraña y Sentido arácnido mejorado."
   ],
   "weaknesses": [
-    "Intervención 1: te cuesta mucho gestionar la amenaza.",
+    "Intervención 1: cuesta mucho gestionar la amenaza.",
     "Su carta de intervención es circunstancial y débil.",
-    "Ataque poco flexible: solo tiene 2 de atributo y un evento de 8, así que te cuesta limpiar esbirros."
+    "Ataque poco flexible: solo tiene 2 de atributo y un evento de 8, así que cuesta limpiar esbirros."
   ],
   "aspects": {
-    "justice": { "solo": 5, "duo": 2, "grupo": 1 },
-    "leadership": { "solo": 4, "duo": 4, "grupo": 4 },
-    "protection": { "solo": 2, "duo": 5, "grupo": 3 },
-    "aggression": { "solo": 1, "duo": 3, "grupo": 2 }
+    "justice": {
+      "solo": 5,
+      "duo": 2,
+      "grupo": 1
+    },
+    "leadership": {
+      "solo": 4,
+      "duo": 4,
+      "grupo": 4
+    },
+    "protection": {
+      "solo": 2,
+      "duo": 5,
+      "grupo": 3
+    },
+    "aggression": {
+      "solo": 1,
+      "duo": 3,
+      "grupo": 2
+    }
   },
   "cards": [
     {
@@ -67,12 +83,12 @@
   ],
   "basics": [
     {
-      "code": "29027",
-      "note": "Muy buen generador de recursos para Peter Parker."
-    },
-    {
       "code": "01092",
       "note": "Mejora de economía."
+    },
+    {
+      "code": "29027",
+      "note": "Muy buen generador de recursos para Peter Parker."
     },
     {
       "code": "28018",
@@ -85,7 +101,7 @@
     "defensa-total"
   ],
   "consideraciones": [
-    "Gata Negra no tiene daño derivado: si ataca con ella, puede quedarse en mesa toda la partida.",
+    "Gata Negra no tiene daño derivado: si atacas con ella, puede quedarse en mesa toda la partida.",
     "Los recursos de Lanzarredes se gastan de uno en uno; después de usarlo, se agota hasta el siguiente turno.",
     "Con la vida baja, al final del turno pasa a alter ego y recupera 4 con Tía May. Al inicio del siguiente, otros 4 antes de volver a héroe.",
     "Voltereta hacia atrás y Sentido arácnido mejorado se juegan durante la fase del villano.",
@@ -97,7 +113,7 @@
     "keep": [
       "Lanzarredes: economía flexible para los primeros turnos.",
       "Tía May: asegura una recuperación excelente al ir a alter ego.",
-      "Gata Negra: aliado que te acompaña durante toda la partida.",
+      "Gata Negra: aliado que acompaña durante toda la partida.",
       "Inventiva, Mansión de los Vengadores y Helitransporte: buenos generadores de recursos para arrancar la partida."
     ],
     "toss": [

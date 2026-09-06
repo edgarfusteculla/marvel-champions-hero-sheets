@@ -3,60 +3,127 @@
   "hero_card_code": "03001a",
   "display_name": "Capitán América",
   "alter_ego_name": "Steve Rogers",
-  "wip": true,
-  "difficulty": 2,
-  "power": 4,
+  "difficulty": 1,
+  "power": 5,
   "strengths": [
-    "Puede prepararse descartando una carta: saca más acciones por turno.",
-    "El escudo sube la defensa y da Represalia 1.",
-    "En alter ego abarata el primer aliado de cada ronda.",
-    "Tiene un evento de defensa que evita todo el daño."
+    "Tiene atributos muy equilibrados y su kit de cartas es muy potente.",
+    "Defensa 3 y una carta de defensa muy buena: aguanta bien los ataques del villano.",
+    "Es un héroe muy flexible: atributos y kit le permiten hacer de todo.",
+    "Su acción descarta una carta para prepararse, una vez por ronda.",
+    "Steve Rogers busca el Escudo del Capitán América en la preparación: consistencia, Defensa 3 y Represalia 1 desde el inicio."
   ],
   "weaknesses": [
-    "Intervención 2: no gestiona la amenaza con el atributo.",
-    "Sin el escudo en mesa, defiende peor y pierde el bloqueo."
+    "Su mecánica depende del Escudo del Capitán América."
   ],
   "aspects": {
-    "aggression": { "solo": 2, "duo": 3, "grupo": 3 },
-    "justice": { "solo": 3, "duo": 3, "grupo": 2 },
-    "leadership": { "solo": 5, "duo": 5, "grupo": 5 },
-    "protection": { "solo": 3, "duo": 4, "grupo": 4 }
+    "aggression": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "justice": {
+      "solo": 4,
+      "duo": 3,
+      "grupo": 3
+    },
+    "leadership": {
+      "solo": 5,
+      "duo": 4,
+      "grupo": 4
+    },
+    "protection": {
+      "solo": 3,
+      "duo": 5,
+      "grupo": 2
+    }
   },
   "cards": [
-    { "code": "03009", "priority": 5, "note": "Da +1 DEF y Represalia 1." },
-    { "code": "03003", "priority": 5, "note": "Coste 0: +1 INT y robo." },
-    { "code": "03005", "priority": 4, "note": "Evita todo el daño si el escudo está listo." },
-    { "code": "03010", "priority": 4, "note": "Recurso físico cada turno." },
-    { "code": "03004", "priority": 3, "note": "Ataque de 6 que puede aturdir." },
-    { "code": "03002", "priority": 3, "note": "Aliado que quita 2 de amenaza al entrar." },
-    { "code": "03007", "priority": 2, "note": "Robo y cura en alter ego." },
-    { "code": "03008", "priority": 2, "note": "Evita la derrota una vez." },
-    { "code": "03006", "priority": 1, "note": "Ataque que devuelve el escudo a la mano." }
+    {
+      "code": "03009",
+      "priority": 5,
+      "note": "Imprescindible para su mecánica."
+    },
+    {
+      "code": "03005",
+      "priority": 5,
+      "note": "Evita todo el daño de un ataque."
+    },
+    {
+      "code": "03003",
+      "priority": 5,
+      "note": "Coste 0: +1 INT y robo."
+    },
+    {
+      "code": "03010",
+      "priority": 4,
+      "note": "Generador de recursos."
+    },
+    {
+      "code": "03004",
+      "priority": 3,
+      "note": "Ataque de 6. Aturde si se paga un recurso físico."
+    },
+    {
+      "code": "03007",
+      "priority": 3,
+      "note": "Robo y cura en alter ego."
+    },
+    {
+      "code": "03006",
+      "priority": 2,
+      "note": "Ataque flexible."
+    },
+    {
+      "code": "03002",
+      "priority": 2,
+      "note": "Aliado que ayuda a gestionar la amenaza."
+    },
+    {
+      "code": "03008",
+      "priority": 1,
+      "note": "Salvavidas cuando un ataque va a derrotar al héroe."
+    }
   ],
   "basics": [
-    { "code": "01091", "note": "Robo extra de cartas para alimentar la acción de preparar." },
-    { "code": "01084", "note": "Un buen aliado flexible." },
-    { "code": "29027", "note": "Generador de recursos para montar mesa." }
+    {
+      "code": "01091",
+      "note": "Robo extra de cartas."
+    },
+    {
+      "code": "01084",
+      "note": "Un buen aliado flexible."
+    },
+    {
+      "code": "08023",
+      "note": "Recurso universal."
+    }
   ],
   "mazos": [
     "aliados-vengadores",
-    "defensa-total"
+    "defensa-total",
+    "logistica-shield"
   ],
   "consideraciones": [
-    "Steve Rogers busca el Escudo del Capitán América al preparar mesa: bájalo pronto.",
-    "La acción de héroe descarta 1 carta para prepararse: una vez por ronda.",
-    "Bloqueo de escudo pide agotar el escudo: no lo uses si ya está agotado.",
-    "Lanzamiento de escudo devuelve el escudo a la mano: después hay que volver a jugarlo."
+    "Leyenda viviente reduce en 1 el coste del primer aliado de cada ronda. Puedes aplicársela a un compañero.",
+    "Solo vale para el primer aliado de la ronda: si ya se ha jugado uno y vas a alter ego, no se puede usar.",
+    "No hace falta jugar el aliado en alter ego: puedes pasar a héroe y jugarlo después.",
+    "Buscar el Escudo del Capitán América en la preparación es después de robar la mano inicial y el mulligan.",
+    "Al usar la acción de héroe, puedes descartar la carta que quieras de la mano para prepararte.",
+    "Bloqueo de escudo agota el escudo: no se puede jugar si está agotado.",
+    "Golpe heroico aturde si pagas un recurso físico. Suero de supersoldado o Quintransporte aseguran ese icono.",
+    "Lanzamiento de escudo vuelve el escudo a la mano y pierde sus efectos. No se juega sin el escudo en mesa."
   ],
   "mulligan": {
     "keep": [
-      "Escudo del Capitán América: conviene tenerlo en mesa desde el primer turno.",
-      "Determinación audaz: robo y +1 INT por coste 0.",
-      "Suero de supersoldado: recurso físico para montar mesa."
+      "Apartamento de Steve: consistencia cuando vayas a alter ego.",
+      "Suero de supersoldado: economía a lo largo de la partida.",
+      "Determinación audaz: roba otra carta y da +1 INT esa ronda.",
+      "Mansión de los Vengadores y Quintransporte: robo y recurso para abrir."
     ],
     "toss": [
-      "Lanzamiento de escudo: pide descartar mano y devolver el escudo.",
-      "Casco del Capitán América: no ayuda a abrir."
+      "Bloqueo de escudo: no se usa hasta que un enemigo ataque.",
+      "Lanzamiento de escudo: pide devolver el escudo a la mano.",
+      "Casco del Capitán América: al inicio no hay peligro de derrota."
     ]
   }
 }

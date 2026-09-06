@@ -56,7 +56,7 @@ descubre solo.
 | `strengths`, `weaknesses` | Listas de frases, una caja cada una. |
 | `aspects` | Los cuatro aspectos, cada uno valorado de 1 a 5 en `solo`, `duo` y `grupo`. El orden es siempre Agresividad, Justicia, Liderazgo y Protección. |
 | `cards` | Lista de `{code, priority, note}`. Las cuatro de mayor prioridad salen como «Mejores cartas»; el resto, como «Cartas circunstanciales». |
-| `basics` | Cartas básicas ajenas al kit: `{code, note}`. |
+| `basics` | Cartas básicas ajenas al kit: `{code, note}`. Orden alfabético por el nombre en español. |
 | `consideraciones` | Lista de frases (o de `{chain, text}`). |
 | `mulligan` | `{keep: [...], toss: [...]}`. |
 | `palette` | Opcional. Por defecto se usan los colores oficiales del héroe que da MarvelCDB. |

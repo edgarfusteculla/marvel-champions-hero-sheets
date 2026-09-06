@@ -123,6 +123,10 @@ body {
   min-height: 0;
 }
 
+.sheet-b .body {
+  gap: 2mm;
+}
+
 .row {
   display: flex;
   gap: 4mm;
@@ -178,6 +182,14 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 3mm;
+}
+
+.wip-banner {
+  font-size: 3.1mm;
+  line-height: 1.35;
+  padding: 2.4mm 3mm;
+  border-left: 2.5mm solid var(--accent);
+  background: var(--paper-light);
 }
 
 .meter-label {
@@ -276,6 +288,11 @@ body {
 
 .split-lists .item-list {
   margin: 0;
+}
+
+.split-lists .item-list li {
+  font-size: 2.8mm;
+  line-height: 1.28;
 }
 
 .split-lists .sub-title {
@@ -776,30 +793,30 @@ body {
     <div class="panel">
       <div class="panel-title">Fortalezas</div>
       <ul class="item-list">
-<li>En <i>héroe</i>, robas una carta cada vez que el <i>villano</i> te ataca.</li><li>Defensa 3 y una carta de defensa muy buena: aguanta bien los ataques del <i>villano</i>.</li><li>Buena economía: el <i>recurso</i> de <b>Peter Parker</b> y la carta extra al recibir el ataque.</li><li><i>Recuperación</i> muy alta gracias a <b>Tía May</b>.</li><li>Control del <i>villano</i> con <b>Envuelto en telaraña</b> y <b>Sentido arácnido mejorado</b>.</li>      </ul>
+<li>En <i>héroe</i>, roba una carta cada vez que el <i>villano</i> le ataca.</li><li>Defensa 3 y una carta de defensa muy buena: aguanta bien los ataques del <i>villano</i>.</li><li>Buena economía: el <i>recurso</i> de <b>Peter Parker</b> y la carta extra al recibir el ataque.</li><li><i>Recuperación</i> muy alta gracias a <b>Tía May</b>.</li><li>Control del <i>villano</i> con <b>Envuelto en telaraña</b> y <b>Sentido arácnido mejorado</b>.</li>      </ul>
     </div>
 
     <div class="panel">
       <div class="panel-title">Debilidades</div>
       <ul class="item-list">
-<li><i>Intervención</i> 1: te cuesta mucho gestionar la <i>amenaza</i>.</li><li>Su carta de <i>intervención</i> es circunstancial y débil.</li><li>Ataque poco flexible: solo tiene 2 de atributo y un <i>evento</i> de 8, así que te cuesta limpiar <i>esbirros</i>.</li>      </ul>
+<li><i>Intervención</i> 1: cuesta mucho gestionar la <i>amenaza</i>.</li><li>Su carta de <i>intervención</i> es circunstancial y débil.</li><li>Ataque poco flexible: solo tiene 2 de atributo y un <i>evento</i> de 8, así que cuesta limpiar <i>esbirros</i>.</li>      </ul>
     </div>
 
     <div>
       <div class="panel-title">Cartas básicas indispensables</div>
       <div class="rec-basics rec-basics-3">
         <div class="rec-basic">
-<img src="https://marvelcdb.com/bundles/cards/29027.png" alt="Inventiva">          <div>
-            <div class="sig-name">Inventiva</div>
-            <span class="type-tag">Mejora</span>
-            <p class="sig-note">Muy buen generador de <i>recursos</i> para <b>Peter Parker</b>.</p>
-          </div>
-        </div>
-        <div class="rec-basic">
 <img src="https://marvelcdb.com/bundles/cards/01092.png" alt="Helitransporte">          <div>
             <div class="sig-name">Helitransporte</div>
             <span class="type-tag">Apoyo</span>
             <p class="sig-note"><i>Mejora</i> de economía.</p>
+          </div>
+        </div>
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/29027.png" alt="Inventiva">          <div>
+            <div class="sig-name">Inventiva</div>
+            <span class="type-tag">Mejora</span>
+            <p class="sig-note">Muy buen generador de <i>recursos</i> para <b>Peter Parker</b>.</p>
           </div>
         </div>
         <div class="rec-basic">
@@ -1001,7 +1018,7 @@ body {
     <div class="panel">
       <div class="panel-title">Consideraciones</div>
       <ul class="item-list">
-        <li><b>Gata Negra</b> no tiene <i>daño derivado</i>: si ataca con ella, puede quedarse en mesa toda la partida.</li>
+        <li><b>Gata Negra</b> no tiene <i>daño derivado</i>: si atacas con ella, puede quedarse en mesa toda la partida.</li>
         <li>Los <i>recursos</i> de <b>Lanzarredes</b> se gastan de uno en uno; después de usarlo, se agota hasta el siguiente turno.</li>
         <li>Con la vida baja, al final del turno pasa a <i>alter ego</i> y recupera 4 con <b>Tía May</b>. Al inicio del siguiente, otros 4 antes de volver a <i>héroe</i>.</li>
         <li><b>Voltereta hacia atrás</b> y <b>Sentido arácnido mejorado</b> se juegan durante la <i>fase del villano</i>.</li>
@@ -1017,7 +1034,7 @@ body {
         <div>
           <div class="sub-title">Buscar</div>
           <ul class="item-list">
-<li><b>Lanzarredes</b>: economía flexible para los primeros turnos.</li><li><b>Tía May</b>: asegura una <i>recuperación</i> excelente al ir a <i>alter ego</i>.</li><li><b>Gata Negra</b>: <i>aliado</i> que te acompaña durante toda la partida.</li><li><b>Inventiva</b>, <b>Mansión de los Vengadores</b> y <b>Helitransporte</b>: buenos generadores de <i>recursos</i> para arrancar la partida.</li>          </ul>
+<li><b>Lanzarredes</b>: economía flexible para los primeros turnos.</li><li><b>Tía May</b>: asegura una <i>recuperación</i> excelente al ir a <i>alter ego</i>.</li><li><b>Gata Negra</b>: <i>aliado</i> que acompaña durante toda la partida.</li><li><b>Inventiva</b>, <b>Mansión de los Vengadores</b> y <b>Helitransporte</b>: buenos generadores de <i>recursos</i> para arrancar la partida.</li>          </ul>
         </div>
         <div>
           <div class="sub-title">Cambia</div>

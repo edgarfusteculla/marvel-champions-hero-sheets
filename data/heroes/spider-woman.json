@@ -7,7 +7,7 @@
   "difficulty": 3,
   "power": 4,
   "strengths": [
-    "Elige dos aspectos al montar el mazo, con el mismo número de cartas de cada uno.",
+    "Puede incluir dos aspectos al montar el mazo, con el mismo número de cartas de cada uno.",
     "Al jugar una carta de aspecto, recibe +1 INT, +1 ATQ y +1 DEF hasta el final de la ronda.",
     "Ese bonus es una vez por ronda para cada aspecto.",
     "En alter ego puede mirar la primera carta de cualquier mazo."

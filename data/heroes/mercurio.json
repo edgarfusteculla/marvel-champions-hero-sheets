@@ -27,7 +27,7 @@
     { "code": "14003", "priority": 5, "note": "Prepara a Mercurio por coste 1." },
     { "code": "14005", "priority": 5, "note": "+2 INT, ATQ y DEF hasta el final de la ronda." },
     { "code": "14009", "priority": 4, "note": "Se prepara con Mercurio y genera un recurso físico." },
-    { "code": "14004", "priority": 4, "note": "Elige dos veces: 2 de daño o 2 de amenaza." },
+    { "code": "14004", "priority": 4, "note": "Dos veces: 2 de daño o 2 de amenaza." },
     { "code": "14011", "priority": 3, "note": "Da +1 ATQ." },
     { "code": "14010", "priority": 3, "note": "Da +1 INT." },
     { "code": "14008", "priority": 3, "note": "Da +1 DEF." },

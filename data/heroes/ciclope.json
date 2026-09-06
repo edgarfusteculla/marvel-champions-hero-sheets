@@ -29,7 +29,7 @@
     { "code": "33007", "priority": 4, "note": "Al derrotar al enemigo, ese jugador roba 2." },
     { "code": "33006", "priority": 4, "note": "El enemigo recibe -1 ATQ." },
     { "code": "33010", "priority": 4, "note": "Quita 3 de amenaza y recupera una Táctica." },
-    { "code": "33004", "priority": 3, "note": "Juegas el primer turno. Las Tácticas en esbirros dejan de ser Temporales." },
+    { "code": "33004", "priority": 3, "note": "Se juega el primer turno. Las Tácticas en esbirros dejan de ser Temporales." },
     { "code": "33009", "priority": 3, "note": "3 de daño a un enemigo y 3 a otro con mejora vinculada." },
     { "code": "33008", "priority": 2, "note": "El rayo óptico inflige 8 extra y gana Brutalidad." },
     { "code": "33002", "priority": 2, "note": "Al entrar, recupera una carta de Cíclope del descarte." }

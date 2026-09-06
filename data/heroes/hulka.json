@@ -17,10 +17,26 @@
     "En héroe, la mano es de 4 cartas."
   ],
   "aspects": {
-    "aggression": { "solo": 2, "duo": 4, "grupo": 4 },
-    "justice": { "solo": 5, "duo": 3, "grupo": 1 },
-    "leadership": { "solo": 4, "duo": 3, "grupo": 3 },
-    "protection": { "solo": 1, "duo": 5, "grupo": 5 }
+    "aggression": {
+      "solo": 2,
+      "duo": 4,
+      "grupo": 4
+    },
+    "justice": {
+      "solo": 5,
+      "duo": 3,
+      "grupo": 1
+    },
+    "leadership": {
+      "solo": 4,
+      "duo": 3,
+      "grupo": 3
+    },
+    "protection": {
+      "solo": 1,
+      "duo": 5,
+      "grupo": 5
+    }
   },
   "cards": [
     {
@@ -41,7 +57,7 @@
     {
       "code": "01021",
       "priority": 4,
-      "note": "Daño igual a tus puntos de vida faltantes, hasta 15."
+      "note": "Daño igual a la vida faltante, hasta 15."
     },
     {
       "code": "01025",
@@ -61,7 +77,7 @@
     {
       "code": "01026",
       "priority": 1,
-      "note": "En alter ego, gastas un recurso mental y quitas 2 de amenaza."
+      "note": "En alter ego, gasta un recurso mental y quita 2 de amenaza."
     },
     {
       "code": "01023",

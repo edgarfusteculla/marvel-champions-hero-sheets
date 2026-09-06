@@ -8,17 +8,33 @@
   "strengths": [
     "Con las mejoras de la armadura en mesa, tiene unos turnos muy potentes.",
     "Aporta tanto daño como intervención a la partida.",
-    "Tiene un alter ego muy bueno: si controlas la amenaza, ayuda mucho a montar mesa."
+    "Tiene un alter ego muy bueno: si la amenaza está controlada, ayuda mucho a montar mesa."
   ],
   "weaknesses": [
     "En héroe tiene mano 1: debe bajar mejoras para aumentarla.",
     "Tiene un inicio de partida difícil: debe aguantar los primeros turnos para estabilizar."
   ],
   "aspects": {
-    "aggression": { "solo": 2, "duo": 2, "grupo": 2 },
-    "justice": { "solo": 4, "duo": 3, "grupo": 3 },
-    "leadership": { "solo": 3, "duo": 3, "grupo": 3 },
-    "protection": { "solo": 3, "duo": 5, "grupo": 5 }
+    "aggression": {
+      "solo": 2,
+      "duo": 2,
+      "grupo": 2
+    },
+    "justice": {
+      "solo": 4,
+      "duo": 3,
+      "grupo": 3
+    },
+    "leadership": {
+      "solo": 3,
+      "duo": 3,
+      "grupo": 3
+    },
+    "protection": {
+      "solo": 3,
+      "duo": 5,
+      "grupo": 5
+    }
   },
   "cards": [
     {
@@ -74,12 +90,12 @@
   ],
   "basics": [
     {
-      "code": "29027",
-      "note": "Muy buen generador de recursos para Tony Stark."
-    },
-    {
       "code": "56019",
       "note": "Aliado que ayuda a buscar mejoras."
+    },
+    {
+      "code": "29027",
+      "note": "Muy buen generador de recursos para Tony Stark."
     },
     {
       "code": "40057",

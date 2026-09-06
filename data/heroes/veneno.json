@@ -24,14 +24,14 @@
     "protection": { "solo": 3, "duo": 4, "grupo": 4 }
   },
   "cards": [
-    { "code": "20010", "priority": 5, "note": "+1 al atributo básico que uses." },
+    { "code": "20010", "priority": 5, "note": "+1 al atributo básico que se use." },
     { "code": "20004", "priority": 5, "note": "Busca un Arma en el mazo." },
     { "code": "20005", "priority": 4, "note": "Prepara a Veneno y todas las armas." },
-    { "code": "20008", "priority": 4, "note": "Elige daño, daño a esbirros o quitar amenaza." },
+    { "code": "20008", "priority": 4, "note": "Daño, daño a esbirros o quitar amenaza." },
     { "code": "20002", "priority": 3, "note": "Quita 3 de amenaza. Con mentales, confunde." },
     { "code": "20003", "priority": 3, "note": "Evita el ataque del villano. Con físicos, aturde." },
     { "code": "20006", "priority": 3, "note": "Ataque de 5. Con energéticos, Brutalidad." },
-    { "code": "20009", "priority": 2, "note": "Roba cuando el villano te ataca." },
+    { "code": "20009", "priority": 2, "note": "Roba cuando el villano ataca al héroe." },
     { "code": "20007", "priority": 2, "note": "Robo o cura 3 en alter ego." }
   ],
   "basics": [

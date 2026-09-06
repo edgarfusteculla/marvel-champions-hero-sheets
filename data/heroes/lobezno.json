@@ -13,7 +13,7 @@
     "Logan tiene Recuperación 6."
   ],
   "weaknesses": [
-    "Pagar eventos con las garras te hace daño igual a su coste.",
+    "Pagar eventos con las garras hace daño igual a su coste.",
     "Sin las garras listas, esos eventos se pagan normal.",
     "Me mataron y mejoré es cara y se descarta al usarla."
   ],
@@ -26,8 +26,8 @@
   "cards": [
     { "code": "35002", "priority": 5, "note": "Permanente. Paga un evento de Ataque sufriendo su coste. Gana Penetrante." },
     { "code": "35004", "priority": 5, "note": "+4 de vida, +1 ATQ y Penetrante en ataques básicos." },
-    { "code": "35010", "priority": 4, "note": "Ataque de 8. Si has agotado las garras para pagarlo, Brutalidad." },
-    { "code": "35008", "priority": 4, "note": "4 de daño. Si derrota, puedes sufrir 2 y repetir." },
+    { "code": "35010", "priority": 4, "note": "Ataque de 8. Si las garras se han agotado para pagarlo, Brutalidad." },
+    { "code": "35008", "priority": 4, "note": "4 de daño. Si derrota, se puede sufrir 2 y repetir." },
     { "code": "35009", "priority": 3, "note": "Dos ataques de 3." },
     { "code": "35011", "priority": 3, "note": "Quita 3 de amenaza. Si limpia el plan, roba 2." },
     { "code": "35012", "priority": 3, "note": "Cura 4 o descarta Aturdido y Confundido." },
@@ -48,7 +48,7 @@
   "consideraciones": [
     "Logan busca las Garras de Lobezno y las pone en juego al preparar mesa.",
     "La acción de las garras las agota, te hace daño igual al coste del evento y lo juega gratis con Penetrante.",
-    "Al empezar tu fase, cúrate 2.",
+    "Al empezar la fase de los jugadores, cúrate 2.",
     "Tirarse de cabeza inflige 8. Si las has agotado para pagarlo, gana Brutalidad."
   ],
   "mulligan": {

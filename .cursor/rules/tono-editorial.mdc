@@ -5,23 +5,27 @@ alwaysApply: true
 
 # Tono de las hojas
 
-Al escribir o reescribir textos de `data/heroes/*.json` (fortalezas, debilidades, notas de carta, consideraciones, mulligan), usa siempre este registro. No inventes criterio de juego: solo unifica la voz.
+Al escribir o reescribir textos de `data/heroes/*.json`, unifica la voz. No inventes criterio de juego ni cambies números. Si Edgar dicta texto, no lo copies literal: ajústalo a este registro.
 
 ## Registro
 
 - Frases cortas y completas (sujeto y verbo). Una idea por viñeta.
-- Tuteo al jugador cuando describes lo que hace en mesa (`robas`, `te cuesta`, `pasa a alter ego`).
-- El héroe y sus atributos en tercera persona (`tiene Intervención 1`, `recupera 5`).
+- Presente. No condicional (`deberías`) ni `nosotros`.
 - Sin relleno (`excelente`, `imprescindible`, `clave`) salvo que Edgar lo haya dicho así.
-- Conserva su criterio y los números; no suavices ni endurezcas valoraciones.
-- No pongas markdown ni HTML en el JSON: el generador pone en **negrita** los nombres de carta y en *cursiva* las mecánicas (`alter ego`, `héroe`, `daño`, `amenaza`, `villano`, `mazo`, `montar mesa`…).
+- Sin markdown ni HTML en el JSON: el generador pone en **negrita** los nombres de carta y en *cursiva* las mecánicas (`alter ego`, `héroe`, `daño`, `amenaza`, `villano`, `mazo`, `montar mesa`…).
 
-## Dónde encaja cada cosa
+## Quién habla en cada apartado
 
-- **Fortalezas / debilidades:** quién es el héroe. No expliques timing de cartas concretas (eso va en consideraciones).
-- **Notas de carta:** qué hace esa carta para este héroe, en una línea. Impersonal, sin `nosotros`.
-- **Consideraciones:** timing y trucos de *este* héroe. Lo que vale para cualquier mazo (Helitransporte, Mansión) no se copia en cada hoja.
-- **Mulligan:** `Carta: motivo.` El motivo cabe en una frase.
+El jugador y el héroe son la misma ficha, como en las cartas. La voz cambia por bloque:
+
+- **Fortalezas / debilidades:** el héroe, en tercera persona. Quién es, no timing de cartas concretas.
+- **Notas de carta (kit, básicas, mazos):** la carta, impersonal. Qué hace, en una línea. Sin `tú` ni `nosotros`.
+- **Consideraciones:** el jugador, de tuteo. Timing y trucos de *este* héroe. Lo que vale para cualquier mazo (Helitransporte, Mansión) no se copia en cada hoja.
+- **Mulligan:** `Carta: motivo.` El motivo cabe en una frase. Puede tutear si habla de la apertura.
+
+## Básicas indispensables
+
+En `basics`, el orden es alfabético por el nombre en español de MarvelCDB. Sin distinguir mayúsculas ni tildes (`Mansión` va con la M). Si varios héroes comparten cartas, salen en el mismo orden. Al añadir o quitar una básica, reordena la lista; no dejes la nueva al final.
 
 ## Ejemplo
 
@@ -31,6 +35,12 @@ Al escribir o reescribir textos de `data/heroes/*.json` (fortalezas, debilidades
 
 ❌ Ataque que nos da robo
 ✅ Ataque que da robo.
+
+❌ En héroe, robas una carta cada vez que el villano te ataca.
+✅ En héroe, roba una carta cada vez que el villano le ataca.
+
+❌ Intervención 1: te cuesta gestionar la amenaza.
+✅ Intervención 1: cuesta gestionar la amenaza.
 
 ❌ Tiene un colchón de vida muy alto, lo cual permite aguantar en heroe sin necesidad de defender.
 ✅ Tiene un colchón de vida muy alto: puedes aguantar en héroe sin defender.
