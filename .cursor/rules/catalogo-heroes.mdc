@@ -14,7 +14,7 @@ Si Edgar pide la plantilla de un héroe:
 1. `python tools/init_hero.py <slug>` (el código sale del catálogo).
 2. Crea `data/heroes/<slug>.json` (`wip: true`, sin consejos inventados) y `notas/<slug>.md`.
 3. Regenera el catálogo (el script ya lo hace).
-4. No copies nada a `finals/`.
+Si Edgar da **dificultad** y **nivel de poder**, quita `wip` para que la hoja muestre esos medidores en lugar del texto de borrador. Eso no cierra la hoja: a `finals/` solo se copia cuando la dé por terminada.
 
 ## Cerrar una hoja (pasa a Terminado)
 
