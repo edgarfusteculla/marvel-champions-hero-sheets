@@ -295,20 +295,20 @@ def _external_cards(editorial: list[dict[str, Any]], client: MarvelCDB) -> list[
                 "code": card["code"],
                 "name": card["name"],
                 "type_label": TYPE_LABELS.get(card["type_code"], card.get("type_name", "")),
-                "image": image_url(card),
+                "image": image_url(card, client),
                 "note": entry.get("note", ""),
             }
         )
     return merged
 
 
-def _mazo_face_src(mazo: dict[str, Any], card: Card) -> str | None:
+def _mazo_face_src(mazo: dict[str, Any], card: Card, client: MarvelCDB) -> str | None:
     local = mazo.get("face_image")
     if local:
         path = ART_DIR / local
         if path.exists():
             return f"cards/{path.name}"
-    return image_url(card)
+    return image_url(card, client)
 
 
 def _mazo_cards(editorial: list[dict[str, Any]], client: MarvelCDB) -> list[dict[str, Any]]:
@@ -323,7 +323,7 @@ def _mazo_cards(editorial: list[dict[str, Any]], client: MarvelCDB) -> list[dict
                 "aspect": mazo["aspect"],
                 "aspect_label": ASPECT_LABELS[mazo["aspect"]],
                 "face_name": card["name"],
-                "image": _mazo_face_src(mazo, card),
+                "image": _mazo_face_src(mazo, card, client),
                 "note": mazo.get("note") or "",
             }
         )

@@ -94,6 +94,14 @@ class MarvelCDB:
         return hero, kit
 
 
-def image_url(card: Card) -> str | None:
+def image_url(card: Card, client: MarvelCDB | None = None) -> str | None:
+    """URL de arte. Las reimpresiones suelen ir sin imagesrc: se usa la impresión original."""
     source = card.get("imagesrc")
-    return IMAGE_HOST + source if source else None
+    if source:
+        return IMAGE_HOST + source
+    original = card.get("duplicate_of_code")
+    if not original or original == card.get("code"):
+        return None
+    if client is not None:
+        return image_url(client.card(original), client)
+    return f"{IMAGE_HOST}/bundles/cards/{original}.png"

@@ -3,61 +3,124 @@
   "hero_card_code": "06001a",
   "display_name": "Thor",
   "alter_ego_name": "Odinson",
-  "wip": true,
   "difficulty": 2,
   "power": 4,
   "strengths": [
-    "Tiene 14 de vida: aguanta mucho.",
+    "Tiene 14 de vida base: aguanta mucho.",
     "Al enfrentarse a un esbirro, roba 2 cartas una vez por fase.",
-    "Mjolnir da +1 ATQ y el rasgo Aéreo.",
-    "Odinson puede buscar Mjolnir una vez por ronda."
+    "En alter ego, Odinson busca Mjolnir: da +1 ATQ y el rasgo Aéreo.",
+    "Con las mejoras en mesa, es muy potente en ataque."
   ],
   "weaknesses": [
     "Intervención 1: cuesta gestionar la amenaza.",
     "En héroe, la mano es de 4 cartas.",
-    "Lanzamiento de martillo agota Mjolnir y lo devuelve a la mano."
+    "Le cuesta montar mesa al inicio de la partida."
   ],
   "aspects": {
-    "aggression": { "solo": 5, "duo": 5, "grupo": 4 },
-    "justice": { "solo": 2, "duo": 2, "grupo": 1 },
-    "leadership": { "solo": 3, "duo": 3, "grupo": 4 },
-    "protection": { "solo": 2, "duo": 3, "grupo": 3 }
+    "aggression": {
+      "solo": 3,
+      "duo": 4,
+      "grupo": 4
+    },
+    "justice": {
+      "solo": 5,
+      "duo": 3,
+      "grupo": 2
+    },
+    "leadership": {
+      "solo": 3,
+      "duo": 2,
+      "grupo": 2
+    },
+    "protection": {
+      "solo": 4,
+      "duo": 5,
+      "grupo": 5
+    }
   },
   "cards": [
-    { "code": "06009", "priority": 5, "note": "Da +1 ATQ y el rasgo Aéreo." },
-    { "code": "06005", "priority": 5, "note": "Ataque de 8 con Brutalidad que pide agotar Mjolnir." },
-    { "code": "06007", "priority": 5, "note": "Sube el tamaño de mano." },
-    { "code": "06008", "priority": 4, "note": "Recurso de energía cada turno." },
-    { "code": "06006", "priority": 3, "note": "Daño al villano y a los esbirros enfrentados." },
-    { "code": "06002", "priority": 3, "note": "Aliado que prepara a Thor al entrar." },
-    { "code": "06010", "priority": 3, "note": "Da +5 de vida." },
-    { "code": "06003", "priority": 2, "note": "Quita 3 de amenaza a cambio de poner un esbirro enfrentado." },
-    { "code": "06004", "priority": 2, "note": "Busca una carta Asgard en alter ego." }
+    {
+      "code": "06009",
+      "priority": 5,
+      "note": "Da +1 ATQ y el rasgo Aéreo. Imprescindible para su mecánica."
+    },
+    {
+      "code": "06008",
+      "priority": 4,
+      "note": "Generador de recursos de energía."
+    },
+    {
+      "code": "06007",
+      "priority": 4,
+      "note": "Sube el tamaño de mano en 1."
+    },
+    {
+      "code": "06005",
+      "priority": 4,
+      "note": "Ataque de 8 con Brutalidad."
+    },
+    {
+      "code": "06010",
+      "priority": 3,
+      "note": "Da +5 de vida."
+    },
+    {
+      "code": "06006",
+      "priority": 3,
+      "note": "Daño al villano y a los esbirros enfrentados."
+    },
+    {
+      "code": "06002",
+      "priority": 3,
+      "note": "Aliado que prepara a Thor al entrar."
+    },
+    {
+      "code": "06003",
+      "priority": 2,
+      "note": "Quita 3 de amenaza a cambio de poner un esbirro enfrentado."
+    },
+    {
+      "code": "06004",
+      "priority": 1,
+      "note": "Busca una carta Asgard en alter ego."
+    }
   ],
   "basics": [
-    { "code": "01091", "note": "Robo extra: en héroe la mano es de 4." },
-    { "code": "01092", "note": "Mejora de economía." },
-    { "code": "01084", "note": "Un buen aliado flexible." }
+    {
+      "code": "31023",
+      "note": "Para preparar al héroe."
+    },
+    {
+      "code": "12024",
+      "note": "Reduce en 1 el coste de una carta que comparte rasgo con el héroe."
+    },
+    {
+      "code": "08023",
+      "note": "Recurso universal."
+    }
   ],
   "mazos": [
-    "eventos-tecnica-depurada",
-    "aliados-vengadores"
+    "agresividad-recolector-esbirros",
+    "justicia-la-balsa",
+    "proteccion-cambio-seguro"
   ],
   "consideraciones": [
-    "Odinson busca Mjolnir al preparar mesa y una vez por ronda: bájalo pronto.",
-    "Lanzamiento de martillo agota Mjolnir y lo devuelve a la mano: después hay que volver a jugarlo.",
-    "Al enfrentarte a un esbirro, robas 2 una vez por fase: Defensor de los Nueve Reinos puede forzar ese enfrentamiento.",
-    "Asgard sube el tamaño de mano: ayuda a compensar la mano 4."
+    "En alter ego busca Mjolnir en el mazo o en el descarte. Si te sale en la mano inicial, puedes mulliganearlo y buscarlo después, o gastarlo como recurso y recuperarlo.",
+    "Lanzamiento de martillo agota Mjolnir y lo devuelve a la mano: si Mjolnir está agotado, no se puede jugar el evento.",
+    "Robas cartas al enfrentarte a un esbirro, una vez por fase: si entra uno en la fase del villano y te enfrentas a otro en la de los héroes, robas las dos veces.",
+    "Los ataques de Thor son potentes, pero los enemigos con Duro son un problema: no tiene Penetrante. Los aliados te ayudan a lidiar con esto.",
+    "Asgard sube el tamaño de mano en 1, en héroe y en alter ego."
   ],
   "mulligan": {
     "keep": [
-      "Mjolnir: conviene tenerlo en mesa desde el primer turno.",
-      "Dios del Trueno: recurso de energía para montar mesa.",
-      "Asgard: sube la mano en héroe."
+      "Asgard: incrementa la mano desde el inicio.",
+      "Dios del Trueno: ayuda a bajar las otras mejoras y los eventos con restricción de recurso.",
+      "Quintransporte y Espíritu de equipo: ayudan a montar mesa."
     ],
     "toss": [
-      "Defensor de los Nueve Reinos: pone un esbirro enfrentado.",
-      "Yelmo de Thor: no ayuda a abrir."
+      "Lanzamiento de martillo.",
+      "Relámpago.",
+      "Yelmo de Thor."
     ]
   }
 }
