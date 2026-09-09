@@ -3,62 +3,130 @@
   "hero_card_code": "09001a",
   "display_name": "Doctor Extraño",
   "alter_ego_name": "Stephen Extraño",
-  "wip": true,
-  "difficulty": 4,
-  "power": 4,
+  "difficulty": 2,
+  "power": 5,
   "strengths": [
-    "Puede resolver la capacidad Especial del mazo de Invocación.",
-    "Tiene Intervención 2 y un evento que anula una perfidia.",
-    "El Ojo de Agamotto genera un recurso universal.",
-    "La Capa de levitación da Aéreo y puede prepararlo."
+    "Tiene el mazo de Invocación.",
+    "Los hechizos de Invocación tienen efectos muy potentes.",
+    "Con las mejoras en mesa genera recursos, se prepara y gana Aéreo.",
+    "Tiene el rasgo Místico: puede incluir cartas exclusivas muy potentes.",
+    "Tiene un control muy bueno del villano."
   ],
   "weaknesses": [
-    "Empieza con Ataque 1.",
-    "Debe gestionar el mazo de Invocación además de la mano.",
-    "Mejoras mágicas se descarta al final de la ronda."
+    "El orden del mazo de Invocación es aleatorio: solo se juega el hechizo de encima.",
+    "Además de pagar el hechizo, se agota para jugarlo desde el mazo de Invocación.",
+    "Le cuesta lidiar con los esbirros.",
+    "Las cartas de estado de Aturdido y Confundido lo frenan bastante."
   ],
   "aspects": {
-    "aggression": { "solo": 2, "duo": 2, "grupo": 2 },
-    "justice": { "solo": 4, "duo": 4, "grupo": 3 },
-    "leadership": { "solo": 3, "duo": 3, "grupo": 3 },
-    "protection": { "solo": 5, "duo": 4, "grupo": 4 }
+    "aggression": {
+      "solo": 1,
+      "duo": 1,
+      "grupo": 1
+    },
+    "justice": {
+      "solo": 3,
+      "duo": 2,
+      "grupo": 2
+    },
+    "leadership": {
+      "solo": 4,
+      "duo": 4,
+      "grupo": 4
+    },
+    "protection": {
+      "solo": 5,
+      "duo": 5,
+      "grupo": 5
+    }
   },
   "cards": [
-    { "code": "09011", "priority": 5, "note": "Recurso universal cada turno." },
-    { "code": "09005", "priority": 5, "note": "Resuelve la carta de Invocación y la deja encima boca arriba." },
-    { "code": "09009", "priority": 4, "note": "Da Aéreo y puede preparar al Doctor Extraño." },
-    { "code": "09007", "priority": 4, "note": "Anula una perfidia." },
-    { "code": "09003", "priority": 3, "note": "Quita 3 de amenaza y mira el mazo de encuentros." },
-    { "code": "09004", "priority": 3, "note": "Ataque de 5 con un extra según el recurso descartado." },
-    { "code": "09002", "priority": 3, "note": "Cura 1 o descarta la primera carta de Invocación." },
-    { "code": "09006", "priority": 3, "note": "Busca una carta del Doctor Extraño en alter ego." },
-    { "code": "09008", "priority": 2, "note": "Recicla un hechizo del descarte y da robo." },
-    { "code": "09010", "priority": 1, "note": "+1 a los tres atributos hasta el final de la ronda." }
+    {
+      "code": "09009",
+      "priority": 5,
+      "note": "Otorga Aéreo y puede preparar al Doctor Extraño."
+    },
+    {
+      "code": "09011",
+      "priority": 5,
+      "note": "Recurso universal en héroe."
+    },
+    {
+      "code": "09005",
+      "priority": 4,
+      "note": "Resuelve la carta de Invocación sin descartarla."
+    },
+    {
+      "code": "09007",
+      "priority": 4,
+      "note": "Anula una perfidia."
+    },
+    {
+      "code": "09002",
+      "priority": 4,
+      "note": "Cura 1 o descarta la primera carta de Invocación."
+    },
+    {
+      "code": "09004",
+      "priority": 4,
+      "note": "Ataque de 5 con un extra según el recurso descartado."
+    },
+    {
+      "code": "09003",
+      "priority": 3,
+      "note": "Quita 3 de amenaza y mira el mazo de encuentros."
+    },
+    {
+      "code": "09008",
+      "priority": 3,
+      "note": "Recicla un hechizo del descarte y da robo."
+    },
+    {
+      "code": "09006",
+      "priority": 2,
+      "note": "Busca una carta del Doctor Extraño en alter ego."
+    },
+    {
+      "code": "09010",
+      "priority": 2,
+      "note": "+1 a los tres atributos. Se descarta al final de la ronda."
+    }
   ],
   "basics": [
-    { "code": "29027", "note": "Generador de recursos para pagar invocaciones." },
-    { "code": "01091", "note": "Robo extra de cartas." },
-    { "code": "01084", "note": "Un buen aliado flexible." }
+    {
+      "code": "09026",
+      "note": "Sube el tamaño de mano en 1 en héroe."
+    },
+    {
+      "code": "01092",
+      "note": "Mejora de economía."
+    },
+    {
+      "code": "15019",
+      "note": "Roba 2 cartas y descarta 1."
+    }
   ],
   "mazos": [
-    "justicia-planificacion",
-    "defensa-total"
+    "aliados-vengadores",
+    "proteccion-cambio-seguro"
   ],
   "consideraciones": [
-    "Stephen Extraño empieza con el mazo de Invocación: en alter ego puedes descartar la primera carta una vez por fase.",
-    "La acción de héroe te agota y paga la primera carta de Invocación.",
-    "Maestro de las artes místicas resuelve esa carta y la deja encima boca arriba.",
-    "La Capa de levitación puede prepararte después de agotarte para invocar."
+    "Maestro de las artes místicas resuelve el hechizo de encima sin agotarte y sin descartarlo. Pagas su coste y queda boca arriba.",
+    "La Capa de levitación te da Aéreo y te prepara: puedes lanzar dos hechizos de Invocación en un turno.",
+    "Mejoras mágicas se descarta al terminar la ronda, cuando acaba la fase del villano. Puedes ponerla bajo el control de otro héroe.",
+    "Wong te ayuda a descartar la primera carta del mazo de Invocación. Si ese hechizo no te interesa, te sirve para buscar otro.",
+    "Proyección astral te deja ver la primera carta del mazo de encuentros. Además de potenciar el efecto, te informa del próximo aumento: puedes actuar con esa información.",
+    "El Ojo de Agamotto es un recurso universal que solo puedes usar en héroe."
   ],
   "mulligan": {
     "keep": [
-      "El Ojo de Agamotto: recurso universal para invocar.",
-      "Capa de levitación: Aéreo y preparar.",
-      "Maestro de las artes místicas: usa la invocación sin perder la carta de encima."
+      "El Ojo de Agamotto: recurso universal para pagar cartas y hechizos en héroe.",
+      "Capa de levitación: Aéreo y te prepara para lanzar dos invocaciones o usar atributos básicos.",
+      "Estudios místicos: te ayuda a buscar cartas con prioridad."
     ],
     "toss": [
-      "Mejoras mágicas: se descarta al final de la ronda.",
-      "Rayo mágico: ataque caro para abrir."
+      "Mejoras mágicas: no te interesa al inicio de la partida.",
+      "Salvaguarda arcana: te interesa robarla al final de la fase de jugador."
     ]
   }
 }

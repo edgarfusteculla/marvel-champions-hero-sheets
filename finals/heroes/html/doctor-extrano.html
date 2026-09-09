@@ -1,0 +1,1077 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Doctor Extraño — Hoja de héroe · Marvel Champions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #797c81;
+  --secondary: #841519;
+  --on-primary: #ffffff;
+  --on-secondary: #ffffff;
+  --primary-ink: color-mix(in srgb, #797c81 72%, #000);
+  --ink: #141414;
+  --paper: #f4efe4;
+  --paper-light: #fbf8f1;
+  --accent: #f2b705;
+}
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  padding: 8mm 0;
+  background: #4a4a4a;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: var(--ink);
+}
+
+.sheet {
+  width: 210mm;
+  /* Con min-height, si el contenido no cabe se va a otra página impresa en vez de recortarse
+     en silencio: así el aviso de páginas del generador lo detecta. */
+  min-height: 297mm;
+  margin: 0 auto 8mm;
+  background: var(--paper);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4mm 10mm rgba(0, 0, 0, .45);
+}
+
+/* ---------------- Cabecera ---------------- */
+
+.header {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 5mm 9mm 4.5mm;
+  background: linear-gradient(115deg, var(--primary) 0%, var(--secondary) 130%);
+  color: var(--on-primary);
+  border-bottom: 1.4mm solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6mm;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(48deg, rgba(0, 0, 0, .14) 0 .6mm, transparent .6mm 7mm);
+  pointer-events: none;
+}
+
+.header > * {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: .18em;
+  font-size: 2.9mm;
+  text-transform: uppercase;
+  opacity: .92;
+}
+
+.hero-name {
+  font-family: 'Bangers', cursive;
+  font-size: 16mm;
+  line-height: .95;
+  letter-spacing: .02em;
+  text-shadow: .7mm .7mm 0 var(--ink);
+  margin: .6mm 0 .8mm;
+}
+
+.alter-ego-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 5mm;
+  font-weight: 600;
+  font-style: italic;
+  opacity: .95;
+}
+
+/* ---------------- Estructura ---------------- */
+
+.body {
+  flex: 1 1 auto;
+  padding: 4mm 9mm 1.5mm;
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+}
+
+.sheet-b .body {
+  gap: 2mm;
+}
+
+.row {
+  display: flex;
+  gap: 4mm;
+  align-items: stretch;
+}
+
+.panel {
+  background: var(--paper-light);
+  border: .4mm solid var(--ink);
+  border-radius: 2mm;
+  padding: 0 0 2.4mm;
+  overflow: hidden;
+}
+
+.panel-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: 3.8mm;
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: 1.4mm;
+  margin: 0 0 2.2mm;
+  padding: 1.1mm 2.6mm .9mm;
+  box-shadow: inset 0 -.7mm 0 rgba(0, 0, 0, .22);
+}
+
+.panel > .panel-title {
+  border-radius: 0;
+}
+
+/* ---------------- Cara A ---------------- */
+
+.portrait {
+  flex: 0 0 52mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5mm;
+}
+
+.card-art {
+  width: 100%;
+  display: block;
+  border-radius: 2.4mm;
+  border: .4mm solid var(--ink);
+  background: #ddd;
+}
+
+.meters-panel {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3mm;
+}
+
+.wip-banner {
+  font-size: 3.1mm;
+  line-height: 1.35;
+  padding: 2.4mm 3mm;
+  border-left: 2.5mm solid var(--accent);
+  background: var(--paper-light);
+}
+
+.meter-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 4.2mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 2mm;
+}
+
+.sub-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: 3.4mm;
+  opacity: .7;
+  margin-bottom: 1.8mm;
+}
+
+.dots {
+  display: flex;
+  gap: 1.6mm;
+}
+
+.dot {
+  width: 7mm;
+  height: 7mm;
+  border-radius: 50%;
+  border: .55mm solid var(--ink);
+  background: #ded8ca;
+}
+
+.dot.on {
+  background: var(--secondary);
+}
+
+.dot.on.power {
+  background: var(--accent);
+}
+
+.dots.small {
+  gap: 1.1mm;
+}
+
+.dots.small .dot {
+  width: 3.8mm;
+  height: 3.8mm;
+  border-width: .4mm;
+}
+
+.dots.small .dot.on {
+  background: #3a3a3a;
+}
+
+.meters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+}
+
+.item-list {
+  margin: 0 6mm;
+  padding: 0 0 0 4.5mm;
+}
+
+.item-list li {
+  font-size: 3.05mm;
+  line-height: 1.38;
+  margin-bottom: 1.1mm;
+}
+
+.item-list li:last-child {
+  margin-bottom: 0;
+}
+
+.item-list b,
+.sig-note b,
+.notes b {
+  font-weight: 700;
+}
+
+.item-list i,
+.sig-note i,
+.notes i {
+  font-style: italic;
+}
+
+.split-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  padding: 0 6mm;
+}
+
+.split-lists .item-list {
+  margin: 0;
+}
+
+.split-lists .item-list li {
+  font-size: 2.8mm;
+  line-height: 1.28;
+}
+
+.split-lists .sub-title {
+  margin-bottom: 1.2mm;
+}
+
+.rec-basics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  padding: 0 6mm;
+}
+
+.rec-basics-4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.2mm;
+}
+
+.rec-basics-4 .rec-basic img {
+  flex-basis: 14mm;
+  width: 14mm;
+}
+
+.rec-basic {
+  display: flex;
+  gap: 2.6mm;
+  align-items: center;
+}
+
+.rec-basic img {
+  flex: 0 0 22mm;
+  width: 22mm;
+  aspect-ratio: 300 / 419;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 1mm;
+  border: .3mm solid var(--ink);
+  background: #ddd;
+}
+
+.rec-basic .sig-note {
+  margin-top: .8mm;
+}
+
+.rec-mazos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3mm;
+  padding: 0 6mm;
+}
+
+.rec-mazos-1 {
+  grid-template-columns: 1fr;
+}
+
+.rec-mazos-2 {
+  grid-template-columns: repeat(2, minmax(0, calc((100% - 6mm) / 3)));
+  justify-content: center;
+}
+
+.rec-mazos-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.rec-mazos-4 {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6mm;
+}
+
+.rec-mazos-4 .rec-mazo {
+  gap: 1.8mm;
+}
+
+.rec-mazos-4 .rec-mazo-art {
+  flex-basis: 14mm;
+  width: 14mm;
+}
+
+.rec-mazos-4 .rec-mazo-title {
+  font-size: 3mm;
+}
+
+.rec-mazo {
+  display: flex;
+  gap: 2.6mm;
+  align-items: center;
+}
+
+.rec-mazo-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  line-height: 1.12;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4mm;
+}
+
+.rec-mazo-title .sig-note {
+  margin-top: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.rec-mazo-aspecto {
+  font-size: 2.6mm;
+  letter-spacing: .06em;
+  padding: 0;
+}
+
+.rec-mazo-art {
+  flex: 0 0 22mm;
+  width: 22mm;
+  aspect-ratio: 300 / 419;
+  overflow: hidden;
+  border-radius: 1mm;
+  border: .3mm solid var(--ink);
+  background: #ddd;
+}
+
+.rec-mazo-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.aspects-block {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-top: .35mm solid rgba(20, 20, 20, .28);
+  padding-top: 2mm;
+}
+
+.aspect-grid {
+  flex: 1 1 auto;
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto repeat(3, minmax(0, 1fr));
+  gap: 2mm 2mm;
+  align-items: center;
+}
+
+.ag-head {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3mm;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  opacity: .65;
+  text-align: center;
+}
+
+.ag-head-aspects {
+  text-align: left;
+}
+
+.ag-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.7mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding-right: 1.6mm;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.ag-cell {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.aspect-aggression { color: #b5262d; }
+.aspect-justice { color: #a07e10; }
+.aspect-leadership { color: #2f66b5; }
+.aspect-protection { color: #2f9455; }
+
+.aspect-bar {
+  width: 100%;
+  height: 3.6mm;
+  border: .4mm solid var(--ink);
+  border-radius: .8mm;
+  background: #e7e1d3;
+  overflow: hidden;
+}
+
+.aspect-bar span {
+  display: block;
+  height: 100%;
+}
+
+.ag-aggression .aspect-bar span { background: #b5262d; }
+.ag-justice .aspect-bar span { background: #d9ae1e; }
+.ag-leadership .aspect-bar span { background: #2f66b5; }
+.ag-protection .aspect-bar span { background: #2f9455; }
+
+/* ---------------- Cara B ---------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5mm;
+  justify-items: center;
+}
+
+.sig-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2mm;
+  width: 35mm;
+}
+
+.sig-art {
+  position: relative;
+  width: 100%;
+}
+
+.sig-art img {
+  width: 100%;
+  display: block;
+  border-radius: 1.8mm;
+  border: .35mm solid var(--ink);
+  background: #ddd;
+}
+
+.sig-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  line-height: 1.05;
+  color: var(--primary-ink);
+  text-transform: uppercase;
+}
+
+.sig-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1mm;
+}
+
+.type-tag {
+  font-size: 2.4mm;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  background: #e3ddce;
+  border-radius: .8mm;
+  padding: .3mm 1.2mm;
+}
+
+.sig-note {
+  font-size: 2.75mm;
+  line-height: 1.32;
+  margin: 0;
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5mm 4mm;
+  /* Mismo aire lateral que las imágenes de Mejores cartas. */
+  padding: 0 6mm;
+}
+
+.mini {
+  display: flex;
+  gap: 2.5mm;
+  align-items: flex-start;
+}
+
+.mini img {
+  flex: 0 0 auto;
+  width: 11mm;
+  display: block;
+  border-radius: 1mm;
+  border: .3mm solid var(--ink);
+  background: #ddd;
+}
+
+.mini-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.mini .sig-meta {
+  margin: .6mm 0;
+}
+
+.res {
+  display: inline-block;
+  font-size: .82em;
+  font-weight: 800;
+  letter-spacing: .02em;
+  padding: 0 .35em;
+  border-radius: .25em;
+  color: #fff;
+}
+
+.res-physical { background: #b8480f; }
+.res-energy { background: #1a6fbf; }
+.res-mental { background: #6b3f9e; }
+.res-wild { background: #4b4b4b; }
+.res-per_hero { background: #7a7a7a; }
+.res-star { background: #b8941f; }
+
+/* ---------------- Notas propias ---------------- */
+
+.notes {
+  margin: 0 6mm;
+  border-left: 2.5mm solid var(--ink);
+  border-radius: 0 1.4mm 1.4mm 0;
+  padding: 1.6mm 3mm 1.8mm 2.6mm;
+  background: var(--paper-light);
+}
+
+.notes-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: 3.6mm;
+  margin-bottom: 1.2mm;
+}
+
+.notes ul {
+  margin: 0;
+  padding-left: 4mm;
+}
+
+.notes li {
+  font-size: 2.9mm;
+  line-height: 1.33;
+  margin-bottom: .8mm;
+}
+
+.notes li:last-child {
+  margin-bottom: 0;
+}
+
+.notes-consejo {
+  border-left-color: var(--secondary);
+  background: #eef2fb;
+}
+
+.notes-consejo .notes-title {
+  color: var(--secondary);
+}
+
+.notes-aviso {
+  border-left-color: #b3242a;
+  background: #fdeeee;
+}
+
+.notes-aviso .notes-title {
+  color: #8e1c22;
+}
+
+.notes-neutro {
+  border-left-color: var(--ink);
+}
+
+/* ---------------- Pie ---------------- */
+
+.footer {
+  flex: 0 0 auto;
+  background: var(--ink);
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.7mm;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.8mm;
+  border-top: 1mm solid var(--accent);
+  opacity: 1;
+}
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .sheet {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+  .sheet:last-of-type {
+    page-break-after: auto;
+  }
+}</style>
+</head>
+<body>
+
+<section class="sheet sheet-a">
+  <header class="header">
+    <div>
+      <div class="eyebrow">Guía básica de héroe · Marvel Champions LCG</div>
+      <div class="hero-name">Doctor Extraño</div>
+      <div class="alter-ego-name">Stephen Extraño</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div class="row">
+      <div class="portrait">
+        <img class="card-art" src="https://marvelcdb.com/bundles/cards/09001a.png" alt="Doctor Extraño">
+      </div>
+
+      <div class="meters-panel">
+        <div class="meters">
+          <div>
+            <div class="meter-label">Dificultad</div>
+            <div class="dots ">
+  <div class="dot on "></div>
+  <div class="dot on "></div>
+  <div class="dot  "></div>
+  <div class="dot  "></div>
+  <div class="dot  "></div>
+</div>
+          </div>
+          <div>
+            <div class="meter-label">Nivel de poder</div>
+            <div class="dots power">
+  <div class="dot on power"></div>
+  <div class="dot on power"></div>
+  <div class="dot on power"></div>
+  <div class="dot on power"></div>
+  <div class="dot on power"></div>
+</div>
+          </div>
+        </div>
+
+        <div class="aspects-block">
+          <div class="aspect-grid">
+            <div class="ag-head ag-head-aspects">Aspectos</div>
+<div class="ag-head">Solo</div><div class="ag-head">2 jugadores</div><div class="ag-head">3-4 jugadores</div>            <div class="ag-name aspect-aggression">Agresividad</div>
+            <div class="ag-cell ag-aggression"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 20.0%"></span>
+</div></div>
+            <div class="ag-cell ag-aggression"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 20.0%"></span>
+</div></div>
+            <div class="ag-cell ag-aggression"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 20.0%"></span>
+</div></div>
+            <div class="ag-name aspect-justice">Justicia</div>
+            <div class="ag-cell ag-justice"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 60.0%"></span>
+</div></div>
+            <div class="ag-cell ag-justice"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 40.0%"></span>
+</div></div>
+            <div class="ag-cell ag-justice"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 40.0%"></span>
+</div></div>
+            <div class="ag-name aspect-leadership">Liderazgo</div>
+            <div class="ag-cell ag-leadership"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 80.0%"></span>
+</div></div>
+            <div class="ag-cell ag-leadership"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 80.0%"></span>
+</div></div>
+            <div class="ag-cell ag-leadership"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 80.0%"></span>
+</div></div>
+            <div class="ag-name aspect-protection">Protección</div>
+            <div class="ag-cell ag-protection"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 100.0%"></span>
+</div></div>
+            <div class="ag-cell ag-protection"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 100.0%"></span>
+</div></div>
+            <div class="ag-cell ag-protection"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 100.0%"></span>
+</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Fortalezas</div>
+      <ul class="item-list">
+<li>Tiene el <i>mazo</i> de Invocación.</li><li>Los hechizos de Invocación tienen efectos muy potentes.</li><li>Con las <i>mejoras</i> en mesa genera <i>recursos</i>, <i>se prepara</i> y gana <i>Aéreo</i>.</li><li>Tiene el <i>rasgo</i> Místico: puede incluir cartas exclusivas muy potentes.</li><li>Tiene un control muy bueno del <i>villano</i>.</li>      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Debilidades</div>
+      <ul class="item-list">
+<li>El orden del <i>mazo</i> de Invocación es aleatorio: solo se juega el hechizo de encima.</li><li>Además de pagar el hechizo, se agota para jugarlo desde el <i>mazo</i> de Invocación.</li><li>Le cuesta lidiar con los <i>esbirros</i>.</li><li>Las cartas de estado de <i>Aturdido</i> y <i>Confundido</i> lo frenan bastante.</li>      </ul>
+    </div>
+
+    <div>
+      <div class="panel-title">Cartas básicas indispensables</div>
+      <div class="rec-basics rec-basics-3">
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/09026.png" alt="El Hechicero Supremo">          <div>
+            <div class="sig-name">El Hechicero Supremo</div>
+            <span class="type-tag">Mejora</span>
+            <p class="sig-note">Sube el <i>tamaño de mano</i> en 1 en <i>héroe</i>.</p>
+          </div>
+        </div>
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/01092.png" alt="Helitransporte">          <div>
+            <div class="sig-name">Helitransporte</div>
+            <span class="type-tag">Apoyo</span>
+            <p class="sig-note"><i>Mejora</i> de economía.</p>
+          </div>
+        </div>
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/15019.png" alt="Meditación espiritual">          <div>
+            <div class="sig-name">Meditación espiritual</div>
+            <span class="type-tag">Evento</span>
+            <p class="sig-note">Roba 2 cartas y descarta 1.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel-title">Mazos recomendados</div>
+      <div class="rec-mazos rec-mazos-2">
+        <div class="rec-mazo rec-mazo-leadership">
+          <div class="rec-mazo-art">
+<img src="https://marvelcdb.com/bundles/cards/03015.png" alt="¡Vengadores, reuníos!">          </div>
+          <div class="rec-mazo-title">
+            <span class="rec-mazo-aspecto aspect-leadership">Liderazgo</span>
+            Aliados Vengadores
+          </div>
+        </div>
+        <div class="rec-mazo rec-mazo-protection">
+          <div class="rec-mazo-art">
+<img src="cards/27016.jpg" alt="Lo que no me mata">          </div>
+          <div class="rec-mazo-title">
+            <span class="rec-mazo-aspecto aspect-protection">Protección</span>
+            Siempre preparado
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+</section>
+
+<section class="sheet sheet-b">
+  <header class="header">
+    <div>
+      <div class="eyebrow">Cartas propias y consideraciones de juego</div>
+      <div class="hero-name">Doctor Extraño</div>
+      <div class="alter-ego-name">Stephen Extraño</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div>
+      <div class="panel-title">Mejores cartas</div>
+      <div class="card-grid">
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/09009.png" alt="Capa de levitación">          </div>
+          <div class="sig-name">Capa de levitación</div>
+          <div class="sig-meta">
+            <span class="type-tag">Mejora · x1</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div>
+          </div>
+          <p class="sig-note">Otorga <i>Aéreo</i> y puede <i>preparar</i> al Doctor Extraño.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/09011.png" alt="El Ojo de Agamotto">          </div>
+          <div class="sig-name">El Ojo de Agamotto</div>
+          <div class="sig-meta">
+            <span class="type-tag">Mejora · x1</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div>
+          </div>
+          <p class="sig-note"><i>Recurso</i> universal en <i>héroe</i>.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/09005.png" alt="Maestro de las artes místicas">          </div>
+          <div class="sig-name">Maestro de las artes místicas</div>
+          <div class="sig-meta">
+            <span class="type-tag">Evento · x2</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+          </div>
+          <p class="sig-note">Resuelve la carta de Invocación sin descartarla.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/09007.png" alt="Salvaguarda arcana">          </div>
+          <div class="sig-name">Salvaguarda arcana</div>
+          <div class="sig-meta">
+            <span class="type-tag">Evento · x2</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+          </div>
+          <p class="sig-note">Anula una perfidia.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel-title">Cartas circunstanciales</div>
+      <div class="mini-grid">
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/09002.png" alt="Wong">          <div class="mini-info">
+            <div class="sig-name">Wong</div>
+            <div class="sig-meta">
+              <span class="type-tag">Aliado · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Cura 1 o descarta la primera carta de Invocación.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/09004.png" alt="Rayo mágico">          <div class="mini-info">
+            <div class="sig-name">Rayo mágico</div>
+            <div class="sig-meta">
+              <span class="type-tag">Evento · x2</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Ataque de 5 con un extra según el <i>recurso</i> descartado.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/09008.png" alt="Sancta Sanctorum">          <div class="mini-info">
+            <div class="sig-name">Sancta Sanctorum</div>
+            <div class="sig-meta">
+              <span class="type-tag">Apoyo · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Recicla un hechizo del <i>descarte</i> y da robo.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/09003.png" alt="Proyección astral">          <div class="mini-info">
+            <div class="sig-name">Proyección astral</div>
+            <div class="sig-meta">
+              <span class="type-tag">Evento · x2</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Quita 3 de <i>amenaza</i> y mira el <i>mazo de encuentros</i>.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/09006.png" alt="Estudios místicos">          <div class="mini-info">
+            <div class="sig-name">Estudios místicos</div>
+            <div class="sig-meta">
+              <span class="type-tag">Evento · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">Busca una carta del Doctor Extraño en <i>alter ego</i>.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/09010.png" alt="Mejoras mágicas">          <div class="mini-info">
+            <div class="sig-name">Mejoras mágicas</div>
+            <div class="sig-meta">
+              <span class="type-tag">Mejora · x2</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">+1 a los tres atributos. Se descarta al final de la ronda.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Consideraciones</div>
+      <ul class="item-list">
+        <li><b>Maestro de las artes místicas</b> resuelve el hechizo de encima sin agotarte y sin descartarlo. Pagas su coste y queda boca arriba.</li>
+        <li>La <b>Capa de levitación</b> te da <i>Aéreo</i> y te prepara: puedes lanzar dos hechizos de Invocación en un turno.</li>
+        <li><b>Mejoras mágicas</b> se descarta al terminar la ronda, cuando acaba la <i>fase del villano</i>. Puedes ponerla bajo el control de otro <i>héroe</i>.</li>
+        <li><b>Wong</b> te ayuda a descartar la primera carta del <i>mazo</i> de Invocación. Si ese hechizo no te interesa, te sirve para buscar otro.</li>
+        <li><b>Proyección astral</b> te deja ver la primera carta del <i>mazo de encuentros</i>. Además de potenciar el efecto, te informa del próximo aumento: puedes actuar con esa información.</li>
+        <li><b>El Ojo de Agamotto</b> es un <i>recurso</i> universal que solo puedes usar en <i>héroe</i>.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Mulligan</div>
+      <div class="split-lists">
+        <div>
+          <div class="sub-title">Buscar</div>
+          <ul class="item-list">
+<li><b>El Ojo de Agamotto</b>: <i>recurso</i> universal para pagar cartas y hechizos en <i>héroe</i>.</li><li><b>Capa de levitación</b>: <i>Aéreo</i> y te prepara para lanzar dos invocaciones o usar atributos básicos.</li><li><b>Estudios místicos</b>: te ayuda a buscar cartas con prioridad.</li>          </ul>
+        </div>
+        <div>
+          <div class="sub-title">Cambia</div>
+          <ul class="item-list">
+<li><b>Mejoras mágicas</b>: no te interesa al inicio de la partida.</li><li><b>Salvaguarda arcana</b>: te interesa robarla al final de la fase de jugador.</li>          </ul>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+</section>
+
+</body>
+</html>

@@ -67,6 +67,7 @@ MECHANIC_TERMS = (
     "aturdido",
     "aturdir",
     "aturde",
+    "confundido",
     "confundir",
     "confunde",
     "respuesta",
