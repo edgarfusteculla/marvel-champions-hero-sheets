@@ -106,16 +106,15 @@
   ],
   "mazos": [
     "agresividad-multi-golpe",
-    "justicia-planes-secundarios",
-    "justicia-multi-intervencion"
+    "justicia-planes-secundarios"
   ],
   "consideraciones": [
     "La habilidad de héroe pide agotar a Ms. Marvel: si ya está agotada, el evento no vuelve a la mano.",
-    "Su habilidad de héroe no tiene límite por fase: si consigues preparar a Ms. Marvel, puedes volver a usarla.",
+    "La habilidad de héroe no tiene límite por fase: si consigues preparar a Ms. Marvel, puedes volver a usarla.",
     "Agrandar y Encoger se agotan al usarse.",
     "Si usas Flexibilidad durante el ataque de un enemigo, puedes agotar a Ms. Marvel para devolverla a la mano y volverla a jugar: evitas 6 de daño y robas 2 cartas.",
     "Si un evento tiene más de una instancia, Agrandar y Encoger suman 2 a cada una.",
-    "Si controlas la amenaza del plan principal, ir a alter ego da turnos muy potentes."
+    "Si controlas la amenaza del plan principal, ve a alter ego: da turnos muy potentes."
   ],
   "mulligan": {
     "keep": [

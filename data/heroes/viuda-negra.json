@@ -3,61 +3,126 @@
   "hero_card_code": "08001a",
   "display_name": "Viuda Negra",
   "alter_ego_name": "Natasha Romanoff",
-  "wip": true,
-  "difficulty": 3,
+  "difficulty": 2,
   "power": 3,
   "strengths": [
     "Después de usar una carta de Planificación, inflige 1 de daño a un enemigo.",
-    "En alter ego, jugar Planificación da robo una vez por fase.",
-    "Tiene Intervención 2 y un evento que quita 4 y confunde al villano.",
-    "El traje puede prepararla después de usar Planificación."
+    "Atributos base equilibrados.",
+    "Tiene un control excelente del villano.",
+    "Aprovecha muy bien jugar en alter ego."
   ],
   "weaknesses": [
     "Tiene 9 de vida: aguanta poco si no defiende.",
-    "Sin cartas de Planificación en mesa, la habilidad de héroe no dispara.",
-    "Varias cartas de firma se descartan al usarse."
+    "Depende de construir el mazo alrededor de cartas de Planificación.",
+    "No destaca en ofensiva, defensa ni intervención: hace un poco de todo.",
+    "Muy dependiente del Traje sintético."
   ],
   "aspects": {
-    "aggression": { "solo": 3, "duo": 3, "grupo": 3 },
-    "justice": { "solo": 5, "duo": 5, "grupo": 4 },
-    "leadership": { "solo": 3, "duo": 4, "grupo": 4 },
-    "protection": { "solo": 2, "duo": 2, "grupo": 2 }
+    "aggression": {
+      "solo": 1,
+      "duo": 3,
+      "grupo": 2
+    },
+    "justice": {
+      "solo": 5,
+      "duo": 5,
+      "grupo": 4
+    },
+    "leadership": {
+      "solo": 4,
+      "duo": 4,
+      "grupo": 4
+    },
+    "protection": {
+      "solo": 3,
+      "duo": 4,
+      "grupo": 2
+    }
   },
   "cards": [
-    { "code": "08007", "priority": 5, "note": "Recurso comodín para una carta de Planificación." },
-    { "code": "08003", "priority": 5, "note": "Quita 4 de amenaza y confunde al villano." },
-    { "code": "08009", "priority": 4, "note": "Da +1 DEF y puede preparar a la Viuda Negra." },
-    { "code": "08002", "priority": 4, "note": "Aliado que se abarata por cada Planificación en mesa." },
-    { "code": "08005", "priority": 3, "note": "Recupera una Planificación del descarte en alter ego." },
-    { "code": "08008", "priority": 3, "note": "Anula una perfidia y se descarta." },
-    { "code": "08004", "priority": 3, "note": "Tres ataques encadenados." },
-    { "code": "08010", "priority": 2, "note": "2 de daño y aturde a un esbirro que acaba de entrar." },
-    { "code": "08006", "priority": 2, "note": "Anula iconos de aumento y se descarta." }
+    {
+      "code": "08009",
+      "priority": 5,
+      "note": "Otorga +1 DEF y puede preparar a la Viuda Negra."
+    },
+    {
+      "code": "08007",
+      "priority": 5,
+      "note": "Recurso universal para una carta de Planificación."
+    },
+    {
+      "code": "08008",
+      "priority": 4,
+      "note": "Anula una perfidia y se descarta."
+    },
+    {
+      "code": "08006",
+      "priority": 4,
+      "note": "Anula iconos de aumento y se descarta."
+    },
+    {
+      "code": "08010",
+      "priority": 3,
+      "note": "2 de daño y aturde a un esbirro que acaba de entrar."
+    },
+    {
+      "code": "08004",
+      "priority": 3,
+      "note": "Tres ataques encadenados."
+    },
+    {
+      "code": "08005",
+      "priority": 3,
+      "note": "Recupera una Planificación del descarte en alter ego."
+    },
+    {
+      "code": "08002",
+      "priority": 3,
+      "note": "Aliado que se abarata por cada Planificación en mesa."
+    },
+    {
+      "code": "08003",
+      "priority": 3,
+      "note": "Quita 4 de amenaza y confunde al villano."
+    }
   ],
   "basics": [
-    { "code": "01091", "note": "Robo extra de cartas." },
-    { "code": "01092", "note": "Mejora de economía." },
-    { "code": "01084", "note": "Un buen aliado flexible." }
+    {
+      "code": "08033",
+      "note": "Roba 2 cartas al anular una Oleada."
+    },
+    {
+      "code": "01092",
+      "note": "Mejora de economía."
+    },
+    {
+      "code": "01084",
+      "note": "Un buen aliado flexible."
+    }
   ],
   "mazos": [
     "justicia-planificacion",
-    "aliados-vengadores"
+    "liderazgo-respuesta-rapida"
   ],
   "consideraciones": [
-    "Las cartas de Planificación disparan 1 de daño en héroe y robo en alter ego.",
-    "El Soldado de Invierno se abarata 1 por cada Planificación que controles.",
-    "Gancho de escalada y Combate acrobático se descartan al usarse: el Piso franco puede recuperar Planificación.",
-    "El Traje sintético prepara a la Viuda Negra después de usar Planificación."
+    "El Traje sintético es prioridad absoluta: te da consistencia y supervivencia.",
+    "No puedes usar dos Brazaletes de la Viuda Negra para una misma carta de Planificación.",
+    "Danza mortal hace 3 ataques distintos. El primero puede quitar Duro; luego resuelves los otros dos. Si el enemigo tiene Represalia, recibes daño por cada ataque.",
+    "Operación encubierta es una acción: puedes jugarla en alter ego.",
+    "El coste del Soldado de Invierno se reduce por cada Planificación en juego.",
+    "Combate acrobático anula los iconos de aumento, pero no la capacidad de aumento.",
+    "Gancho de escalada se queda en mesa hasta que lo uses. Eliges la perfidia: no es una interrupción obligada.",
+    "Si se te enfrenta un esbirro con Ataque rápido, te ataca primero. Después puedes usar Picadura de Viuda: 2 de daño y aturde."
   ],
   "mulligan": {
     "keep": [
-      "Brazaletes de la Viuda Negra: recurso para Planificación.",
-      "Traje sintético: +1 DEF y prepara al héroe.",
-      "Operación encubierta: amenaza y confundir."
+      "Brazaletes de la Viuda Negra.",
+      "Traje sintético.",
+      "Planificaciones para controlar al villano."
     ],
     "toss": [
-      "Danza mortal: ataque caro para abrir.",
-      "Picadura de Viuda: espera a que entre un esbirro."
+      "Danza mortal.",
+      "Soldado de Invierno: mejor más adelante, cuando puedas abaratar su coste."
     ]
   }
 }

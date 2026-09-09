@@ -8,8 +8,8 @@
   "strengths": [
     "Roba muchas cartas.",
     "Buena economía gracias a sus recursos triples.",
-    "Sus cartas rinden más con recursos de energía.",
-    "Buena supervivencia: mucha vida, buena recuperación y su habilidad de curar."
+    "Saca mucho partido a los recursos de energía para potenciar sus cartas.",
+    "Su supervivencia se basa en su vida elevada, buena recuperación y su habilidad de curar."
   ],
   "weaknesses": [
     "Mala gestión de la amenaza con sus cartas.",
@@ -17,9 +17,9 @@
   ],
   "aspects": {
     "aggression": {
-      "solo": 1,
+      "solo": 2,
       "duo": 3,
-      "grupo": 2
+      "grupo": 3
     },
     "justice": {
       "solo": 4,
@@ -33,8 +33,8 @@
     },
     "protection": {
       "solo": 2,
-      "duo": 2,
-      "grupo": 2
+      "duo": 1,
+      "grupo": 1
     }
   },
   "cards": [
@@ -66,12 +66,12 @@
     {
       "code": "01017",
       "priority": 2,
-      "note": "Da el rasgo Aéreo."
+      "note": "Otorga el rasgo Aéreo."
     },
     {
       "code": "01016",
       "priority": 2,
-      "note": "Sube la defensa en 1 (en 2 si Vuelo cósmico está en mesa)."
+      "note": "Otorga +1 DEF (+2 si Vuelo cósmico está en mesa)."
     },
     {
       "code": "01012",
@@ -99,10 +99,11 @@
   ],
   "consideraciones": [
     "Te interesa ir a alter ego de forma recurrente si la amenaza no es un problema. Spider-Woman puede confundir al villano.",
-    "En alter ego, su acción roba una carta y la Base orbital de Alpha Flight da 2 cartas por 1.",
-    "Los recursos de energía que sobran al final del turno se pueden gastar para llenar Canalizar energía.",
-    "A Canalizar energía se le puede dar más de una carta por turno.",
-    "El recurso universal del Quintransporte vale para su acción de héroe, para Canalizar energía o para el requisito de Rayo fotónico."
+    "En alter ego, la acción roba una carta y la Base orbital de Alpha Flight da 2 cartas por 1. Esa carta de la acción puede ser para ti o para otro jugador.",
+    "Los recursos de energía que te sobran al final del turno puedes gastarlos para llenar Canalizar energía.",
+    "A Canalizar energía le puedes dar más de una carta por turno.",
+    "Puedes gastar el recurso del Quintransporte para activar la acción de Capitana Marvel. También vale para Canalizar energía y para el requisito de Rayo fotónico.",
+    "Al usarlo, Vuelo cósmico se descarta y pierdes el rasgo Aéreo. Deja la mejora en mesa para que el Casco de la Capitana Marvel y Evitar una crisis rindan del todo, salvo que haga falta."
   ],
   "mulligan": {
     "keep": [

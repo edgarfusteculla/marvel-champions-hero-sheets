@@ -26,7 +26,7 @@
   "cards": [
     { "code": "04002", "priority": 5, "note": "Da +1 ATQ y A distancia a las flechas." },
     { "code": "04003", "priority": 5, "note": "Busca una flecha y permite jugarla vinculada." },
-    { "code": "04010", "priority": 4, "note": "Recurso comodín para un evento Flecha." },
+    { "code": "04010", "priority": 4, "note": "Recurso universal para un evento Flecha." },
     { "code": "04009", "priority": 3, "note": "Ataque de 6 con Penetrante." },
     { "code": "04008", "priority": 3, "note": "Quita 3 de amenaza ignorando crisis." },
     { "code": "04005", "priority": 3, "note": "Confunde e inflige 3 de daño, 5 si ya estaba confundido." },
@@ -47,7 +47,7 @@
     "Clint Barton busca el Arco de Ojo de Halcón al preparar mesa y una vez por fase: bájalo pronto.",
     "Las flechas piden agotar el arco. La acción de héroe prepara el arco.",
     "El carcaj vincula una flecha de las 5 primeras del mazo: puedes jugarla desde ahí.",
-    "Tirador experto genera un recurso comodín para un evento Flecha."
+    "Tirador experto genera un recurso universal para un evento Flecha."
   ],
   "mulligan": {
     "keep": [

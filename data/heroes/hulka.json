@@ -6,15 +6,14 @@
   "difficulty": 2,
   "power": 3,
   "strengths": [
-    "Empieza con Ataque 3.",
-    "Tiene 15 de vida: aguanta mucho.",
-    "En alter ego, evita 1 de amenaza al entrar en un plan.",
-    "En alter ego recupera 5.",
-    "Al pasar a héroe, hace 2 de daño a un enemigo."
+    "Empieza con Ataque 3: consistencia ofensiva desde el inicio.",
+    "En alter ego, evita 1 de amenaza cuando se pone en un plan.",
+    "Tiene una recuperación muy alta."
   ],
   "weaknesses": [
     "Intervención 1: muy mala gestión de la amenaza.",
-    "En héroe, la mano es de 4 cartas."
+    "El kit de intervención es muy débil.",
+    "En héroe, la mano es de 4 cartas: necesita rápidamente cartas que mejoren la economía y el robo."
   ],
   "aspects": {
     "aggression": {
@@ -24,13 +23,13 @@
     },
     "justice": {
       "solo": 5,
-      "duo": 3,
-      "grupo": 1
+      "duo": 2,
+      "grupo": 2
     },
     "leadership": {
       "solo": 4,
       "duo": 3,
-      "grupo": 3
+      "grupo": 2
     },
     "protection": {
       "solo": 1,
@@ -105,11 +104,11 @@
   ],
   "consideraciones": [
     "Tiene un colchón de vida muy alto: puedes aguantar en héroe sin defender.",
-    "Furia concentrada quita un punto de vida a cambio de una carta, cosa que interesa mucho a Hulka.",
-    "En alter ego tiene una recuperación muy alta.",
-    "Doble personalidad permite un cambio de identidad gratis en el turno.",
+    "Aprovecha la vida alta para robar con Furia concentrada siempre que puedas.",
+    "Si la amenaza está controlada, ve a alter ego: recuperación alta y mano 6 para bajar las mejoras.",
+    "Doble personalidad permite un cambio de identidad gratis en el turno: puedes ir a alter ego, robar la mano entera y volver a héroe haciendo daño con su respuesta.",
     "Fuerza sobrehumana no se descarta si el objetivo ya está aturdido.",
-    "Al tener mano 4 en héroe, necesita cartas que mejoren la economía y el robo."
+    "Apisonadora gamma es un buen finalizador. Deja que te hagan daño y tendrás un turno explosivo para rematar al villano."
   ],
   "mulligan": {
     "keep": [
@@ -118,7 +117,7 @@
     ],
     "toss": [
       "Apisonadora gamma: con la vida al máximo no inflige daño.",
-      "División de Derecho Superhumano y Proceso judicial: cartas poco poderosas que no ayudan al inicio."
+      "División de Derecho Superhumano y Proceso judicial: cartas poco poderosas, muy situacionales."
     ]
   }
 }

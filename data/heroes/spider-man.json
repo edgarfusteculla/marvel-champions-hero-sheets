@@ -102,12 +102,10 @@
   ],
   "consideraciones": [
     "Gata Negra no tiene daño derivado: si atacas con ella, puede quedarse en mesa toda la partida.",
-    "Los recursos de Lanzarredes se gastan de uno en uno; después de usarlo, se agota hasta el siguiente turno.",
-    "Con la vida baja, al final del turno pasa a alter ego y recupera 4 con Tía May. Al inicio del siguiente, otros 4 antes de volver a héroe.",
-    "Voltereta hacia atrás y Sentido arácnido mejorado se juegan durante la fase del villano.",
-    "Inventiva solo se puede jugar en alter ego. Una vez en mesa, también se usa en héroe.",
-    "El Helitransporte puede abaratar una carta del compañero.",
-    "La Mansión de los Vengadores puede dar un robo a un compañero."
+    "Los recursos de Lanzarredes se gastan de uno en uno: después de usarlo, se agota hasta el siguiente turno.",
+    "Con la vida baja, al final del turno ve a alter ego y recuperas 4 con Tía May. Al inicio del siguiente, otros 4 antes de volver a héroe.",
+    "Voltereta hacia atrás y Sentido arácnido mejorado se juegan en la fase del villano.",
+    "Inventiva solo la puedes jugar en alter ego. Una vez en mesa, también la usas en héroe."
   ],
   "mulligan": {
     "keep": [

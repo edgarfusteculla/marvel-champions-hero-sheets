@@ -106,8 +106,10 @@
     "aliados-vengadores"
   ],
   "consideraciones": [
-    "Al jugar ¡Wakanda por siempre!, elige el orden de las mejoras Pantera Negra según la situación.",
-    "Tiene recursos dobles en el kit: la economía es excelente.",
+    "Al jugar ¡Wakanda por siempre!, elige el orden de las mejoras Pantera Negra según la situación. El efecto de la última mejora queda potenciado.",
+    "Cuanto antes bajes las mejoras Pantera Negra, antes se potencian los efectos de ¡Wakanda por siempre!.",
+    "Sabiduría ancestral recupera 3 cartas del descarte: deben ser distintas entre sí.",
+    "Tienes recursos dobles en el kit: la economía es excelente.",
     "Según el escenario, te interesa empezar con una mejora Pantera Negra u otra."
   ],
   "mulligan": {

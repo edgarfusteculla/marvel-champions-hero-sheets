@@ -16,7 +16,7 @@
   ],
   "aspects": {
     "aggression": {
-      "solo": 2,
+      "solo": 1,
       "duo": 2,
       "grupo": 2
     },
@@ -27,11 +27,11 @@
     },
     "leadership": {
       "solo": 3,
-      "duo": 3,
-      "grupo": 3
+      "duo": 2,
+      "grupo": 2
     },
     "protection": {
-      "solo": 3,
+      "solo": 4,
       "duo": 5,
       "grupo": 5
     }
@@ -107,9 +107,12 @@
     "tecnologias"
   ],
   "consideraciones": [
-    "El plan inicial es bajar mejoras baratas para aumentar el tamaño de mano en héroe.",
+    "Baja primero mejoras baratas para aumentar el tamaño de mano en héroe.",
     "Controla la carta de encima del descarte: deja recursos dobles para aprovechar Pepper Potts.",
-    "Inventiva da el recurso necesario para activar la acción de las Botas propulsoras."
+    "Inventiva da el recurso necesario para activar la acción de las Botas propulsoras.",
+    "El rasgo Aéreo lo da la acción de las Botas propulsoras. Gasta ese recurso los turnos en que vayas a aprovecharlo con las otras cartas.",
+    "Con la armadura montada, tienes un colchón de vida muy alto: puedes jugar muchos turnos en héroe sin ir a alter ego.",
+    "Máquina de Guerra es una carta muy situacional y de poco poder."
   ],
   "mulligan": {
     "keep": [

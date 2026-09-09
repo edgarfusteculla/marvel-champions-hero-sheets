@@ -24,7 +24,7 @@
     "protection": { "solo": 3, "duo": 3, "grupo": 3 }
   },
   "cards": [
-    { "code": "04033", "priority": 5, "note": "Recurso comodín para una carta de aspecto." },
+    { "code": "04033", "priority": 5, "note": "Recurso universal para una carta de aspecto." },
     { "code": "04039", "priority": 5, "note": "Prepara a Spider-Woman y da Aéreo." },
     { "code": "04035", "priority": 4, "note": "Ataque de 5. También cuenta como Agresividad." },
     { "code": "04038", "priority": 4, "note": "Quita 3 de amenaza entre los planes. También cuenta como Justicia." },
@@ -45,7 +45,7 @@
   "consideraciones": [
     "Al montar mesa elige dos aspectos y el mismo número de cartas de cada uno.",
     "Jugar una carta de aspecto da +1 a los tres atributos hasta el final de la ronda, una vez por aspecto.",
-    "Sutileza genera un recurso comodín para una carta de aspecto y dispara esa habilidad.",
+    "Sutileza genera un recurso universal para una carta de aspecto y dispara esa habilidad.",
     "Jessica Drew puede mirar la primera carta de cualquier mazo una vez por ronda."
   ],
   "mulligan": {

@@ -18,13 +18,13 @@
   "aspects": {
     "aggression": {
       "solo": 3,
-      "duo": 3,
-      "grupo": 3
+      "duo": 4,
+      "grupo": 4
     },
     "justice": {
       "solo": 4,
-      "duo": 3,
-      "grupo": 3
+      "duo": 4,
+      "grupo": 4
     },
     "leadership": {
       "solo": 5,
@@ -33,7 +33,7 @@
     },
     "protection": {
       "solo": 3,
-      "duo": 5,
+      "duo": 4,
       "grupo": 2
     }
   },
@@ -105,13 +105,13 @@
   ],
   "consideraciones": [
     "Leyenda viviente reduce en 1 el coste del primer aliado de cada ronda. Puedes aplicársela a un compañero.",
-    "Solo vale para el primer aliado de la ronda: si ya se ha jugado uno y vas a alter ego, no se puede usar.",
-    "No hace falta jugar el aliado en alter ego: puedes pasar a héroe y jugarlo después.",
+    "Leyenda viviente solo vale para el primer aliado de la ronda: si ya se ha jugado uno y vas a alter ego, no la puedes usar.",
+    "Con Leyenda viviente, no hace falta jugar el aliado en alter ego: puedes pasar a héroe y jugarlo con el descuento después.",
     "Buscar el Escudo del Capitán América en la preparación es después de robar la mano inicial y el mulligan.",
     "Al usar la acción de héroe, puedes descartar la carta que quieras de la mano para prepararte.",
-    "Bloqueo de escudo agota el escudo: no se puede jugar si está agotado.",
-    "Golpe heroico aturde si pagas un recurso físico. Suero de supersoldado o Quintransporte aseguran ese icono.",
-    "Lanzamiento de escudo vuelve el escudo a la mano y pierde sus efectos. No se juega sin el escudo en mesa."
+    "Bloqueo de escudo agota el escudo: no lo puedes jugar si está agotado.",
+    "Golpe heroico aturde si pagas un recurso físico. Suero de supersoldado o Quintransporte aseguran ese efecto.",
+    "Lanzamiento de escudo vuelve el escudo a la mano, perdiendo sus efectos. No lo puedes jugar sin el escudo en juego."
   ],
   "mulligan": {
     "keep": [
@@ -123,7 +123,7 @@
     "toss": [
       "Bloqueo de escudo: no se usa hasta que un enemigo ataque.",
       "Lanzamiento de escudo: pide devolver el escudo a la mano.",
-      "Casco del Capitán América: al inicio no hay peligro de derrota."
+      "Casco del Capitán América: al inicio no hay peligro de ser derrotado."
     ]
   }
 }

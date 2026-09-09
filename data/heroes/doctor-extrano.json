@@ -9,7 +9,7 @@
   "strengths": [
     "Puede resolver la capacidad Especial del mazo de Invocación.",
     "Tiene Intervención 2 y un evento que anula una perfidia.",
-    "El Ojo de Agamotto genera un recurso comodín.",
+    "El Ojo de Agamotto genera un recurso universal.",
     "La Capa de levitación da Aéreo y puede prepararlo."
   ],
   "weaknesses": [
@@ -24,7 +24,7 @@
     "protection": { "solo": 5, "duo": 4, "grupo": 4 }
   },
   "cards": [
-    { "code": "09011", "priority": 5, "note": "Recurso comodín cada turno." },
+    { "code": "09011", "priority": 5, "note": "Recurso universal cada turno." },
     { "code": "09005", "priority": 5, "note": "Resuelve la carta de Invocación y la deja encima boca arriba." },
     { "code": "09009", "priority": 4, "note": "Da Aéreo y puede preparar al Doctor Extraño." },
     { "code": "09007", "priority": 4, "note": "Anula una perfidia." },
@@ -52,7 +52,7 @@
   ],
   "mulligan": {
     "keep": [
-      "El Ojo de Agamotto: recurso comodín para invocar.",
+      "El Ojo de Agamotto: recurso universal para invocar.",
       "Capa de levitación: Aéreo y preparar.",
       "Maestro de las artes místicas: usa la invocación sin perder la carta de encima."
     ],

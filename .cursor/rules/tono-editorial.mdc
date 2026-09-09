@@ -11,6 +11,7 @@ Al escribir o reescribir textos de `data/heroes/*.json`, unifica la voz. No inve
 
 - Frases cortas y completas (sujeto y verbo). Una idea por viñeta.
 - Presente. No condicional (`deberías`) ni `nosotros`.
+- En Marvel Champions se dice *recurso universal*, no *recurso comodín*.
 - Sin relleno (`excelente`, `imprescindible`, `clave`) salvo que Edgar lo haya dicho así.
 - Sin markdown ni HTML en el JSON: el generador pone en **negrita** los nombres de carta y en *cursiva* las mecánicas (`alter ego`, `héroe`, `daño`, `amenaza`, `villano`, `mazo`, `montar mesa`…).
 
@@ -20,7 +21,7 @@ El jugador y el héroe son la misma ficha, como en las cartas. La voz cambia por
 
 - **Fortalezas / debilidades:** el héroe, en tercera persona. Quién es, no timing de cartas concretas.
 - **Notas de carta (kit, básicas, mazos):** la carta, impersonal. Qué hace, en una línea. Sin `tú` ni `nosotros`.
-- **Consideraciones:** el jugador, de tuteo. Timing y trucos de *este* héroe. Lo que vale para cualquier mazo (Helitransporte, Mansión) no se copia en cada hoja.
+- **Consideraciones:** el jugador, de tuteo. Timing y trucos de *este* héroe. Una frase de regla puede quedar impersonal si el consejo va en tuteo. Lo que vale para cualquier mazo (Helitransporte, Mansión) no se copia en cada hoja.
 - **Mulligan:** `Carta: motivo.` El motivo cabe en una frase. Puede tutear si habla de la apertura.
 
 ## Básicas indispensables

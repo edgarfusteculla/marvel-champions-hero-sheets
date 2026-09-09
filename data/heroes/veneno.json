@@ -8,13 +8,13 @@
   "power": 4,
   "strengths": [
     "Puede controlar 1 mejora Restringida extra.",
-    "Una vez por fase puede sufrir 1 de daño para generar un recurso comodín.",
+    "Una vez por fase puede sufrir 1 de daño para generar un recurso universal.",
     "Flash Thompson busca un Arma al preparar mesa.",
     "Tiene Defensa 2 y 12 de vida."
   ],
   "weaknesses": [
     "Empieza con Intervención 1.",
-    "El recurso comodín cuesta 1 de daño cada vez.",
+    "El recurso universal cuesta 1 de daño cada vez.",
     "Sin armas en mesa, Disparo en movimiento rinde poco."
   ],
   "aspects": {
@@ -46,7 +46,7 @@
   "consideraciones": [
     "Puedes controlar 1 Restringida extra: baja Pistola de Veneno y otra arma a la vez.",
     "Flash Thompson busca un Arma al preparar mesa: bájala pronto.",
-    "Una vez por fase puedes sufrir 1 de daño para un recurso comodín.",
+    "Una vez por fase puedes sufrir 1 de daño para un recurso universal.",
     "Disparo en movimiento prepara a Veneno y todas las armas."
   ],
   "mulligan": {
