@@ -15,7 +15,7 @@
   "weaknesses": [
     "Empieza con Intervención 1 y Defensa 1.",
     "Sin el apoyo Clima adecuado, los eventos no resuelven su Extra.",
-    "Hay que gestionar el mazo de Clima además de la mano."
+    "Debe gestionar el mazo de Clima además de la mano."
   ],
   "aspects": {
     "aggression": { "solo": 3, "duo": 3, "grupo": 3 },
@@ -34,16 +34,16 @@
     { "code": "36008", "priority": 2, "note": "Cura 2 en alter ego." }
   ],
   "basics": [
+    { "code": "29027", "note": "Generador de recursos." },
     { "code": "01091", "note": "Robo extra de cartas." },
-    { "code": "01084", "note": "Un buen aliado flexible." },
-    { "code": "29027", "note": "Generador de recursos." }
+    { "code": "01084", "note": "Un buen aliado flexible." }
   ],
   "mazos": [
     "justicia-planificacion",
     "aliados-vengadores"
   ],
   "consideraciones": [
-    "Ororo Munroe empieza con un mazo de Clima. Al preparar mesa elige un apoyo de ese mazo y lo pone en juego.",
+    "Ororo Munroe empieza con un mazo de Clima. Al preparar mesa eliges un apoyo de ese mazo y lo pones en juego.",
     "La acción de héroe cambia ese apoyo por otro del mazo de Clima y resuelve su Especial: una vez por ronda.",
     "Diosa de los elementos hace el mismo cambio otra vez, sin gastar esa acción.",
     "La diadema genera el recurso impreso en el Clima que tengas en juego.",

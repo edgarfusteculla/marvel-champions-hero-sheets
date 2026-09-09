@@ -36,8 +36,8 @@
     { "code": "19011", "priority": 1, "note": "Evita la derrota una vez y pasa a alter ego." }
   ],
   "basics": [
-    { "code": "01091", "note": "Robo extra: en héroe solo roba 4." },
     { "code": "01092", "note": "Mejora de economía." },
+    { "code": "01091", "note": "Robo extra: en héroe solo roba 4." },
     { "code": "01084", "note": "Un buen aliado flexible." }
   ],
   "mazos": [
@@ -45,9 +45,9 @@
     "proteccion-cambio-seguro"
   ],
   "consideraciones": [
-    "Cuando el villano ataca a Drax, coloca 1 contador de Venganza (máximo 3). Si ya tiene 3, roba 1.",
+    "Cuando el villano te ataca, coloca 1 contador de Venganza (máximo 3). Si ya tienes 3, robas 1.",
     "Enfréntate a mí, cobarde prepara y roba: el villano te ataca y suele dar otro contador.",
-    "Al pasar a alter ego quita todos los contadores y cura 2 por cada uno.",
+    "Al pasar a alter ego quitas todos los contadores y curas 2 por cada uno.",
     "Intimidación y Parada usan el ATQ actual: rinden más con Venganza en mesa."
   ],
   "mulligan": {

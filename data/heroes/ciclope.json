@@ -35,9 +35,9 @@
     { "code": "33002", "priority": 2, "note": "Al entrar, recupera una carta de Cíclope del descarte." }
   ],
   "basics": [
+    { "code": "29027", "note": "Generador de recursos para el rayo óptico." },
     { "code": "01091", "note": "Robo extra de cartas." },
-    { "code": "01084", "note": "Un buen aliado flexible." },
-    { "code": "29027", "note": "Generador de recursos para el rayo óptico." }
+    { "code": "01084", "note": "Un buen aliado flexible." }
   ],
   "mazos": [
     "justicia-planificacion",
@@ -45,7 +45,7 @@
   ],
   "consideraciones": [
     "El rayo óptico pide 1 recurso y un enemigo con una mejora vinculada: una vez por ronda.",
-    "Scott Summers busca una Táctica en el mazo, una vez por ronda.",
+    "En alter ego buscas una Táctica en el mazo, una vez por ronda.",
     "El visor paga el rayo y le da A distancia y Penetrante.",
     "Agudeza táctica quita amenaza y saca una Táctica del descarte."
   ],

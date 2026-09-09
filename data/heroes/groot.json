@@ -36,8 +36,8 @@
     { "code": "16006", "priority": 1, "note": "Gasta hasta 4 contadores para dar Duro a amigos." }
   ],
   "basics": [
-    { "code": "01091", "note": "Robo extra de cartas." },
     { "code": "01092", "note": "Mejora de economía." },
+    { "code": "01091", "note": "Robo extra de cartas." },
     { "code": "01084", "note": "Un buen aliado flexible." }
   ],
   "mazos": [
@@ -45,8 +45,8 @@
     "defensa-total"
   ],
   "consideraciones": [
-    "Cuando Groot va a sufrir daño, quita contadores de Crecimiento: cada uno evita 1 de ese daño.",
-    "En alter ego coloca 2 contadores una vez por ronda. Germinación coloca 2 más por coste 0.",
+    "Cuando vas a sufrir daño, quita contadores de Crecimiento: cada uno evita 1 de ese daño.",
+    "En alter ego colocas 2 contadores una vez por ronda. Germinación coloca 2 más por coste 0.",
     "Soy Groot y ¡SOY GROOT! escalan con los contadores que tenga en ese momento.",
     "Las lianas gastan contadores para subir un atributo básico: no las uses si te deja sin colchón."
   ],

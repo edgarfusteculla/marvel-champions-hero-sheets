@@ -45,7 +45,7 @@
     "tecnologias"
   ],
   "consideraciones": [
-    "Las armas entran con cargas: sin cargas, la acción de ataque no se usa.",
+    "Las armas entran con cargas: sin cargas, no puedes usar la acción de ataque.",
     "Batería auxiliar mueve 1 carga a otra Tecnología. Recarga prepara todas.",
     "Al hacer daño sobrante a un enemigo, robas 1.",
     "En alter ego puedes descartar una Tecnología para robar 2, una vez por ronda."

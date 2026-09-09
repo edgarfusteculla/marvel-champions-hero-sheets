@@ -37,8 +37,8 @@
     { "code": "35006", "priority": 1, "note": "Evita la derrota una vez, deja la vida en 5 y prepara." }
   ],
   "basics": [
-    { "code": "01091", "note": "Robo extra de cartas." },
     { "code": "01092", "note": "Mejora de economía." },
+    { "code": "01091", "note": "Robo extra de cartas." },
     { "code": "01084", "note": "Un buen aliado flexible." }
   ],
   "mazos": [

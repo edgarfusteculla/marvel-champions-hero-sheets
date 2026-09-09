@@ -14,7 +14,7 @@
   ],
   "weaknesses": [
     "Empieza con Ataque 1.",
-    "Hay que gestionar el mazo de Invocación además de la mano.",
+    "Debe gestionar el mazo de Invocación además de la mano.",
     "Mejoras mágicas se descarta al final de la ronda."
   ],
   "aspects": {
@@ -36,8 +36,8 @@
     { "code": "09010", "priority": 1, "note": "+1 a los tres atributos hasta el final de la ronda." }
   ],
   "basics": [
-    { "code": "01091", "note": "Robo extra de cartas." },
     { "code": "29027", "note": "Generador de recursos para pagar invocaciones." },
+    { "code": "01091", "note": "Robo extra de cartas." },
     { "code": "01084", "note": "Un buen aliado flexible." }
   ],
   "mazos": [
@@ -45,10 +45,10 @@
     "defensa-total"
   ],
   "consideraciones": [
-    "Stephen Extraño empieza con el mazo de Invocación: en alter ego puede descartar la primera carta una vez por fase.",
-    "La acción de héroe agota al Doctor Extraño y paga la primera carta de Invocación.",
+    "Stephen Extraño empieza con el mazo de Invocación: en alter ego puedes descartar la primera carta una vez por fase.",
+    "La acción de héroe te agota y paga la primera carta de Invocación.",
     "Maestro de las artes místicas resuelve esa carta y la deja encima boca arriba.",
-    "La Capa de levitación puede prepararlo después de agotarlo para invocar."
+    "La Capa de levitación puede prepararte después de agotarte para invocar."
   ],
   "mulligan": {
     "keep": [

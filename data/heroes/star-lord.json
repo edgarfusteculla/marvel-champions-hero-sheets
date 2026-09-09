@@ -35,9 +35,9 @@
     { "code": "17002", "priority": 1, "note": "Aliado caro: al jugarlo, derrota un esbirro que no sea Élite." }
   ],
   "basics": [
+    { "code": "29027", "note": "Generador de recursos para la pistola." },
     { "code": "01091", "note": "Robo extra de cartas." },
-    { "code": "01084", "note": "Un buen aliado flexible. Gana el rasgo Guardián." },
-    { "code": "29027", "note": "Generador de recursos para la pistola." }
+    { "code": "01084", "note": "Un buen aliado flexible. Gana el rasgo Guardián." }
   ],
   "mazos": [
     "justicia-planificacion",

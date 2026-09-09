@@ -34,19 +34,19 @@
     { "code": "27008", "priority": 1, "note": "Descarta la mano, baraja, roba hasta el máximo y prepara sus cartas." }
   ],
   "basics": [
-    { "code": "01091", "note": "Robo extra de cartas." },
+    { "code": "31023", "note": "Otra forma de prepararse." },
     { "code": "01092", "note": "Mejora de economía." },
-    { "code": "31023", "note": "Otra forma de prepararse." }
+    { "code": "01091", "note": "Robo extra de cartas." }
   ],
   "mazos": [
     "justicia-planificacion",
     "proteccion-cambio-seguro"
   ],
   "consideraciones": [
-    "Después de resolver la interrupción o respuesta de un evento, Ghost-Spider se prepara: una vez por fase.",
+    "Después de resolver la interrupción o respuesta de un evento, te preparas: una vez por fase.",
     "Patada fantasma y Voltereta espectral son respuestas: disparan esa preparación.",
     "La pulsera roba tras el mismo tipo de evento: agótala cuando resuelvas uno.",
-    "Gwen Stacy puede devolver el Billete al mazo o preparar a George Stacy, una vez por ronda."
+    "En alter ego puedes devolver el Billete al mazo o preparar a George Stacy, una vez por ronda."
   ],
   "mulligan": {
     "keep": [

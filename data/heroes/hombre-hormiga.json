@@ -13,7 +13,7 @@
     "El casco cura al pasar a Gigante y da robo al pasar a Diminuto."
   ],
   "weaknesses": [
-    "Hay que recordar qué forma está en juego: varias cartas solo se juegan en una.",
+    "Debe recordar qué forma está en juego: varias cartas solo se juegan en una.",
     "Sin Ejército de hormigas, Mente colmena rinde poco.",
     "El casco cuesta 3."
   ],
@@ -35,16 +35,16 @@
     { "code": "12010", "priority": 2, "note": "Aturde en Gigante o confunde en Diminuto." }
   ],
   "basics": [
+    { "code": "29027", "note": "Generador de recursos para bajar el casco." },
     { "code": "01091", "note": "Robo extra de cartas." },
-    { "code": "01084", "note": "Un buen aliado flexible." },
-    { "code": "29027", "note": "Generador de recursos para bajar el casco." }
+    { "code": "01084", "note": "Un buen aliado flexible." }
   ],
   "mazos": [
     "justicia-planificacion",
     "aliados-vengadores"
   ],
   "consideraciones": [
-    "Al pasar a héroe quita 1 de amenaza. Al pasar a alter ego, Scott Lang cura 1.",
+    "Al pasar a héroe quitas 1 de amenaza. Al pasar a alter ego curas 1.",
     "Cambio de tamaño cambia entre Gigante y Diminuto y da robo.",
     "Pisotón de gigante solo se juega en Gigante. Mente colmena solo en Diminuto.",
     "Ejército de hormigas ataca en Diminuto: baja varios si puedes."

@@ -35,8 +35,8 @@
     { "code": "04004", "priority": 2, "note": "Aliado que evita un ataque del villano y vuelve a la mano." }
   ],
   "basics": [
-    { "code": "01091", "note": "Robo extra de cartas." },
     { "code": "29027", "note": "Generador de recursos para las flechas." },
+    { "code": "01091", "note": "Robo extra de cartas." },
     { "code": "01084", "note": "Un buen aliado flexible." }
   ],
   "mazos": [

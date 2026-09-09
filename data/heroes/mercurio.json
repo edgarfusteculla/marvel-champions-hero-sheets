@@ -37,17 +37,17 @@
   ],
   "basics": [
     { "code": "31023", "note": "Para preparar al héroe." },
-    { "code": "01091", "note": "Robo extra de cartas." },
-    { "code": "01092", "note": "Mejora de economía." }
+    { "code": "01092", "note": "Mejora de economía." },
+    { "code": "01091", "note": "Robo extra de cartas." }
   ],
   "mazos": [
     "eventos-tecnica-depurada",
     "defensa-total"
   ],
   "consideraciones": [
-    "Después de un ataque, intervención o defensa básica, se prepara una vez por fase.",
+    "Después de un ataque, intervención o defensa básica, te preparas una vez por fase.",
     "Siempre corriendo da otra preparación: puedes encadenar más acciones básicas.",
-    "Resistencia a la fricción se prepara cuando se prepara Mercurio: recurso físico repetible.",
+    "Resistencia a la fricción se prepara cuando te preparas: recurso físico repetible.",
     "Máxima velocidad es máximo 1 por fase y dura hasta el final de la ronda."
   ],
   "mulligan": {

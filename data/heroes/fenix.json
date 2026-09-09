@@ -15,7 +15,7 @@
   "weaknesses": [
     "Empieza con Ataque 1 y 9 de vida.",
     "Al quitar el último contador, la Fuerza Fénix pasa a Desatada.",
-    "Hay que decidir cuándo gastar contadores y cuándo recargarlos."
+    "Debe decidir cuándo gastar contadores y cuándo recargarlos."
   ],
   "aspects": {
     "aggression": { "solo": 3, "duo": 3, "grupo": 2 },
@@ -51,7 +51,7 @@
     "En héroe puedes quitar 1 contador para un recurso universal, una vez por fase.",
     "Si quitas el último contador, la carta se da la vuelta a Desatada.",
     "Fénix de Fuego coloca 2 contadores o quita 1 para prepararse.",
-    "Tras una recuperación básica, Jean Grey coloca 1 contador."
+    "Tras una recuperación básica, colocas 1 contador."
   ],
   "mulligan": {
     "keep": [

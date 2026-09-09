@@ -35,18 +35,18 @@
   ],
   "basics": [
     { "code": "01091", "note": "Robo extra de cartas." },
-    { "code": "08023", "note": "Recurso universal para pagar cartas de aspecto." },
-    { "code": "01084", "note": "Un buen aliado flexible." }
+    { "code": "01084", "note": "Un buen aliado flexible." },
+    { "code": "08023", "note": "Recurso universal para pagar cartas de aspecto." }
   ],
   "mazos": [
     "eventos-tecnica-depurada",
     "justicia-planificacion"
   ],
   "consideraciones": [
-    "Al montar mesa elige dos aspectos y el mismo número de cartas de cada uno.",
-    "Jugar una carta de aspecto da +1 a los tres atributos hasta el final de la ronda, una vez por aspecto.",
+    "Al montar el mazo eliges dos aspectos y el mismo número de cartas de cada uno.",
+    "Cuando juegas una carta de aspecto, recibes +1 a los tres atributos hasta el final de la ronda, una vez por aspecto.",
     "Sutileza genera un recurso universal para una carta de aspecto y dispara esa habilidad.",
-    "Jessica Drew puede mirar la primera carta de cualquier mazo una vez por ronda."
+    "En alter ego puedes mirar la primera carta de cualquier mazo, una vez por ronda."
   ],
   "mulligan": {
     "keep": [

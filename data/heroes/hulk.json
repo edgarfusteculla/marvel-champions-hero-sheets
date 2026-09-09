@@ -35,8 +35,8 @@
     { "code": "10004", "priority": 2, "note": "La única intervención del kit: quita 3 o 5 de amenaza." }
   ],
   "basics": [
-    { "code": "01092", "note": "Mejora de economía para compensar la mano 4." },
     { "code": "31023", "note": "Para preparar al héroe." },
+    { "code": "01092", "note": "Mejora de economía para compensar la mano 4." },
     { "code": "01091", "note": "Robo extra de cartas." }
   ],
   "mazos": [

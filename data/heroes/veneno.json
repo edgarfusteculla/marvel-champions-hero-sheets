@@ -35,8 +35,8 @@
     { "code": "20007", "priority": 2, "note": "Robo o cura 3 en alter ego." }
   ],
   "basics": [
-    { "code": "01091", "note": "Robo extra de cartas." },
     { "code": "29027", "note": "Generador de recursos para bajar armas." },
+    { "code": "01091", "note": "Robo extra de cartas." },
     { "code": "01084", "note": "Un buen aliado flexible." }
   ],
   "mazos": [
