@@ -1,0 +1,1068 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Hulk — Hoja de héroe · Marvel Champions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #039956;
+  --secondary: #029856;
+  --on-primary: #ffffff;
+  --on-secondary: #ffffff;
+  --primary-ink: color-mix(in srgb, #039956 72%, #000);
+  --ink: #141414;
+  --paper: #f4efe4;
+  --paper-light: #fbf8f1;
+  --accent: #f2b705;
+}
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  padding: 8mm 0;
+  background: #4a4a4a;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: var(--ink);
+}
+
+.sheet {
+  width: 210mm;
+  /* Con min-height, si el contenido no cabe se va a otra página impresa en vez de recortarse
+     en silencio: así el aviso de páginas del generador lo detecta. */
+  min-height: 297mm;
+  margin: 0 auto 8mm;
+  background: var(--paper);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4mm 10mm rgba(0, 0, 0, .45);
+}
+
+/* ---------------- Cabecera ---------------- */
+
+.header {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 5mm 9mm 4.5mm;
+  background: linear-gradient(115deg, var(--primary) 0%, var(--secondary) 130%);
+  color: var(--on-primary);
+  border-bottom: 1.4mm solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6mm;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(48deg, rgba(0, 0, 0, .14) 0 .6mm, transparent .6mm 7mm);
+  pointer-events: none;
+}
+
+.header > * {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: .18em;
+  font-size: 2.9mm;
+  text-transform: uppercase;
+  opacity: .92;
+}
+
+.hero-name {
+  font-family: 'Bangers', cursive;
+  font-size: 16mm;
+  line-height: .95;
+  letter-spacing: .02em;
+  text-shadow: .7mm .7mm 0 var(--ink);
+  margin: .6mm 0 .8mm;
+}
+
+.alter-ego-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 5mm;
+  font-weight: 600;
+  font-style: italic;
+  opacity: .95;
+}
+
+/* ---------------- Estructura ---------------- */
+
+.body {
+  flex: 1 1 auto;
+  padding: 4mm 9mm 1.5mm;
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+}
+
+.sheet-b .body {
+  gap: 2mm;
+}
+
+.row {
+  display: flex;
+  gap: 4mm;
+  align-items: stretch;
+}
+
+.panel {
+  background: var(--paper-light);
+  border: .4mm solid var(--ink);
+  border-radius: 2mm;
+  padding: 0 0 2.4mm;
+  overflow: hidden;
+}
+
+.panel-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: 3.8mm;
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: 1.4mm;
+  margin: 0 0 2.2mm;
+  padding: 1.1mm 2.6mm .9mm;
+  box-shadow: inset 0 -.7mm 0 rgba(0, 0, 0, .22);
+}
+
+.panel > .panel-title {
+  border-radius: 0;
+}
+
+/* ---------------- Cara A ---------------- */
+
+.portrait {
+  flex: 0 0 52mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5mm;
+}
+
+.card-art {
+  width: 100%;
+  display: block;
+  border-radius: 2.4mm;
+  border: .4mm solid var(--ink);
+  background: #ddd;
+}
+
+.meters-panel {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3mm;
+}
+
+.wip-banner {
+  font-size: 3.1mm;
+  line-height: 1.35;
+  padding: 2.4mm 3mm;
+  border-left: 2.5mm solid var(--accent);
+  background: var(--paper-light);
+}
+
+.meter-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 4.2mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 2mm;
+}
+
+.sub-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: 3.4mm;
+  opacity: .7;
+  margin-bottom: 1.8mm;
+}
+
+.dots {
+  display: flex;
+  gap: 1.6mm;
+}
+
+.dot {
+  width: 7mm;
+  height: 7mm;
+  border-radius: 50%;
+  border: .55mm solid var(--ink);
+  background: #ded8ca;
+}
+
+.dot.on {
+  background: var(--secondary);
+}
+
+.dot.on.power {
+  background: var(--accent);
+}
+
+.dots.small {
+  gap: 1.1mm;
+}
+
+.dots.small .dot {
+  width: 3.8mm;
+  height: 3.8mm;
+  border-width: .4mm;
+}
+
+.dots.small .dot.on {
+  background: #3a3a3a;
+}
+
+.meters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+}
+
+.item-list {
+  margin: 0 6mm;
+  padding: 0 0 0 4.5mm;
+}
+
+.item-list li {
+  font-size: 3.05mm;
+  line-height: 1.38;
+  margin-bottom: 1.1mm;
+}
+
+.item-list li:last-child {
+  margin-bottom: 0;
+}
+
+.item-list b,
+.sig-note b,
+.notes b {
+  font-weight: 700;
+}
+
+.item-list i,
+.sig-note i,
+.notes i {
+  font-style: italic;
+}
+
+.split-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  padding: 0 6mm;
+}
+
+.split-lists .item-list {
+  margin: 0;
+}
+
+.split-lists .item-list li {
+  font-size: 2.8mm;
+  line-height: 1.28;
+}
+
+.split-lists .sub-title {
+  margin-bottom: 1.2mm;
+}
+
+.rec-basics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  padding: 0 6mm;
+}
+
+.rec-basics-4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.2mm;
+}
+
+.rec-basics-4 .rec-basic img {
+  flex-basis: 14mm;
+  width: 14mm;
+}
+
+.rec-basic {
+  display: flex;
+  gap: 2.6mm;
+  align-items: center;
+}
+
+.rec-basic img {
+  flex: 0 0 22mm;
+  width: 22mm;
+  aspect-ratio: 300 / 419;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 1mm;
+  border: .3mm solid var(--ink);
+  background: #ddd;
+}
+
+.rec-basic .sig-note {
+  margin-top: .8mm;
+}
+
+.rec-mazos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3mm;
+  padding: 0 6mm;
+}
+
+.rec-mazos-1 {
+  grid-template-columns: 1fr;
+}
+
+.rec-mazos-2 {
+  grid-template-columns: repeat(2, minmax(0, calc((100% - 6mm) / 3)));
+  justify-content: center;
+}
+
+.rec-mazos-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.rec-mazos-4 {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6mm;
+}
+
+.rec-mazos-4 .rec-mazo {
+  gap: 1.8mm;
+}
+
+.rec-mazos-4 .rec-mazo-art {
+  flex-basis: 14mm;
+  width: 14mm;
+}
+
+.rec-mazos-4 .rec-mazo-title {
+  font-size: 3mm;
+}
+
+.rec-mazo {
+  display: flex;
+  gap: 2.6mm;
+  align-items: center;
+}
+
+.rec-mazo-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  line-height: 1.12;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4mm;
+}
+
+.rec-mazo-title .sig-note {
+  margin-top: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.rec-mazo-aspecto {
+  font-size: 2.6mm;
+  letter-spacing: .06em;
+  padding: 0;
+}
+
+.rec-mazo-art {
+  flex: 0 0 22mm;
+  width: 22mm;
+  aspect-ratio: 300 / 419;
+  overflow: hidden;
+  border-radius: 1mm;
+  border: .3mm solid var(--ink);
+  background: #ddd;
+}
+
+.rec-mazo-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.aspects-block {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-top: .35mm solid rgba(20, 20, 20, .28);
+  padding-top: 2mm;
+}
+
+.aspect-grid {
+  flex: 1 1 auto;
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto repeat(3, minmax(0, 1fr));
+  gap: 2mm 2mm;
+  align-items: center;
+}
+
+.ag-head {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3mm;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  opacity: .65;
+  text-align: center;
+}
+
+.ag-head-aspects {
+  text-align: left;
+}
+
+.ag-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.7mm;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding-right: 1.6mm;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.ag-cell {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.aspect-aggression { color: #b5262d; }
+.aspect-justice { color: #a07e10; }
+.aspect-leadership { color: #2f66b5; }
+.aspect-protection { color: #2f9455; }
+
+.aspect-bar {
+  width: 100%;
+  height: 3.6mm;
+  border: .4mm solid var(--ink);
+  border-radius: .8mm;
+  background: #e7e1d3;
+  overflow: hidden;
+}
+
+.aspect-bar span {
+  display: block;
+  height: 100%;
+}
+
+.ag-aggression .aspect-bar span { background: #b5262d; }
+.ag-justice .aspect-bar span { background: #d9ae1e; }
+.ag-leadership .aspect-bar span { background: #2f66b5; }
+.ag-protection .aspect-bar span { background: #2f9455; }
+
+/* ---------------- Cara B ---------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5mm;
+  justify-items: center;
+}
+
+.sig-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2mm;
+  width: 35mm;
+}
+
+.sig-art {
+  position: relative;
+  width: 100%;
+}
+
+.sig-art img {
+  width: 100%;
+  display: block;
+  border-radius: 1.8mm;
+  border: .35mm solid var(--ink);
+  background: #ddd;
+}
+
+.sig-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 3.4mm;
+  line-height: 1.05;
+  color: var(--primary-ink);
+  text-transform: uppercase;
+}
+
+.sig-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1mm;
+}
+
+.type-tag {
+  font-size: 2.4mm;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  background: #e3ddce;
+  border-radius: .8mm;
+  padding: .3mm 1.2mm;
+}
+
+.sig-note {
+  font-size: 2.75mm;
+  line-height: 1.32;
+  margin: 0;
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5mm 4mm;
+  /* Mismo aire lateral que las imágenes de Mejores cartas. */
+  padding: 0 6mm;
+}
+
+.mini {
+  display: flex;
+  gap: 2.5mm;
+  align-items: flex-start;
+}
+
+.mini img {
+  flex: 0 0 auto;
+  width: 11mm;
+  display: block;
+  border-radius: 1mm;
+  border: .3mm solid var(--ink);
+  background: #ddd;
+}
+
+.mini-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.mini .sig-meta {
+  margin: .6mm 0;
+}
+
+.res {
+  display: inline-block;
+  font-size: .82em;
+  font-weight: 800;
+  letter-spacing: .02em;
+  padding: 0 .35em;
+  border-radius: .25em;
+  color: #fff;
+}
+
+.res-physical { background: #b8480f; }
+.res-energy { background: #1a6fbf; }
+.res-mental { background: #6b3f9e; }
+.res-wild { background: #4b4b4b; }
+.res-per_hero { background: #7a7a7a; }
+.res-star { background: #b8941f; }
+
+/* ---------------- Notas propias ---------------- */
+
+.notes {
+  margin: 0 6mm;
+  border-left: 2.5mm solid var(--ink);
+  border-radius: 0 1.4mm 1.4mm 0;
+  padding: 1.6mm 3mm 1.8mm 2.6mm;
+  background: var(--paper-light);
+}
+
+.notes-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: 3.6mm;
+  margin-bottom: 1.2mm;
+}
+
+.notes ul {
+  margin: 0;
+  padding-left: 4mm;
+}
+
+.notes li {
+  font-size: 2.9mm;
+  line-height: 1.33;
+  margin-bottom: .8mm;
+}
+
+.notes li:last-child {
+  margin-bottom: 0;
+}
+
+.notes-consejo {
+  border-left-color: var(--secondary);
+  background: #eef2fb;
+}
+
+.notes-consejo .notes-title {
+  color: var(--secondary);
+}
+
+.notes-aviso {
+  border-left-color: #b3242a;
+  background: #fdeeee;
+}
+
+.notes-aviso .notes-title {
+  color: #8e1c22;
+}
+
+.notes-neutro {
+  border-left-color: var(--ink);
+}
+
+/* ---------------- Pie ---------------- */
+
+.footer {
+  flex: 0 0 auto;
+  background: var(--ink);
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.7mm;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.8mm;
+  border-top: 1mm solid var(--accent);
+  opacity: 1;
+}
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .sheet {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+  .sheet:last-of-type {
+    page-break-after: auto;
+  }
+}</style>
+</head>
+<body>
+
+<section class="sheet sheet-a">
+  <header class="header">
+    <div>
+      <div class="eyebrow">Guía básica de héroe · Marvel Champions LCG</div>
+      <div class="hero-name">Hulk</div>
+      <div class="alter-ego-name">Bruce Banner</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div class="row">
+      <div class="portrait">
+        <img class="card-art" src="https://marvelcdb.com/bundles/cards/10001a.png" alt="Hulk">
+      </div>
+
+      <div class="meters-panel">
+        <div class="meters">
+          <div>
+            <div class="meter-label">Dificultad</div>
+            <div class="dots ">
+  <div class="dot on "></div>
+  <div class="dot on "></div>
+  <div class="dot  "></div>
+  <div class="dot  "></div>
+  <div class="dot  "></div>
+</div>
+          </div>
+          <div>
+            <div class="meter-label">Nivel de poder</div>
+            <div class="dots power">
+  <div class="dot on power"></div>
+  <div class="dot on power"></div>
+  <div class="dot  power"></div>
+  <div class="dot  power"></div>
+  <div class="dot  power"></div>
+</div>
+          </div>
+        </div>
+
+        <div class="aspects-block">
+          <div class="aspect-grid">
+            <div class="ag-head ag-head-aspects">Aspectos</div>
+<div class="ag-head">Solo</div><div class="ag-head">2 jugadores</div><div class="ag-head">3-4 jugadores</div>            <div class="ag-name aspect-aggression">Agresividad</div>
+            <div class="ag-cell ag-aggression"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 20.0%"></span>
+</div></div>
+            <div class="ag-cell ag-aggression"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 80.0%"></span>
+</div></div>
+            <div class="ag-cell ag-aggression"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 80.0%"></span>
+</div></div>
+            <div class="ag-name aspect-justice">Justicia</div>
+            <div class="ag-cell ag-justice"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 100.0%"></span>
+</div></div>
+            <div class="ag-cell ag-justice"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 40.0%"></span>
+</div></div>
+            <div class="ag-cell ag-justice"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 20.0%"></span>
+</div></div>
+            <div class="ag-name aspect-leadership">Liderazgo</div>
+            <div class="ag-cell ag-leadership"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 60.0%"></span>
+</div></div>
+            <div class="ag-cell ag-leadership"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 60.0%"></span>
+</div></div>
+            <div class="ag-cell ag-leadership"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 60.0%"></span>
+</div></div>
+            <div class="ag-name aspect-protection">Protección</div>
+            <div class="ag-cell ag-protection"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 40.0%"></span>
+</div></div>
+            <div class="ag-cell ag-protection"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 100.0%"></span>
+</div></div>
+            <div class="ag-cell ag-protection"><div class="aspect-bar" aria-hidden="true">
+  <span style="width: 100.0%"></span>
+</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Fortalezas</div>
+      <ul class="item-list">
+<li>Empieza con Ataque 3 y Defensa 3.</li><li>Tiene 18 de vida: aguanta mucho.</li><li><b>Fuerza ilimitada</b> es un <i>recurso</i> triple de <i>héroe</i>.</li><li>Aprovecha los <i>recursos</i> físicos.</li>      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Debilidades</div>
+      <ul class="item-list">
+<li><i>Intervención</i> 0: no quita <i>amenaza</i> con el atributo.</li><li>Su carta de <i>intervención</i> es muy débil.</li><li>Al final del turno de <i>héroe</i>, descarta la mano.</li><li>En <i>héroe</i>, la mano es de 4 cartas.</li><li>Su kit de cartas no es muy potente y el coste de las cartas es muy alto.</li>      </ul>
+    </div>
+
+    <div>
+      <div class="panel-title">Cartas básicas indispensables</div>
+      <div class="rec-basics rec-basics-3">
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/31023.png" alt="Aguante ilimitado">          <div>
+            <div class="sig-name">Aguante ilimitado</div>
+            <span class="type-tag">Evento</span>
+            <p class="sig-note">Para <i>preparar</i> al <i>héroe</i>.</p>
+          </div>
+        </div>
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/26022.png" alt="Hombre Máquina">          <div>
+            <div class="sig-name">Hombre Máquina</div>
+            <span class="type-tag">Aliado</span>
+            <p class="sig-note">Gasta <i>recursos</i> de la mano para subir ATQ e INT.</p>
+          </div>
+        </div>
+        <div class="rec-basic">
+<img src="https://marvelcdb.com/bundles/cards/08023.png" alt="Quintransporte">          <div>
+            <div class="sig-name">Quintransporte</div>
+            <span class="type-tag">Apoyo</span>
+            <p class="sig-note"><i>Recurso</i> universal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel-title">Mazos recomendados</div>
+      <div class="rec-mazos rec-mazos-3">
+        <div class="rec-mazo rec-mazo-aggression">
+          <div class="rec-mazo-art">
+<img src="https://marvelcdb.com/bundles/cards/01057.png" alt="Entrenamiento de combate">          </div>
+          <div class="rec-mazo-title">
+            <span class="rec-mazo-aspecto aspect-aggression">Agresividad</span>
+            Ataque potenciado
+          </div>
+        </div>
+        <div class="rec-mazo rec-mazo-justice">
+          <div class="rec-mazo-art">
+<img src="https://marvelcdb.com/bundles/cards/08011.png" alt="Agente Coulson">          </div>
+          <div class="rec-mazo-title">
+            <span class="rec-mazo-aspecto aspect-justice">Justicia</span>
+            Prevención de amenaza
+          </div>
+        </div>
+        <div class="rec-mazo rec-mazo-protection">
+          <div class="rec-mazo-art">
+<img src="cards/27016.jpg" alt="Lo que no me mata">          </div>
+          <div class="rec-mazo-title">
+            <span class="rec-mazo-aspecto aspect-protection">Protección</span>
+            Siempre preparado
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+</section>
+
+<section class="sheet sheet-b">
+  <header class="header">
+    <div>
+      <div class="eyebrow">Cartas propias y consideraciones de juego</div>
+      <div class="hero-name">Hulk</div>
+      <div class="alter-ego-name">Bruce Banner</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div>
+      <div class="panel-title">Mejores cartas</div>
+      <div class="card-grid">
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/10003.png" alt="Hulk aplasta">          </div>
+          <div class="sig-name">Hulk aplasta</div>
+          <div class="sig-meta">
+            <span class="type-tag">Evento · x2</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div>
+          </div>
+          <p class="sig-note">+10 ATQ en un <i>ataque básico</i>. Puede ganar Brutalidad.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/10007.png" alt="Fuerza ilimitada">          </div>
+          <div class="sig-name">Fuerza ilimitada</div>
+          <div class="sig-meta">
+            <span class="type-tag">Recurso · x2</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+</div>
+          </div>
+          <p class="sig-note"><i>Recurso</i> triple. Muy útil para los requisitos y la mano 4.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/10002.png" alt="Golpe aplastante">          </div>
+          <div class="sig-name">Golpe aplastante</div>
+          <div class="sig-meta">
+            <span class="type-tag">Evento · x2</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+          </div>
+          <p class="sig-note">Ataque igual al ATQ. Solo se paga con <i>recursos</i> físicos.</p>
+        </div>
+        <div class="sig-card">
+          <div class="sig-art">
+<img src="https://marvelcdb.com/bundles/cards/10006.png" alt="Fuerza imparable">          </div>
+          <div class="sig-name">Fuerza imparable</div>
+          <div class="sig-meta">
+            <span class="type-tag">Evento · x2</span>
+            <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+</div>
+          </div>
+          <p class="sig-note">Prepara a Hulk. Si se paga con <i>recursos</i> físicos, da robo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel-title">Cartas circunstanciales</div>
+      <div class="mini-grid">
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/10009.png" alt="Furia desatada">          <div class="mini-info">
+            <div class="sig-name">Furia desatada</div>
+            <div class="sig-meta">
+              <span class="type-tag">Mejora · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">+1 ATQ. Se descarta al cambiar de identidad.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/10008.png" alt="Laboratorio de Banner">          <div class="mini-info">
+            <div class="sig-name">Laboratorio de Banner</div>
+            <div class="sig-meta">
+              <span class="type-tag">Apoyo · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">En <i>alter ego</i>, +2 REC y un <i>recurso</i> mental.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/10010.png" alt="Objeto inamovible">          <div class="mini-info">
+            <div class="sig-name">Objeto inamovible</div>
+            <div class="sig-meta">
+              <span class="type-tag">Mejora · x1</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">+4 de vida y <i>Represalia</i> 1.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/10005.png" alt="Palmada atronadora">          <div class="mini-info">
+            <div class="sig-name">Palmada atronadora</div>
+            <div class="sig-meta">
+              <span class="type-tag">Evento · x2</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">3 de <i>daño</i> a hasta 3 enemigos.</p>
+          </div>
+        </div>
+        <div class="mini">
+<img src="https://marvelcdb.com/bundles/cards/10004.png" alt="Salto suborbital">          <div class="mini-info">
+            <div class="sig-name">Salto suborbital</div>
+            <div class="sig-meta">
+              <span class="type-tag">Evento · x2</span>
+              <div class="dots small">
+  <div class="dot on small"></div>
+  <div class="dot on small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+  <div class="dot  small"></div>
+</div>
+            </div>
+            <p class="sig-note">La única <i>intervención</i> del kit: quita 3 o 5 de <i>amenaza</i>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Consideraciones</div>
+      <ul class="item-list">
+        <li>Al final del turno en <i>héroe</i> descartas la mano: usa los <i>recursos</i> sobrantes en cartas como el <b>Hombre Máquina</b>.</li>
+        <li>Varias cartas del kit tienen requisitos de <i>recursos</i> físicos o se potencian con ellos.</li>
+        <li><b>Furia desatada</b> se descarta al cambiar de identidad.</li>
+        <li><b>Salto suborbital</b> es la única carta de <i>intervención</i> del kit.</li>
+        <li>Para usar <b>Hulk aplasta</b> es necesario un <i>ataque básico</i>.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Mulligan</div>
+      <div class="split-lists">
+        <div>
+          <div class="sub-title">Buscar</div>
+          <ul class="item-list">
+<li><b>Fuerza ilimitada</b>: <i>recurso</i> triple para los requisitos y la mano 4.</li><li><b>Hulk aplasta</b>: +10 ATQ en un <i>ataque básico</i>.</li><li><b>Furia desatada</b>: +1 ATQ desde el inicio.</li>          </ul>
+        </div>
+        <div>
+          <div class="sub-title">Cambia</div>
+          <ul class="item-list">
+<li><b>Laboratorio de Banner</b>: poco útil.</li><li><b>Palmada atronadora</b>: cara si no hay varios enemigos.</li><li><b>Objeto inamovible</b>: no ayuda al inicio de la partida.</li>          </ul>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <footer class="footer">Hoja no oficial hecha por y para la comunidad · Marvel Champions LCG © Fantasy Flight Games / Marvel · Datos e imágenes de MarvelCDB</footer>
+</section>
+
+</body>
+</html>
